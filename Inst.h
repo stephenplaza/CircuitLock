@@ -10,7 +10,7 @@ class Port;
 class Inst : public CircuitElement {
   public:
     Inst(std::string name_, bool is_port_ = false, bool is_latch_ = false) : 
-        CircuitElement(name_), is_port(false), is_latch(false), visited(false) {}
+        CircuitElement(name_), is_port(is_port_), is_latch(is_latch_), visited(false) {}
 
     CircuitElementType get_type() const
     {

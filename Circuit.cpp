@@ -360,7 +360,13 @@ void Circuit::write_blif(string filename)
 
     bliffile.open(filename.c_str());
 
-    bliffile<<".model rewired_blif"<<endl;
+    string model_name = filename;
+    int last_index = model_name.find_last_of(".");
+    if (last_index > 0) {
+        model_name = model_name.substr(0, last_index);
+    }
+
+    bliffile <<".model " << model_name << endl;
     // inputs
     bliffile<<".inputs ";
     for (pmap= sym_table.begin(); pmap != sym_table.end(); pmap++) {
@@ -390,7 +396,7 @@ void Circuit::write_blif(string filename)
         element = (*pmap).second;
         if (element->get_type() == INST) {
             inst2 = (Inst*)(element);
-            if (inst2->get_is_port() && (inst2->num_outputs() > 0)) {
+            if (inst2->get_is_port() && (inst2->num_inputs() > 0)) {
                 port2 = inst2->get_input(0);
                 Wire* wire = port2->get_wire();
                 if (wire && wire->get_driver()) {
