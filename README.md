@@ -5,13 +5,13 @@ for cracking digital circuits.
 
 ## Installation
 
-% mkdir build; cd build
-% cmake ..
-% make
+    % mkdir build; cd build
+    % cmake ..
+    % make
 
 ## Running
 
 For help
 
-% CircuitLocker -h
+    % CircuitLocker -h
 
