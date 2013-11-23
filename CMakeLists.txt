@@ -16,8 +16,6 @@ endif()
 add_executable(CircuitLock TechLibrary.cpp Wire.cpp Inst.cpp Circuit.cpp main.cpp)
 target_link_libraries(CircuitLock boost_system boost_program_options)
 
-message("${CMAKE_SOURCE_DIR}/integration_tests/testsimple.py")
-
 # testing requires python
 enable_testing()
 add_test("test_simple"
