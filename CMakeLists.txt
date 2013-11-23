@@ -6,6 +6,30 @@ set (CMAKE_CXX_FLAGS_DEBUG "-ggdb")
 set (CMAKE_CXX_LINK_FLAGS "-O3")
 set (CMAKE_DEBUG_POSTFIX "-g")
 
+# set the installation to the source bin directory
+set (BUILDLOC ${CMAKE_SOURCE_DIR})
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BUILDLOC}/bin)
+if (NOT EXISTS ${BUILDLOC}/bin)
+    file (MAKE_DIRECTORY ${BUILDLOC}/bin)
+endif() 
+
 add_executable(CircuitLock TechLibrary.cpp Wire.cpp Inst.cpp Circuit.cpp main.cpp)
 target_link_libraries(CircuitLock boost_system boost_program_options)
+
+message("${CMAKE_SOURCE_DIR}/integration_tests/testsimple.py")
+
+# testing requires python
+enable_testing()
+add_test("test_simple"
+    python 
+    ${CMAKE_SOURCE_DIR}/integration_tests/test_simple.py
+    ${BUILDLOC}
+    ${CMAKE_SOURCE_DIR}
+)
+add_test("test_outcompare"
+    python 
+    ${CMAKE_SOURCE_DIR}/integration_tests/test_outcompare.py
+    ${BUILDLOC}
+    ${CMAKE_SOURCE_DIR}
+)
 

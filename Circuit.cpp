@@ -360,8 +360,18 @@ void Circuit::write_blif(string filename)
 
     bliffile.open(filename.c_str());
 
+    // extract name of the model from the given file name
+    // the filename should not have any '/' or '\' characters
     string model_name = filename;
-    int last_index = model_name.find_last_of(".");
+    int last_index = model_name.find_last_of("/");
+    if (last_index > 0) {
+        model_name = model_name.substr(last_index+1, model_name.size());
+    }
+    last_index = model_name.find_last_of("\\");
+    if (last_index > 0) {
+        model_name = model_name.substr(last_index+1, model_name.size());
+    }
+    last_index = model_name.find_last_of(".");
     if (last_index > 0) {
         model_name = model_name.substr(0, last_index);
     }

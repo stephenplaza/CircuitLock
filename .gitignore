@@ -1,2 +1,5 @@
 build
+bin
 *.swp
+*.pyc
+integration_tests/temp_data

@@ -1,0 +1,13 @@
+.model majority
+.inputs a d e b c 
+.outputs f 
+.names d a b c e h 
+000-- 1
+00-0- 1
+0-00- 1
+00--0 1
+0-0-0 1
+0--00 1
+.names h f 
+0 1
+.end
