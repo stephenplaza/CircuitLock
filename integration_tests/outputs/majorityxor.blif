@@ -1,0 +1,16 @@
+.model majorityxor
+.inputs a d key-0 e b c 
+.outputs f 
+.names d a b c e h 
+000-- 1
+00-0- 1
+0-00- 1
+00--0 1
+0-0-0 1
+0--00 1
+.names key-0 h key-0-xor 
+11 1
+00 1
+.names key-0-xor f 
+0 1
+.end

@@ -13,7 +13,7 @@ if (NOT EXISTS ${BUILDLOC}/bin)
     file (MAKE_DIRECTORY ${BUILDLOC}/bin)
 endif() 
 
-add_executable(CircuitLock TechLibrary.cpp Wire.cpp Inst.cpp Circuit.cpp main.cpp)
+add_executable(CircuitLock TechLibrary.cpp Wire.cpp Inst.cpp Circuit.cpp EncryptedCircuit.cpp main.cpp)
 target_link_libraries(CircuitLock boost_system boost_program_options)
 
 # testing requires python
@@ -30,4 +30,15 @@ add_test("test_outcompare"
     ${BUILDLOC}
     ${CMAKE_SOURCE_DIR}
 )
-
+add_test("test_simpxor"
+    python 
+    ${CMAKE_SOURCE_DIR}/integration_tests/test_simpxor.py
+    ${BUILDLOC}
+    ${CMAKE_SOURCE_DIR}
+)
+add_test("test_aluxor"
+    python 
+    ${CMAKE_SOURCE_DIR}/integration_tests/test_aluxor.py
+    ${BUILDLOC}
+    ${CMAKE_SOURCE_DIR}
+)

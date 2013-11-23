@@ -22,11 +22,19 @@ class Wire : public CircuitElement {
     void set_driver(Port* in_port);
     
     void add_output_port(Port* port);
-  
+ 
+    bool is_output();
+
     unsigned int num_outputs() const
     {
         return outputs.size();
     }
+
+    /*!
+     * Reassign the output to the given wire to
+     * the current object instance.
+    */
+    void reassign_outputs(Wire* wire);
 
     typedef std::vector<Port*>::iterator output_iterator;
 

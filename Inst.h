@@ -27,7 +27,6 @@ class Inst : public CircuitElement {
     }
 
     void evaluate(int num_simulations);
-    void evaluate_core(int num_simulations);
 
     void add_lib_cell(lib_cell* lib_cell_)
     {
@@ -40,7 +39,7 @@ class Inst : public CircuitElement {
     }
     bool get_is_latch() const
     {
-        return is_port;
+        return is_latch;
     }
 
     unsigned int num_outputs() const
@@ -104,6 +103,8 @@ class Inst : public CircuitElement {
     }
 
   private:
+    void evaluate_core(int num_simulations);
+    
     std::vector<Port*> inputs;
     std::vector<Port*> outputs;
 
