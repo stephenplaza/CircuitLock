@@ -55,8 +55,9 @@ class Wire : public CircuitElement {
 
     //! contains value from simulation, not yet saved to signatures
     unsigned long long sig_temp;
-   
+    
     std::vector<unsigned long long> signatures;
+
 };
 
 #endif

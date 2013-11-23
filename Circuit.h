@@ -49,13 +49,23 @@ class Circuit {
  
     TechLibrary* library;
 
-    int num_insts, num_wires, num_gates, num_ports;
-    
+    int num_insts, num_wires, num_gates, num_ports, max_level;
+
     std::vector<Wire*> constants_list;
     std::tr1::unordered_set<std::string> one_list;
     std::tr1::unordered_set<std::string> zero_list;
 
+    //! includes latch outputs as primary inputs
+    std::vector<Wire*> input_wires;
+
+    //! includes latch inputs as primary outputs
+    std::vector<Wire*> output_wires;
+
+    //! non input/output/latch instances
+    std::vector<Inst*> lib_insts;
+
     std::vector<Inst*> linsts;
+    
 };
 
 

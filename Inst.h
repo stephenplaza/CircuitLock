@@ -10,7 +10,7 @@ class Port;
 class Inst : public CircuitElement {
   public:
     Inst(std::string name_, bool is_port_ = false, bool is_latch_ = false) : 
-        CircuitElement(name_), is_port(is_port_), is_latch(is_latch_), visited(false) {}
+        CircuitElement(name_), is_port(is_port_), is_latch(is_latch_), level(0) {}
 
     CircuitElementType get_type() const
     {
@@ -48,6 +48,16 @@ class Inst : public CircuitElement {
         return outputs.size();
     }
 
+    void set_level(int level_)
+    {
+        level = level_;
+    }
+
+    int get_level() const
+    {
+        return level;
+    }
+
     unsigned int num_inputs() const
     {
         return inputs.size();
@@ -60,6 +70,11 @@ class Inst : public CircuitElement {
     Port * get_input(unsigned int id)
     {
         return inputs[id];
+    }
+
+    bool is_PI()
+    {
+        return (is_port && inputs.empty());
     }
 
     typedef std::vector<Port*>::iterator output_iterator;
@@ -88,16 +103,6 @@ class Inst : public CircuitElement {
         return lib_cells[id];
     }
 
-    bool get_visited() const
-    {
-        return visited;
-    }
-
-    void set_visited(bool val)
-    {
-        visited = val;
-    }
-
   private:
     std::vector<Port*> inputs;
     std::vector<Port*> outputs;
@@ -108,11 +113,8 @@ class Inst : public CircuitElement {
     bool is_port;
     bool is_latch;
     
-    //! general flag for algorithms that iterate through instances
-    bool visited;
-    
-    int level; // Level of the instance
-    
+    //! level of the instance    
+    int level;
 };
 
 #endif

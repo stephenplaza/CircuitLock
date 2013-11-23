@@ -22,7 +22,8 @@ using std::ifstream; using std::ofstream;
 using std::tr1::unordered_set;
 
 Circuit::Circuit(string filename, TechLibrary* library_) :
-    library(library_), num_insts(0), num_wires(0), num_gates(0), num_ports(0)
+    library(library_), num_insts(0), num_wires(0), num_gates(0),
+    num_ports(0), max_level(0)
 {
     // will throw an Error if incorrectly formatted
     parse_blif(filename);
@@ -30,10 +31,85 @@ Circuit::Circuit(string filename, TechLibrary* library_) :
     levelize();
 }
 
+/*!
+ * Assumes all of the wire/inst visited flags are false
+*/
 void Circuit::levelize()
 {
-    // TBD
-}
+    max_level= 0;
+    linsts.clear();
+    
+    for (vector<Wire*>::iterator pwire = input_wires.begin();
+            pwire != input_wires.end(); ++pwire) {
+	(*pwire)->set_visited(true);
+    }
+
+    // Add all latch and inputs to linst; reset level
+    for (vector<Inst*>::iterator pinst= lib_insts.begin();
+            pinst != lib_insts.end(); pinst++) {
+        (*pinst)->set_level(0);
+	if ((*pinst)->get_is_latch() || (*pinst)->is_PI()) {
+	    (*pinst)->set_visited(true);
+	    linsts.push_back(*pinst);
+	}
+    }
+
+    // Now check all instances, if all its input is valid, add to linsts
+    int num_iterations = 0;
+    while (linsts.size() < lib_insts.size())
+    {
+        ++num_iterations;
+        // more iterations than instances == problem
+        if (num_iterations > lib_insts.size()) {
+            throw Error("Cannot levelize instances");
+            break;
+        }
+
+        for (vector<Inst*>::iterator pinst= lib_insts.begin();
+                pinst != lib_insts.end(); pinst++) {
+            Inst* inst2= *pinst;
+            if (inst2->is_visited()) {
+                continue;
+            }
+            int max_level2= 0;
+            Inst::input_iterator pport;
+            for (pport = inst2->input_begin();
+                    pport != inst2->input_end(); ++pport) {
+                Wire* wire2= (*pport)->get_wire();
+                if (wire2 && !(wire2->is_visited())) {
+                    break;
+                }
+                int curr_level = wire2->get_driver()->get_inst()->get_level();
+                if (max_level2 < curr_level) {
+                    max_level2 = curr_level;
+                }
+            }
+
+            if (pport == inst2->input_end()) {
+                linsts.push_back(inst2);
+                ++max_level2;
+                inst2->set_level(max_level2);
+                if (max_level < max_level2) {
+                    max_level= max_level2;
+                }
+                inst2->set_visited(true);
+                for (Inst::output_iterator pport= inst2->output_begin();
+                        pport != inst2->output_end(); pport++) {
+                    Wire* wire2= (*pport)->get_wire();
+                    if (wire2) {
+                        wire2->set_visited(true);
+                    }
+                }
+            }
+        }
+    }
+
+    // clear all the flags, leave the level
+    for (sym_map::iterator iter = sym_table.begin(); 
+            iter != sym_table.end(); ++iter) {
+        (iter->second)->set_visited(false);
+    }
+} 
 
 void Circuit::print_info()
 {
@@ -45,6 +121,9 @@ void Circuit::print_info()
 
     // number of combinational gates
     cout << "Num of logic gates: " << num_gates << endl;
+
+    // number of logic levels
+    cout << "Num levels: " << max_level << endl;
 }
 
 
@@ -65,10 +144,10 @@ void Circuit::parse_blif(string filename)
         if (type == 2) {
             break;
         } else if (type == 4) {
-            if (token.compare(".inputs") == 0 || token.compare(".outputs") == 0) {
+            if (token == ".inputs" || token == ".outputs") {
                 int type= 0;
 
-                if (token.compare(".outputs") == 0) {
+                if (token == ".outputs") {
                     type= 1;
                 }
                 while (get_blif_token(token) != 1) {
@@ -94,12 +173,14 @@ void Circuit::parse_blif(string filename)
                         // input, connect port as output
                         ninst->add_output(nport);
                         nwire->set_driver(nport);
+                        input_wires.push_back(nwire);
                     } else {
                         ninst->add_input(nport);
                         nwire->add_output_port(nport);
+                        output_wires.push_back(nwire);
                     }
                 }
-            } else if (token.compare(".latch") == 0) {
+            } else if (token == ".latch") {
                 // .latch input output [<type> <control>] [<init-val>]
                 // only need input and output
                 string input, output;
@@ -123,6 +204,7 @@ void Circuit::parse_blif(string filename)
                 // create/find wire 
                 Wire* nwire= find_wire_insert(input);
                 nwire->add_output_port(nport);
+                output_wires.push_back(nwire);
                 ninst->add_input(nport);
                 
                 // handle output port
@@ -136,12 +218,13 @@ void Circuit::parse_blif(string filename)
                     cout << "Warning, wire " << output
                         << " has multipler drivers."<<endl;
                 }
+                input_wires.push_back(nwire);
                 nwire->set_driver(nport);
                 ninst->add_output(nport);
                 // latch always has only one input
                 lib_cell* cell = library->create_libcell(latch_str, 1);
                 ninst->add_lib_cell(cell);
-            } else if (token.compare(".names") == 0) {
+            } else if (token == ".names") {
                 // .names <in-1> <in-2> ... <in-n> <output>
                 vector<string> strvec;
                 int i;
@@ -180,6 +263,7 @@ void Circuit::parse_blif(string filename)
                 // set instance
                 inst_name= inst_name + "name";
                 ninst= new Inst(inst_name);
+                lib_insts.push_back(ninst);
                 ++num_insts;
                 ++num_gates;
                 sym_table[inst_name]= ninst;
@@ -539,8 +623,8 @@ bool Circuit::check_input_cone(Port* port2, Port* driver)
         return false;
     }
 
-    inst2= driver->get_inst();
-    if (!inst2->get_visited()) {
+    inst2 = driver->get_inst();
+    if (!(inst2->is_visited())) {
         stack.push_back(inst2);
         stack2.push_back(inst2);
         inst2->set_visited(true);
@@ -578,7 +662,7 @@ bool Circuit::check_input_cone(Port* port2, Port* driver)
                 }
                 port1 = wire2->get_driver();
                 inst2 = port1->get_inst();
-                if (!(inst2->get_visited())) {
+                if (!(inst2->is_visited())) {
                     inst2->set_visited(true);
                     stack.push_back(inst2);
                     stack2.push_back(inst2);
