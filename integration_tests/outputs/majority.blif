@@ -1,5 +1,5 @@
 .model majority
-.inputs a d e b c 
+.inputs a b c d e 
 .outputs f 
 .names d a b c e h 
 000-- 1

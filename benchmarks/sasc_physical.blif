@@ -1,0 +1,2168 @@
+# Benchmark "rewired_blif" written by ABC on Mon Apr  3 14:38:50 2006
+.model rewired_blif
+.inputs clk cts_i din_i_lb_0_rb_ din_i_lb_1_rb_ din_i_lb_2_rb_ \
+ din_i_lb_3_rb_ din_i_lb_4_rb_ din_i_lb_5_rb_ din_i_lb_6_rb_ din_i_lb_7_rb_ \
+ re_i rst rxd_i sio_ce sio_ce_x4 we_i
+.outputs dout_o_lb_0_rb_ dout_o_lb_1_rb_ dout_o_lb_2_rb_ dout_o_lb_3_rb_ \
+ dout_o_lb_4_rb_ dout_o_lb_5_rb_ dout_o_lb_6_rb_ dout_o_lb_7_rb_ empty_o \
+ full_o rts_o txd_o
+.latch  change_in     change  0
+.latch dpll_state_pound_5b0_pound_5d_in dpll_state_pound_5b0_pound_5d  0
+.latch dpll_state_pound_5b1_pound_5d_in dpll_state_pound_5b1_pound_5d  0
+.latch hold_reg_in   hold_reg  0
+.latch hold_reg_reg_pound_5b1_pound_5d_Q_in hold_reg_reg_pound_5b1_pound_5d_Q  0
+.latch hold_reg_reg_pound_5b2_pound_5d_Q_in hold_reg_reg_pound_5b2_pound_5d_Q  0
+.latch hold_reg_reg_pound_5b3_pound_5d_Q_in hold_reg_reg_pound_5b3_pound_5d_Q  0
+.latch hold_reg_reg_pound_5b4_pound_5d_Q_in hold_reg_reg_pound_5b4_pound_5d_Q  0
+.latch hold_reg_reg_pound_5b5_pound_5d_Q_in hold_reg_reg_pound_5b5_pound_5d_Q  0
+.latch hold_reg_reg_pound_5b6_pound_5d_Q_in hold_reg_reg_pound_5b6_pound_5d_Q  0
+.latch hold_reg_reg_pound_5b7_pound_5d_Q_in hold_reg_reg_pound_5b7_pound_5d_Q  0
+.latch hold_reg_reg_pound_5b8_pound_5d_Q_in hold_reg_reg_pound_5b8_pound_5d_Q  0
+.latch hold_reg_9_in hold_reg_9  0
+.latch    load_in       load  0
+.latch   rts_o_in      rts_o  0
+.latch rx_bit_cnt_pound_5b0_pound_5d_in rx_bit_cnt_pound_5b0_pound_5d  0
+.latch   n_182_in      n_182  0
+.latch rx_bit_cnt_pound_5b2_pound_5d_in rx_bit_cnt_pound_5b2_pound_5d  0
+.latch rx_bit_cnt_pound_5b3_pound_5d_in rx_bit_cnt_pound_5b3_pound_5d  0
+.latch rx_fifo_gb_in rx_fifo_gb  0
+.latch rx_fifo_mem_pound_5b0_pound_5d_in rx_fifo_mem_pound_5b0_pound_5d  0
+.latch rx_fifo_mem_pound_5b0_pound_5d_10_in rx_fifo_mem_pound_5b0_pound_5d_10  0
+.latch rx_fifo_mem_pound_5b0_pound_5d_11_in rx_fifo_mem_pound_5b0_pound_5d_11  0
+.latch rx_fifo_mem_pound_5b0_pound_5d_12_in rx_fifo_mem_pound_5b0_pound_5d_12  0
+.latch rx_fifo_mem_pound_5b0_pound_5d_13_in rx_fifo_mem_pound_5b0_pound_5d_13  0
+.latch rx_fifo_mem_pound_5b0_pound_5d_14_in rx_fifo_mem_pound_5b0_pound_5d_14  0
+.latch rx_fifo_mem_pound_5b0_pound_5d_15_in rx_fifo_mem_pound_5b0_pound_5d_15  0
+.latch rx_fifo_mem_pound_5b0_pound_5d_16_in rx_fifo_mem_pound_5b0_pound_5d_16  0
+.latch rx_fifo_mem_pound_5b1_pound_5d_in rx_fifo_mem_pound_5b1_pound_5d  0
+.latch rx_fifo_mem_pound_5b1_pound_5d_3_in rx_fifo_mem_pound_5b1_pound_5d_3  0
+.latch rx_fifo_mem_pound_5b1_pound_5d_4_in rx_fifo_mem_pound_5b1_pound_5d_4  0
+.latch rx_fifo_mem_pound_5b1_pound_5d_5_in rx_fifo_mem_pound_5b1_pound_5d_5  0
+.latch rx_fifo_mem_pound_5b1_pound_5d_6_in rx_fifo_mem_pound_5b1_pound_5d_6  0
+.latch rx_fifo_mem_pound_5b1_pound_5d_7_in rx_fifo_mem_pound_5b1_pound_5d_7  0
+.latch rx_fifo_mem_pound_5b1_pound_5d_8_in rx_fifo_mem_pound_5b1_pound_5d_8  0
+.latch rx_fifo_mem_pound_5b1_pound_5d_9_in rx_fifo_mem_pound_5b1_pound_5d_9  0
+.latch rx_fifo_mem_pound_5b2_pound_5d_in rx_fifo_mem_pound_5b2_pound_5d  0
+.latch rx_fifo_mem_pound_5b2_pound_5d_24_in rx_fifo_mem_pound_5b2_pound_5d_24  0
+.latch rx_fifo_mem_pound_5b2_pound_5d_25_in rx_fifo_mem_pound_5b2_pound_5d_25  0
+.latch rx_fifo_mem_pound_5b2_pound_5d_26_in rx_fifo_mem_pound_5b2_pound_5d_26  0
+.latch rx_fifo_mem_pound_5b2_pound_5d_27_in rx_fifo_mem_pound_5b2_pound_5d_27  0
+.latch rx_fifo_mem_pound_5b2_pound_5d_28_in rx_fifo_mem_pound_5b2_pound_5d_28  0
+.latch rx_fifo_mem_pound_5b2_pound_5d_29_in rx_fifo_mem_pound_5b2_pound_5d_29  0
+.latch rx_fifo_mem_pound_5b2_pound_5d_30_in rx_fifo_mem_pound_5b2_pound_5d_30  0
+.latch rx_fifo_mem_pound_5b3_pound_5d_in rx_fifo_mem_pound_5b3_pound_5d  0
+.latch rx_fifo_mem_pound_5b3_pound_5d_17_in rx_fifo_mem_pound_5b3_pound_5d_17  0
+.latch rx_fifo_mem_pound_5b3_pound_5d_18_in rx_fifo_mem_pound_5b3_pound_5d_18  0
+.latch rx_fifo_mem_pound_5b3_pound_5d_19_in rx_fifo_mem_pound_5b3_pound_5d_19  0
+.latch rx_fifo_mem_pound_5b3_pound_5d_20_in rx_fifo_mem_pound_5b3_pound_5d_20  0
+.latch rx_fifo_mem_pound_5b3_pound_5d_21_in rx_fifo_mem_pound_5b3_pound_5d_21  0
+.latch rx_fifo_mem_pound_5b3_pound_5d_22_in rx_fifo_mem_pound_5b3_pound_5d_22  0
+.latch rx_fifo_mem_pound_5b3_pound_5d_23_in rx_fifo_mem_pound_5b3_pound_5d_23  0
+.latch rx_fifo_rp_pound_5b0_pound_5d_in rx_fifo_rp_pound_5b0_pound_5d  0
+.latch rx_fifo_rp_pound_5b1_pound_5d_in rx_fifo_rp_pound_5b1_pound_5d  0
+.latch rx_fifo_wp_pound_5b0_pound_5d_in rx_fifo_wp_pound_5b0_pound_5d  0
+.latch rx_fifo_wp_pound_5b1_pound_5d_in rx_fifo_wp_pound_5b1_pound_5d  0
+.latch   rx_go_in      rx_go  0
+.latch rx_sio_ce_r1_reg_Q_in rx_sio_ce_r1_reg_Q  0
+.latch rx_sio_ce_r2_in rx_sio_ce_r2  0
+.latch rx_sio_ce_in  rx_sio_ce  0
+.latch rx_valid_r_reg_Q_in rx_valid_r_reg_Q  0
+.latch rx_valid_in   rx_valid  0
+.latch rxd_r_reg_Q_in rxd_r_reg_Q  0
+.latch   rxd_s_in      rxd_s  0
+.latch rxr_pound_5b2_pound_5d_in rxr_pound_5b2_pound_5d  0
+.latch rxr_pound_5b2_pound_5d_171_in rxr_pound_5b2_pound_5d_171  0
+.latch rxr_pound_5b2_pound_5d_172_in rxr_pound_5b2_pound_5d_172  0
+.latch rxr_pound_5b2_pound_5d_173_in rxr_pound_5b2_pound_5d_173  0
+.latch rxr_pound_5b2_pound_5d_174_in rxr_pound_5b2_pound_5d_174  0
+.latch rxr_pound_5b2_pound_5d_175_in rxr_pound_5b2_pound_5d_175  0
+.latch rxr_pound_5b2_pound_5d_176_in rxr_pound_5b2_pound_5d_176  0
+.latch rxr_pound_5b2_pound_5d_177_in rxr_pound_5b2_pound_5d_177  0
+.latch shift_en_r_in shift_en_r  0
+.latch shift_en_in   shift_en  0
+.latch tx_bit_cnt_pound_5b0_pound_5d_in tx_bit_cnt_pound_5b0_pound_5d  0
+.latch tx_bit_cnt_pound_5b1_pound_5d_in tx_bit_cnt_pound_5b1_pound_5d  0
+.latch tx_bit_cnt_pound_5b2_pound_5d_in tx_bit_cnt_pound_5b2_pound_5d  0
+.latch tx_bit_cnt_pound_5b3_pound_5d_in tx_bit_cnt_pound_5b3_pound_5d  0
+.latch tx_fifo_gb_reg_Q_in tx_fifo_gb_reg_Q  0
+.latch tx_fifo_mem_pound_5b0_pound_5d_in tx_fifo_mem_pound_5b0_pound_5d  0
+.latch tx_fifo_mem_pound_5b0_pound_5d_10_in tx_fifo_mem_pound_5b0_pound_5d_10  0
+.latch tx_fifo_mem_pound_5b0_pound_5d_11_in tx_fifo_mem_pound_5b0_pound_5d_11  0
+.latch tx_fifo_mem_pound_5b0_pound_5d_12_in tx_fifo_mem_pound_5b0_pound_5d_12  0
+.latch tx_fifo_mem_pound_5b0_pound_5d_13_in tx_fifo_mem_pound_5b0_pound_5d_13  0
+.latch tx_fifo_mem_pound_5b0_pound_5d_14_in tx_fifo_mem_pound_5b0_pound_5d_14  0
+.latch tx_fifo_mem_pound_5b0_pound_5d_15_in tx_fifo_mem_pound_5b0_pound_5d_15  0
+.latch tx_fifo_mem_pound_5b0_pound_5d_16_in tx_fifo_mem_pound_5b0_pound_5d_16  0
+.latch tx_fifo_mem_pound_5b1_pound_5d_in tx_fifo_mem_pound_5b1_pound_5d  0
+.latch tx_fifo_mem_pound_5b1_pound_5d_3_in tx_fifo_mem_pound_5b1_pound_5d_3  0
+.latch tx_fifo_mem_pound_5b1_pound_5d_4_in tx_fifo_mem_pound_5b1_pound_5d_4  0
+.latch tx_fifo_mem_pound_5b1_pound_5d_5_in tx_fifo_mem_pound_5b1_pound_5d_5  0
+.latch tx_fifo_mem_pound_5b1_pound_5d_6_in tx_fifo_mem_pound_5b1_pound_5d_6  0
+.latch tx_fifo_mem_pound_5b1_pound_5d_7_in tx_fifo_mem_pound_5b1_pound_5d_7  0
+.latch tx_fifo_mem_pound_5b1_pound_5d_8_in tx_fifo_mem_pound_5b1_pound_5d_8  0
+.latch tx_fifo_mem_pound_5b1_pound_5d_9_in tx_fifo_mem_pound_5b1_pound_5d_9  0
+.latch tx_fifo_mem_pound_5b2_pound_5d_in tx_fifo_mem_pound_5b2_pound_5d  0
+.latch tx_fifo_mem_pound_5b2_pound_5d_24_in tx_fifo_mem_pound_5b2_pound_5d_24  0
+.latch tx_fifo_mem_pound_5b2_pound_5d_25_in tx_fifo_mem_pound_5b2_pound_5d_25  0
+.latch tx_fifo_mem_pound_5b2_pound_5d_26_in tx_fifo_mem_pound_5b2_pound_5d_26  0
+.latch tx_fifo_mem_pound_5b2_pound_5d_27_in tx_fifo_mem_pound_5b2_pound_5d_27  0
+.latch tx_fifo_mem_pound_5b2_pound_5d_28_in tx_fifo_mem_pound_5b2_pound_5d_28  0
+.latch tx_fifo_mem_pound_5b2_pound_5d_29_in tx_fifo_mem_pound_5b2_pound_5d_29  0
+.latch tx_fifo_mem_pound_5b2_pound_5d_30_in tx_fifo_mem_pound_5b2_pound_5d_30  0
+.latch tx_fifo_mem_pound_5b3_pound_5d_in tx_fifo_mem_pound_5b3_pound_5d  0
+.latch tx_fifo_mem_pound_5b3_pound_5d_17_in tx_fifo_mem_pound_5b3_pound_5d_17  0
+.latch tx_fifo_mem_pound_5b3_pound_5d_18_in tx_fifo_mem_pound_5b3_pound_5d_18  0
+.latch tx_fifo_mem_pound_5b3_pound_5d_19_in tx_fifo_mem_pound_5b3_pound_5d_19  0
+.latch tx_fifo_mem_pound_5b3_pound_5d_20_in tx_fifo_mem_pound_5b3_pound_5d_20  0
+.latch tx_fifo_mem_pound_5b3_pound_5d_21_in tx_fifo_mem_pound_5b3_pound_5d_21  0
+.latch tx_fifo_mem_pound_5b3_pound_5d_22_in tx_fifo_mem_pound_5b3_pound_5d_22  0
+.latch tx_fifo_mem_pound_5b3_pound_5d_23_in tx_fifo_mem_pound_5b3_pound_5d_23  0
+.latch tx_fifo_rp_pound_5b0_pound_5d_in tx_fifo_rp_pound_5b0_pound_5d  0
+.latch tx_fifo_rp_pound_5b1_pound_5d_in tx_fifo_rp_pound_5b1_pound_5d  0
+.latch tx_fifo_wp_pound_5b0_pound_5d_in tx_fifo_wp_pound_5b0_pound_5d  0
+.latch tx_fifo_wp_pound_5b1_pound_5d_in tx_fifo_wp_pound_5b1_pound_5d  0
+.latch   txd_o_in      txd_o  0
+.latch txf_empty_r_reg_Q_in txf_empty_r_reg_Q  0
+
+.names rx_fifo_wp_pound_5b0_pound_5d [145]
+0 1
+.names tx_fifo_wp_pound_5b0_pound_5d [146]
+0 1
+.names [148] [147]
+1 1
+.names [241] [198] [148]
+00 1
+01 1
+10 1
+.names [154] [314] rst rx_bit_cnt_pound_5b3_pound_5d_in
+000 1
+001 1
+010 1
+100 1
+110 1
+.names [158] [464] [535] rx_fifo_gb_in
+000 1
+010 1
+101 1
+.names [546] [427] [151]
+00 1
+.names [195] [498] rst tx_bit_cnt_pound_5b3_pound_5d_in
+000 1
+001 1
+010 1
+100 1
+110 1
+.names [314] [207] rst n_182_in
+000 1
+001 1
+010 1
+100 1
+110 1
+.names rx_bit_cnt_pound_5b3_pound_5d [232] [157] [154]
+000 1
+010 1
+101 1
+.names [194] [295] rx_bit_cnt_pound_5b2_pound_5d_in
+00 1
+.names [196] [295] rx_bit_cnt_pound_5b0_pound_5d_in
+00 1
+.names [199] [232] [157]
+00 1
+.names [308] [213] [455] [158]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [575] [537] [193] rx_fifo_wp_pound_5b0_pound_5d_in
+000 1
+001 1
+010 1
+100 1
+110 1
+.names [342] rx_fifo_mem_pound_5b1_pound_5d_9 [212] \
+ rx_fifo_mem_pound_5b1_pound_5d_9_in
+011 1
+100 1
+110 1
+111 1
+.names [343] rx_fifo_mem_pound_5b2_pound_5d [212] \
+ rx_fifo_mem_pound_5b2_pound_5d_in
+011 1
+100 1
+110 1
+111 1
+.names [344] rx_fifo_mem_pound_5b2_pound_5d_24 [218] \
+ rx_fifo_mem_pound_5b2_pound_5d_24_in
+011 1
+100 1
+110 1
+111 1
+.names [341] rx_fifo_mem_pound_5b1_pound_5d_8 [216] \
+ rx_fifo_mem_pound_5b1_pound_5d_8_in
+011 1
+100 1
+110 1
+111 1
+.names [346] rx_fifo_mem_pound_5b2_pound_5d_25 [218] \
+ rx_fifo_mem_pound_5b2_pound_5d_25_in
+011 1
+100 1
+110 1
+111 1
+.names [348] rx_fifo_mem_pound_5b2_pound_5d_26 [214] \
+ rx_fifo_mem_pound_5b2_pound_5d_26_in
+011 1
+100 1
+110 1
+111 1
+.names [349] rx_fifo_mem_pound_5b2_pound_5d_27 [212] \
+ rx_fifo_mem_pound_5b2_pound_5d_27_in
+011 1
+100 1
+110 1
+111 1
+.names [350] rx_fifo_mem_pound_5b2_pound_5d_28 [214] \
+ rx_fifo_mem_pound_5b2_pound_5d_28_in
+011 1
+100 1
+110 1
+111 1
+.names [351] rx_fifo_mem_pound_5b2_pound_5d_29 [218] \
+ rx_fifo_mem_pound_5b2_pound_5d_29_in
+011 1
+100 1
+110 1
+111 1
+.names [352] rx_fifo_mem_pound_5b2_pound_5d_30 [216] \
+ rx_fifo_mem_pound_5b2_pound_5d_30_in
+011 1
+100 1
+110 1
+111 1
+.names [347] rx_fifo_mem_pound_5b1_pound_5d [218] \
+ rx_fifo_mem_pound_5b1_pound_5d_in
+011 1
+100 1
+110 1
+111 1
+.names [368] rx_fifo_mem_pound_5b1_pound_5d_3 [212] \
+ rx_fifo_mem_pound_5b1_pound_5d_3_in
+011 1
+100 1
+110 1
+111 1
+.names [367] rx_fifo_mem_pound_5b1_pound_5d_4 [212] \
+ rx_fifo_mem_pound_5b1_pound_5d_4_in
+011 1
+100 1
+110 1
+111 1
+.names [369] rx_fifo_mem_pound_5b1_pound_5d_5 [214] \
+ rx_fifo_mem_pound_5b1_pound_5d_5_in
+011 1
+100 1
+110 1
+111 1
+.names [370] rx_fifo_mem_pound_5b1_pound_5d_6 [212] \
+ rx_fifo_mem_pound_5b1_pound_5d_6_in
+011 1
+100 1
+110 1
+111 1
+.names [372] rx_fifo_mem_pound_5b1_pound_5d_7 [216] \
+ rx_fifo_mem_pound_5b1_pound_5d_7_in
+011 1
+100 1
+110 1
+111 1
+.names [379] rx_fifo_mem_pound_5b3_pound_5d [216] \
+ rx_fifo_mem_pound_5b3_pound_5d_in
+011 1
+100 1
+110 1
+111 1
+.names [380] rx_fifo_mem_pound_5b3_pound_5d_17 [218] \
+ rx_fifo_mem_pound_5b3_pound_5d_17_in
+011 1
+100 1
+110 1
+111 1
+.names [382] rx_fifo_mem_pound_5b3_pound_5d_18 [214] \
+ rx_fifo_mem_pound_5b3_pound_5d_18_in
+011 1
+100 1
+110 1
+111 1
+.names [383] rx_fifo_mem_pound_5b3_pound_5d_19 [216] \
+ rx_fifo_mem_pound_5b3_pound_5d_19_in
+011 1
+100 1
+110 1
+111 1
+.names [384] rx_fifo_mem_pound_5b3_pound_5d_20 [216] \
+ rx_fifo_mem_pound_5b3_pound_5d_20_in
+011 1
+100 1
+110 1
+111 1
+.names [386] rx_fifo_mem_pound_5b3_pound_5d_21 [214] \
+ rx_fifo_mem_pound_5b3_pound_5d_21_in
+011 1
+100 1
+110 1
+111 1
+.names [387] rx_fifo_mem_pound_5b3_pound_5d_22 [218] \
+ rx_fifo_mem_pound_5b3_pound_5d_22_in
+011 1
+100 1
+110 1
+111 1
+.names [388] rx_fifo_mem_pound_5b3_pound_5d_23 [218] \
+ rx_fifo_mem_pound_5b3_pound_5d_23_in
+011 1
+100 1
+110 1
+111 1
+.names [403] rx_fifo_mem_pound_5b0_pound_5d [216] \
+ rx_fifo_mem_pound_5b0_pound_5d_in
+011 1
+100 1
+110 1
+111 1
+.names [390] rx_fifo_mem_pound_5b0_pound_5d_10 [214] \
+ rx_fifo_mem_pound_5b0_pound_5d_10_in
+011 1
+100 1
+110 1
+111 1
+.names [404] rx_fifo_mem_pound_5b0_pound_5d_11 [218] \
+ rx_fifo_mem_pound_5b0_pound_5d_11_in
+011 1
+100 1
+110 1
+111 1
+.names [405] rx_fifo_mem_pound_5b0_pound_5d_12 [216] \
+ rx_fifo_mem_pound_5b0_pound_5d_12_in
+011 1
+100 1
+110 1
+111 1
+.names [410] rx_fifo_mem_pound_5b0_pound_5d_13 [212] \
+ rx_fifo_mem_pound_5b0_pound_5d_13_in
+011 1
+100 1
+110 1
+111 1
+.names [407] rx_fifo_mem_pound_5b0_pound_5d_14 [212] \
+ rx_fifo_mem_pound_5b0_pound_5d_14_in
+011 1
+100 1
+110 1
+111 1
+.names [396] rx_fifo_mem_pound_5b0_pound_5d_15 [214] \
+ rx_fifo_mem_pound_5b0_pound_5d_15_in
+011 1
+100 1
+110 1
+111 1
+.names [408] rx_fifo_mem_pound_5b0_pound_5d_16 [214] \
+ rx_fifo_mem_pound_5b0_pound_5d_16_in
+011 1
+100 1
+110 1
+111 1
+.names [449] [234] [535] tx_fifo_gb_reg_Q_in
+000 1
+010 1
+101 1
+.names [575] [537] [193]
+00 1
+01 1
+10 1
+.names rx_bit_cnt_pound_5b2_pound_5d [232] [211] [194]
+000 1
+010 1
+101 1
+.names [493] tx_bit_cnt_pound_5b3_pound_5d [210] [195]
+000 1
+010 1
+101 1
+.names [516] [232] [208] [196]
+000 1
+010 1
+101 1
+.names rxd_s rxr_pound_5b2_pound_5d_177 [232] rxr_pound_5b2_pound_5d_177_in
+011 1
+100 1
+110 1
+111 1
+.names [503] [514] [198]
+00 1
+01 1
+10 1
+.names rx_bit_cnt_pound_5b3_pound_5d [287] [199]
+01 1
+10 1
+.names rxr_pound_5b2_pound_5d_171 rxr_pound_5b2_pound_5d [232] \
+ rxr_pound_5b2_pound_5d_in
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_172 rxr_pound_5b2_pound_5d_171 [232] \
+ rxr_pound_5b2_pound_5d_171_in
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_173 rxr_pound_5b2_pound_5d_172 [232] \
+ rxr_pound_5b2_pound_5d_172_in
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_174 rxr_pound_5b2_pound_5d_173 [232] \
+ rxr_pound_5b2_pound_5d_173_in
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_175 rxr_pound_5b2_pound_5d_174 [232] \
+ rxr_pound_5b2_pound_5d_174_in
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_176 rxr_pound_5b2_pound_5d_175 [232] \
+ rxr_pound_5b2_pound_5d_175_in
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_177 rxr_pound_5b2_pound_5d_176 [232] \
+ rxr_pound_5b2_pound_5d_176_in
+011 1
+100 1
+110 1
+111 1
+.names [458] [231] n_182 [232] [207]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names [516] [232] [208]
+00 1
+.names [237] [439] tx_bit_cnt_pound_5b2_pound_5d_in
+00 1
+.names [238] [493] [210]
+00 1
+.names [254] [232] [211]
+00 1
+.names [213] [212]
+0 1
+.names [558] [213]
+0 1
+.names [215] [214]
+0 1
+.names [558] [215]
+0 1
+.names [217] [216]
+0 1
+.names [558] [217]
+0 1
+.names [219] [218]
+0 1
+.names [558] [219]
+0 1
+.names [378] [247] [498] hold_reg_reg_pound_5b6_pound_5d_Q_in
+011 1
+100 1
+110 1
+111 1
+.names [376] [246] [498] hold_reg_reg_pound_5b5_pound_5d_Q_in
+011 1
+100 1
+110 1
+111 1
+.names [381] [248] [498] hold_reg_reg_pound_5b7_pound_5d_Q_in
+011 1
+100 1
+110 1
+111 1
+.names [389] [249] [498] hold_reg_reg_pound_5b8_pound_5d_Q_in
+011 1
+100 1
+110 1
+111 1
+.names [395] [250] [498] hold_reg_reg_pound_5b1_pound_5d_Q_in
+011 1
+100 1
+110 1
+111 1
+.names [391] [251] [500] hold_reg_reg_pound_5b2_pound_5d_Q_in
+011 1
+100 1
+110 1
+111 1
+.names [385] [252] [500] hold_reg_reg_pound_5b3_pound_5d_Q_in
+011 1
+100 1
+110 1
+111 1
+.names [414] [253] [500] hold_reg_reg_pound_5b4_pound_5d_Q_in
+011 1
+100 1
+110 1
+111 1
+.names [452] [472] [305] dpll_state_pound_5b0_pound_5d_in
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [242] [544] empty_o
+00 1
+.names [147] rts_o_in
+0 1
+.names [232] [231]
+0 1
+.names rx_go rx_sio_ce [232]
+00 1
+01 1
+10 1
+.names [244] [439] tx_bit_cnt_pound_5b1_pound_5d_in
+00 1
+.names [307] [454] we_i [234]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [245] rst txf_empty_r_reg_Q_in
+00 1
+01 1
+10 1
+.names [306] [535] [428] change_in
+000 1
+001 1
+010 1
+100 1
+110 1
+.names tx_bit_cnt_pound_5b2_pound_5d [491] [240] [237]
+000 1
+010 1
+101 1
+.names tx_bit_cnt_pound_5b3_pound_5d [424] [238]
+01 1
+10 1
+.names [309] rst txd_o_in
+00 1
+01 1
+10 1
+.names [374] [491] [240]
+00 1
+.names [554] [553] [241]
+00 1
+01 1
+10 1
+.names [151] [242]
+0 1
+.names [373] [500] rst tx_bit_cnt_pound_5b0_pound_5d_in
+000 1
+001 1
+010 1
+100 1
+110 1
+.names tx_bit_cnt_pound_5b1_pound_5d [491] [296] [244]
+000 1
+010 1
+101 1
+.names [483] [315] [539] [530] [245]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names [419] [426] [319] [246]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [448] [420] [324] [247]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [432] [447] [325] [248]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [421] [440] [328] [249]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [430] [433] [334] [250]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [441] [431] [337] [251]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [429] [436] [339] [252]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [418] [445] [320] [253]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [416] rx_bit_cnt_pound_5b2_pound_5d [297] [254]
+000 1
+010 1
+101 1
+.names tx_fifo_mem_pound_5b0_pound_5d [398] we_i \
+ tx_fifo_mem_pound_5b0_pound_5d_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_10 [406] we_i \
+ tx_fifo_mem_pound_5b0_pound_5d_10_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_11 [399] we_i \
+ tx_fifo_mem_pound_5b0_pound_5d_11_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_12 [400] we_i \
+ tx_fifo_mem_pound_5b0_pound_5d_12_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_13 [401] we_i \
+ tx_fifo_mem_pound_5b0_pound_5d_13_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_14 [393] we_i \
+ tx_fifo_mem_pound_5b0_pound_5d_14_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_15 [402] we_i \
+ tx_fifo_mem_pound_5b0_pound_5d_15_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_16 [392] we_i \
+ tx_fifo_mem_pound_5b0_pound_5d_16_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b1_pound_5d [353] we_i \
+ tx_fifo_mem_pound_5b1_pound_5d_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b1_pound_5d_3 [354] we_i \
+ tx_fifo_mem_pound_5b1_pound_5d_3_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b1_pound_5d_4 [355] we_i \
+ tx_fifo_mem_pound_5b1_pound_5d_4_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b1_pound_5d_5 [357] we_i \
+ tx_fifo_mem_pound_5b1_pound_5d_5_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b1_pound_5d_6 [358] we_i \
+ tx_fifo_mem_pound_5b1_pound_5d_6_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b1_pound_5d_7 [356] we_i \
+ tx_fifo_mem_pound_5b1_pound_5d_7_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b1_pound_5d_8 [359] we_i \
+ tx_fifo_mem_pound_5b1_pound_5d_8_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b1_pound_5d_9 [360] we_i \
+ tx_fifo_mem_pound_5b1_pound_5d_9_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b2_pound_5d [361] we_i \
+ tx_fifo_mem_pound_5b2_pound_5d_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b2_pound_5d_24 [371] we_i \
+ tx_fifo_mem_pound_5b2_pound_5d_24_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b2_pound_5d_25 [362] we_i \
+ tx_fifo_mem_pound_5b2_pound_5d_25_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b2_pound_5d_26 [363] we_i \
+ tx_fifo_mem_pound_5b2_pound_5d_26_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b2_pound_5d_27 [364] we_i \
+ tx_fifo_mem_pound_5b2_pound_5d_27_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b2_pound_5d_28 [345] we_i \
+ tx_fifo_mem_pound_5b2_pound_5d_28_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b2_pound_5d_29 [365] we_i \
+ tx_fifo_mem_pound_5b2_pound_5d_29_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b2_pound_5d_30 [366] we_i \
+ tx_fifo_mem_pound_5b2_pound_5d_30_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b3_pound_5d [409] we_i \
+ tx_fifo_mem_pound_5b3_pound_5d_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b3_pound_5d_17 [411] we_i \
+ tx_fifo_mem_pound_5b3_pound_5d_17_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b3_pound_5d_18 [377] we_i \
+ tx_fifo_mem_pound_5b3_pound_5d_18_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b3_pound_5d_23 [415] we_i \
+ tx_fifo_mem_pound_5b3_pound_5d_23_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b3_pound_5d_19 [412] we_i \
+ tx_fifo_mem_pound_5b3_pound_5d_19_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b3_pound_5d_20 [394] we_i \
+ tx_fifo_mem_pound_5b3_pound_5d_20_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b3_pound_5d_21 [413] we_i \
+ tx_fifo_mem_pound_5b3_pound_5d_21_in
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b3_pound_5d_22 [397] we_i \
+ tx_fifo_mem_pound_5b3_pound_5d_22_in
+011 1
+100 1
+110 1
+111 1
+.names [509] rx_bit_cnt_pound_5b2_pound_5d [287]
+00 1
+01 1
+10 1
+.names [330] [336] dout_o_lb_6_rb_
+00 1
+01 1
+10 1
+.names [317] [321] dout_o_lb_2_rb_
+00 1
+01 1
+10 1
+.names [326] [327] dout_o_lb_1_rb_
+00 1
+01 1
+10 1
+.names [331] [335] dout_o_lb_4_rb_
+00 1
+01 1
+10 1
+.names [332] [333] dout_o_lb_0_rb_
+00 1
+01 1
+10 1
+.names [443] [465] [452] dpll_state_pound_5b1_pound_5d_in
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [442] [423] [498] hold_reg_in
+000 1
+010 1
+101 1
+.names [314] [535] [295]
+01 1
+10 1
+11 1
+.names [477] [463] [491] [296]
+000 1
+010 1
+101 1
+.names [416] rx_bit_cnt_pound_5b2_pound_5d [297]
+00 1
+.names [315] [521] full_o
+11 1
+.names [329] [338] dout_o_lb_7_rb_
+00 1
+01 1
+10 1
+.names [322] [323] dout_o_lb_5_rb_
+00 1
+01 1
+10 1
+.names [318] [340] dout_o_lb_3_rb_
+00 1
+01 1
+10 1
+.names [566] [453] [500] tx_fifo_rp_pound_5b1_pound_5d_in
+011 1
+100 1
+110 1
+111 1
+.names [585] rx_sio_ce_r2 rx_sio_ce_in
+00 1
+.names [473] [477] shift_en_in
+01 1
+10 1
+11 1
+.names [508] [462] change [444] [305]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rxd_s [587] [306]
+01 1
+10 1
+.names [567] [451] [307]
+01 1
+10 1
+.names [557] [541] [316] [308]
+000 1
+001 1
+010 1
+100 1
+110 1
+.names [425] sio_ce [539] txd_o [309]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names [541] [450] re_i rx_fifo_rp_pound_5b1_pound_5d_in
+011 1
+100 1
+110 1
+111 1
+.names [549] [451] we_i tx_fifo_wp_pound_5b1_pound_5d_in
+011 1
+100 1
+110 1
+111 1
+.names [468] [492] [535] shift_en_r_in
+000 1
+010 1
+101 1
+.names [446] hold_reg_9 hold_reg_9_in
+01 1
+10 1
+11 1
+.names [437] [587] [314]
+00 1
+.names [460] [454] [315]
+00 1
+.names [541] [557] [316]
+00 1
+01 1
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_25 [475] \
+ rx_fifo_mem_pound_5b3_pound_5d_18 [501] [317]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rx_fifo_mem_pound_5b2_pound_5d_26 [475] \
+ rx_fifo_mem_pound_5b3_pound_5d_19 [501] [318]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names [488] tx_fifo_mem_pound_5b0_pound_5d_13 \
+ tx_fifo_mem_pound_5b2_pound_5d_27 [478] [319]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names [488] tx_fifo_mem_pound_5b0_pound_5d_12 \
+ tx_fifo_mem_pound_5b1_pound_5d_5 [573] [320]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rx_fifo_mem_pound_5b1_pound_5d_4 [466] \
+ rx_fifo_mem_pound_5b0_pound_5d_11 [505] [321]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rx_fifo_mem_pound_5b2_pound_5d_28 [475] \
+ rx_fifo_mem_pound_5b3_pound_5d_21 [501] [322]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rx_fifo_mem_pound_5b1_pound_5d_7 [466] \
+ rx_fifo_mem_pound_5b0_pound_5d_14 [505] [323]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names tx_fifo_mem_pound_5b1_pound_5d_7 [573] \
+ tx_fifo_mem_pound_5b2_pound_5d_28 [478] [324]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names [512] tx_fifo_mem_pound_5b3_pound_5d_22 \
+ tx_fifo_mem_pound_5b1_pound_5d_8 [573] [325]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rx_fifo_mem_pound_5b2_pound_5d_24 [475] \
+ rx_fifo_mem_pound_5b3_pound_5d_17 [501] [326]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rx_fifo_mem_pound_5b1_pound_5d_3 [466] \
+ rx_fifo_mem_pound_5b0_pound_5d_10 [505] [327]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names [488] tx_fifo_mem_pound_5b0_pound_5d_16 \
+ tx_fifo_mem_pound_5b1_pound_5d_9 [573] [328]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names [466] rx_fifo_mem_pound_5b1_pound_5d_9 [505] \
+ rx_fifo_mem_pound_5b0_pound_5d_16 [329]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rx_fifo_mem_pound_5b1_pound_5d_8 [466] \
+ rx_fifo_mem_pound_5b0_pound_5d_15 [505] [330]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rx_fifo_mem_pound_5b2_pound_5d_27 [475] \
+ rx_fifo_mem_pound_5b3_pound_5d_20 [501] [331]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rx_fifo_mem_pound_5b2_pound_5d [475] rx_fifo_mem_pound_5b3_pound_5d \
+ [501] [332]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rx_fifo_mem_pound_5b1_pound_5d [466] rx_fifo_mem_pound_5b0_pound_5d \
+ [505] [333]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names [512] tx_fifo_mem_pound_5b3_pound_5d tx_fifo_mem_pound_5b2_pound_5d \
+ [478] [334]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rx_fifo_mem_pound_5b1_pound_5d_6 [466] \
+ rx_fifo_mem_pound_5b0_pound_5d_13 [505] [335]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rx_fifo_mem_pound_5b2_pound_5d_29 [475] \
+ rx_fifo_mem_pound_5b3_pound_5d_22 [501] [336]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names [512] tx_fifo_mem_pound_5b3_pound_5d_17 \
+ tx_fifo_mem_pound_5b2_pound_5d_24 [478] [337]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names [475] rx_fifo_mem_pound_5b2_pound_5d_30 [501] \
+ rx_fifo_mem_pound_5b3_pound_5d_23 [338]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names [512] tx_fifo_mem_pound_5b3_pound_5d_18 \
+ tx_fifo_mem_pound_5b1_pound_5d_4 [573] [339]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rx_fifo_mem_pound_5b1_pound_5d_5 [466] \
+ rx_fifo_mem_pound_5b0_pound_5d_12 [505] [340]
+0000 1
+0001 1
+0010 1
+0100 1
+0101 1
+0110 1
+1000 1
+1001 1
+1010 1
+.names rxr_pound_5b2_pound_5d_176 rx_fifo_mem_pound_5b1_pound_5d_8 [469] \
+ [341]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_177 rx_fifo_mem_pound_5b1_pound_5d_9 [469] \
+ [342]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d rx_fifo_mem_pound_5b2_pound_5d [480] [343]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_171 rx_fifo_mem_pound_5b2_pound_5d_24 [480] \
+ [344]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_5_rb_ tx_fifo_mem_pound_5b2_pound_5d_28 [484] [345]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_172 rx_fifo_mem_pound_5b2_pound_5d_25 [480] \
+ [346]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d rx_fifo_mem_pound_5b1_pound_5d [469] [347]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_173 rx_fifo_mem_pound_5b2_pound_5d_26 [480] \
+ [348]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_174 rx_fifo_mem_pound_5b2_pound_5d_27 [480] \
+ [349]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_175 rx_fifo_mem_pound_5b2_pound_5d_28 [480] \
+ [350]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_176 rx_fifo_mem_pound_5b2_pound_5d_29 [480] \
+ [351]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_177 rx_fifo_mem_pound_5b2_pound_5d_30 [480] \
+ [352]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_0_rb_ tx_fifo_mem_pound_5b1_pound_5d [574] [353]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_1_rb_ tx_fifo_mem_pound_5b1_pound_5d_3 [574] [354]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_2_rb_ tx_fifo_mem_pound_5b1_pound_5d_4 [574] [355]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_5_rb_ tx_fifo_mem_pound_5b1_pound_5d_7 [574] [356]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_3_rb_ tx_fifo_mem_pound_5b1_pound_5d_5 [574] [357]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_4_rb_ tx_fifo_mem_pound_5b1_pound_5d_6 [574] [358]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_6_rb_ tx_fifo_mem_pound_5b1_pound_5d_8 [574] [359]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_7_rb_ tx_fifo_mem_pound_5b1_pound_5d_9 [574] [360]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_0_rb_ tx_fifo_mem_pound_5b2_pound_5d [484] [361]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_2_rb_ tx_fifo_mem_pound_5b2_pound_5d_25 [486] [362]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_3_rb_ tx_fifo_mem_pound_5b2_pound_5d_26 [486] [363]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_4_rb_ tx_fifo_mem_pound_5b2_pound_5d_27 [484] [364]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_6_rb_ tx_fifo_mem_pound_5b2_pound_5d_29 [486] [365]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_7_rb_ tx_fifo_mem_pound_5b2_pound_5d_30 [484] [366]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_172 rx_fifo_mem_pound_5b1_pound_5d_4 [469] \
+ [367]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_171 rx_fifo_mem_pound_5b1_pound_5d_3 [469] \
+ [368]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_173 rx_fifo_mem_pound_5b1_pound_5d_5 [469] \
+ [369]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_174 rx_fifo_mem_pound_5b1_pound_5d_6 [469] \
+ [370]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_1_rb_ tx_fifo_mem_pound_5b2_pound_5d_24 [486] [371]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_175 rx_fifo_mem_pound_5b1_pound_5d_7 [469] \
+ [372]
+011 1
+100 1
+110 1
+111 1
+.names tx_bit_cnt_pound_5b0_pound_5d [492] [435] [373]
+000 1
+010 1
+101 1
+.names [506] tx_bit_cnt_pound_5b2_pound_5d [438] [374]
+000 1
+010 1
+101 1
+.names [528] [500] tx_fifo_rp_pound_5b0_pound_5d_in
+01 1
+10 1
+.names [520] [527] [493] [376]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_2_rb_ tx_fifo_mem_pound_5b3_pound_5d_18 [548] [377]
+011 1
+100 1
+110 1
+111 1
+.names [534] [520] [491] [378]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d rx_fifo_mem_pound_5b3_pound_5d [568] [379]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_171 rx_fifo_mem_pound_5b3_pound_5d_17 [568] \
+ [380]
+011 1
+100 1
+110 1
+111 1
+.names [531] [534] [491] [381]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_172 rx_fifo_mem_pound_5b3_pound_5d_18 [568] \
+ [382]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_173 rx_fifo_mem_pound_5b3_pound_5d_19 [568] \
+ [383]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_174 rx_fifo_mem_pound_5b3_pound_5d_20 [568] \
+ [384]
+011 1
+100 1
+110 1
+111 1
+.names [515] [518] [491] [385]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_175 rx_fifo_mem_pound_5b3_pound_5d_21 [568] \
+ [386]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_176 rx_fifo_mem_pound_5b3_pound_5d_22 [568] \
+ [387]
+011 1
+100 1
+110 1
+111 1
+.names rxr_pound_5b2_pound_5d_177 rx_fifo_mem_pound_5b3_pound_5d_23 [568] \
+ [388]
+011 1
+100 1
+110 1
+111 1
+.names hold_reg_9 [531] [491] [389]
+011 1
+100 1
+110 1
+111 1
+.names rx_fifo_mem_pound_5b0_pound_5d_10 rxr_pound_5b2_pound_5d_171 [495] \
+ [390]
+011 1
+100 1
+110 1
+111 1
+.names [518] [519] [493] [391]
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_16 din_i_lb_7_rb_ [510] [392]
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_14 din_i_lb_5_rb_ [510] [393]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_4_rb_ tx_fifo_mem_pound_5b3_pound_5d_20 [548] [394]
+011 1
+100 1
+110 1
+111 1
+.names [519] [533] [493] [395]
+011 1
+100 1
+110 1
+111 1
+.names rx_fifo_mem_pound_5b0_pound_5d_15 rxr_pound_5b2_pound_5d_176 [495] \
+ [396]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_6_rb_ tx_fifo_mem_pound_5b3_pound_5d_22 [548] [397]
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d din_i_lb_0_rb_ [510] [398]
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_11 din_i_lb_2_rb_ [510] [399]
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_12 din_i_lb_3_rb_ [510] [400]
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_13 din_i_lb_4_rb_ [510] [401]
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_15 din_i_lb_6_rb_ [510] [402]
+011 1
+100 1
+110 1
+111 1
+.names rx_fifo_mem_pound_5b0_pound_5d rxr_pound_5b2_pound_5d [495] [403]
+011 1
+100 1
+110 1
+111 1
+.names rx_fifo_mem_pound_5b0_pound_5d_11 rxr_pound_5b2_pound_5d_172 [495] \
+ [404]
+011 1
+100 1
+110 1
+111 1
+.names rx_fifo_mem_pound_5b0_pound_5d_12 rxr_pound_5b2_pound_5d_173 [495] \
+ [405]
+011 1
+100 1
+110 1
+111 1
+.names tx_fifo_mem_pound_5b0_pound_5d_10 din_i_lb_1_rb_ [510] [406]
+011 1
+100 1
+110 1
+111 1
+.names rx_fifo_mem_pound_5b0_pound_5d_14 rxr_pound_5b2_pound_5d_175 [495] \
+ [407]
+011 1
+100 1
+110 1
+111 1
+.names rx_fifo_mem_pound_5b0_pound_5d_16 rxr_pound_5b2_pound_5d_177 [495] \
+ [408]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_0_rb_ tx_fifo_mem_pound_5b3_pound_5d [548] [409]
+011 1
+100 1
+110 1
+111 1
+.names rx_fifo_mem_pound_5b0_pound_5d_13 rxr_pound_5b2_pound_5d_174 [495] \
+ [410]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_1_rb_ tx_fifo_mem_pound_5b3_pound_5d_17 [548] [411]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_3_rb_ tx_fifo_mem_pound_5b3_pound_5d_19 [548] [412]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_5_rb_ tx_fifo_mem_pound_5b3_pound_5d_21 [548] [413]
+011 1
+100 1
+110 1
+111 1
+.names [527] [515] [493] [414]
+011 1
+100 1
+110 1
+111 1
+.names din_i_lb_7_rb_ tx_fifo_mem_pound_5b3_pound_5d_23 [548] [415]
+011 1
+100 1
+110 1
+111 1
+.names [509] [416]
+0 1
+.names [585] rx_sio_ce_r2_in
+0 1
+.names [512] tx_fifo_mem_pound_5b3_pound_5d_19 [418]
+00 1
+01 1
+10 1
+.names [512] tx_fifo_mem_pound_5b3_pound_5d_20 [419]
+00 1
+01 1
+10 1
+.names [512] tx_fifo_mem_pound_5b3_pound_5d_21 [420]
+00 1
+01 1
+10 1
+.names [512] tx_fifo_mem_pound_5b3_pound_5d_23 [421]
+00 1
+01 1
+10 1
+.names [490] cts_i load_in
+00 1
+.names [577] [492] [423]
+01 1
+10 1
+11 1
+.names [507] tx_bit_cnt_pound_5b2_pound_5d [424]
+00 1
+01 1
+10 1
+.names [489] hold_reg [425]
+01 1
+10 1
+11 1
+.names tx_fifo_mem_pound_5b1_pound_5d_6 [573] [426]
+00 1
+01 1
+10 1
+.names [198] [427]
+0 1
+.names change [540] rst [428]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [488] tx_fifo_mem_pound_5b0_pound_5d_11 [429]
+00 1
+01 1
+10 1
+.names [488] tx_fifo_mem_pound_5b0_pound_5d [430]
+00 1
+01 1
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_3 [573] [431]
+00 1
+01 1
+10 1
+.names [488] tx_fifo_mem_pound_5b0_pound_5d_15 [432]
+00 1
+01 1
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d [573] [433]
+00 1
+01 1
+10 1
+.names [504] [502] rx_valid_in
+00 1
+.names tx_bit_cnt_pound_5b0_pound_5d [492] [435]
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_25 [478] [436]
+00 1
+01 1
+10 1
+.names rxd_s rx_go [437]
+01 1
+10 1
+11 1
+.names [506] tx_bit_cnt_pound_5b2_pound_5d [438]
+00 1
+.names [500] [535] [439]
+01 1
+10 1
+11 1
+.names tx_fifo_mem_pound_5b2_pound_5d_30 [478] [440]
+00 1
+01 1
+10 1
+.names [488] tx_fifo_mem_pound_5b0_pound_5d_10 [441]
+00 1
+01 1
+10 1
+.names [492] hold_reg [442]
+00 1
+01 1
+10 1
+.names [444] [443]
+0 1
+.names sio_ce_x4 rx_sio_ce_r1_reg_Q_in [444]
+11 1
+.names tx_fifo_mem_pound_5b2_pound_5d_26 [478] [445]
+00 1
+01 1
+10 1
+.names [492] [499] [446]
+00 1
+01 1
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_29 [478] [447]
+00 1
+01 1
+10 1
+.names [488] tx_fifo_mem_pound_5b0_pound_5d_14 [448]
+00 1
+01 1
+10 1
+.names [499] [521] [449]
+00 1
+01 1
+10 1
+.names [476] [467] [450]
+01 1
+10 1
+11 1
+.names [474] [486] [451]
+00 1
+01 1
+10 1
+.names [462] dpll_state_pound_5b1_pound_5d [542] [452]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [573] [478] [453]
+01 1
+10 1
+11 1
+.names [528] [525] [497] [454]
+000 1
+010 1
+101 1
+.names [571] [536] [455]
+01 1
+10 1
+.names [526] n_182 rx_bit_cnt_pound_5b3_pound_5d [517] rx_go_in
+0000 1
+0001 1
+0010 1
+0011 1
+0100 1
+0101 1
+0110 1
+0111 1
+1000 1
+1001 1
+1010 1
+1011 1
+1100 1
+1101 1
+1110 1
+.names [525] we_i tx_fifo_wp_pound_5b0_pound_5d_in
+01 1
+10 1
+.names [516] n_182 [458]
+01 1
+10 1
+.names re_i [570] rx_fifo_rp_pound_5b0_pound_5d_in
+01 1
+10 1
+.names [549] [566] [460]
+01 1
+10 1
+.names tx_fifo_rp_pound_5b0_pound_5d [567] [461]
+00 1
+01 1
+10 1
+.names change [540] [462]
+00 1
+.names [543] tx_bit_cnt_pound_5b1_pound_5d [463]
+00 1
+01 1
+10 1
+.names re_i [545] [464]
+01 1
+10 1
+11 1
+.names [540] dpll_state_pound_5b1_pound_5d [465]
+00 1
+01 1
+10 1
+.names [467] [466]
+1 1
+.names [571] [541] [467]
+00 1
+.names shift_en_r [539] [468]
+00 1
+01 1
+10 1
+.names [470] [469]
+0 1
+.names [471] [470]
+0 1
+.names [537] [564] [471]
+00 1
+01 1
+10 1
+.names [540] dpll_state_pound_5b0_pound_5d [472]
+00 1
+01 1
+10 1
+.names [524] tx_bit_cnt_pound_5b3_pound_5d [473]
+00 1
+01 1
+10 1
+.names tx_fifo_wp_pound_5b0_pound_5d [550] [474]
+00 1
+01 1
+10 1
+.names [476] [475]
+1 1
+.names [570] [551] [476]
+00 1
+.names [543] tx_bit_cnt_pound_5b1_pound_5d [477]
+01 1
+10 1
+11 1
+.names [479] [478]
+0 1
+.names [529] tx_fifo_rp_pound_5b1_pound_5d [479]
+00 1
+01 1
+10 1
+.names [481] [480]
+0 1
+.names [576] [481]
+0 1
+.names dpll_state_pound_5b1_pound_5d [542] rx_sio_ce_r1_reg_Q_in
+00 1
+.names [539] [521] [483]
+00 1
+.names [485] [484]
+0 1
+.names [486] [485]
+0 1
+.names [146] tx_fifo_wp_pound_5b1_pound_5d [486]
+00 1
+01 1
+10 1
+.names [537] [561] [487]
+00 1
+01 1
+10 1
+.names [529] [567] [488]
+11 1
+.names shift_en shift_en_r [489]
+00 1
+.names shift_en [530] [490]
+01 1
+10 1
+11 1
+.names [494] [491]
+0 1
+.names [494] [492]
+0 1
+.names [494] [493]
+0 1
+.names [522] [539] [494]
+00 1
+.names [496] [495]
+0 1
+.names [536] [564] [496]
+00 1
+01 1
+10 1
+.names [528] [525] [497]
+00 1
+.names [499] [498]
+0 1
+.names [500] [499]
+0 1
+.names load sio_ce [500]
+11 1
+.names [571] [551] [501]
+00 1
+.names [516] rx_bit_cnt_pound_5b3_pound_5d [502]
+00 1
+01 1
+10 1
+.names [538] [572] [503]
+01 1
+10 1
+11 1
+.names rx_bit_cnt_pound_5b2_pound_5d n_182 [504]
+01 1
+10 1
+11 1
+.names [571] [551] [505]
+11 1
+.names [507] [506]
+0 1
+.names [543] [532] [507]
+00 1
+.names dpll_state_pound_5b1_pound_5d dpll_state_pound_5b0_pound_5d [508]
+00 1
+.names [517] [523] [509]
+00 1
+.names [511] [510]
+0 1
+.names [146] [550] [511]
+00 1
+01 1
+10 1
+.names [513] [512]
+0 1
+.names [529] [567] [513]
+01 1
+10 1
+11 1
+.names [145] [572] [514]
+00 1
+01 1
+10 1
+.names [580] [515]
+0 1
+.names [517] [516]
+0 1
+.names rx_bit_cnt_pound_5b0_pound_5d [517]
+0 1
+.names [579] [518]
+0 1
+.names [578] [519]
+0 1
+.names [582] [520]
+0 1
+.names [588] [521]
+0 1
+.names shift_en [522]
+0 1
+.names n_182 [523]
+0 1
+.names tx_bit_cnt_pound_5b2_pound_5d [524]
+0 1
+.names [146] [525]
+0 1
+.names rx_bit_cnt_pound_5b2_pound_5d [526]
+0 1
+.names [581] [527]
+0 1
+.names [529] [528]
+0 1
+.names tx_fifo_rp_pound_5b0_pound_5d [529]
+0 1
+.names [589] [530]
+0 1
+.names [584] [531]
+0 1
+.names tx_bit_cnt_pound_5b1_pound_5d [532]
+0 1
+.names [577] [533]
+0 1
+.names [583] [534]
+0 1
+.names rst [535]
+0 1
+.names [537] [536]
+0 1
+.names [145] [537]
+0 1
+.names rx_fifo_wp_pound_5b0_pound_5d [538]
+0 1
+.names sio_ce [539]
+0 1
+.names sio_ce_x4 [540]
+0 1
+.names [551] [541]
+0 1
+.names dpll_state_pound_5b0_pound_5d [542]
+0 1
+.names tx_bit_cnt_pound_5b0_pound_5d [543]
+0 1
+.names [545] [544]
+0 1
+.names rx_fifo_gb [545]
+0 1
+.names [547] [552] [546]
+00 1
+01 1
+10 1
+.names [562] [551] [547]
+00 1
+01 1
+10 1
+.names [549] [525] [548]
+00 1
+01 1
+10 1
+.names [550] [549]
+0 1
+.names tx_fifo_wp_pound_5b1_pound_5d [550]
+0 1
+.names rx_fifo_rp_pound_5b1_pound_5d [551]
+0 1
+.names [563] rx_fifo_rp_pound_5b1_pound_5d [552]
+00 1
+01 1
+10 1
+.names [560] rx_fifo_rp_pound_5b1_pound_5d rx_fifo_gb [553]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names [555] [565] rx_fifo_gb [554]
+000 1
+001 1
+010 1
+011 1
+100 1
+101 1
+110 1
+.names rx_fifo_rp_pound_5b1_pound_5d [555]
+0 1
+.names [557] [562] [575] rx_fifo_wp_pound_5b1_pound_5d_in
+011 1
+100 1
+110 1
+111 1
+.names [576] [471] [557]
+00 1
+01 1
+10 1
+.names [148] [559] [558]
+00 1
+01 1
+10 1
+.names [586] rx_valid [559]
+11 1
+.names [565] [560]
+0 1
+.names [564] [561]
+0 1
+.names [563] [562]
+0 1
+.names [564] [563]
+1 1
+.names [565] [564]
+1 1
+.names rx_fifo_wp_pound_5b1_pound_5d [565]
+0 1
+.names [567] [566]
+0 1
+.names tx_fifo_rp_pound_5b1_pound_5d [567]
+0 1
+.names [569] [568]
+0 1
+.names [487] [569]
+0 1
+.names [571] [570]
+0 1
+.names [572] [571]
+1 1
+.names rx_fifo_rp_pound_5b0_pound_5d [572]
+0 1
+.names [461] [573]
+0 1
+.names [474] [574]
+1 1
+.names [147] [559] [575]
+00 1
+01 1
+10 1
+.names [561] [145] [576]
+00 1
+01 1
+10 1
+.names hold_reg_reg_pound_5b1_pound_5d_Q [577]
+0 1
+.names hold_reg_reg_pound_5b2_pound_5d_Q [578]
+0 1
+.names hold_reg_reg_pound_5b3_pound_5d_Q [579]
+0 1
+.names hold_reg_reg_pound_5b4_pound_5d_Q [580]
+0 1
+.names hold_reg_reg_pound_5b5_pound_5d_Q [581]
+0 1
+.names hold_reg_reg_pound_5b6_pound_5d_Q [582]
+0 1
+.names hold_reg_reg_pound_5b7_pound_5d_Q [583]
+0 1
+.names hold_reg_reg_pound_5b8_pound_5d_Q [584]
+0 1
+.names rx_sio_ce_r1_reg_Q [585]
+0 1
+.names rx_valid_r_reg_Q [586]
+0 1
+.names rxd_r_reg_Q [587]
+0 1
+.names tx_fifo_gb_reg_Q [588]
+0 1
+.names txf_empty_r_reg_Q [589]
+0 1
+.names rx_valid rx_valid_r_reg_Q_in
+1 1
+.names rxd_s rxd_r_reg_Q_in
+1 1
+.names rxd_i rxd_s_in
+1 1
+.end

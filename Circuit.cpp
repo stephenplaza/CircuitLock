@@ -15,11 +15,13 @@
 
 #include <fstream>
 #include <string>
+#include <map>
 
 using std::cout; using std::endl;
 using std::string; using std::vector;
 using std::ifstream; using std::ofstream;
 using std::tr1::unordered_set;
+using std::map;
 
 Circuit::Circuit(string filename, TechLibrary* library_) :
     library(library_), num_insts(0), num_wires(0), num_gates(0),
@@ -431,7 +433,7 @@ Wire* Circuit::find_wire_insert(string& name)
 // Write blif file from netlist
 void Circuit::write_blif(string filename)
 {
-    sym_map::iterator pmap;
+    map<string, CircuitElement*>::iterator pmap;
     CircuitElement* element;
     Wire* wire2;
     Inst* inst2;
@@ -460,10 +462,12 @@ void Circuit::write_blif(string filename)
         model_name = model_name.substr(0, last_index);
     }
 
+    map<string, CircuitElement*> sym_table_map(sym_table.begin(), sym_table.end());
+
     bliffile <<".model " << model_name << endl;
     // inputs
     bliffile<<".inputs ";
-    for (pmap= sym_table.begin(); pmap != sym_table.end(); pmap++) {
+    for (pmap= sym_table_map.begin(); pmap != sym_table_map.end(); pmap++) {
         element = (*pmap).second;
         if (element->get_type() == INST) {
             inst2 = (Inst*)(element);
@@ -486,7 +490,7 @@ void Circuit::write_blif(string filename)
     }
     bliffile<<endl;
     bliffile<<".outputs ";
-    for (pmap= sym_table.begin(); pmap != sym_table.end(); pmap++) {
+    for (pmap= sym_table_map.begin(); pmap != sym_table_map.end(); pmap++) {
         element = (*pmap).second;
         if (element->get_type() == INST) {
             inst2 = (Inst*)(element);
@@ -514,7 +518,7 @@ void Circuit::write_blif(string filename)
     }
 
     // names, latch
-    for (pmap= sym_table.begin(); pmap != sym_table.end(); pmap++) {
+    for (pmap= sym_table_map.begin(); pmap != sym_table_map.end(); pmap++) {
         element = (*pmap).second;
         if (element->get_type() == INST) {
             inst2= (Inst*) element;

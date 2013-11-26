@@ -1,14 +1,160 @@
 .model alu4
-.inputs key-10 key-25 key-0 f key-8 n key-59 key-51 key-27 key-24 key-22 k key-19 key-39 key-23 key-16 key-44 key-31 key-21 key-60 key-46 key-12 key-26 key-42 key-40 key-30 key-9 key-35 key-62 key-58 key-63 key-47 key-20 key-28 key-5 c key-32 key-43 key-54 key-38 key-4 key-7 a b j key-2 d l key-17 key-56 key-55 key-53 m key-15 i key-13 key-3 e key-11 key-52 key-49 key-33 g key-36 key-48 key-18 key-1 key-45 key-61 key-29 key-37 key-6 key-50 h key-14 key-41 key-34 key-57 
-.outputs t o v p u s q r 
+.inputs a b c d e f g h i j k key-0 key-10 key-11 key-12 key-13 key-14 key-15 key-16 key-17 key-18 key-19 key-1 key-20 key-21 key-22 key-23 key-24 key-25 key-26 key-27 key-28 key-29 key-2 key-30 key-31 key-32 key-33 key-34 key-35 key-36 key-37 key-38 key-39 key-3 key-40 key-41 key-42 key-43 key-44 key-45 key-46 key-47 key-48 key-49 key-4 key-50 key-51 key-52 key-53 key-54 key-55 key-56 key-57 key-58 key-59 key-5 key-60 key-61 key-62 key-63 key-6 key-7 key-8 key-9 l m n 
+.outputs o p q r s t u v 
+.names a b d3 
+00 1
+.names a e j3 
+00 1
+.names a e k3 
+11 1
+.names a e m3 
+10 1
+.names a e n3 
+01 1
+.names a key-55-xor l3 
+11 1
+.names a l h3 
+11 1
+.names a q3 a4 
+11 1
+.names b4 c4 b1 h1 t f1 q0 v3 d t0 
+-1-1----- 1
+-1------1 1
+1--0-1--- 1
+1-1---1-- 1
+1---1--1- 1
+.names b4 key-63-xor f1 key-0-xor b i f j r3 
+-1-1---- 1
+-1--1--- 1
+1-10---- 1
+1--111-1 1
+1---1110 1
+.names b4 c4 f1 y1 c i g j v2 
+-1-1---- 1
+-1--1--- 1
+1-10---- 1
+1--111-1 1
+1---1110 1
+.names b4 c4 i3 l3 k3 f1 q0 v3 a q3 
+-11------ 1
+-1------1 1
+1-0--1--- 1
+1--1--1-- 1
+1---1--1- 1
+.names b f n2 
+10 1
+.names b f o2 
+01 1
+.names b f p2 
+00 1
+.names b f q2 
+11 1
+.names c1 h1 f2 
+01 1
+10 1
+.names c key-32-xor y0 
+01 1
+.names c g a2 
+11 1
+.names c g z1 
+1- 1
+-1 1
+.names c l x1 
+11 1
+.names d4 d1 e4 t h n i d2 d k f4 key-42-xor u3 x1 s0 j l h1 
+-01-------------- 1
+1---0------------ 1
+---1-1-1--------- 1
+---1--01--------- 1
+---1-1----1------ 1
+-----10------11-- 1
+---1-10----01---- 1
+-1---10----0---1- 1
+-----00-00-----0- 1
+-----00-00------0 1
+----010-1--1---1- 1
+----110-0--11--1- 1
+.names d4 h4 p2 e4 q2 i4 b f n i u3 s0 h3 n3 j n2 o2 m2 
+--01------------- 1
+-1--1------------ 1
+-----10---------- 1
+1------0--------- 1
+--------10-11---- 1
+----1---101--1--- 1
+--1-----10---11-- 1
+--------10---011- 1
+--------101--01-1 1
+.names d4 h4 z1 a2 e4 i4 c g n i u3 s0 j4 b j l y1 
+-1-1------------ 1
+--1-1----------- 1
+-----10--------- 1
+1------0-------- 1
+--------10-1-1-1 1
+------11101-1--- 1
+------0010--1-1- 1
+------1010--0-1- 1
+------01101-0-1- 1
+.names key-10-xor k4 j3 r0 key-46-xor key-40-xor k3 a e n key-57-xor u3 key-29-xor i3 
+--0-1-------- 1
+-1----1------ 1
+-----1-0----- 1
+1-------0---- 1
+---1-----11-- 1
+---1-----1-11 1
+.names d h1 b1 
+11 1
+.names d h d1 
+00 1
+.names d h t 
+11 1
 .names d l l1 
 11 1
-.names key-63 c4 key-63-xor 
+.names key-53-xor v2 u0 
 10 1
-01 1
-.names r3 a4 o3 
-01 1
+.names key-28-xor key-18-xor e2 
 10 1
+.names h1 e2 n0 
+01 1
+.names i c3 l4 s1 
+-1- 1
+1-1 1
+.names i j f1 
+00 1
+.names i j q0 
+11 1
+.names i j r0 
+01 1
+.names i j v3 
+10 1
+.names i k c3 
+01 1
+.names i k m1 
+00 1
+.names i k o1 
+11 1
+.names i k x2 
+10 1
+.names i l p1 
+01 1
+.names i u3 q1 
+01 1
+.names i u3 u1 
+11 1
+.names j1 n g3 m k1 h3 m1 i3 e j n1 j3 o1 p1 q1 k3 l3 l s1 t1 r1 u1 m3 n3 o 
+1----------------------- 1
+-111-------------------- 1
+-100-------------------- 1
+-0--11------------------ 1
+-0----111--------------- 1
+-0------11---1---------- 1
+-0-------1-1--1--------- 1
+-0-------11----1-------- 1
+-0-------1--1---1------- 1
+-0-----0-0--------1----- 1
+-0-----1-0----------1--- 1
+-0------00-----------1-- 1
+-0-------0-------1----1- 1
+-0-------0---------1---1 1
 .names j1 n k2 l2 k1 m1 m2 b f j l s1 t1 r1 u1 n2 o2 n1 o1 p1 q1 p2 q2 p 
 1---------------------- 1
 -111------------------- 1
@@ -24,21 +170,313 @@
 -0-------1----------11- 1
 -0-------1-------1----1 1
 -0----11-1--------1---- 1
+.names j1 n m0 p0 k1 l1 m1 h1 h j n1 o1 p1 q1 b1 d1 t r1 s1 t1 d u1 r 
+1--------------------- 1
+-111------------------ 1
+-100------------------ 1
+-0--11---------------- 1
+-0----111------------- 1
+-0---1--00------------ 1
+-0------11--1--------- 1
+-0-------1-1--1------- 1
+-0-------1---1-1------ 1
+-0-------11-----1----- 1
+-0-----1-0-------1---- 1
+-0-----0-0--------1--- 1
+-0------00-----------1 1
+-0------10---------10- 1
+.names j1 n v1 w1 k1 x1 m1 y1 g j key-44-xor key-23-xor a2 o1 p1 q1 c key-27-xor key-3-xor key-9-xor u1 q 
+1-------------------- 1
+-111----------------- 1
+-100----------------- 1
+-0--11--------------- 1
+-0----111------------ 1
+-0---1--00----------- 1
+-0-------11-1-------- 1
+-0------11----1------ 1
+-0-------1-0---1----- 1
+-0-----1-0-------1--- 1
+-0-----0-0--------1-- 1
+-0------00----------1 1
+-0-----1-1---1--1---- 1
+-0------10------0--1- 1
+.names key-54-xor c g g4 
+01- 1
+0-0 1
+-10 1
+.names j k s0 
+01 1
+.names j l n u3 o1 q0 r0 d4 
+---1-1- 1
+--10--1 1
+010-1-- 1
 .names j l r2 
 00 1
-.names key-28-xor key-18-xor e2 
-10 1
-.names c key-32-xor y0 
+.names j m1 x0 
+11 1
+.names j n key-19-xor q1 k4 
+-11- 1
+0--1 1
+.names j n u1 z3 
+011 1
+.names j q1 l o0 b2 
+11-- 1
+--11 1
+.names j u3 d2 
 01 1
-.names key-45-xor o2 n3 j4 
+.names j x2 w0 
+01 1
+.names key-14-xor key-17-xor v1 
+1- 1
+-0 1
+.names k c4 y3 
+01 1
+.names k f1 k1 
+1- 1
+-1 1
+.names k g2 f1 i2 
 -1- 1
 0-1 1
-.names key-38 i2 key-38-xor 
+.names k j key-43-xor s2 
+011 1
+.names k l f1 q0 f4 
+011- 1
+01-1 1
+.names k l l4 
+00 1
+.names k l key-56-xor r1 
+--1 1
+11- 1
+.names k l u3 
+10 1
+.names k q0 o0 
+01 1
+.names k q0 v0 
+11 1
+.names key-0 m2 key-0-xor 
+11 1
+00 1
+.names key-1 a3 key-1-xor 
+11 1
+00 1
+.names key-10 d4 key-10-xor 
+11 1
+00 1
+.names key-11 z0 key-11-xor 
 11 1
 00 1
 .names key-12 v3 key-12-xor 
 11 1
 00 1
+.names key-13 k3 key-13-xor 
+10 1
+01 1
+.names key-14 k2 key-14-xor 
+11 1
+00 1
+.names key-15 q3 key-15-xor 
+10 1
+01 1
+.names key-16 p0 key-16-xor 
+11 1
+00 1
+.names key-17 l2 key-17-xor 
+11 1
+00 1
+.names key-18 y1 key-18-xor 
+11 1
+00 1
+.names key-19 f4 key-19-xor 
+11 1
+00 1
+.names key-2 o2 key-2-xor 
+10 1
+01 1
+.names key-20 e1 key-20-xor 
+11 1
+00 1
+.names key-21 x3 key-21-xor 
+11 1
+00 1
+.names key-22 h2 key-22-xor 
+11 1
+00 1
+.names key-23 z1 key-23-xor 
+11 1
+00 1
+.names key-24 z2 key-24-xor 
+11 1
+00 1
+.names key-25 y3 key-25-xor 
+11 1
+00 1
+.names key-26 s2 key-26-xor 
+10 1
+01 1
+.names key-27 r1 key-27-xor 
+11 1
+00 1
+.names key-28 f3 key-28-xor 
+11 1
+00 1
+.names key-29 n3 key-29-xor 
+10 1
+01 1
+.names key-3 s1 key-3-xor 
+11 1
+00 1
+.names key-30 x0 key-30-xor 
+11 1
+00 1
+.names key-31 o3 key-31-xor 
+10 1
+01 1
+.names key-32 d3 key-32-xor 
+11 1
+00 1
+.names key-33 y0 key-33-xor 
+11 1
+00 1
+.names key-34 a1 key-34-xor 
+10 1
+01 1
+.names key-35 r3 key-35-xor 
+10 1
+01 1
+.names key-36 k4 key-36-xor 
+11 1
+00 1
+.names key-37 m0 key-37-xor 
+10 1
+01 1
+.names key-38 i2 key-38-xor 
+11 1
+00 1
+.names key-39 y2 key-39-xor 
+11 1
+00 1
+.names key-4 c3 key-4-xor 
+10 1
+01 1
+.names key-40 i4 key-40-xor 
+11 1
+00 1
+.names key-41 h1 key-41-xor 
+10 1
+01 1
+.names key-42 g4 key-42-xor 
+10 1
+01 1
+.names key-43 p1 key-43-xor 
+10 1
+01 1
+.names key-44 n1 key-44-xor 
+11 1
+00 1
+.names key-45 n2 key-45-xor 
+10 1
+01 1
+.names key-46 e4 key-46-xor 
+11 1
+00 1
+.names key-47 g3 key-47-xor 
+10 1
+01 1
+.names key-48 c1 key-48-xor 
+11 1
+00 1
+.names key-49 t2 key-49-xor 
+10 1
+01 1
+.names key-5 g2 key-5-xor 
+10 1
+01 1
+.names key-50 q2 key-50-xor 
+11 1
+00 1
+.names key-51 t3 key-51-xor 
+10 1
+01 1
+.names key-52 e2 key-52-xor 
+11 1
+00 1
+.names key-53 e3 key-53-xor 
+11 1
+00 1
+.names key-54 j4 key-54-xor 
+11 1
+00 1
+.names key-55 i3 key-55-xor 
+11 1
+00 1
+.names key-56 m1 key-56-xor 
+10 1
+01 1
+.names key-57 m3 key-57-xor 
+10 1
+01 1
+.names key-58 d1 key-58-xor 
+10 1
+01 1
+.names key-59 s0 key-59-xor 
+11 1
+00 1
+.names key-6 h3 key-6-xor 
+10 1
+01 1
+.names key-60 s3 key-60-xor 
+10 1
+01 1
+.names key-61 u2 key-61-xor 
+11 1
+00 1
+.names key-62 v0 key-62-xor 
+10 1
+01 1
+.names key-63 c4 key-63-xor 
+10 1
+01 1
+.names key-7 w0 key-7-xor 
+11 1
+00 1
+.names key-8 d2 key-8-xor 
+10 1
+01 1
+.names key-9 t1 key-9-xor 
+10 1
+01 1
+.names l4 q0 j2 
+10 1
+.names l c3 n1 
+1- 1
+-1 1
+.names l f1 k q0 g2 
+11-- 1
+1-10 1
+.names l r0 o0 c2 
+01- 1
+1-1 1
+.names l x2 t1 
+11 1
+.names m1 n j l i4 
+100- 1
+10-0 1
+.names m2 i3 f3 
+00 1
+.names m2 l3 b b3 
+11- 1
+1-1 1
+-11 1
+.names m2 s3 p3 z2 
+11- 1
+1-1 1
+-11 1
+.names m key-47-xor k2 
+1- 1
+-0 1
+.names key-45-xor o2 n3 j4 
+-1- 1
+0-1 1
 .names n b2 c2 v0 n0 l1 key-8-xor w0 x0 h1 key-52-xor y0 d i l z0 t0 a1 f2 key-5-xor e1 h g1 f1 u0 key-22-xor i1 key-38-xor j2 d1 t p0 
 11--1-------------------------- 1
 1-----------1---------------1-- 1
@@ -65,63 +503,24 @@
 1-----1-----00--1-----0-------- 1
 1-----------1-0-1-----11------- 1
 1-----------1-0-0-----01------- 1
-.names j1 n v1 w1 k1 x1 m1 y1 g j key-44-xor key-23-xor a2 o1 p1 q1 c key-27-xor key-3-xor key-9-xor u1 q 
-1-------------------- 1
--111----------------- 1
--100----------------- 1
--0--11--------------- 1
--0----111------------ 1
--0---1--00----------- 1
--0-------11-1-------- 1
--0------11----1------ 1
--0-------1-0---1----- 1
--0-----1-0-------1--- 1
--0-----0-0--------1-- 1
--0------00----------1 1
--0-----1-1---1--1---- 1
--0------10------0--1- 1
-.names n key-36-xor d2 h4 
--1- 1
-1-1 1
-.names s e f a2 d3 y0 g j3 q2 k3 p2 z1 v 
-1--1---11--- 1
-1--1----11-- 1
-1--1-----11- 1
-1------11--0 1
-1-------11-0 1
-1--------110 1
-10011------- 1
-100--10----- 1
-.names a e n3 
-01 1
-.names b4 c4 f1 y1 c i g j v2 
--1-1---- 1
--1--1--- 1
-1-10---- 1
-1--111-1 1
-1---1110 1
-.names y1 u2 z2 i1 
-11- 1
-1-1 1
--11 1
-.names l c3 n1 
-1- 1
--1 1
-.names i l p1 
-01 1
-.names key-35-xor a4 b x3 
-11- 1
-1-1 1
--11 1
-.names key-41 h1 key-41-xor 
-10 1
-01 1
-.names u2 y1 y2 
-11 1
-00 1
-.names key-61 u2 key-61-xor 
-11 1
-00 1
+.names n b2 u3 q0 key-12-xor r2 m1 i3 q3 k l x2 a e i x0 w3 k1 v0 j m3 n3 g3 
+11-----0-------------- 1
+1-11----0------------- 1
+1-----1---0-1--------- 1
+1----1-----1-1-------- 1
+1---------1-0-----1--- 1
+1---1----0----------1- 1
+1---1----0-----------1 1
+1----1--0---1-0------- 1
+1-------0-1----11----- 1
+1-------1-1----10----- 1
+1------1--1-0----1---- 1
+1-----11--0--------1-- 1
+1-----10----1------0-- 1
+1--0---0-11-1--------- 1
+1----1--11--0-0------- 1
+1----1-0-1----1-1----- 1
+1----1-1-1----1-0----- 1
 .names n b2 v0 g2 r2 w0 s2 m2 l3 f3 b key-31-xor o1 x2 c3 f i p3 d3 l q3 r3 e3 s3 t3 i2 j2 key-6-xor k3 c2 x0 i3 key-2-xor p2 q2 l2 
 11-------1------------------------- 1
 1---------1---------------1-------- 1
@@ -150,112 +549,6 @@
 1---1--0----1----0-----1----------- 1
 1---1--0----1----1-----0----------- 1
 1---1--1----1----0-----0----------- 1
-.names t0 key-25-xor z3 t z0 
-0-1- 1
--1-1 1
-.names key-49 t2 key-49-xor 
-10 1
-01 1
-.names key-5 g2 key-5-xor 
-10 1
-01 1
-.names m2 s3 p3 z2 
-11- 1
-1-1 1
--11 1
-.names i u3 q1 
-01 1
-.names m1 n j l i4 
-100- 1
-10-0 1
-.names j1 n m0 p0 k1 l1 m1 h1 h j n1 o1 p1 q1 b1 d1 t r1 s1 t1 d u1 r 
-1--------------------- 1
--111------------------ 1
--100------------------ 1
--0--11---------------- 1
--0----111------------- 1
--0---1--00------------ 1
--0------11--1--------- 1
--0-------1-1--1------- 1
--0-------1---1-1------ 1
--0-------11-----1----- 1
--0-----1-0-------1---- 1
--0-----0-0--------1--- 1
--0------00-----------1 1
--0------10---------10- 1
-.names key-26 s2 key-26-xor 
-10 1
-01 1
-.names x3 v2 a3 
-01 1
-10 1
-.names key-30 x0 key-30-xor 
-11 1
-00 1
-.names key-2 o2 key-2-xor 
-10 1
-01 1
-.names key-1 a3 key-1-xor 
-11 1
-00 1
-.names key-4 c3 key-4-xor 
-10 1
-01 1
-.names d h t 
-11 1
-.names key-57 m3 key-57-xor 
-10 1
-01 1
-.names key-19 f4 key-19-xor 
-11 1
-00 1
-.names key-20 e1 key-20-xor 
-11 1
-00 1
-.names n j p1 c4 
-111 1
-.names a e k3 
-11 1
-.names k j key-43-xor s2 
-011 1
-.names key-9 t1 key-9-xor 
-10 1
-01 1
-.names key-36 k4 key-36-xor 
-11 1
-00 1
-.names b f q2 
-11 1
-.names i k c3 
-01 1
-.names k q0 o0 
-01 1
-.names j m1 x0 
-11 1
-.names v2 key-21-xor c g1 
-11- 1
-1-1 1
--11 1
-.names key-51 t3 key-51-xor 
-10 1
-01 1
-.names c1 h1 f2 
-01 1
-10 1
-.names n u3 b4 
-11 1
-.names r3 key-60-xor key-51-xor w2 
-11- 1
-1-1 1
--11 1
-.names k q0 v0 
-11 1
-.names key-23 z1 key-23-xor 
-11 1
-00 1
-.names q3 y3 z3 key-13-xor w3 
-0-1- 1
--1-1 1
 .names n b2 v0 r2 w0 key-26-xor y1 key-49-xor e2 c u2 v2 w2 o1 x2 g key-39-xor key-24-xor i2 key-1-xor j2 i b3 g2 key-4-xor x1 d3 y0 l e3 u0 c2 x0 f3 z1 a2 w1 
 11------1--------------------------- 1
 1--------1----------1--------------- 1
@@ -282,206 +575,11 @@
 1--1-----0---------1----1----------- 1
 1-1--------1----------------00------ 1
 1---1--1--------------------1-----0- 1
-.names j l n u3 o1 q0 r0 d4 
----1-1- 1
---10--1 1
-010-1-- 1
-.names i j f1 
-00 1
-.names key-52 e2 key-52-xor 
-11 1
-00 1
-.names j q1 l o0 b2 
-11-- 1
---11 1
-.names j n u1 z3 
-011 1
-.names y1 b3 c c1 
-11- 1
+.names n j p1 c4 
+111 1
+.names n key-36-xor d2 h4 
+-1- 1
 1-1 1
--11 1
-.names n b2 u3 q0 key-12-xor r2 m1 i3 q3 k l x2 a e i x0 w3 k1 v0 j m3 n3 g3 
-11-----0-------------- 1
-1-11----0------------- 1
-1-----1---0-1--------- 1
-1----1-----1-1-------- 1
-1---------1-0-----1--- 1
-1---1----0----------1- 1
-1---1----0-----------1 1
-1----1--0---1-0------- 1
-1-------0-1----11----- 1
-1-------1-1----10----- 1
-1------1--1-0----1---- 1
-1-----11--0--------1-- 1
-1-----10----1------0-- 1
-1--0---0-11-1--------- 1
-1----1--11--0-0------- 1
-1----1-0-1----1-1----- 1
-1----1-1-1----1-0----- 1
-.names key-37 m0 key-37-xor 
-10 1
-01 1
-.names key-32 d3 key-32-xor 
-11 1
-00 1
-.names i u3 u1 
-11 1
-.names key-28 f3 key-28-xor 
-11 1
-00 1
-.names m2 i3 f3 
-00 1
-.names k l f1 q0 f4 
-011- 1
-01-1 1
-.names r3 key-15-xor e3 
-00 1
-.names l x2 t1 
-11 1
-.names c g a2 
-11 1
-.names i j q0 
-11 1
-.names l f1 k q0 g2 
-11-- 1
-1-10 1
-.names key-59 s0 key-59-xor 
-11 1
-00 1
-.names key-27 r1 key-27-xor 
-11 1
-00 1
-.names v3 k n l4 e4 
-111- 1
-1-01 1
-.names d4 d1 e4 t h n i d2 d k f4 key-42-xor u3 x1 s0 j l h1 
--01-------------- 1
-1---0------------ 1
----1-1-1--------- 1
----1--01--------- 1
----1-1----1------ 1
------10------11-- 1
----1-10----01---- 1
--1---10----0---1- 1
------00-00-----0- 1
------00-00------0 1
-----010-1--1---1- 1
-----110-0--11--1- 1
-.names key-39 y2 key-39-xor 
-11 1
-00 1
-.names c l x1 
-11 1
-.names key-56 m1 key-56-xor 
-10 1
-01 1
-.names h1 e2 n0 
-01 1
-.names b4 c4 b1 h1 t f1 q0 v3 d t0 
--1-1----- 1
--1------1 1
-1--0-1--- 1
-1-1---1-- 1
-1---1--1- 1
-.names key-10 d4 key-10-xor 
-11 1
-00 1
-.names v2 y3 z3 a2 u2 
-0-1- 1
--1-1 1
-.names key-34 a1 key-34-xor 
-10 1
-01 1
-.names l4 q0 j2 
-10 1
-.names k l l4 
-00 1
-.names key-35 r3 key-35-xor 
-10 1
-01 1
-.names i j r0 
-01 1
-.names key-43 p1 key-43-xor 
-10 1
-01 1
-.names a l h3 
-11 1
-.names i k o1 
-11 1
-.names z0 h1 h2 
-01 1
-10 1
-.names k l key-56-xor r1 
---1 1
-11- 1
-.names key-17 l2 key-17-xor 
-11 1
-00 1
-.names key-62 v0 key-62-xor 
-10 1
-01 1
-.names b f o2 
-01 1
-.names b f n2 
-10 1
-.names i j v3 
-10 1
-.names j x2 w0 
-01 1
-.names key-25 y3 key-25-xor 
-11 1
-00 1
-.names d4 h4 z1 a2 e4 i4 c g n i u3 s0 j4 b j l y1 
--1-1------------ 1
---1-1----------- 1
------10--------- 1
-1------0-------- 1
---------10-1-1-1 1
-------11101-1--- 1
-------0010--1-1- 1
-------1010--0-1- 1
-------01101-0-1- 1
-.names j1 n g3 m k1 h3 m1 i3 e j n1 j3 o1 p1 q1 k3 l3 l s1 t1 r1 u1 m3 n3 o 
-1----------------------- 1
--111-------------------- 1
--100-------------------- 1
--0--11------------------ 1
--0----111--------------- 1
--0------11---1---------- 1
--0-------1-1--1--------- 1
--0-------11----1-------- 1
--0-------1--1---1------- 1
--0-----0-0--------1----- 1
--0-----1-0----------1--- 1
--0------00-----------1-- 1
--0-------0-------1----1- 1
--0-------0---------1---1 1
-.names key-54-xor c g g4 
-01- 1
-0-0 1
--10 1
-.names a key-55-xor l3 
-11 1
-.names key-14 k2 key-14-xor 
-11 1
-00 1
-.names key-44 n1 key-44-xor 
-11 1
-00 1
-.names n p1 s0 l4 q0 j1 
-011-- 1
-1--11 1
-.names w3 q3 t3 
-11 1
-.names j u3 d2 
-01 1
-.names key-54 j4 key-54-xor 
-11 1
-00 1
-.names k l u3 
-10 1
-.names k c4 y3 
-01 1
 .names n key-37-xor n0 o0 key-16-xor l q0 r0 key-59-xor t0 u0 k i key-62-xor key-7-xor key-30-xor key-33-xor d key-11-xor key-34-xor b1 key-48-xor key-58-xor t key-20-xor f1 g1 key-41-xor i1 u 
 1-11------------------------- 1
 10--1------------------------ 1
@@ -506,185 +604,87 @@
 1----10----1---------1-----1- 1
 1----0--1---1-----1---------1 1
 1----0--1---1--------------11 1
-.names d h1 b1 
+.names n p1 s0 l4 q0 j1 
+011-- 1
+1--11 1
+.names n u3 b4 
 11 1
-.names j k s0 
-01 1
-.names key-47 g3 key-47-xor 
-10 1
-01 1
-.names k g2 f1 i2 
--1- 1
-0-1 1
-.names key-53-xor v2 u0 
-10 1
-.names key-22 h2 key-22-xor 
-11 1
-00 1
-.names key-21 x3 key-21-xor 
-11 1
-00 1
-.names key-24 z2 key-24-xor 
-11 1
-00 1
-.names key-6 h3 key-6-xor 
-10 1
-01 1
-.names w3 i3 p3 
-11 1
-.names v1 w1 m0 
-1- 1
--0 1
-.names t2 z1 a2 e1 
---1 1
-11- 1
-.names a q3 a4 
-11 1
-.names key-29 n3 key-29-xor 
-10 1
-01 1
-.names key-53 e3 key-53-xor 
-11 1
-00 1
-.names j n key-19-xor q1 k4 
--11- 1
-0--1 1
-.names key-50 q2 key-50-xor 
-11 1
-00 1
-.names key-55 i3 key-55-xor 
-11 1
-00 1
-.names key-15 q3 key-15-xor 
-10 1
-01 1
-.names d h d1 
-00 1
-.names b4 c4 i3 l3 k3 f1 q0 v3 a q3 
--11------ 1
--1------1 1
-1-0--1--- 1
-1--1--1-- 1
-1---1--1- 1
-.names key-0 m2 key-0-xor 
-11 1
-00 1
-.names key-48 c1 key-48-xor 
-11 1
-00 1
-.names a b d3 
-00 1
-.names key-58 d1 key-58-xor 
-10 1
-01 1
-.names key-46 e4 key-46-xor 
-11 1
-00 1
-.names c g z1 
-1- 1
--1 1
-.names i k x2 
-10 1
-.names key-18 y1 key-18-xor 
-11 1
-00 1
-.names key-3 s1 key-3-xor 
-11 1
-00 1
-.names d4 h4 p2 e4 q2 i4 b f n i u3 s0 h3 n3 j n2 o2 m2 
---01------------- 1
--1--1------------ 1
------10---------- 1
-1------0--------- 1
---------10-11---- 1
-----1---101--1--- 1
---1-----10---11-- 1
---------10---011- 1
---------101--01-1 1
-.names k f1 k1 
-1- 1
--1 1
-.names i k m1 
-00 1
-.names key-31 o3 key-31-xor 
-10 1
-01 1
-.names m2 l3 b b3 
-11- 1
-1-1 1
--11 1
 .names key-50-xor k3 p2 t2 
 1-- 1
 -10 1
+.names q3 y3 z3 key-13-xor w3 
+0-1- 1
+-1-1 1
+.names key-35-xor a4 b x3 
+11- 1
+1-1 1
+-11 1
+.names r3 a4 o3 
+01 1
+10 1
+.names r3 key-15-xor e3 
+00 1
+.names r3 key-60-xor key-51-xor w2 
+11- 1
+1-1 1
+-11 1
 .names r3 y3 z3 q2 s3 
 0-1- 1
 -1-1 1
+.names s e f a2 d3 y0 g j3 q2 k3 p2 z1 v 
+1--1---11--- 1
+1--1----11-- 1
+1--1-----11- 1
+1------11--0 1
+1-------11-0 1
+1--------110 1
+10011------- 1
+100--10----- 1
+.names t0 key-25-xor z3 t z0 
+0-1- 1
+-1-1 1
+.names t2 z1 a2 e1 
+--1 1
+11- 1
 .names t d1 s 
 1- 1
 -1 1
+.names u2 y1 y2 
+11 1
+00 1
+.names v1 w1 m0 
+1- 1
+-0 1
 .names v2 key-61-xor w2 a1 
 11- 1
 1-1 1
 -11 1
-.names key-60 s3 key-60-xor 
-10 1
-01 1
-.names b f p2 
-00 1
-.names key-11 z0 key-11-xor 
-11 1
-00 1
-.names key-13 k3 key-13-xor 
-10 1
-01 1
-.names m key-47-xor k2 
-1- 1
--0 1
-.names key-8 d2 key-8-xor 
-10 1
-01 1
-.names key-16 p0 key-16-xor 
-11 1
-00 1
-.names key-42 g4 key-42-xor 
-10 1
-01 1
-.names key-10-xor k4 j3 r0 key-46-xor key-40-xor k3 a e n key-57-xor u3 key-29-xor i3 
---0-1-------- 1
--1----1------ 1
------1-0----- 1
-1-------0---- 1
----1-----11-- 1
----1-----1-11 1
-.names key-40 i4 key-40-xor 
-11 1
-00 1
-.names key-33 y0 key-33-xor 
-11 1
-00 1
-.names b4 key-63-xor f1 key-0-xor b i f j r3 
--1-1---- 1
--1--1--- 1
-1-10---- 1
-1--111-1 1
-1---1110 1
-.names l r0 o0 c2 
-01- 1
+.names v2 key-21-xor c g1 
+11- 1
 1-1 1
-.names a e m3 
-10 1
-.names i c3 l4 s1 
--1- 1
-1-1 1
-.names key-14-xor key-17-xor v1 
-1- 1
--0 1
-.names key-7 w0 key-7-xor 
+-11 1
+.names v2 y3 z3 a2 u2 
+0-1- 1
+-1-1 1
+.names v3 k n l4 e4 
+111- 1
+1-01 1
+.names w3 i3 p3 
 11 1
-00 1
-.names key-45 n2 key-45-xor 
-10 1
+.names w3 q3 t3 
+11 1
+.names x3 v2 a3 
 01 1
-.names a e j3 
-00 1
+10 1
+.names y1 b3 c c1 
+11- 1
+1-1 1
+-11 1
+.names y1 u2 z2 i1 
+11- 1
+1-1 1
+-11 1
+.names z0 h1 h2 
+01 1
+10 1
 .end

@@ -17,3 +17,8 @@ For help
 
     % CircuitLocker -h
 
+## Notes
+
+This tool is for primarily exploring locking mechanisms in combinational circuits.  The circuit parser can read BLIF format with
+latches.  If latches exist in the circuit, the latch output is treated as a primary input; the latch input is treated as
+a primary output.

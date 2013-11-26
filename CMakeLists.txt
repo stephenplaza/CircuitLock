@@ -2,7 +2,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 project (CircuitLock)
 
 set (CMAKE_CXX_FLAGS_RELEASE "-O3")
-set (CMAKE_CXX_FLAGS_DEBUG "-ggdb")
+set (CMAKE_CXX_FLAGS_DEBUG "-Wall -ggdb")
 set (CMAKE_CXX_LINK_FLAGS "-O3")
 set (CMAKE_DEBUG_POSTFIX "-g")
 
@@ -39,6 +39,12 @@ add_test("test_simpxor"
 add_test("test_aluxor"
     python 
     ${CMAKE_SOURCE_DIR}/integration_tests/test_aluxor.py
+    ${BUILDLOC}
+    ${CMAKE_SOURCE_DIR}
+)
+add_test("test_seqxor"
+    python 
+    ${CMAKE_SOURCE_DIR}/integration_tests/test_seqxor.py
     ${BUILDLOC}
     ${CMAKE_SOURCE_DIR}
 )
