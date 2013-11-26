@@ -18,7 +18,7 @@ void Wire::set_driver(Port* in_port)
 // will add wire's outputs to this
 void Wire::reassign_outputs(Wire* wire)
 {
-    for (int i = 0; i < wire->outputs.size(); ++i) {
+    for (unsigned int i = 0; i < wire->outputs.size(); ++i) {
         add_output_port(wire->outputs[0]);
     }
     wire->outputs.clear();
@@ -26,7 +26,7 @@ void Wire::reassign_outputs(Wire* wire)
 
 bool Wire::is_output()
 {
-    for (int i = 0; i < outputs.size(); ++i) {
+    for (unsigned int i = 0; i < outputs.size(); ++i) {
         if (outputs[i]->get_inst()->get_is_port() ||
             outputs[i]->get_inst()->get_is_latch()) {
             return true;

@@ -57,7 +57,7 @@ void Circuit::levelize()
     }
 
     // Now check all instances, if all its input is valid, add to linsts
-    int num_iterations = 0;
+    unsigned int num_iterations = 0;
     while (linsts.size() < lib_insts.size())
     {
         ++num_iterations;
@@ -271,7 +271,7 @@ void Circuit::parse_blif(string filename)
                 sym_table[inst_name]= ninst;
                 
                 // first n-1 names are inputs
-                for (i= 0; i < strvec.size() - 1; i++) {
+                for (i= 0; i < int(strvec.size()) - 1; i++) {
                     nport= new Port(strvec[i]);
                     ++num_ports;
                     nwire= find_wire_insert(strvec[i]);
@@ -435,7 +435,6 @@ void Circuit::write_blif(string filename)
 {
     map<string, CircuitElement*>::iterator pmap;
     CircuitElement* element;
-    Wire* wire2;
     Inst* inst2;
     Port* port2;
     ofstream bliffile;
@@ -522,7 +521,7 @@ void Circuit::write_blif(string filename)
         element = (*pmap).second;
         if (element->get_type() == INST) {
             inst2= (Inst*) element;
-            for (i = 0; i < inst2->num_outputs(); ++i) {
+            for (i = 0; i < int(inst2->num_outputs()); ++i) {
                 if (!(inst2->get_is_port())) {
                     if (inst2->get_is_latch()) {
                         bliffile<<".latch ";

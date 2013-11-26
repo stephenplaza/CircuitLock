@@ -178,9 +178,7 @@ void Inst::evaluate_core(int num_simulations)
     vector<Port*>::iterator pport;
     Port* port2;
     Wire* wire2;
-    int size;
     int i;
-    lib_cell* lcell;
 
     for(int j = 0; j < num_simulations; j++) {
         inputstr = "";
