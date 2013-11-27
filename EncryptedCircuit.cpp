@@ -41,7 +41,7 @@ void EncryptedCircuit::set_key(Key key, int value)
 
 void EncryptedCircuit::randomly_set_keys()
 {
-    for (int i = 0; i < key_wires.size(); ++i) {
+    for (int i = 0; i < int(key_wires.size()); ++i) {
         if (rand()%2) {
             key_wires[i]->set_sig_temp(~((unsigned long long)(0)));
         } else {
@@ -56,6 +56,9 @@ void EncryptedCircuit::add_random_xors(int num_xors)
     if (num_ops < num_xors) {
         throw Error("Request for more keys than gates");
     }
+
+    // generate simulation vectors that the testing will work against
+    simulate();
 
     vector<Inst*> chosen_insts;
     while (num_xors > 0) {
@@ -72,14 +75,19 @@ void EncryptedCircuit::add_random_xors(int num_xors)
             continue;
         } 
 
-        // ?! TBD: verify that an XOR impacts the output
+        // verify that XOR impacts the output
+        if (!non_redundant_signal(inst)) {
+            std::cout << "Redundant!" << std::endl;
+            continue;
+        }            
+
         chosen_insts.push_back(inst);
         inst->set_visited(true);
         --num_xors;
     }
 
     // march through list and randomly choose value, insert logic
-    for (int i = 0; i < chosen_insts.size(); ++i) {
+    for (int i = 0; i < int(chosen_insts.size()); ++i) {
         stringstream keyss;
         keyss << "key-" << i;
         string key = keyss.str();
@@ -101,11 +109,11 @@ void EncryptedCircuit::levelize()
 {
     // key wires are not added to the circuit input list
     // which is used for levelization
-    for (int i = 0; i < key_wires.size(); ++i) {
+    for (int i = 0; i < int(key_wires.size()); ++i) {
         key_wires[i]->set_visited(true);
     } 
     Circuit::levelize();
-    for (int i = 0; i < key_wires.size(); ++i) {
+    for (int i = 0; i < int(key_wires.size()); ++i) {
         key_wires[i]->set_visited(false);
     } 
 }

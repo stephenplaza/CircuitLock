@@ -24,6 +24,28 @@ void Wire::reassign_outputs(Wire* wire)
     wire->outputs.clear();
 }
 
+bool Wire::sig_equiv(Wire& wire1)
+{
+    assert(signatures.size() == wire1.signatures.size());
+
+    for (int i = 0; i < int(signatures.size()); ++i) {
+        if (signatures[i] != wire1.signatures[i]) {
+            return false;
+        }
+    }
+    return true;
+} 
+
+void Wire::randomize()
+{
+    int num_sims = sizeof(unsigned long long) * 8;
+    sig_temp = 0;
+
+    for (int i = 0; i < num_sims; ++i) {
+       sig_temp |= ((unsigned long long)((rand()%2)) << num_sims);
+    }
+}
+
 bool Wire::is_output()
 {
     for (unsigned int i = 0; i < outputs.size(); ++i) {

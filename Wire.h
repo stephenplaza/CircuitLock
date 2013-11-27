@@ -4,6 +4,8 @@
 #include "CircuitElement.h"
 #include <vector>
 
+#define SIGSTEP sizeof(unsigned long long)*8
+
 class Port;
 
 class Wire : public CircuitElement {
@@ -55,6 +57,27 @@ class Wire : public CircuitElement {
     void set_sig_temp(unsigned long long sig_temp_)
     {
         sig_temp = sig_temp_;
+    }
+    
+
+
+    void commit_signature()
+    {
+        signatures.push_back(sig_temp);
+    }
+
+    void clear_signature()
+    {
+        signatures.clear();
+    }
+
+    bool sig_equiv(Wire& wire1); 
+    
+    void randomize();
+
+    unsigned long long get_signature(int i)
+    {
+        return signatures[i];
     }
 
   private:

@@ -167,6 +167,7 @@ void Inst::evaluate(int num_simulations)
             wire2->set_sig_temp(wire2->get_sig_temp() & 
                     (((unsigned long long)1 << (num_simulations)) - ((unsigned long long) 1)));
         }
+
         ++i; 
     }
 }

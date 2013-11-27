@@ -6,9 +6,9 @@
 #include <vector>
 #include <iosfwd>
 #include <fstream>
+#include "Wire.h"
 
 class CircuitElement;
-class Wire;
 class Inst;
 class Port;
 class TechLibrary;
@@ -30,8 +30,23 @@ class Circuit {
         return inst_iterator(linsts.end());
     } 
 
+    /*!
+     * Basic simulation of primary inputs.
+    */
+    void simulate(int num_sims = SIGSTEP);
+
+    /*!
+     * Checks for equivalence of signatures between circuits.
+    */
+    virtual bool circuit_sig_equiv(Circuit& ckt1);
+
+    void clear_signatures();
+    void commit_signatures();
+
     void print_info();
-    
+   
+    bool non_redundant_signal(Inst* inst);
+
     /*!
      * Levelization requires that the input_wires vector
      * be initialized.
@@ -56,7 +71,9 @@ class Circuit {
     int get_blif_token(std::string& token);
     int get_blif_ttable(std::string& token);
     Wire* find_wire_insert(std::string& name);
-    
+
+    int sim_patterns;
+
     //! blif file stream 
     std::fstream ifile;
  

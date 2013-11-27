@@ -100,7 +100,7 @@ class OptionParser
         std::cout << generic_options <<std::endl;
     }
     
-    
+    std::string description;
     boost::program_options::options_description generic_options; 
     boost::program_options::options_description hidden_options; 
     
@@ -108,7 +108,6 @@ class OptionParser
 
     std::vector<std::string> positional_ids;
     std::vector<std::string> positional_descr;
-    std::string description;
 };
 }
 

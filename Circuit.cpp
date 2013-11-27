@@ -25,7 +25,7 @@ using std::map;
 
 Circuit::Circuit(string filename, TechLibrary* library_) :
     library(library_), num_insts(0), num_wires(0), num_gates(0),
-    num_ports(0), max_level(0)
+    num_ports(0), max_level(0), sim_patterns(0)
 {
     // will throw an Error if incorrectly formatted
     parse_blif(filename);
@@ -306,6 +306,8 @@ void Circuit::parse_blif(string filename)
         }
     }
     ifile.close();
+    sort(output_wires.begin(), output_wires.end());
+    sort(input_wires.begin(), input_wires.end());
 }
 
 // return blif token in token. return value is: 0: normal token, 1: end-of-line,
@@ -683,5 +685,105 @@ bool Circuit::check_input_cone(Port* port2, Port* driver)
 
     return found;
 }
+    
+void Circuit::simulate(int num_sims)
+{
+    if (sim_patterns > 0) {
+        clear_signatures();
+    }
+    sim_patterns += num_sims;
+    
+    while (num_sims > 0) {
+        for (int i = 0; i < int(input_wires.size()); ++i) {
+            input_wires[i]->randomize();
+        }
+
+        for (int i = 0; i < int(linsts.size()); ++i) {
+            if (num_sims < int(SIGSTEP)) {
+                linsts[i]->evaluate(num_sims);
+            } else {
+                linsts[i]->evaluate(SIGSTEP);
+            }
+        } 
+
+        num_sims -= SIGSTEP;
+        commit_signatures();
+    }
+}
+
+// true if current input signatures reveal that the given signal is non-redundant
+bool Circuit::non_redundant_signal(Inst* inst)
+{
+    assert(sim_patterns > 0);
+
+    Wire* owire = inst->get_output(0)->get_wire();
+    int num_patterns = (sim_patterns - 1)/ SIGSTEP + 1;
+    int leftover = sim_patterns%SIGSTEP;
+
+    for (int j = 0; j < num_patterns; ++j) {
+        for (int i = 0; i < int(input_wires.size()); ++i) {
+            input_wires[i]->set_sig_temp(input_wires[i]->get_signature(j));
+        }
+
+        for (int i = 0; i < int(linsts.size()); ++i) {
+            if ((j == (num_patterns - 1)) && (leftover > 0)) {
+                linsts[i]->evaluate(leftover);
+            } else {
+                linsts[i]->evaluate(SIGSTEP);
+            }
+
+            if (linsts[i] == inst) {
+                owire->set_sig_temp(~(owire->get_sig_temp()));
+            }
+        } 
+
+        for (int i = 0; i < int(output_wires.size()); ++i) {
+            if (output_wires[i]->get_sig_temp() != output_wires[i]->get_signature(j)) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+
+void Circuit::clear_signatures()
+{
+    for (sym_map::iterator iter = sym_table.begin();
+            iter != sym_table.end(); ++iter) {
+        if (iter->second->get_type() == WIRE) {
+            Wire* wire = (Wire*)(iter->second);
+            wire->clear_signature();
+        }
+    }
+    sim_patterns = 0;
+}
+
+void Circuit::commit_signatures()
+{
+    for (sym_map::iterator iter = sym_table.begin();
+            iter != sym_table.end(); ++iter) {
+        if (iter->second->get_type() == WIRE) {
+            Wire* wire = (Wire*)(iter->second);
+            wire->commit_signature();
+        }
+    }
+}
+
+bool Circuit::circuit_sig_equiv(Circuit& ckt1)
+{
+    assert(output_wires.size() == ckt1.output_wires.size());
+    
+    for (int i = 0; i < int(output_wires.size()); ++i) {
+        if (!(output_wires[i]->sig_equiv(*(ckt1.output_wires[i])))) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
 
 
