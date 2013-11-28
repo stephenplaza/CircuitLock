@@ -747,6 +747,75 @@ bool Circuit::observable_signal(Inst* inst)
     return false;
 }
 
+// primary inputs are indicated in the first line
+// the remaining lines contain 0s and 1s
+void Circuit::load_test_vectors(string testfile)
+{
+    ifstream fin(testfile.c_str());
+    if (!fin) {
+        throw Error("Cannot open test file");
+    }
+    
+    input_vecs.resize(input_wires.size());
+    vector<int> testpos2wire_index;
+
+    string pi_input;
+    while (fin >> pi_input) {
+        bool found = false;
+        for (int i = 0; i < int(input_wires.size()); ++i) {
+            if (input_wires[i]->get_name() == pi_input) {
+                testpos2wire_index.push_back(i);
+                found = true;
+            }
+        }
+        if (!found) {
+            throw Error("Could not find test input: " + pi_input + " in circuit" );
+        }
+
+        if (testpos2wire_index.size() == input_wires.size()) {
+            break;
+        }
+    }
+    if (testpos2wire_index.size() != input_wires.size()) {
+        throw Error("Test file is missing circuit inputs");
+    }
+
+    int num_vec = 1;
+    int input_spot = 0;
+    char val;
+    while (fin >> val) {
+        if (val == '\n') {
+            continue;
+        } 
+        if (input_spot == int(testpos2wire_index.size())) {
+            input_spot = 0;
+            ++num_vec;
+        }
+        
+        int sim_val;
+        if (val == '0') {
+            sim_val = 0;
+        } else if (val == '1') {
+            sim_val = 1;
+        } else {
+            throw Error("Unrecognized value in test file");
+        }
+       
+        int pos = testpos2wire_index[input_spot];
+        int index = (num_vec - 1)/ SIGSTEP;
+        int leftover = sim_patterns%SIGSTEP;
+        
+        if (int(input_vecs[pos].size()) == index) {
+            input_vecs[pos].push_back(0);
+        }
+
+        input_vecs[pos][index] |= (((unsigned long long) sim_val) << leftover);
+        ++input_spot;        
+    }
+
+    fin.close();
+    cout << "Num input patterns: " << num_vec << endl;
+}
 
 void Circuit::clear_signatures()
 {

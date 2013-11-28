@@ -43,6 +43,11 @@ class Circuit {
     void clear_signatures();
     void commit_signatures();
 
+    /*!
+     * Takes a series of test vectors (1st line is a list of PI
+     * names and the remaining lines are 0's and 1's with no spaces)
+    */
+    void load_test_vectors(std::string testfile);
     void print_info();
    
     bool observable_signal(Inst* inst);
@@ -52,6 +57,8 @@ class Circuit {
      * be initialized.
     */
     virtual void levelize();
+
+    void load_test_vectors(const char* testfile);
 
   protected:
     TechLibrary* library;
@@ -87,6 +94,9 @@ class Circuit {
 
     //! includes latch inputs as primary outputs
     std::vector<Wire*> output_wires;
+
+    std::vector<std::vector<unsigned long long> > input_vecs;
+
 };
 
 
