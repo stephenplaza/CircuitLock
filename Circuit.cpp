@@ -711,15 +711,15 @@ void Circuit::simulate(int num_sims)
     }
 }
 
-// true if current input signatures reveal that the given signal is non-redundant
-bool Circuit::non_redundant_signal(Inst* inst)
+// true if current input signatures reveal that the given signal is observable
+bool Circuit::observable_signal(Inst* inst)
 {
     assert(sim_patterns > 0);
 
     Wire* owire = inst->get_output(0)->get_wire();
     int num_patterns = (sim_patterns - 1)/ SIGSTEP + 1;
     int leftover = sim_patterns%SIGSTEP;
-
+        
     for (int j = 0; j < num_patterns; ++j) {
         for (int i = 0; i < int(input_wires.size()); ++i) {
             input_wires[i]->set_sig_temp(input_wires[i]->get_signature(j));

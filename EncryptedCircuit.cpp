@@ -53,38 +53,41 @@ void EncryptedCircuit::randomly_set_keys()
 void EncryptedCircuit::add_random_xors(int num_xors)
 {
     int num_ops = linsts.size();
-    if (num_ops < num_xors) {
-        throw Error("Request for more keys than gates");
-    }
 
     // generate simulation vectors that the testing will work against
     simulate();
 
     vector<Inst*> chosen_insts;
+    int total_nonobservable = 0;
     while (num_xors > 0) {
+        if (num_ops < num_xors) {
+            throw Error("Request for more keys than gates");
+        }
+
         Inst* inst = linsts[(rand() % (linsts.size()))];
         if (inst->is_visited()) {
             continue;
         }
+        inst->set_visited(true);
+        
         Wire* owire = inst->get_output(0)->get_wire();
         if (owire->is_output()) {
             --num_ops;
-            if (num_ops < num_xors) {
-                throw Error("Request for more keys than gates");
-            }
             continue;
         } 
 
         // verify that XOR impacts the output
-        if (!non_redundant_signal(inst)) {
-            std::cout << "Redundant!" << std::endl;
+        if (!observable_signal(inst)) {
+            ++total_nonobservable;
+            --num_ops;
             continue;
         }            
 
         chosen_insts.push_back(inst);
-        inst->set_visited(true);
         --num_xors;
     }
+    cout << "Num non-observable: " << total_nonobservable << endl; 
+
 
     // march through list and randomly choose value, insert logic
     for (int i = 0; i < int(chosen_insts.size()); ++i) {
@@ -97,9 +100,11 @@ void EncryptedCircuit::add_random_xors(int num_xors)
         // value = 0 add an XOR; value = 1 add an XNOR
         // adds wire to key_wires 
         insert_xor(chosen_insts[i], key, value);
-        
+    }
+    
+    for (int i = 0; i < int(linsts.size()); ++i) {
         // clear flags
-        chosen_insts[i]->set_visited(false);
+        linsts[i]->set_visited(false);
     }
 
     levelize();

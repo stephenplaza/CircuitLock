@@ -4,7 +4,7 @@
 #include "CircuitElement.h"
 #include <vector>
 
-#define SIGSTEP sizeof(unsigned long long)*8
+#define SIGSTEP (sizeof(unsigned long long)*8)
 
 class Port;
 

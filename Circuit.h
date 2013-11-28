@@ -45,7 +45,7 @@ class Circuit {
 
     void print_info();
    
-    bool non_redundant_signal(Inst* inst);
+    bool observable_signal(Inst* inst);
 
     /*!
      * Levelization requires that the input_wires vector

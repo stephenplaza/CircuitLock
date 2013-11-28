@@ -42,7 +42,7 @@ void Wire::randomize()
     sig_temp = 0;
 
     for (int i = 0; i < num_sims; ++i) {
-       sig_temp |= ((unsigned long long)((rand()%2)) << num_sims);
+       sig_temp |= ((unsigned long long)((rand()%2)) << i);
     }
 }
 
