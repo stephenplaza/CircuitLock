@@ -24,7 +24,7 @@ int main(int argc, char** argv)
     try {
         OptionParser parser("Program for obfuscating and cracking a combinational circuit"); 
         parser.add_positional(blif_file, "blif-file", "circuit in BLIF format");
-        parser.add_option(output_file, "write-blif", "Write circuit in BLIF format to specified file");
+        parser.add_option(output_file, "write-blif", "Write COMBINATIONAL circuit in BLIF format to specified file (will remove latches from sequential circuit)");
         parser.add_option(random_xors, "lock-randxor", "Number of random XORs to add");
         parser.add_option(random_mux, "lock-mux", "Number of random test-aware MUXs to add");
         parser.add_option(test_file, "test-file", "File containing test vectors");

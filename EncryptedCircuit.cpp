@@ -124,7 +124,7 @@ void EncryptedCircuit::add_test_mux(int num_muxes)
     int matching_tests = 0;
     vector<pair<Wire*, Wire*> > candidate_muxes;
    
-    create_random_inputs(1024);
+    create_random_inputs(10000);
     simulate_random();
     int num_bins = 0;
 

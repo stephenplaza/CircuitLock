@@ -477,7 +477,8 @@ void Circuit::write_blif(string filename)
         element = (*pmap).second;
         if (element->get_type() == INST) {
             inst2 = (Inst*)(element);
-            if (inst2->get_is_port() && (inst2->num_outputs() > 0)) {
+            if ((inst2->get_is_latch() || inst2->get_is_port()) && (inst2->num_outputs() > 0)) {
+            //if (inst2->get_is_port() && (inst2->num_outputs() > 0)) {
                 port2 = inst2->get_output(0);
                 Wire* wire = port2->get_wire();
                 if(wire) {
@@ -500,7 +501,8 @@ void Circuit::write_blif(string filename)
         element = (*pmap).second;
         if (element->get_type() == INST) {
             inst2 = (Inst*)(element);
-            if (inst2->get_is_port() && (inst2->num_inputs() > 0)) {
+            if ((inst2->get_is_latch() || inst2->get_is_port()) && (inst2->num_inputs() > 0)) {
+            //if ((inst2->get_is_port()) && (inst2->num_inputs() > 0)) {
                 port2 = inst2->get_input(0);
                 Wire* wire = port2->get_wire();
                 if (wire && wire->get_driver()) {
@@ -531,6 +533,7 @@ void Circuit::write_blif(string filename)
             for (i = 0; i < int(inst2->num_outputs()); ++i) {
                 if (!(inst2->get_is_port())) {
                     if (inst2->get_is_latch()) {
+                        continue;
                         bliffile<<".latch ";
                     } else {
                         bliffile<<".names ";
