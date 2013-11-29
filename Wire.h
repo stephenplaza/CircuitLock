@@ -83,6 +83,11 @@ class Wire : public CircuitElement {
     {
         return signatures[i];
     }
+    
+    std::vector<unsigned long long> get_signature()
+    {
+        return signatures;
+    }
 
   private:
     std::vector<Port*> outputs;

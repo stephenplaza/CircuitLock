@@ -7,11 +7,16 @@
 #include <cmath>
 #include <iostream>
 #include <sstream>
-
+#include <tr1/unordered_map>
+#include <boost/functional/hash.hpp>
 
 using std::cout; using std::endl;
 using std::vector; using std::tr1::unordered_map;
 using std::stringstream; using std::string;
+using boost::hash_range;
+using std::tr1::unordered_map;
+using std::make_pair;
+using std::pair;
 
 const char * XOR_BLIF = "10 1\n01 1\n";
 const char * XNOR_BLIF = "11 1\n00 1\n";
@@ -69,6 +74,108 @@ void EncryptedCircuit::randomly_set_keys()
         }
     }
 }
+
+class SigHash {
+  public:
+    SigHash(vector<unsigned long long> sig_) : sig(sig_) {}
+    SigHash() {}
+
+    size_t operator()(const SigHash& sighash) const
+    {
+        return hash_range(sighash.sig.begin(), sighash.sig.end());
+    }
+
+    bool operator==(const SigHash& sighash) const
+    {
+        assert(sig.size() == sighash.sig.size());
+        for (int i = 0; i < sig.size(); ++i) {
+            if (sig[i] != sighash.sig[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+  private:
+    vector<unsigned long long> sig;
+};
+
+
+void EncryptedCircuit::add_test_mux(int num_muxes)
+{
+    int num_ops = linsts.size();
+    simulate_test();
+
+    unordered_map<SigHash, vector<Wire*>, SigHash> matching_test_signatures;
+
+    for (int i = 0; i < int(linsts.size()); ++i) {
+        Wire* owire = linsts[i]->get_output(0)->get_wire();
+        if (owire->is_output()) {
+            --num_ops;
+            continue;
+        } 
+
+        matching_test_signatures[SigHash(owire->get_signature())].push_back(owire);
+    }
+    if (num_ops < num_muxes) {
+        throw Error("Request for more keys than gates");
+    }
+
+    int matching_tests = 0;
+    vector<pair<Wire*, Wire*> > candidate_muxes;
+   
+    create_random_inputs(1024);
+    simulate_random();
+    int num_bins = 0;
+
+    for (unordered_map<SigHash, vector<Wire*>, SigHash>::iterator iter =
+            matching_test_signatures.begin();
+            iter != matching_test_signatures.end(); ++iter) {
+        if (iter->second.size() > 1) {
+            matching_tests += (iter->second.size()) * (iter->second.size()-1) / 2;
+            ++num_bins;
+
+            for (int i = 0; i < iter->second.size(); ++i) {
+                for (int j = i+1; j < iter->second.size(); ++j) {
+                    /*cout << iter->second[i]->get_name() << " " << iter->second[j]->get_name() << endl;
+                    vector<unsigned long long> sig1 = iter->second[i]->get_signature();
+                    vector<unsigned long long> sig2 = iter->second[j]->get_signature();
+                    
+                    cout << "compare" << endl;
+                    for (int m = 0; m < sig1.size(); ++m) {
+                        cout << sig1[m] << " ";
+                    }
+                    cout << endl;
+                    for (int m = 0; m < sig2.size(); ++m) {
+                        cout << sig2[m] << " ";
+                    }
+                    cout << endl;
+*/
+                    if (!(iter->second[i]->sig_equiv(*(iter->second[j])))) {
+                        candidate_muxes.push_back(
+                                make_pair(iter->second[i], iter->second[j]));
+                    }
+                }
+            }
+        }
+    }
+    cout << "Bins: " << num_bins << endl;
+    cout << "Number of matching test signatures: " << matching_tests << endl;
+    cout << "Number of candidate mux sites: " << candidate_muxes.size() << endl;
+
+
+    // ?! prune down with random sigs
+    // ?! report number of candidates (all pairs)
+
+    // ?! randomly pick pairs -- always choose higher level -- mark as visited
+
+    // ?! try observable as a swap (check candidates) -- abort if too few left
+
+    // ?! add mux (need mux code)
+
+
+}
+
 
 void EncryptedCircuit::add_random_xors(int num_xors)
 {

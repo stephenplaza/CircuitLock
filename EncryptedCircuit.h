@@ -18,7 +18,12 @@ class EncryptedCircuit : public Circuit {
      * be an error if one attempts to add too many XORs.
     */
     void add_random_xors(int num_xors);
-    
+   
+    /*!
+     * Adds MUXes between two signals to preserve testing.
+    */
+    void add_test_mux(int num_muxes);
+ 
     /*!
      * Prints the key wire and its unlocking value.
     */
