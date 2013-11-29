@@ -3,6 +3,7 @@
 #include "OptionParser.h"
 #include "utils.h"
 #include "CrackKey.h"
+#include <cstdlib>
 
 using namespace EschewObfuscation;
 using std::string;
@@ -17,6 +18,7 @@ int main(int argc, char** argv)
     int random_xors = 0;
     int lock_mux = 0;
     bool crack_key = false;
+    int random_seed = 0;
 
     try {
         OptionParser parser("Program for obfuscating and cracking a combinational circuit"); 
@@ -26,7 +28,10 @@ int main(int argc, char** argv)
         parser.add_option(random_xors, "lock-mux", "Number of random test-aware MUXs to add");
         parser.add_option(test_file, "test-file", "File containing test vectors");
         parser.add_option(crack_key, "crack-key", "Try to crack the key");    
+        parser.add_option(random_seed, "random-seed", "Initial seed to use for execution");    
         parser.parse_options(argc, argv);
+
+        srand(random_seed);
 
         TechLibrary library;
         EncryptedCircuit circuit(blif_file, &library);

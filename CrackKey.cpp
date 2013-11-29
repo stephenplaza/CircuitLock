@@ -1,7 +1,6 @@
 #include "CrackKey.h"
 #include "EncryptedCircuit.h"
 #include <iostream>
-#include <cmath>
 #include <cstdlib>
 
 using std::vector;
@@ -14,7 +13,6 @@ const int SEARCH_LIMIT = 1000000000;
 bool CrackKey::generate_key(vector<bool>& key_values, int rand_sim,
         bool use_test, int rand_seed)
 {
-    srand(rand_seed);
     bool use_rand = false;
     if (rand_sim > 0) {
         use_rand = true;
