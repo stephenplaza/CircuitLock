@@ -16,10 +16,10 @@ int main(int argc, char** argv)
     string output_file;
     string test_file;
     int random_xors = 0;
-    int lock_mux = 0;
     bool crack_key = false;
     int random_seed = 0;
     int random_mux = 0;
+    int test_rounds = 0;
 
     try {
         OptionParser parser("Program for obfuscating and cracking a combinational circuit"); 
@@ -28,7 +28,8 @@ int main(int argc, char** argv)
         parser.add_option(random_xors, "lock-randxor", "Number of random XORs to add");
         parser.add_option(random_mux, "lock-mux", "Number of random test-aware MUXs to add");
         parser.add_option(test_file, "test-file", "File containing test vectors");
-        parser.add_option(crack_key, "crack-key", "Try to crack the key");    
+        parser.add_option(crack_key, "crack-key", "Try to crack the key"); 
+        parser.add_option(test_rounds, "num-test-rounds", "Number of rounds of testing on mux locked circuit"); 
         parser.add_option(random_seed, "random-seed", "Initial seed to use for execution");    
         parser.parse_options(argc, argv);
 
@@ -51,7 +52,11 @@ int main(int argc, char** argv)
         if (random_mux > 0) {
             circuit.add_test_mux(random_mux);
             circuit.print_keys();
-            circuit.print_info();    
+            circuit.print_info();
+
+            while (test_rounds-- > 0) {
+                circuit.print_testability();
+            } 
         }
   
         /* 
@@ -83,7 +88,7 @@ int main(int argc, char** argv)
         }
         */
 
-        if (crack_key && ((random_xors > 0) || (lock_mux > 0))) {
+        if (crack_key && ((random_xors > 0) || (random_mux > 0))) {
             Circuit unlocked_circuit(blif_file, &library);
             unlocked_circuit.load_test_vectors(test_file);
             CrackKey crack(&unlocked_circuit, &circuit);

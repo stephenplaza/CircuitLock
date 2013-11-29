@@ -13,6 +13,8 @@ class Inst;
 class Port;
 class TechLibrary;
 
+enum ModType { FLIP, STUCK0, STUCK1 };
+
 class Circuit {
   public:
     Circuit(std::string filename, TechLibrary* library_);
@@ -78,7 +80,8 @@ class Circuit {
 
     void output_differences(Circuit* ckt1, int& num_out_mismatch, int& num_vec_mismatch);
 
-    bool observable_signal(Inst* inst);
+    bool observable_signal(Inst* inst, ModType mod = FLIP);
+    void print_testability();
 
     /*!
      * Levelization requires that the input_wires vector

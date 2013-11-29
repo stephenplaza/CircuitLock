@@ -754,10 +754,32 @@ void Circuit::simulate(vector<vector<unsigned long long> >& input_vectors,
     }
 }
 
+void Circuit::print_testability()
+{
+    simulate_test();
+    int num_sites = 0;
+    int num_found = 0;
+    for (int i = 0; i < linsts.size(); ++i) {
+        Wire* owire = linsts[i]->get_output(0)->get_wire();
+        if (owire->is_output()) {
+            continue;
+        } 
+        num_sites += 2;
+        if (observable_signal(linsts[i], STUCK1)) {
+            ++num_found;
+        }
+        if (observable_signal(linsts[i], STUCK0)) {
+            ++num_found;
+        }
+    } 
+    
+    cout << "Testability of candidate gates: " << 
+        double(num_found) / double(num_sites) * 100 << endl;
+}
 
 
 // true if current input signatures reveal that the given signal is observable
-bool Circuit::observable_signal(Inst* inst)
+bool Circuit::observable_signal(Inst* inst, ModType mod)
 {
     assert(sim_patterns > 0);
 
@@ -778,7 +800,15 @@ bool Circuit::observable_signal(Inst* inst)
             }
 
             if (linsts[i] == inst) {
-                owire->set_sig_temp(~(owire->get_sig_temp()));
+                if (mod == FLIP) {
+                    owire->set_sig_temp(~(owire->get_sig_temp()));
+                } else if (mod == STUCK0) {
+                    owire->set_sig_temp(0);
+                } else if (mod == STUCK1) {
+                    owire->set_sig_temp(~(0));
+                } else {
+                    assert(0);
+                }
             }
         } 
 
