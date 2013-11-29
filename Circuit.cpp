@@ -25,12 +25,17 @@ using std::map;
 
 Circuit::Circuit(string filename, TechLibrary* library_) :
     library(library_), num_insts(0), num_wires(0), num_gates(0),
-    num_ports(0), max_level(0), sim_patterns(0)
+    num_ports(0), max_level(0), sim_patterns(0), disable_signature_clear(false)
 {
     // will throw an Error if incorrectly formatted
     parse_blif(filename);
 
     levelize();
+}
+
+bool sort_wire(Wire* wire1, Wire* wire2)
+{
+    return (wire1->get_name() < wire2->get_name());
 }
 
 /*!
@@ -306,8 +311,8 @@ void Circuit::parse_blif(string filename)
         }
     }
     ifile.close();
-    sort(output_wires.begin(), output_wires.end());
-    sort(input_wires.begin(), input_wires.end());
+    sort(output_wires.begin(), output_wires.end(), sort_wire);
+    sort(input_wires.begin(), input_wires.end(), sort_wire);
 }
 
 // return blif token in token. return value is: 0: normal token, 1: end-of-line,
@@ -686,17 +691,53 @@ bool Circuit::check_input_cone(Port* port2, Port* driver)
     return found;
 }
     
-void Circuit::simulate(int num_sims)
+void Circuit::create_random_inputs(int num_sims)
 {
-    if (sim_patterns > 0) {
-        clear_signatures();
-    }
-    sim_patterns += num_sims;
-    
+    num_rand_vec = num_sims;
+    rand_input_vecs.clear();
+    rand_input_vecs.resize(input_wires.size());
+
     while (num_sims > 0) {
         for (int i = 0; i < int(input_wires.size()); ++i) {
             input_wires[i]->randomize();
+            rand_input_vecs[i].push_back(input_wires[i]->get_sig_temp());
         }
+        num_sims -= SIGSTEP;
+    }
+}
+
+void Circuit::simulate(int num_sims)
+{
+    vector<vector<unsigned long long> > hold_vecs = rand_input_vecs; 
+    int num_rand_vec_hold = num_rand_vec;
+    create_random_inputs(num_sims);    
+    simulate(rand_input_vecs, num_sims);
+    rand_input_vecs = hold_vecs;
+    num_rand_vec = num_rand_vec_hold;
+}
+
+void Circuit::simulate_random()
+{
+    simulate(rand_input_vecs, num_rand_vec);
+}
+
+void Circuit::simulate_test()
+{
+    simulate(input_vecs, num_test_vec);
+}
+
+void Circuit::simulate(vector<vector<unsigned long long> >& input_vectors,
+        int num_sims)
+{
+    if (!disable_signature_clear && (sim_patterns > 0)) {
+        clear_signatures();
+    }
+    sim_patterns += num_sims;
+
+    for (int index = 0; index < int(input_vectors[0].size()); ++index) {
+        for (int i = 0; i < int(input_wires.size()); ++i) {
+            input_wires[i]->set_sig_temp(input_vectors[i][index]); 
+        } 
 
         for (int i = 0; i < int(linsts.size()); ++i) {
             if (num_sims < int(SIGSTEP)) {
@@ -705,11 +746,12 @@ void Circuit::simulate(int num_sims)
                 linsts[i]->evaluate(SIGSTEP);
             }
         } 
-
         num_sims -= SIGSTEP;
         commit_signatures();
     }
 }
+
+
 
 // true if current input signatures reveal that the given signal is observable
 bool Circuit::observable_signal(Inst* inst)
@@ -780,7 +822,7 @@ void Circuit::load_test_vectors(string testfile)
         throw Error("Test file is missing circuit inputs");
     }
 
-    int num_vec = 1;
+    num_test_vec = 1;
     int input_spot = 0;
     char val;
     while (fin >> val) {
@@ -789,7 +831,7 @@ void Circuit::load_test_vectors(string testfile)
         } 
         if (input_spot == int(testpos2wire_index.size())) {
             input_spot = 0;
-            ++num_vec;
+            ++num_test_vec;
         }
         
         int sim_val;
@@ -802,8 +844,8 @@ void Circuit::load_test_vectors(string testfile)
         }
        
         int pos = testpos2wire_index[input_spot];
-        int index = (num_vec - 1)/ SIGSTEP;
-        int leftover = sim_patterns%SIGSTEP;
+        int index = (num_test_vec - 1)/ SIGSTEP;
+        int leftover = (num_test_vec-1)%SIGSTEP;
         
         if (int(input_vecs[pos].size()) == index) {
             input_vecs[pos].push_back(0);
@@ -814,7 +856,7 @@ void Circuit::load_test_vectors(string testfile)
     }
 
     fin.close();
-    cout << "Num input patterns: " << num_vec << endl;
+    cout << "Num input patterns: " << num_test_vec << endl;
 }
 
 void Circuit::clear_signatures()
@@ -840,12 +882,30 @@ void Circuit::commit_signatures()
     }
 }
 
-bool Circuit::circuit_sig_equiv(Circuit& ckt1)
+void Circuit::output_differences(Circuit* ckt1, int& num_out_mismatch, int& num_vec_mismatch)
 {
-    assert(output_wires.size() == ckt1.output_wires.size());
+    num_out_mismatch = 0;
+    num_vec_mismatch = 0;
+
+    assert(output_wires.size() == ckt1->output_wires.size());
     
     for (int i = 0; i < int(output_wires.size()); ++i) {
-        if (!(output_wires[i]->sig_equiv(*(ckt1.output_wires[i])))) {
+        int diffs = output_wires[i]->sig_diffs(*(ckt1->output_wires[i]));
+        if (diffs > 0) {
+            ++num_out_mismatch;
+        }
+        num_vec_mismatch += diffs;
+    }
+}
+
+bool Circuit::circuit_sig_equiv(Circuit* ckt1)
+{
+    assert(output_wires.size() == ckt1->output_wires.size());
+    
+    for (int i = 0; i < int(output_wires.size()); ++i) {
+        assert(output_wires[i]->get_name() == output_wires[i]->get_name());
+
+        if (!(output_wires[i]->sig_equiv(*(ckt1->output_wires[i])))) {
             return false;
         }
     }

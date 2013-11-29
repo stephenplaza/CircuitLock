@@ -25,14 +25,33 @@ void EncryptedCircuit::print_keys()
     cout << endl;
 }
 
-void EncryptedCircuit::set_key(Key key, int value)
+bool EncryptedCircuit::get_key_value(unsigned int id)
 {
-    if (sym_table.find(key) == sym_table.end()) {
-        throw Error("Requested key does not exist");
-    }
-    
-    Wire* wire = (Wire*)(sym_table[key]);
-    if (value > 0) {
+    if (id >= key_wires.size()) {
+        throw Error("Invalid key id given");
+    } 
+    Wire* wire = key_wires[id];
+    return bool(key_values[wire->get_name()]);
+}
+
+bool EncryptedCircuit::get_current_key_value(unsigned int id)
+{
+    if (id >= key_wires.size()) {
+        throw Error("Invalid key id given");
+    } 
+    Wire* wire = key_wires[id];
+    return bool(wire->get_sig_temp());
+}
+
+void EncryptedCircuit::toggle_key(unsigned int key_id)
+{
+    if (key_id >= key_wires.size()) {
+        throw Error("Invalid key id given");
+    } 
+    Wire* wire = key_wires[key_id];
+    bool value = wire->get_sig_temp();
+
+    if (!value) {
         wire->set_sig_temp(~((unsigned long long)(0)));
     } else {
         wire->set_sig_temp(((unsigned long long)(0)));
@@ -43,6 +62,7 @@ void EncryptedCircuit::randomly_set_keys()
 {
     for (int i = 0; i < int(key_wires.size()); ++i) {
         if (rand()%2) {
+        //if (key_values[key_wires[i]->get_name()]) {
             key_wires[i]->set_sig_temp(~((unsigned long long)(0)));
         } else {
             key_wires[i]->set_sig_temp(((unsigned long long)(0)));

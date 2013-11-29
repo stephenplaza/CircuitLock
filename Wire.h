@@ -59,7 +59,10 @@ class Wire : public CircuitElement {
         sig_temp = sig_temp_;
     }
     
-
+    int num_sig_spots()
+    {
+        return signatures.size();
+    }
 
     void commit_signature()
     {
@@ -71,6 +74,7 @@ class Wire : public CircuitElement {
         signatures.clear();
     }
 
+    int sig_diffs(Wire& wire1);
     bool sig_equiv(Wire& wire1); 
     
     void randomize();

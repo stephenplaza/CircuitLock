@@ -13,7 +13,7 @@ if (NOT EXISTS ${BUILDLOC}/bin)
     file (MAKE_DIRECTORY ${BUILDLOC}/bin)
 endif() 
 
-add_executable(CircuitLock TechLibrary.cpp Wire.cpp Inst.cpp Circuit.cpp EncryptedCircuit.cpp main.cpp)
+add_executable(CircuitLock TechLibrary.cpp Wire.cpp Inst.cpp Circuit.cpp EncryptedCircuit.cpp CrackKey.cpp main.cpp)
 target_link_libraries(CircuitLock boost_system boost_program_options)
 
 # testing requires python

@@ -31,17 +31,43 @@ class Circuit {
     } 
 
     /*!
-     * Basic simulation of primary inputs.
+     * Basic simulation of primary inputs using random simulation.
+     * Signatures are saved but the random inputs are not.
     */
     void simulate(int num_sims = SIGSTEP);
 
     /*!
+     * Simulate the saved random simulation vectors.
+    */
+    void simulate_random();
+   
+    /*!
+     * Simulate the saved test simulation vectors.
+    */
+    void simulate_test();
+
+    void set_disable_signature_clear(bool flag)
+    {
+        disable_signature_clear = flag;
+    }
+
+    /*!
+     * Create random input vectors and store.
+    */
+    void create_random_inputs(int num_sims = SIGSTEP);
+
+    /*!
      * Checks for equivalence of signatures between circuits.
     */
-    virtual bool circuit_sig_equiv(Circuit& ckt1);
+    virtual bool circuit_sig_equiv(Circuit* ckt1);
 
     void clear_signatures();
     void commit_signatures();
+
+    int get_num_test_vectors() const
+    {
+        return num_test_vec;
+    }
 
     /*!
      * Takes a series of test vectors (1st line is a list of PI
@@ -49,7 +75,9 @@ class Circuit {
     */
     void load_test_vectors(std::string testfile);
     void print_info();
-   
+
+    void output_differences(Circuit* ckt1, int& num_out_mismatch, int& num_vec_mismatch);
+
     bool observable_signal(Inst* inst);
 
     /*!
@@ -57,6 +85,17 @@ class Circuit {
      * be initialized.
     */
     virtual void levelize();
+
+    std::vector<std::vector<unsigned long long> > get_random_inputs()
+    {
+        return rand_input_vecs; 
+    }
+   
+    void set_random_inputs(std::vector<std::vector<unsigned long long> >& input_vecs2, int rand_sim)
+    {
+        rand_input_vecs = input_vecs2;
+        num_rand_vec = rand_sim;
+    } 
 
     void load_test_vectors(const char* testfile);
 
@@ -74,12 +113,16 @@ class Circuit {
     int num_insts, num_wires, num_gates, num_ports, max_level;
 
   private:
+    void simulate(std::vector<std::vector<unsigned long long> >& input_vectors,
+            int num_sims);
     void parse_blif(std::string filename);
     int get_blif_token(std::string& token);
     int get_blif_ttable(std::string& token);
     Wire* find_wire_insert(std::string& name);
 
     int sim_patterns;
+    int num_test_vec;
+    int num_rand_vec;
 
     //! blif file stream 
     std::fstream ifile;
@@ -96,7 +139,9 @@ class Circuit {
     std::vector<Wire*> output_wires;
 
     std::vector<std::vector<unsigned long long> > input_vecs;
+    std::vector<std::vector<unsigned long long> > rand_input_vecs;
 
+    bool disable_signature_clear;
 };
 
 

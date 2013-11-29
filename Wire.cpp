@@ -24,6 +24,23 @@ void Wire::reassign_outputs(Wire* wire)
     wire->outputs.clear();
 }
 
+int Wire::sig_diffs(Wire& wire1)
+{
+    assert(signatures.size() == wire1.signatures.size());
+    int diffs = 0;
+    for (int i = 0; i < int(signatures.size()); ++i) {
+        unsigned long long mask = 1;
+        for (int j = 0; j < int(SIGSTEP); ++j) {
+            unsigned long long val = signatures[i] & (mask << j);
+            unsigned long long val1 = wire1.signatures[i] & (mask << j);
+            if (val != val1) {
+                ++diffs;
+            }
+        }
+    }
+    return diffs;
+} 
+
 bool Wire::sig_equiv(Wire& wire1)
 {
     assert(signatures.size() == wire1.signatures.size());

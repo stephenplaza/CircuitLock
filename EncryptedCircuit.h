@@ -27,12 +27,20 @@ class EncryptedCircuit : public Circuit {
     /*!
      * Set the key to a value.
     */ 
-    void set_key(Key key, int value);
+    void toggle_key(unsigned int key_id);
 
     /*!
      * Randomly set the value of all of the keys.
     */
     void randomly_set_keys();
+
+    int get_num_keys() const
+    {
+        return key_wires.size();
+    }
+    
+    bool get_key_value(unsigned int id);
+    bool get_current_key_value(unsigned int id);
 
     void levelize();
   
