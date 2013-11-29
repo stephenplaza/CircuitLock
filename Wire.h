@@ -32,6 +32,11 @@ class Wire : public CircuitElement {
         return outputs.size();
     }
 
+    Port* get_output(int id)
+    {
+        return outputs[id];
+    }
+
     /*!
      * Reassign the output to the given wire to
      * the current object instance.

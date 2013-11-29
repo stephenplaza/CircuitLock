@@ -490,6 +490,11 @@ void Circuit::write_blif(string filename)
                     }
                 }
                 if (wire && (wire->num_outputs() > 0)) {
+                    if (inst2->get_is_latch() && wire->num_outputs() == 1) {
+                        if(wire->get_output(0)->get_inst()->get_is_port()) {
+                            continue;
+                        }
+                    }
                     bliffile<<port2->get_name()<<" ";
                 }
             }
@@ -506,7 +511,9 @@ void Circuit::write_blif(string filename)
                 port2 = inst2->get_input(0);
                 Wire* wire = port2->get_wire();
                 if (wire && wire->get_driver()) {
-                    bliffile << port2->get_name() << " ";
+                    if (!(wire->get_driver()->get_inst()->get_is_latch())) {
+                        bliffile << port2->get_name() << " ";
+                    }
                 }
             }
         }
@@ -861,12 +868,13 @@ void Circuit::load_test_vectors(string testfile)
     while (fin >> val) {
         if (val == '\n') {
             continue;
-        } 
+        }
+
         if (input_spot == int(testpos2wire_index.size())) {
             input_spot = 0;
             ++num_test_vec;
         }
-        
+
         int sim_val;
         if (val == '0') {
             sim_val = 0;
