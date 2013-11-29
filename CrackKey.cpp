@@ -6,7 +6,7 @@
 using std::vector;
 using std::cout; using std::endl;
 
-const int VERIFY_LIMIT = 10000;    
+//const int VERIFY_LIMIT = 100000;    
 const int SEARCH_LIMIT = 1000000000;
 
 // ?? allow one to specify simulation step
@@ -62,7 +62,7 @@ bool CrackKey::generate_key(vector<bool>& key_values, int rand_sim,
                     ++matches;
                 }
             }
-            cout << "Matches: " << matches << " remaining errors: " << 
+            cout << "Matches: " << matches << "; remaining errors: " << 
                 num_bad_outputs1 << ", " << num_bad_vectors1 << endl;
             
             for (int i = 0; i < int(examined.size()); ++i) {
@@ -112,7 +112,7 @@ bool CrackKey::generate_key(vector<bool>& key_values, int rand_sim,
 
         if (!num_bad_vectors) {
             // use same vecs between
-            vector<vector<unsigned long long> > saved_vecs; 
+            /*vector<vector<unsigned long long> > saved_vecs; 
             if (use_rand) {
                 saved_vecs = locked_circuit->get_random_inputs();
             }
@@ -123,17 +123,31 @@ bool CrackKey::generate_key(vector<bool>& key_values, int rand_sim,
             unlocked_circuit->simulate_random();
 
             // check equivalence between circuits up to simulation 
-            if (locked_circuit->circuit_sig_equiv(unlocked_circuit)) {
+            if (locked_circuit->circuit_sig_equiv(unlocked_circuit)) {*/
+
+            // oracle mode
+            bool equal = true;  
+            for (int i = 0; i < num_keys; ++i) {
+                if (locked_circuit->get_current_key_value(i) != locked_circuit->get_key_value(i)) {
+                    if (equal) {
+                        cout << "mismatch at: ";
+                    }
+                    equal = false;
+                    cout << i << " ";
+                }
+            } 
+            if (equal) {
                 for (int i = 0; i < num_keys; ++i) {
                     key_values.push_back(locked_circuit->get_current_key_value(i));
                 }
                 found = true;
                 break; 
             } else {
-                if (use_rand) {
+                cout << endl;
+                /*if (use_rand) {
                     locked_circuit->set_random_inputs(saved_vecs, rand_sim);
                     unlocked_circuit->set_random_inputs(saved_vecs, rand_sim);
-                }
+                }*/
                 cout << "restarting" << endl;
                 ++num_restarts;
                 for (int i = 0; i < int(examined.size()); ++i) {
@@ -174,5 +188,5 @@ void CrackKey::print_info()
     cout << "Num search patterns used: " << num_input_patterns << endl;
     cout << "Num keys tried: " << num_iterations << endl;
     cout << "Num restarts: " << num_restarts << endl;
-    cout << "Num verification vectors: " << VERIFY_LIMIT << endl;
+    //cout << "Num verification vectors: " << VERIFY_LIMIT << endl;
 }

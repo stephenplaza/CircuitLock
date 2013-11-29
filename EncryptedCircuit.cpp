@@ -182,7 +182,7 @@ void EncryptedCircuit::add_random_xors(int num_xors)
     int num_ops = linsts.size();
 
     // generate simulation vectors that the testing will work against
-    simulate();
+    simulate(2048);
 
     vector<Inst*> chosen_insts;
     int total_nonobservable = 0;
