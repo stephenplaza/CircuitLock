@@ -43,6 +43,7 @@ int main(int argc, char** argv)
 
         srand(random_seed);
 
+        cout << "Read Circuit" << endl;
         TechLibrary library;
         EncryptedCircuit circuit(blif_file, &library);
         circuit.print_info();
@@ -56,12 +57,14 @@ int main(int argc, char** argv)
         }
 
         if (random_xors > 0) {
+            cout << "Add XORs" << endl;
             circuit.add_random_xors(random_xors);
             circuit.print_keys();
             circuit.print_info();    
         }
 
         if (random_mux > 0) {
+            cout << "Add MUXs" << endl;
             circuit.add_test_mux(random_mux, mux_cands);
             circuit.print_keys();
             circuit.print_info();
@@ -128,6 +131,7 @@ int main(int argc, char** argv)
         unordered_set<Inst*> stuck0;
         unordered_set<Inst*> stuck1;
         if ((test_rounds > 0) && (random_mux > 0)) {
+            cout << "Compute fault percentage" << endl;
             vector<Inst*> new_gates = circuit.get_new_gates();
             for (int i = 0; i < new_gates.size(); ++i) {
                 new_gates[i]->set_visited(true);
@@ -147,6 +151,7 @@ int main(int argc, char** argv)
         }
 
         if (crack_key && ((random_xors > 0) || (random_mux > 0))) {
+            cout << "Crack the keys" << endl;
             bool use_test = true;
             int rand_sim = 0;
             if (random_mux > 0) {
@@ -170,8 +175,8 @@ int main(int argc, char** argv)
                 if (equal) {
                     cout << "Found correct key" << endl;
                 }
-                crack.print_info();
             } 
+            crack.print_info();
         }
 
 

@@ -46,7 +46,11 @@ bool CrackKey::generate_key(vector<bool>& key_values, int rand_sim,
     int last_bad = -1;
     int num_bads = 0;
 
-    while (num_input_patterns < SEARCH_LIMIT) {
+    double timeout = 3600;
+    clock_t initial_clock = clock();
+
+    //while (num_input_patterns < SEARCH_LIMIT) {
+    while (((clock() - initial_clock) / double(CLOCKS_PER_SEC)) < timeout) {
 
         // in theory, outputs could be saved from previous
         // configuration (this doesn't count against num_input_patterns)

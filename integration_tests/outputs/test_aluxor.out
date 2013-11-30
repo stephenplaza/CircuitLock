@@ -1,7 +1,9 @@
+Read Circuit
 Num instances: 134
 Num wires: 126
 Num of logic gates: 112
 Num levels: 12
+Add XORs
 Num non-observable: 0
 key-55(0) key-52(1) key-14(1) key-1(1) key-36(1) key-46(0) key-60(0) key-26(0) key-54(1) key-19(1) key-17(1) key-2(1) key-35(1) key-47(1) key-61(1) key-28(0) key-27(1) key-57(1) key-18(0) key-11(1) key-4(1) key-16(0) key-3(1) key-34(0) key-44(1) key-62(0) key-29(0) key-59(1) key-20(1) key-56(1) key-10(0) key-5(0) key-33(0) key-42(0) key-45(1) key-63(0) key-58(0) key-21(1) key-51(1) key-48(0) key-13(1) key-6(1) key-39(1) key-32(0) key-43(1) key-22(1) key-50(0) key-8(0) key-49(0) key-12(1) key-7(1) key-38(0) key-31(0) key-40(1) key-24(1) key-23(1) key-53(0) key-9(0) key-15(1) key-0(0) key-37(1) key-30(1) key-41(0) key-25(1) 
 Num instances: 262
