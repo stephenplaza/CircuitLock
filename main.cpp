@@ -4,10 +4,13 @@
 #include "utils.h"
 #include "CrackKey.h"
 #include <cstdlib>
+#include "Inst.h"
 
 using namespace EschewObfuscation;
 using std::string;
 using std::cout; using std::endl;
+using std::vector;
+using std::tr1::unordered_set;
 using std::vector;
 
 int main(int argc, char** argv)
@@ -21,6 +24,8 @@ int main(int argc, char** argv)
     int random_mux = 0;
     int test_rounds = 0;
     bool mux_cands = false;
+    bool compute_testability = false;
+
 
     try {
         OptionParser parser("Program for obfuscating and cracking a combinational circuit"); 
@@ -33,6 +38,7 @@ int main(int argc, char** argv)
         parser.add_option(test_rounds, "num-test-rounds", "Number of rounds of testing on mux locked circuit"); 
         parser.add_option(random_seed, "random-seed", "Initial seed to use for execution");    
         parser.add_option(mux_cands, "mux-cands", "Show random MUX candidates", true, false, true); 
+        parser.add_option(compute_testability, "compute-testability", "Compute testability of original circuit"); 
         parser.parse_options(argc, argv);
 
         srand(random_seed);
@@ -45,6 +51,10 @@ int main(int argc, char** argv)
             circuit.load_test_vectors(test_file);
         }
 
+        if (compute_testability) {
+            circuit.print_testability();            
+        }
+
         if (random_xors > 0) {
             circuit.add_random_xors(random_xors);
             circuit.print_keys();
@@ -55,10 +65,6 @@ int main(int argc, char** argv)
             circuit.add_test_mux(random_mux, mux_cands);
             circuit.print_keys();
             circuit.print_info();
-
-            while (test_rounds-- > 0) {
-                circuit.print_testability();
-            } 
         }
 
 /*
@@ -118,6 +124,28 @@ int main(int argc, char** argv)
             exit(1);
         }
         */
+    
+        unordered_set<Inst*> stuck0;
+        unordered_set<Inst*> stuck1;
+        if ((test_rounds > 0) && (random_mux > 0)) {
+            vector<Inst*> new_gates = circuit.get_new_gates();
+            for (int i = 0; i < new_gates.size(); ++i) {
+                new_gates[i]->set_visited(true);
+            }
+
+            circuit.correctly_set_keys();
+            circuit.print_testability();            
+            
+            while (test_rounds-- > 0) { 
+                circuit.randomly_set_keys();
+                circuit.print_testability_prob(stuck0, stuck1);
+            }
+
+            for (int i = 0; i < new_gates.size(); ++i) {
+                new_gates[i]->set_visited(false);
+            }
+        }
+
         if (crack_key && ((random_xors > 0) || (random_mux > 0))) {
             bool use_test = true;
             int rand_sim = 0;

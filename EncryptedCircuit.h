@@ -44,6 +44,8 @@ class EncryptedCircuit : public Circuit {
     */
     void correctly_set_keys();
 
+    void print_testability_prob(std::tr1::unordered_set<Inst*>& stuck0,
+        std::tr1::unordered_set<Inst*>& stuck1);
 
     int get_num_keys() const
     {
@@ -54,7 +56,12 @@ class EncryptedCircuit : public Circuit {
     bool get_current_key_value(unsigned int id);
 
     void levelize();
-  
+ 
+    std::vector<Inst*> get_new_gates()
+    {
+        return new_gates;
+    }
+
   private:
     Inst* create_cover(Inst* inst_correct, Inst* inst_cover, CoverType cover);
 
@@ -70,6 +77,7 @@ class EncryptedCircuit : public Circuit {
     //! the unlocking key
     std::tr1::unordered_map<Key, int> key_values;
 
+    std::vector<Inst*> new_gates;
 };
 
 #endif

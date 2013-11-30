@@ -781,6 +781,10 @@ void Circuit::print_testability()
         if (owire->is_output()) {
             continue;
         } 
+        if (linsts[i]->is_visited()) {
+            continue;
+        }
+
         num_sites += 2;
         if (observable_signal(linsts[i], STUCK1)) {
             ++num_found;
@@ -791,7 +795,8 @@ void Circuit::print_testability()
     } 
     
     cout << "Testability of candidate gates: " << 
-        double(num_found) / double(num_sites) * 100 << endl;
+        double(num_found) / double(num_sites) * 100 << "; Num remaining: " 
+        << num_sites - num_found << "; Num faults: " << num_sites << endl;
 }
 
 

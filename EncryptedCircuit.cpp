@@ -160,7 +160,10 @@ void EncryptedCircuit::add_test_mux(int num_muxes, bool get_cands)
     vector<pair<Wire*, Wire*> > muxed_wires;
     vector<CoverType> muxed_types;
     int total_nonobservable = 0;
-
+    
+    {
+    ScopeTime timer;
+    cout << "Finding MUX covers in circuit" << endl;
     while (num_muxes > 0) {
         if (num_ops < num_muxes) {
             throw Error("Request for more keys than gates");
@@ -239,6 +242,7 @@ void EncryptedCircuit::add_test_mux(int num_muxes, bool get_cands)
 
         insert_mux(inst_correct, inst_cover, key, value);
     }
+    }
 
     for (int i = 0; i < int(linsts.size()); ++i) {
         // clear flags
@@ -247,6 +251,42 @@ void EncryptedCircuit::add_test_mux(int num_muxes, bool get_cands)
 
     levelize();
 }
+
+void EncryptedCircuit::print_testability_prob(unordered_set<Inst*>& stuck0, unordered_set<Inst*>& stuck1)
+{
+    simulate_test();
+    int num_sites = 0;
+    int num_found = 0;
+    for (int i = 0; i < linsts.size(); ++i) {
+        Wire* owire = linsts[i]->get_output(0)->get_wire();
+        if (owire->is_output()) {
+            continue;
+        }
+        if (linsts[i]->is_visited()) {
+            continue;
+        }
+
+        num_sites += 2;
+        if ((stuck1.find(linsts[i]) != stuck1.end()) ||
+                observable_signal(linsts[i], STUCK1)) {
+            stuck1.insert(linsts[i]);
+            ++num_found;
+        }
+        if ((stuck0.find(linsts[i]) != stuck1.end()) ||
+                observable_signal(linsts[i], STUCK0)) {
+            stuck0.insert(linsts[i]);
+            ++num_found;
+        }
+    } 
+    
+    cout << "Mux random testability: " << 
+        double(num_found) / double(num_sites) * 100 << "; Num remaining: " 
+        << num_sites - num_found << "; Num faults: " << num_sites << endl;
+}
+
+
+
+
 
 
 void EncryptedCircuit::add_random_xors(int num_xors)
@@ -331,6 +371,7 @@ Inst* EncryptedCircuit::create_cover(Inst* inst_correct, Inst* inst_cover, Cover
     string inst_name = wire_name + "name";
 
     Inst* new_inst = new Inst(inst_name); 
+    new_gates.push_back(new_inst);
     lib_insts.push_back(new_inst);
     ++num_insts;
     ++num_gates;
@@ -382,6 +423,7 @@ void EncryptedCircuit::insert_mux(Inst* inst, Inst* cover, string key_name, int 
     string key_out = key_name + "-mux";
     string inst_name = key_out+"name";
     Inst* new_inst = new Inst(inst_name); 
+    new_gates.push_back(new_inst);
     lib_insts.push_back(new_inst);
     ++num_insts;
     ++num_gates;
@@ -465,6 +507,7 @@ void EncryptedCircuit::insert_xor(Inst* inst, string key_name, int value)
     string inst_name = key_out+"name";
     Inst* new_inst = new Inst(inst_name); 
     lib_insts.push_back(new_inst);
+    new_gates.push_back(new_inst);
     ++num_insts;
     ++num_gates;
     sym_table[inst_name] = new_inst;
