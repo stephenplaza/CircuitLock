@@ -876,7 +876,7 @@ bool Circuit::observable_signal(Inst* inst, ModType mod)
                 } else if (mod == STUCK0) {
                     owire->set_sig_temp(0);
                 } else if (mod == STUCK1) {
-                    owire->set_sig_temp(~(0));
+                    owire->set_sig_temp(~((unsigned long long)(0)));
                 } else {
                     assert(0);
                 }
