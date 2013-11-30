@@ -874,10 +874,8 @@ bool Circuit::observable_signal(Inst* inst, ModType mod)
                 if (mod == FLIP) {
                     owire->set_sig_temp(~(owire->get_sig_temp()));
                 } else if (mod == STUCK0) {
-                    cout << "blah0" << endl;
                     owire->set_sig_temp(0);
                 } else if (mod == STUCK1) {
-                    cout << "blah1" << endl;
                     owire->set_sig_temp(~((unsigned long long)(0)));
                 } else {
                     assert(0);
