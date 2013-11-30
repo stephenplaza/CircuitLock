@@ -20,6 +20,7 @@ int main(int argc, char** argv)
     int random_seed = 0;
     int random_mux = 0;
     int test_rounds = 0;
+    bool mux_cands = false;
 
     try {
         OptionParser parser("Program for obfuscating and cracking a combinational circuit"); 
@@ -31,6 +32,7 @@ int main(int argc, char** argv)
         parser.add_option(crack_key, "crack-key", "Try to crack the key"); 
         parser.add_option(test_rounds, "num-test-rounds", "Number of rounds of testing on mux locked circuit"); 
         parser.add_option(random_seed, "random-seed", "Initial seed to use for execution");    
+        parser.add_option(mux_cands, "mux-cands", "Show random MUX candidates", true, false, true); 
         parser.parse_options(argc, argv);
 
         srand(random_seed);
@@ -50,7 +52,7 @@ int main(int argc, char** argv)
         }
 
         if (random_mux > 0) {
-            circuit.add_test_mux(random_mux);
+            circuit.add_test_mux(random_mux, mux_cands);
             circuit.print_keys();
             circuit.print_info();
 
@@ -58,7 +60,36 @@ int main(int argc, char** argv)
                 circuit.print_testability();
             } 
         }
-  
+
+/*
+        Circuit unlocked_circuit(blif_file, &library);
+        unlocked_circuit.load_test_vectors(test_file);
+        circuit.correctly_set_keys();
+        circuit.create_random_inputs(1024);
+        vector<vector<unsigned long long> > rand_vecs = circuit.get_random_inputs();
+        unlocked_circuit.set_random_inputs(rand_vecs, 1024);
+        circuit.simulate_random();
+        unlocked_circuit.simulate_random();
+        int num_bad_outputs1, num_bad_vectors1;
+        circuit.output_differences(&unlocked_circuit, num_bad_outputs1, num_bad_vectors1);
+        cout << "Num diffs: " << num_bad_outputs1 << " " << num_bad_vectors1 << endl;
+
+        circuit.randomly_set_keys();
+        circuit.simulate_random();
+        unlocked_circuit.simulate_random();
+        num_bad_outputs1, num_bad_vectors1;
+        circuit.output_differences(&unlocked_circuit, num_bad_outputs1, num_bad_vectors1);
+        cout << "Num diffs2: " << num_bad_outputs1 << " " << num_bad_vectors1 << endl;
+
+        circuit.simulate_test();
+        unlocked_circuit.simulate_test();
+        num_bad_outputs1, num_bad_vectors1;
+        circuit.output_differences(&unlocked_circuit, num_bad_outputs1, num_bad_vectors1);
+        cout << "Num diffs3: " << num_bad_outputs1 << " " << num_bad_vectors1 << endl;
+
+        exit(-1);
+*/
+ 
         /* 
         {
             circuit.randomly_set_keys();
@@ -87,13 +118,19 @@ int main(int argc, char** argv)
             exit(1);
         }
         */
-
         if (crack_key && ((random_xors > 0) || (random_mux > 0))) {
+            bool use_test = true;
+            int rand_sim = 0;
+            if (random_mux > 0) {
+                rand_sim = 1024;
+                use_test = false;
+            }
+
             Circuit unlocked_circuit(blif_file, &library);
             unlocked_circuit.load_test_vectors(test_file);
             CrackKey crack(&unlocked_circuit, &circuit);
             vector<bool> key_values;
-            if (crack.generate_key(key_values)) {
+            if (crack.generate_key(key_values, rand_sim, use_test)) {
                 bool equal = true;  
                 for (int i = 0; i < int(key_values.size()); ++i) {
                     if (key_values[i] != circuit.get_key_value(i)) {

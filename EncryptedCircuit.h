@@ -22,7 +22,7 @@ class EncryptedCircuit : public Circuit {
     /*!
      * Adds MUXes between two signals to preserve testing.
     */
-    void add_test_mux(int num_muxes);
+    void add_test_mux(int num_muxes, bool get_cands);
  
     /*!
      * Prints the key wire and its unlocking value.
@@ -39,6 +39,12 @@ class EncryptedCircuit : public Circuit {
     */
     void randomly_set_keys();
 
+    /*!
+     * Correctly set keys.
+    */
+    void correctly_set_keys();
+
+
     int get_num_keys() const
     {
         return key_wires.size();
@@ -50,6 +56,10 @@ class EncryptedCircuit : public Circuit {
     void levelize();
   
   private:
+    Inst* create_cover(Inst* inst_correct, Inst* inst_cover, CoverType cover);
+
+    void insert_mux(Inst* inst, Inst* cover, std::string key_name, int value);
+
     void insert_xor(Inst* inst, std::string name, int value);
 
     CoverType find_cover(Wire* wire1, Wire* wire2, Circuit& validation_circuit);

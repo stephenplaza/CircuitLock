@@ -796,6 +796,55 @@ void Circuit::print_testability()
 
 
 // true if current input signatures reveal that the given signal is observable
+bool Circuit::observable_cover(string inst_name, string wire_name, CoverType cover)
+{
+    Inst* inst = (Inst*) sym_table[inst_name];
+    Wire* wire = (Wire*) sym_table[wire_name];
+    assert(sim_patterns > 0);
+
+    Wire* owire = inst->get_output(0)->get_wire();
+    int num_patterns = (sim_patterns - 1)/ SIGSTEP + 1;
+    int leftover = sim_patterns%SIGSTEP;
+        
+    for (int j = 0; j < num_patterns; ++j) {
+        for (int i = 0; i < int(input_wires.size()); ++i) {
+            input_wires[i]->set_sig_temp(input_wires[i]->get_signature(j));
+        }
+
+        for (int i = 0; i < int(linsts.size()); ++i) {
+            if ((j == (num_patterns - 1)) && (leftover > 0)) {
+                linsts[i]->evaluate(leftover);
+            } else {
+                linsts[i]->evaluate(SIGSTEP);
+            }
+
+            if (linsts[i] == inst) {
+                if (cover == EQUAL) {
+                    owire->set_sig_temp((wire->get_sig_temp()));
+                } else if (cover == AND) {
+                    owire->set_sig_temp((wire->get_sig_temp() & owire->get_sig_temp()));
+                } else if (cover == OR) {
+                    owire->set_sig_temp((wire->get_sig_temp() | owire->get_sig_temp()));
+                } else {
+                    assert(0);
+                }
+            }
+        } 
+
+        for (int i = 0; i < int(output_wires.size()); ++i) {
+            if (output_wires[i]->get_sig_temp() != output_wires[i]->get_signature(j)) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+
+
+
+// true if current input signatures reveal that the given signal is observable
 bool Circuit::observable_signal(Inst* inst, ModType mod)
 {
     assert(sim_patterns > 0);

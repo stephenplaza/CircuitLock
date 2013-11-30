@@ -149,6 +149,7 @@ bool CrackKey::generate_key(vector<bool>& key_values, int rand_sim,
                     unlocked_circuit->set_random_inputs(saved_vecs, rand_sim);
                 }*/
                 cout << "restarting" << endl;
+                num_examined = 0;
                 ++num_restarts;
                 for (int i = 0; i < int(examined.size()); ++i) {
                     examined[i] = false;

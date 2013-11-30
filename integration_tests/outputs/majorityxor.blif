@@ -11,6 +11,6 @@
 .names key-0-xor f 
 0 1
 .names key-0 h key-0-xor 
-11 1
 00 1
+11 1
 .end

@@ -103,6 +103,7 @@ class Circuit {
     void load_test_vectors(const char* testfile);
     
     bool wires_equal(std::string w1, std::string w2, CoverType type);
+    bool observable_cover(std::string inst_name, std::string wire_name, CoverType cover);
 
   protected:
     TechLibrary* library;
