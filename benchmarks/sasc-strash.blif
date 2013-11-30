@@ -1,0 +1,3417 @@
+# Benchmark "sasc_comb" written by ABC on Fri Nov 29 14:35:08 2013
+.model sasc_comb
+.inputs change cts_i din_i_lb_0_rb_ din_i_lb_1_rb_ din_i_lb_2_rb_ \
+ din_i_lb_3_rb_ din_i_lb_4_rb_ din_i_lb_5_rb_ din_i_lb_6_rb_ din_i_lb_7_rb_ \
+ dpll_state_pound_5b0_pound_5d dpll_state_pound_5b1_pound_5d hold_reg_9 \
+ hold_reg hold_reg_reg_pound_5b1_pound_5d_Q \
+ hold_reg_reg_pound_5b2_pound_5d_Q hold_reg_reg_pound_5b3_pound_5d_Q \
+ hold_reg_reg_pound_5b4_pound_5d_Q hold_reg_reg_pound_5b5_pound_5d_Q \
+ hold_reg_reg_pound_5b6_pound_5d_Q hold_reg_reg_pound_5b7_pound_5d_Q \
+ hold_reg_reg_pound_5b8_pound_5d_Q load n_182 re_i rst \
+ rx_bit_cnt_pound_5b0_pound_5d rx_bit_cnt_pound_5b2_pound_5d \
+ rx_bit_cnt_pound_5b3_pound_5d rx_fifo_gb rx_fifo_mem_pound_5b0_pound_5d_10 \
+ rx_fifo_mem_pound_5b0_pound_5d_11 rx_fifo_mem_pound_5b0_pound_5d_12 \
+ rx_fifo_mem_pound_5b0_pound_5d_13 rx_fifo_mem_pound_5b0_pound_5d_14 \
+ rx_fifo_mem_pound_5b0_pound_5d_15 rx_fifo_mem_pound_5b0_pound_5d_16 \
+ rx_fifo_mem_pound_5b0_pound_5d rx_fifo_mem_pound_5b1_pound_5d_3 \
+ rx_fifo_mem_pound_5b1_pound_5d_4 rx_fifo_mem_pound_5b1_pound_5d_5 \
+ rx_fifo_mem_pound_5b1_pound_5d_6 rx_fifo_mem_pound_5b1_pound_5d_7 \
+ rx_fifo_mem_pound_5b1_pound_5d_8 rx_fifo_mem_pound_5b1_pound_5d_9 \
+ rx_fifo_mem_pound_5b1_pound_5d rx_fifo_mem_pound_5b2_pound_5d_24 \
+ rx_fifo_mem_pound_5b2_pound_5d_25 rx_fifo_mem_pound_5b2_pound_5d_26 \
+ rx_fifo_mem_pound_5b2_pound_5d_27 rx_fifo_mem_pound_5b2_pound_5d_28 \
+ rx_fifo_mem_pound_5b2_pound_5d_29 rx_fifo_mem_pound_5b2_pound_5d_30 \
+ rx_fifo_mem_pound_5b2_pound_5d rx_fifo_mem_pound_5b3_pound_5d_17 \
+ rx_fifo_mem_pound_5b3_pound_5d_18 rx_fifo_mem_pound_5b3_pound_5d_19 \
+ rx_fifo_mem_pound_5b3_pound_5d_20 rx_fifo_mem_pound_5b3_pound_5d_21 \
+ rx_fifo_mem_pound_5b3_pound_5d_22 rx_fifo_mem_pound_5b3_pound_5d_23 \
+ rx_fifo_mem_pound_5b3_pound_5d rx_fifo_rp_pound_5b0_pound_5d \
+ rx_fifo_rp_pound_5b1_pound_5d rx_fifo_wp_pound_5b0_pound_5d \
+ rx_fifo_wp_pound_5b1_pound_5d rx_go rx_sio_ce rx_sio_ce_r1_reg_Q \
+ rx_sio_ce_r2 rx_valid rx_valid_r_reg_Q rxd_i rxd_r_reg_Q rxd_s \
+ rxr_pound_5b2_pound_5d_171 rxr_pound_5b2_pound_5d_172 \
+ rxr_pound_5b2_pound_5d_173 rxr_pound_5b2_pound_5d_174 \
+ rxr_pound_5b2_pound_5d_175 rxr_pound_5b2_pound_5d_176 \
+ rxr_pound_5b2_pound_5d_177 rxr_pound_5b2_pound_5d shift_en shift_en_r \
+ sio_ce sio_ce_x4 tx_bit_cnt_pound_5b0_pound_5d \
+ tx_bit_cnt_pound_5b1_pound_5d tx_bit_cnt_pound_5b2_pound_5d \
+ tx_bit_cnt_pound_5b3_pound_5d tx_fifo_gb_reg_Q \
+ tx_fifo_mem_pound_5b0_pound_5d_10 tx_fifo_mem_pound_5b0_pound_5d_11 \
+ tx_fifo_mem_pound_5b0_pound_5d_12 tx_fifo_mem_pound_5b0_pound_5d_13 \
+ tx_fifo_mem_pound_5b0_pound_5d_14 tx_fifo_mem_pound_5b0_pound_5d_15 \
+ tx_fifo_mem_pound_5b0_pound_5d_16 tx_fifo_mem_pound_5b0_pound_5d \
+ tx_fifo_mem_pound_5b1_pound_5d_3 tx_fifo_mem_pound_5b1_pound_5d_4 \
+ tx_fifo_mem_pound_5b1_pound_5d_5 tx_fifo_mem_pound_5b1_pound_5d_6 \
+ tx_fifo_mem_pound_5b1_pound_5d_7 tx_fifo_mem_pound_5b1_pound_5d_8 \
+ tx_fifo_mem_pound_5b1_pound_5d_9 tx_fifo_mem_pound_5b1_pound_5d \
+ tx_fifo_mem_pound_5b2_pound_5d_24 tx_fifo_mem_pound_5b2_pound_5d_25 \
+ tx_fifo_mem_pound_5b2_pound_5d_26 tx_fifo_mem_pound_5b2_pound_5d_27 \
+ tx_fifo_mem_pound_5b2_pound_5d_28 tx_fifo_mem_pound_5b2_pound_5d_29 \
+ tx_fifo_mem_pound_5b2_pound_5d_30 tx_fifo_mem_pound_5b2_pound_5d \
+ tx_fifo_mem_pound_5b3_pound_5d_17 tx_fifo_mem_pound_5b3_pound_5d_18 \
+ tx_fifo_mem_pound_5b3_pound_5d_19 tx_fifo_mem_pound_5b3_pound_5d_20 \
+ tx_fifo_mem_pound_5b3_pound_5d_21 tx_fifo_mem_pound_5b3_pound_5d_22 \
+ tx_fifo_mem_pound_5b3_pound_5d_23 tx_fifo_mem_pound_5b3_pound_5d \
+ tx_fifo_rp_pound_5b0_pound_5d tx_fifo_rp_pound_5b1_pound_5d \
+ tx_fifo_wp_pound_5b0_pound_5d tx_fifo_wp_pound_5b1_pound_5d txd_o \
+ txf_empty_r_reg_Q we_i
+.outputs change_in dout_o_lb_0_rb_ dout_o_lb_1_rb_ dout_o_lb_2_rb_ \
+ dout_o_lb_3_rb_ dout_o_lb_4_rb_ dout_o_lb_5_rb_ dout_o_lb_6_rb_ \
+ dout_o_lb_7_rb_ dpll_state_pound_5b0_pound_5d_in \
+ dpll_state_pound_5b1_pound_5d_in empty_o full_o hold_reg_9_in hold_reg_in \
+ hold_reg_reg_pound_5b1_pound_5d_Q_in hold_reg_reg_pound_5b2_pound_5d_Q_in \
+ hold_reg_reg_pound_5b3_pound_5d_Q_in hold_reg_reg_pound_5b4_pound_5d_Q_in \
+ hold_reg_reg_pound_5b5_pound_5d_Q_in hold_reg_reg_pound_5b6_pound_5d_Q_in \
+ hold_reg_reg_pound_5b7_pound_5d_Q_in hold_reg_reg_pound_5b8_pound_5d_Q_in \
+ load_in n_182_in rts_o_in rx_bit_cnt_pound_5b0_pound_5d_in \
+ rx_bit_cnt_pound_5b2_pound_5d_in rx_bit_cnt_pound_5b3_pound_5d_in \
+ rx_fifo_gb_in rx_fifo_mem_pound_5b0_pound_5d_10_in \
+ rx_fifo_mem_pound_5b0_pound_5d_11_in rx_fifo_mem_pound_5b0_pound_5d_12_in \
+ rx_fifo_mem_pound_5b0_pound_5d_13_in rx_fifo_mem_pound_5b0_pound_5d_14_in \
+ rx_fifo_mem_pound_5b0_pound_5d_15_in rx_fifo_mem_pound_5b0_pound_5d_16_in \
+ rx_fifo_mem_pound_5b0_pound_5d_in rx_fifo_mem_pound_5b1_pound_5d_3_in \
+ rx_fifo_mem_pound_5b1_pound_5d_4_in rx_fifo_mem_pound_5b1_pound_5d_5_in \
+ rx_fifo_mem_pound_5b1_pound_5d_6_in rx_fifo_mem_pound_5b1_pound_5d_7_in \
+ rx_fifo_mem_pound_5b1_pound_5d_8_in rx_fifo_mem_pound_5b1_pound_5d_9_in \
+ rx_fifo_mem_pound_5b1_pound_5d_in rx_fifo_mem_pound_5b2_pound_5d_24_in \
+ rx_fifo_mem_pound_5b2_pound_5d_25_in rx_fifo_mem_pound_5b2_pound_5d_26_in \
+ rx_fifo_mem_pound_5b2_pound_5d_27_in rx_fifo_mem_pound_5b2_pound_5d_28_in \
+ rx_fifo_mem_pound_5b2_pound_5d_29_in rx_fifo_mem_pound_5b2_pound_5d_30_in \
+ rx_fifo_mem_pound_5b2_pound_5d_in rx_fifo_mem_pound_5b3_pound_5d_17_in \
+ rx_fifo_mem_pound_5b3_pound_5d_18_in rx_fifo_mem_pound_5b3_pound_5d_19_in \
+ rx_fifo_mem_pound_5b3_pound_5d_20_in rx_fifo_mem_pound_5b3_pound_5d_21_in \
+ rx_fifo_mem_pound_5b3_pound_5d_22_in rx_fifo_mem_pound_5b3_pound_5d_23_in \
+ rx_fifo_mem_pound_5b3_pound_5d_in rx_fifo_rp_pound_5b0_pound_5d_in \
+ rx_fifo_rp_pound_5b1_pound_5d_in rx_fifo_wp_pound_5b0_pound_5d_in \
+ rx_fifo_wp_pound_5b1_pound_5d_in rx_go_in rx_sio_ce_in \
+ rx_sio_ce_r1_reg_Q_in rx_sio_ce_r2_in rx_valid_in rx_valid_r_reg_Q_in \
+ rxd_r_reg_Q_in rxd_s_in rxr_pound_5b2_pound_5d_171_in \
+ rxr_pound_5b2_pound_5d_172_in rxr_pound_5b2_pound_5d_173_in \
+ rxr_pound_5b2_pound_5d_174_in rxr_pound_5b2_pound_5d_175_in \
+ rxr_pound_5b2_pound_5d_176_in rxr_pound_5b2_pound_5d_177_in \
+ rxr_pound_5b2_pound_5d_in shift_en_in shift_en_r_in \
+ tx_bit_cnt_pound_5b0_pound_5d_in tx_bit_cnt_pound_5b1_pound_5d_in \
+ tx_bit_cnt_pound_5b2_pound_5d_in tx_bit_cnt_pound_5b3_pound_5d_in \
+ tx_fifo_gb_reg_Q_in tx_fifo_mem_pound_5b0_pound_5d_10_in \
+ tx_fifo_mem_pound_5b0_pound_5d_11_in tx_fifo_mem_pound_5b0_pound_5d_12_in \
+ tx_fifo_mem_pound_5b0_pound_5d_13_in tx_fifo_mem_pound_5b0_pound_5d_14_in \
+ tx_fifo_mem_pound_5b0_pound_5d_15_in tx_fifo_mem_pound_5b0_pound_5d_16_in \
+ tx_fifo_mem_pound_5b0_pound_5d_in tx_fifo_mem_pound_5b1_pound_5d_3_in \
+ tx_fifo_mem_pound_5b1_pound_5d_4_in tx_fifo_mem_pound_5b1_pound_5d_5_in \
+ tx_fifo_mem_pound_5b1_pound_5d_6_in tx_fifo_mem_pound_5b1_pound_5d_7_in \
+ tx_fifo_mem_pound_5b1_pound_5d_8_in tx_fifo_mem_pound_5b1_pound_5d_9_in \
+ tx_fifo_mem_pound_5b1_pound_5d_in tx_fifo_mem_pound_5b2_pound_5d_24_in \
+ tx_fifo_mem_pound_5b2_pound_5d_25_in tx_fifo_mem_pound_5b2_pound_5d_26_in \
+ tx_fifo_mem_pound_5b2_pound_5d_27_in tx_fifo_mem_pound_5b2_pound_5d_28_in \
+ tx_fifo_mem_pound_5b2_pound_5d_29_in tx_fifo_mem_pound_5b2_pound_5d_30_in \
+ tx_fifo_mem_pound_5b2_pound_5d_in tx_fifo_mem_pound_5b3_pound_5d_17_in \
+ tx_fifo_mem_pound_5b3_pound_5d_18_in tx_fifo_mem_pound_5b3_pound_5d_19_in \
+ tx_fifo_mem_pound_5b3_pound_5d_20_in tx_fifo_mem_pound_5b3_pound_5d_21_in \
+ tx_fifo_mem_pound_5b3_pound_5d_22_in tx_fifo_mem_pound_5b3_pound_5d_23_in \
+ tx_fifo_mem_pound_5b3_pound_5d_in tx_fifo_rp_pound_5b0_pound_5d_in \
+ tx_fifo_rp_pound_5b1_pound_5d_in tx_fifo_wp_pound_5b0_pound_5d_in \
+ tx_fifo_wp_pound_5b1_pound_5d_in txd_o_in txf_empty_r_reg_Q_in
+.names rxd_r_reg_Q rxd_s n259
+00 1
+.names rxd_r_reg_Q rxd_s n260
+11 1
+.names n259 n260 n261
+00 1
+.names change sio_ce_x4 n262
+11 1
+.names change n262 n263
+10 1
+.names rst sio_ce_x4 n264
+00 1
+.names change n264 n265
+11 1
+.names n263 n265 n266
+10 1
+.names rst n266 n267
+10 1
+.names n261 n267 n268
+11 1
+.names n266 n268 change_in
+00 0
+.names rx_fifo_rp_pound_5b0_pound_5d rx_fifo_rp_pound_5b1_pound_5d n270
+01 1
+.names rx_fifo_rp_pound_5b0_pound_5d rx_fifo_rp_pound_5b1_pound_5d n271
+11 1
+.names rx_fifo_mem_pound_5b2_pound_5d n270 n272
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d n272 n273
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d n271 n274
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d n274 n275
+10 1
+.names n273 n275 n276
+00 1
+.names rx_fifo_rp_pound_5b0_pound_5d rx_fifo_rp_pound_5b1_pound_5d n277
+10 1
+.names rx_fifo_rp_pound_5b0_pound_5d rx_fifo_rp_pound_5b1_pound_5d n278
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d n277 n279
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d n279 n280
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d n278 n281
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d n281 n282
+10 1
+.names n280 n282 n283
+00 1
+.names n276 n283 n284
+00 1
+.names n276 n283 n285
+01 1
+.names n284 n285 n286
+00 1
+.names n276 n283 n287
+10 1
+.names n286 n287 dout_o_lb_0_rb_
+10 0
+.names rx_fifo_mem_pound_5b2_pound_5d_24 n270 n289
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_24 n289 n290
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_17 n271 n291
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_17 n291 n292
+10 1
+.names n290 n292 n293
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d_3 n277 n294
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_3 n294 n295
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_10 n278 n296
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_10 n296 n297
+10 1
+.names n295 n297 n298
+00 1
+.names n293 n298 n299
+00 1
+.names n293 n298 n300
+01 1
+.names n299 n300 n301
+00 1
+.names n293 n298 n302
+10 1
+.names n301 n302 dout_o_lb_1_rb_
+10 0
+.names rx_fifo_mem_pound_5b2_pound_5d_25 n270 n304
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_25 n304 n305
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_18 n271 n306
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_18 n306 n307
+10 1
+.names n305 n307 n308
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d_4 n277 n309
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_4 n309 n310
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_11 n278 n311
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_11 n311 n312
+10 1
+.names n310 n312 n313
+00 1
+.names n308 n313 n314
+00 1
+.names n308 n313 n315
+01 1
+.names n314 n315 n316
+00 1
+.names n308 n313 n317
+10 1
+.names n316 n317 dout_o_lb_2_rb_
+10 0
+.names rx_fifo_mem_pound_5b2_pound_5d_26 n270 n319
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_26 n319 n320
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_19 n271 n321
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_19 n321 n322
+10 1
+.names n320 n322 n323
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d_5 n277 n324
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_5 n324 n325
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_12 n278 n326
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_12 n326 n327
+10 1
+.names n325 n327 n328
+00 1
+.names n323 n328 n329
+00 1
+.names n323 n328 n330
+01 1
+.names n329 n330 n331
+00 1
+.names n323 n328 n332
+10 1
+.names n331 n332 dout_o_lb_3_rb_
+10 0
+.names rx_fifo_mem_pound_5b2_pound_5d_27 n270 n334
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_27 n334 n335
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_20 n271 n336
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_20 n336 n337
+10 1
+.names n335 n337 n338
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d_6 n277 n339
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_6 n339 n340
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_13 n278 n341
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_13 n341 n342
+10 1
+.names n340 n342 n343
+00 1
+.names n338 n343 n344
+00 1
+.names n338 n343 n345
+01 1
+.names n344 n345 n346
+00 1
+.names n338 n343 n347
+10 1
+.names n346 n347 dout_o_lb_4_rb_
+10 0
+.names rx_fifo_mem_pound_5b2_pound_5d_28 n270 n349
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_28 n349 n350
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_21 n271 n351
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_21 n351 n352
+10 1
+.names n350 n352 n353
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d_7 n277 n354
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_7 n354 n355
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_14 n278 n356
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_14 n356 n357
+10 1
+.names n355 n357 n358
+00 1
+.names n353 n358 n359
+00 1
+.names n353 n358 n360
+01 1
+.names n359 n360 n361
+00 1
+.names n353 n358 n362
+10 1
+.names n361 n362 dout_o_lb_5_rb_
+10 0
+.names rx_fifo_mem_pound_5b1_pound_5d_8 n277 n364
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_8 n364 n365
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_15 n278 n366
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_15 n366 n367
+10 1
+.names n365 n367 n368
+00 1
+.names rx_fifo_mem_pound_5b2_pound_5d_29 n270 n369
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_29 n369 n370
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_22 n271 n371
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_22 n371 n372
+10 1
+.names n370 n372 n373
+00 1
+.names n368 n373 n374
+00 1
+.names n368 n373 n375
+01 1
+.names n374 n375 n376
+00 1
+.names n368 n373 n377
+10 1
+.names n376 n377 dout_o_lb_6_rb_
+10 0
+.names rx_fifo_mem_pound_5b1_pound_5d_9 n277 n379
+01 1
+.names n277 n379 n380
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_16 n278 n381
+01 1
+.names n278 n381 n382
+10 1
+.names n380 n382 n383
+00 1
+.names rx_fifo_mem_pound_5b2_pound_5d_30 n270 n384
+01 1
+.names n270 n384 n385
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_23 n271 n386
+01 1
+.names n271 n386 n387
+10 1
+.names n385 n387 n388
+00 1
+.names n383 n388 n389
+00 1
+.names n383 n388 n390
+01 1
+.names n389 n390 n391
+00 1
+.names n383 n388 n392
+10 1
+.names n391 n392 dout_o_lb_7_rb_
+10 0
+.names change sio_ce_x4 n394
+01 1
+.names dpll_state_pound_5b1_pound_5d n394 n395
+01 1
+.names n394 n395 n396
+10 1
+.names dpll_state_pound_5b0_pound_5d dpll_state_pound_5b1_pound_5d n397
+11 1
+.names n394 n397 n398
+11 1
+.names n396 n398 n399
+10 1
+.names dpll_state_pound_5b0_pound_5d sio_ce_x4 n400
+01 1
+.names dpll_state_pound_5b0_pound_5d sio_ce_x4 n401
+11 1
+.names n400 n401 n402
+00 1
+.names dpll_state_pound_5b0_pound_5d sio_ce_x4 n403
+00 1
+.names n402 n403 n404
+10 1
+.names dpll_state_pound_5b0_pound_5d dpll_state_pound_5b1_pound_5d n405
+00 1
+.names dpll_state_pound_5b0_pound_5d dpll_state_pound_5b1_pound_5d \
+ rx_sio_ce_r1_reg_Q_in
+10 1
+.names sio_ce_x4 rx_sio_ce_r1_reg_Q_in n407
+11 1
+.names n394 n405 n408
+01 1
+.names n405 n408 n409
+10 1
+.names change n407 n410
+10 1
+.names change n410 n411
+10 1
+.names n409 n411 n412
+00 1
+.names n399 n404 n413
+01 1
+.names n399 n413 n414
+00 1
+.names n404 n412 n415
+00 1
+.names n399 n415 n416
+01 1
+.names n414 n416 dpll_state_pound_5b0_pound_5d_in
+10 0
+.names dpll_state_pound_5b1_pound_5d sio_ce_x4 n418
+01 1
+.names dpll_state_pound_5b1_pound_5d sio_ce_x4 n419
+11 1
+.names n418 n419 n420
+00 1
+.names dpll_state_pound_5b1_pound_5d sio_ce_x4 n421
+00 1
+.names n420 n421 n422
+10 1
+.names n407 n422 n423
+01 1
+.names n407 n423 n424
+00 1
+.names n399 n422 n425
+10 1
+.names n407 n425 n426
+01 1
+.names n424 n426 dpll_state_pound_5b1_pound_5d_in
+10 0
+.names rx_fifo_rp_pound_5b1_pound_5d rx_fifo_wp_pound_5b1_pound_5d n428
+10 1
+.names rx_fifo_rp_pound_5b1_pound_5d rx_fifo_wp_pound_5b1_pound_5d n429
+00 1
+.names n428 n429 n430
+00 1
+.names rx_fifo_rp_pound_5b1_pound_5d rx_fifo_wp_pound_5b1_pound_5d n431
+11 1
+.names n430 n431 n432
+10 1
+.names rx_fifo_rp_pound_5b1_pound_5d rx_fifo_wp_pound_5b1_pound_5d n433
+01 1
+.names n431 n433 n434
+00 1
+.names n429 n434 n435
+01 1
+.names n432 n435 n436
+11 1
+.names n432 n435 n437
+10 1
+.names n436 n437 n438
+00 1
+.names n432 n435 n439
+01 1
+.names n438 n439 n440
+10 1
+.names rx_fifo_rp_pound_5b0_pound_5d rx_fifo_wp_pound_5b0_pound_5d n441
+01 1
+.names rx_fifo_rp_pound_5b0_pound_5d rx_fifo_wp_pound_5b0_pound_5d n442
+10 1
+.names n441 n442 n443
+00 1
+.names rx_fifo_rp_pound_5b0_pound_5d rx_fifo_wp_pound_5b0_pound_5d n444
+00 1
+.names n443 n444 n445
+10 1
+.names rx_fifo_rp_pound_5b0_pound_5d rx_fifo_wp_pound_5b0_pound_5d n446
+11 1
+.names n441 n446 n447
+00 1
+.names n442 n447 n448
+01 1
+.names n445 n448 n449
+11 1
+.names n445 n448 n450
+10 1
+.names n449 n450 n451
+00 1
+.names n445 n448 n452
+01 1
+.names n451 n452 n453
+10 1
+.names n440 n453 n454
+10 1
+.names rx_fifo_gb n454 empty_o
+01 1
+.names tx_fifo_rp_pound_5b1_pound_5d tx_fifo_wp_pound_5b1_pound_5d n456
+10 1
+.names tx_fifo_rp_pound_5b1_pound_5d tx_fifo_wp_pound_5b1_pound_5d n457
+01 1
+.names n456 n457 n458
+00 1
+.names tx_fifo_rp_pound_5b0_pound_5d tx_fifo_wp_pound_5b0_pound_5d n459
+00 1
+.names tx_fifo_rp_pound_5b0_pound_5d n459 n460
+00 1
+.names tx_fifo_wp_pound_5b0_pound_5d n459 n461
+01 1
+.names tx_fifo_rp_pound_5b0_pound_5d n461 n462
+11 1
+.names n460 n462 n463
+00 1
+.names n458 n463 n464
+11 1
+.names tx_fifo_gb_reg_Q n464 full_o
+11 1
+.names shift_en sio_ce n466
+11 1
+.names load sio_ce n467
+11 1
+.names n466 n467 n468
+11 1
+.names n466 n467 n469
+10 1
+.names n468 n469 n470
+00 1
+.names n466 n467 n471
+01 1
+.names n470 n471 n472
+10 1
+.names hold_reg_9 n472 n473
+11 1
+.names hold_reg_9 n472 n474
+00 1
+.names n473 n474 n475
+00 1
+.names hold_reg_9 n472 n476
+10 1
+.names n475 n476 hold_reg_9_in
+10 0
+.names hold_reg n466 n478
+01 1
+.names hold_reg n466 n479
+11 1
+.names n478 n479 n480
+00 1
+.names hold_reg n466 n481
+00 1
+.names n480 n481 n482
+10 1
+.names hold_reg_reg_pound_5b1_pound_5d_Q n466 n483
+10 1
+.names hold_reg_reg_pound_5b1_pound_5d_Q n466 n484
+01 1
+.names n483 n484 n485
+00 1
+.names hold_reg_reg_pound_5b1_pound_5d_Q n466 n486
+00 1
+.names n485 n486 n487
+10 1
+.names n467 n482 n488
+01 1
+.names n467 n487 n489
+11 1
+.names n482 n489 n490
+01 1
+.names n488 n490 hold_reg_in
+00 0
+.names hold_reg_reg_pound_5b2_pound_5d_Q n466 n492
+00 1
+.names hold_reg_reg_pound_5b2_pound_5d_Q n492 n493
+00 1
+.names hold_reg_reg_pound_5b1_pound_5d_Q n493 n494
+10 1
+.names hold_reg_reg_pound_5b2_pound_5d_Q n484 n495
+11 1
+.names n494 n495 n496
+00 1
+.names tx_fifo_rp_pound_5b0_pound_5d tx_fifo_rp_pound_5b1_pound_5d n497
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d n497 n498
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d n497 n499
+10 1
+.names n498 n499 n500
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d n497 n501
+01 1
+.names n500 n501 n502
+10 1
+.names tx_fifo_rp_pound_5b0_pound_5d tx_fifo_rp_pound_5b1_pound_5d n503
+01 1
+.names n497 n503 n504
+00 1
+.names tx_fifo_rp_pound_5b0_pound_5d tx_fifo_rp_pound_5b1_pound_5d n505
+11 1
+.names n504 n505 n506
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d n506 n507
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d n506 n508
+01 1
+.names n507 n508 n509
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d n506 n510
+10 1
+.names n509 n510 n511
+10 1
+.names tx_fifo_rp_pound_5b0_pound_5d tx_fifo_rp_pound_5b1_pound_5d n512
+10 1
+.names n503 n512 n513
+00 1
+.names n497 n513 n514
+01 1
+.names n505 n512 n515
+00 1
+.names n497 n515 n516
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d n514 n517
+01 1
+.names n514 n517 n518
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d n516 n519
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d n519 n520
+10 1
+.names n518 n520 n521
+00 1
+.names n502 n511 n522
+01 1
+.names n502 n522 n523
+00 1
+.names n511 n521 n524
+00 1
+.names n502 n524 n525
+01 1
+.names n523 n525 n526
+10 1
+.names n467 n496 n527
+11 1
+.names n496 n527 n528
+10 1
+.names n526 n528 n529
+00 1
+.names n467 n526 n530
+01 1
+.names n496 n530 n531
+01 1
+.names n529 n531 hold_reg_reg_pound_5b1_pound_5d_Q_in
+00 0
+.names hold_reg_reg_pound_5b3_pound_5d_Q n466 n533
+00 1
+.names hold_reg_reg_pound_5b3_pound_5d_Q n533 n534
+00 1
+.names hold_reg_reg_pound_5b2_pound_5d_Q n534 n535
+10 1
+.names hold_reg_reg_pound_5b2_pound_5d_Q n466 n536
+01 1
+.names hold_reg_reg_pound_5b3_pound_5d_Q n536 n537
+11 1
+.names n535 n537 n538
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_10 n497 n539
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_10 n497 n540
+10 1
+.names n539 n540 n541
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_10 n497 n542
+01 1
+.names n541 n542 n543
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_3 n506 n544
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_3 n506 n545
+01 1
+.names n544 n545 n546
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_3 n506 n547
+10 1
+.names n546 n547 n548
+10 1
+.names tx_fifo_mem_pound_5b3_pound_5d_17 n514 n549
+01 1
+.names n514 n549 n550
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_24 n516 n551
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_24 n551 n552
+10 1
+.names n550 n552 n553
+00 1
+.names n543 n548 n554
+01 1
+.names n543 n554 n555
+00 1
+.names n548 n553 n556
+00 1
+.names n543 n556 n557
+01 1
+.names n555 n557 n558
+10 1
+.names n467 n538 n559
+11 1
+.names n538 n559 n560
+10 1
+.names n558 n560 n561
+00 1
+.names n467 n558 n562
+01 1
+.names n538 n562 n563
+01 1
+.names n561 n563 hold_reg_reg_pound_5b2_pound_5d_Q_in
+00 0
+.names hold_reg_reg_pound_5b4_pound_5d_Q n466 n565
+00 1
+.names hold_reg_reg_pound_5b4_pound_5d_Q n565 n566
+00 1
+.names hold_reg_reg_pound_5b3_pound_5d_Q n566 n567
+10 1
+.names hold_reg_reg_pound_5b3_pound_5d_Q n466 n568
+01 1
+.names hold_reg_reg_pound_5b4_pound_5d_Q n568 n569
+11 1
+.names n567 n569 n570
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_11 n497 n571
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_11 n497 n572
+10 1
+.names n571 n572 n573
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_11 n497 n574
+01 1
+.names n573 n574 n575
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_25 n516 n576
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_25 n516 n577
+01 1
+.names n576 n577 n578
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_25 n516 n579
+10 1
+.names n578 n579 n580
+10 1
+.names tx_fifo_mem_pound_5b3_pound_5d_18 n514 n581
+01 1
+.names n514 n581 n582
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_4 n506 n583
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_4 n583 n584
+10 1
+.names n582 n584 n585
+00 1
+.names n575 n580 n586
+01 1
+.names n575 n586 n587
+00 1
+.names n580 n585 n588
+00 1
+.names n575 n588 n589
+01 1
+.names n587 n589 n590
+10 1
+.names n467 n570 n591
+11 1
+.names n570 n591 n592
+10 1
+.names n590 n592 n593
+00 1
+.names n467 n590 n594
+01 1
+.names n570 n594 n595
+01 1
+.names n593 n595 hold_reg_reg_pound_5b3_pound_5d_Q_in
+00 0
+.names hold_reg_reg_pound_5b5_pound_5d_Q n466 n597
+00 1
+.names hold_reg_reg_pound_5b5_pound_5d_Q n597 n598
+00 1
+.names hold_reg_reg_pound_5b4_pound_5d_Q n598 n599
+10 1
+.names hold_reg_reg_pound_5b4_pound_5d_Q n466 n600
+01 1
+.names hold_reg_reg_pound_5b5_pound_5d_Q n600 n601
+11 1
+.names n599 n601 n602
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_19 n514 n603
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_19 n514 n604
+10 1
+.names n603 n604 n605
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_19 n514 n606
+01 1
+.names n605 n606 n607
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_26 n516 n608
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_26 n516 n609
+01 1
+.names n608 n609 n610
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_26 n516 n611
+10 1
+.names n610 n611 n612
+10 1
+.names tx_fifo_mem_pound_5b0_pound_5d_12 n497 n613
+01 1
+.names n497 n613 n614
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_5 n506 n615
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_5 n615 n616
+10 1
+.names n614 n616 n617
+00 1
+.names n607 n612 n618
+01 1
+.names n607 n618 n619
+00 1
+.names n612 n617 n620
+00 1
+.names n607 n620 n621
+01 1
+.names n619 n621 n622
+10 1
+.names n467 n602 n623
+11 1
+.names n602 n623 n624
+10 1
+.names n622 n624 n625
+00 1
+.names n467 n622 n626
+01 1
+.names n602 n626 n627
+01 1
+.names n625 n627 hold_reg_reg_pound_5b4_pound_5d_Q_in
+00 0
+.names hold_reg_reg_pound_5b6_pound_5d_Q n466 n629
+00 1
+.names hold_reg_reg_pound_5b6_pound_5d_Q n629 n630
+00 1
+.names hold_reg_reg_pound_5b5_pound_5d_Q n630 n631
+10 1
+.names hold_reg_reg_pound_5b5_pound_5d_Q n466 n632
+01 1
+.names hold_reg_reg_pound_5b6_pound_5d_Q n632 n633
+11 1
+.names n631 n633 n634
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_20 n514 n635
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_20 n514 n636
+10 1
+.names n635 n636 n637
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_20 n514 n638
+01 1
+.names n637 n638 n639
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_6 n506 n640
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_6 n506 n641
+01 1
+.names n640 n641 n642
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_6 n506 n643
+10 1
+.names n642 n643 n644
+10 1
+.names tx_fifo_mem_pound_5b0_pound_5d_13 n497 n645
+01 1
+.names n497 n645 n646
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_27 n516 n647
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_27 n647 n648
+10 1
+.names n646 n648 n649
+00 1
+.names n639 n644 n650
+01 1
+.names n639 n650 n651
+00 1
+.names n644 n649 n652
+00 1
+.names n639 n652 n653
+01 1
+.names n651 n653 n654
+10 1
+.names n467 n634 n655
+11 1
+.names n634 n655 n656
+10 1
+.names n654 n656 n657
+00 1
+.names n467 n654 n658
+01 1
+.names n634 n658 n659
+01 1
+.names n657 n659 hold_reg_reg_pound_5b5_pound_5d_Q_in
+00 0
+.names hold_reg_reg_pound_5b7_pound_5d_Q n466 n661
+00 1
+.names hold_reg_reg_pound_5b7_pound_5d_Q n661 n662
+00 1
+.names hold_reg_reg_pound_5b6_pound_5d_Q n662 n663
+10 1
+.names hold_reg_reg_pound_5b6_pound_5d_Q n466 n664
+01 1
+.names hold_reg_reg_pound_5b7_pound_5d_Q n664 n665
+11 1
+.names n663 n665 n666
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_14 n497 n667
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_14 n497 n668
+10 1
+.names n667 n668 n669
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_14 n497 n670
+01 1
+.names n669 n670 n671
+10 1
+.names tx_fifo_mem_pound_5b3_pound_5d_21 n514 n672
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_21 n514 n673
+10 1
+.names n672 n673 n674
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_21 n514 n675
+01 1
+.names n674 n675 n676
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_7 n506 n677
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_7 n677 n678
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_28 n516 n679
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_28 n679 n680
+10 1
+.names n678 n680 n681
+00 1
+.names n671 n676 n682
+01 1
+.names n671 n682 n683
+00 1
+.names n676 n681 n684
+00 1
+.names n671 n684 n685
+01 1
+.names n683 n685 n686
+10 1
+.names n467 n666 n687
+11 1
+.names n666 n687 n688
+10 1
+.names n686 n688 n689
+00 1
+.names n467 n686 n690
+01 1
+.names n666 n690 n691
+01 1
+.names n689 n691 hold_reg_reg_pound_5b6_pound_5d_Q_in
+00 0
+.names hold_reg_reg_pound_5b8_pound_5d_Q n466 n693
+00 1
+.names hold_reg_reg_pound_5b8_pound_5d_Q n693 n694
+00 1
+.names hold_reg_reg_pound_5b7_pound_5d_Q n694 n695
+10 1
+.names hold_reg_reg_pound_5b7_pound_5d_Q n466 n696
+01 1
+.names hold_reg_reg_pound_5b8_pound_5d_Q n696 n697
+11 1
+.names n695 n697 n698
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_15 n497 n699
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_15 n497 n700
+10 1
+.names n699 n700 n701
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_15 n497 n702
+01 1
+.names n701 n702 n703
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_29 n516 n704
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_29 n516 n705
+01 1
+.names n704 n705 n706
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_29 n516 n707
+10 1
+.names n706 n707 n708
+10 1
+.names tx_fifo_mem_pound_5b3_pound_5d_22 n514 n709
+01 1
+.names n514 n709 n710
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_8 n506 n711
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_8 n711 n712
+10 1
+.names n710 n712 n713
+00 1
+.names n703 n708 n714
+01 1
+.names n703 n714 n715
+00 1
+.names n708 n713 n716
+00 1
+.names n703 n716 n717
+01 1
+.names n715 n717 n718
+10 1
+.names n467 n698 n719
+11 1
+.names n698 n719 n720
+10 1
+.names n718 n720 n721
+00 1
+.names n467 n718 n722
+01 1
+.names n698 n722 n723
+01 1
+.names n721 n723 hold_reg_reg_pound_5b7_pound_5d_Q_in
+00 0
+.names hold_reg_9 n466 n725
+00 1
+.names hold_reg_9 n725 n726
+00 1
+.names hold_reg_reg_pound_5b8_pound_5d_Q n726 n727
+10 1
+.names hold_reg_reg_pound_5b8_pound_5d_Q n466 n728
+01 1
+.names hold_reg_9 n728 n729
+11 1
+.names n727 n729 n730
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_23 n514 n731
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_23 n514 n732
+10 1
+.names n731 n732 n733
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_23 n514 n734
+01 1
+.names n733 n734 n735
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_30 n516 n736
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_30 n516 n737
+01 1
+.names n736 n737 n738
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_30 n516 n739
+10 1
+.names n738 n739 n740
+10 1
+.names tx_fifo_mem_pound_5b0_pound_5d_16 n497 n741
+01 1
+.names n497 n741 n742
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_9 n506 n743
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_9 n743 n744
+10 1
+.names n742 n744 n745
+00 1
+.names n735 n740 n746
+01 1
+.names n735 n746 n747
+00 1
+.names n740 n745 n748
+00 1
+.names n735 n748 n749
+01 1
+.names n747 n749 n750
+10 1
+.names n467 n730 n751
+11 1
+.names n730 n751 n752
+10 1
+.names n750 n752 n753
+00 1
+.names n467 n750 n754
+01 1
+.names n730 n754 n755
+01 1
+.names n753 n755 hold_reg_reg_pound_5b8_pound_5d_Q_in
+00 0
+.names shift_en txf_empty_r_reg_Q n757
+01 1
+.names shift_en txf_empty_r_reg_Q n758
+10 1
+.names n757 n758 n759
+00 1
+.names shift_en txf_empty_r_reg_Q n760
+11 1
+.names n759 n760 n761
+10 1
+.names cts_i n761 load_in
+01 1
+.names rx_go rxd_s n763
+10 1
+.names rx_go rxd_s n764
+01 1
+.names n763 n764 n765
+00 1
+.names rx_go rxd_s n766
+11 1
+.names n765 n766 n767
+10 1
+.names rxd_r_reg_Q n767 n768
+11 1
+.names n_182 rx_bit_cnt_pound_5b0_pound_5d n769
+10 1
+.names n_182 rx_bit_cnt_pound_5b0_pound_5d n770
+01 1
+.names n769 n770 n771
+00 1
+.names rx_go rx_sio_ce n772
+00 1
+.names rx_go rx_sio_ce n773
+01 1
+.names n772 n773 n774
+00 1
+.names rx_go rx_sio_ce n775
+10 1
+.names n774 n775 n776
+10 1
+.names n771 n776 n777
+00 1
+.names n771 n777 n778
+00 1
+.names n_182 n776 n779
+11 1
+.names n_182 n779 n780
+10 1
+.names n778 n780 n781
+00 1
+.names rst n781 n782
+10 1
+.names n768 n782 n783
+01 1
+.names rst n783 n_182_in
+10 0
+.names rx_fifo_rp_pound_5b1_pound_5d n433 n785
+00 1
+.names rx_fifo_gb rx_fifo_wp_pound_5b1_pound_5d n786
+00 1
+.names rx_fifo_rp_pound_5b1_pound_5d n786 n787
+01 1
+.names n785 n787 n788
+10 1
+.names rx_fifo_wp_pound_5b1_pound_5d n433 n789
+10 1
+.names rx_fifo_gb rx_fifo_rp_pound_5b1_pound_5d n790
+01 1
+.names rx_fifo_wp_pound_5b1_pound_5d n790 n791
+11 1
+.names n789 n791 n792
+10 1
+.names n788 n792 n793
+11 1
+.names n788 n792 n794
+10 1
+.names n793 n794 n795
+00 1
+.names n788 n792 n796
+01 1
+.names n795 n796 n797
+10 1
+.names n453 n797 n798
+11 1
+.names n453 n797 n799
+01 1
+.names n798 n799 n800
+00 1
+.names n453 n797 n801
+10 1
+.names n800 n801 rts_o_in
+10 1
+.names rx_bit_cnt_pound_5b0_pound_5d n776 n803
+01 1
+.names rx_bit_cnt_pound_5b0_pound_5d n803 n804
+00 1
+.names n776 n803 n805
+11 1
+.names rx_bit_cnt_pound_5b0_pound_5d n805 n806
+11 1
+.names n804 n806 n807
+00 1
+.names rst n768 n808
+00 1
+.names rst n768 n809
+11 1
+.names n808 n809 n810
+00 1
+.names rst n768 n811
+01 1
+.names n810 n811 n812
+10 1
+.names n807 n812 rx_bit_cnt_pound_5b0_pound_5d_in
+11 1
+.names n_182 rx_bit_cnt_pound_5b0_pound_5d n814
+11 1
+.names rx_bit_cnt_pound_5b2_pound_5d n814 n815
+01 1
+.names n814 n815 n816
+10 1
+.names rx_bit_cnt_pound_5b2_pound_5d n815 n817
+01 1
+.names n814 n817 n818
+01 1
+.names n816 n818 n819
+00 1
+.names n776 n819 n820
+11 1
+.names rx_bit_cnt_pound_5b2_pound_5d n820 n821
+00 1
+.names n776 n820 n822
+11 1
+.names rx_bit_cnt_pound_5b2_pound_5d n822 n823
+11 1
+.names n821 n823 n824
+00 1
+.names n812 n824 rx_bit_cnt_pound_5b2_pound_5d_in
+11 1
+.names rx_bit_cnt_pound_5b2_pound_5d n814 n826
+00 1
+.names rx_bit_cnt_pound_5b2_pound_5d n814 n827
+10 1
+.names n826 n827 n828
+00 1
+.names n815 n828 n829
+01 1
+.names rx_bit_cnt_pound_5b3_pound_5d n829 n830
+00 1
+.names rx_bit_cnt_pound_5b3_pound_5d n829 n831
+11 1
+.names n830 n831 n832
+00 1
+.names n776 n832 n833
+11 1
+.names rx_bit_cnt_pound_5b3_pound_5d n833 n834
+00 1
+.names n776 n833 n835
+11 1
+.names rx_bit_cnt_pound_5b3_pound_5d n835 n836
+11 1
+.names n834 n836 n837
+00 1
+.names rst n768 n838
+10 1
+.names n837 n838 n839
+11 1
+.names rst n839 rx_bit_cnt_pound_5b3_pound_5d_in
+10 0
+.names rx_fifo_wp_pound_5b0_pound_5d rx_fifo_wp_pound_5b1_pound_5d n841
+10 1
+.names rx_fifo_wp_pound_5b0_pound_5d rx_fifo_wp_pound_5b1_pound_5d n842
+00 1
+.names n841 n842 n843
+00 1
+.names rx_fifo_wp_pound_5b0_pound_5d rx_fifo_wp_pound_5b1_pound_5d n844
+11 1
+.names n843 n844 n845
+10 1
+.names rx_fifo_wp_pound_5b0_pound_5d rx_fifo_wp_pound_5b1_pound_5d n846
+01 1
+.names n842 n846 n847
+00 1
+.names n844 n847 n848
+01 1
+.names n845 n848 n849
+11 1
+.names n845 n848 n850
+10 1
+.names n849 n850 n851
+00 1
+.names n845 n848 n852
+01 1
+.names n851 n852 n853
+10 1
+.names rx_fifo_rp_pound_5b1_pound_5d n853 n854
+01 1
+.names rx_fifo_rp_pound_5b1_pound_5d n853 n855
+00 1
+.names n854 n855 n856
+00 1
+.names rx_fifo_rp_pound_5b1_pound_5d n853 n857
+11 1
+.names n856 n857 n858
+10 1
+.names rx_fifo_rp_pound_5b1_pound_5d n858 n859
+00 1
+.names n853 n859 n860
+11 1
+.names n858 n860 n861
+00 1
+.names rx_valid rx_valid_r_reg_Q n862
+10 1
+.names rts_o_in n862 n863
+10 1
+.names rts_o_in n862 n864
+11 1
+.names n863 n864 n865
+00 1
+.names rts_o_in n862 n866
+00 1
+.names n865 n866 n867
+10 1
+.names n861 n867 n868
+00 1
+.names n861 n868 n869
+00 1
+.names n443 n867 n870
+11 1
+.names n861 n870 n871
+01 1
+.names n869 n871 n872
+10 1
+.names re_i rx_fifo_gb n873
+00 1
+.names re_i rx_fifo_gb n874
+11 1
+.names n873 n874 n875
+00 1
+.names re_i rx_fifo_gb n876
+10 1
+.names n875 n876 n877
+10 1
+.names rst n872 n878
+11 1
+.names rst n877 n879
+01 1
+.names n872 n879 n880
+01 1
+.names n878 n880 rx_fifo_gb_in
+00 0
+.names n841 n844 n882
+00 1
+.names n846 n882 n883
+01 1
+.names rx_fifo_mem_pound_5b0_pound_5d_10 n883 n884
+01 1
+.names rx_fifo_mem_pound_5b0_pound_5d_10 n884 n885
+00 1
+.names rxr_pound_5b2_pound_5d_171 n885 n886
+10 1
+.names rxr_pound_5b2_pound_5d_171 n883 n887
+00 1
+.names rx_fifo_mem_pound_5b0_pound_5d_10 n887 n888
+11 1
+.names n886 n888 n889
+00 1
+.names n867 n889 n890
+01 1
+.names n889 n890 n891
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_10 n891 n892
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_10 n867 n893
+01 1
+.names n889 n893 n894
+01 1
+.names n892 n894 rx_fifo_mem_pound_5b0_pound_5d_10_in
+00 0
+.names rx_fifo_mem_pound_5b0_pound_5d_11 n883 n896
+01 1
+.names rx_fifo_mem_pound_5b0_pound_5d_11 n896 n897
+00 1
+.names rxr_pound_5b2_pound_5d_172 n897 n898
+10 1
+.names rxr_pound_5b2_pound_5d_172 n883 n899
+00 1
+.names rx_fifo_mem_pound_5b0_pound_5d_11 n899 n900
+11 1
+.names n898 n900 n901
+00 1
+.names n867 n901 n902
+01 1
+.names n901 n902 n903
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_11 n903 n904
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_11 n867 n905
+01 1
+.names n901 n905 n906
+01 1
+.names n904 n906 rx_fifo_mem_pound_5b0_pound_5d_11_in
+00 0
+.names rx_fifo_mem_pound_5b0_pound_5d_12 n883 n908
+01 1
+.names rx_fifo_mem_pound_5b0_pound_5d_12 n908 n909
+00 1
+.names rxr_pound_5b2_pound_5d_173 n909 n910
+10 1
+.names rxr_pound_5b2_pound_5d_173 n883 n911
+00 1
+.names rx_fifo_mem_pound_5b0_pound_5d_12 n911 n912
+11 1
+.names n910 n912 n913
+00 1
+.names n867 n913 n914
+01 1
+.names n913 n914 n915
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_12 n915 n916
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_12 n867 n917
+01 1
+.names n913 n917 n918
+01 1
+.names n916 n918 rx_fifo_mem_pound_5b0_pound_5d_12_in
+00 0
+.names rx_fifo_mem_pound_5b0_pound_5d_13 n883 n920
+01 1
+.names rx_fifo_mem_pound_5b0_pound_5d_13 n920 n921
+00 1
+.names rxr_pound_5b2_pound_5d_174 n921 n922
+10 1
+.names rxr_pound_5b2_pound_5d_174 n883 n923
+00 1
+.names rx_fifo_mem_pound_5b0_pound_5d_13 n923 n924
+11 1
+.names n922 n924 n925
+00 1
+.names n867 n925 n926
+01 1
+.names n925 n926 n927
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_13 n927 n928
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_13 n867 n929
+01 1
+.names n925 n929 n930
+01 1
+.names n928 n930 rx_fifo_mem_pound_5b0_pound_5d_13_in
+00 0
+.names rx_fifo_mem_pound_5b0_pound_5d_14 n883 n932
+01 1
+.names rx_fifo_mem_pound_5b0_pound_5d_14 n932 n933
+00 1
+.names rxr_pound_5b2_pound_5d_175 n933 n934
+10 1
+.names rxr_pound_5b2_pound_5d_175 n883 n935
+00 1
+.names rx_fifo_mem_pound_5b0_pound_5d_14 n935 n936
+11 1
+.names n934 n936 n937
+00 1
+.names n867 n937 n938
+01 1
+.names n937 n938 n939
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_14 n939 n940
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_14 n867 n941
+01 1
+.names n937 n941 n942
+01 1
+.names n940 n942 rx_fifo_mem_pound_5b0_pound_5d_14_in
+00 0
+.names rx_fifo_mem_pound_5b0_pound_5d_15 n883 n944
+01 1
+.names rx_fifo_mem_pound_5b0_pound_5d_15 n944 n945
+00 1
+.names rxr_pound_5b2_pound_5d_176 n945 n946
+10 1
+.names rxr_pound_5b2_pound_5d_176 n883 n947
+00 1
+.names rx_fifo_mem_pound_5b0_pound_5d_15 n947 n948
+11 1
+.names n946 n948 n949
+00 1
+.names n867 n949 n950
+01 1
+.names n949 n950 n951
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_15 n951 n952
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_15 n867 n953
+01 1
+.names n949 n953 n954
+01 1
+.names n952 n954 rx_fifo_mem_pound_5b0_pound_5d_15_in
+00 0
+.names rx_fifo_mem_pound_5b0_pound_5d_16 n883 n956
+01 1
+.names rx_fifo_mem_pound_5b0_pound_5d_16 n956 n957
+00 1
+.names rxr_pound_5b2_pound_5d_177 n957 n958
+10 1
+.names rxr_pound_5b2_pound_5d_177 n883 n959
+00 1
+.names rx_fifo_mem_pound_5b0_pound_5d_16 n959 n960
+11 1
+.names n958 n960 n961
+00 1
+.names n867 n961 n962
+01 1
+.names n961 n962 n963
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_16 n963 n964
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d_16 n867 n965
+01 1
+.names n961 n965 n966
+01 1
+.names n964 n966 rx_fifo_mem_pound_5b0_pound_5d_16_in
+00 0
+.names rx_fifo_mem_pound_5b0_pound_5d n883 n968
+01 1
+.names rx_fifo_mem_pound_5b0_pound_5d n968 n969
+00 1
+.names rxr_pound_5b2_pound_5d n969 n970
+10 1
+.names rxr_pound_5b2_pound_5d n883 n971
+00 1
+.names rx_fifo_mem_pound_5b0_pound_5d n971 n972
+11 1
+.names n970 n972 n973
+00 1
+.names n867 n973 n974
+01 1
+.names n973 n974 n975
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d n975 n976
+10 1
+.names rx_fifo_mem_pound_5b0_pound_5d n867 n977
+01 1
+.names n973 n977 n978
+01 1
+.names n976 n978 rx_fifo_mem_pound_5b0_pound_5d_in
+00 0
+.names rxr_pound_5b2_pound_5d_171 n848 n980
+00 1
+.names rxr_pound_5b2_pound_5d_171 n980 n981
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d_3 n981 n982
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_3 n848 n983
+01 1
+.names rxr_pound_5b2_pound_5d_171 n983 n984
+11 1
+.names n982 n984 n985
+00 1
+.names n867 n985 n986
+01 1
+.names n985 n986 n987
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_3 n987 n988
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_3 n867 n989
+01 1
+.names n985 n989 n990
+01 1
+.names n988 n990 rx_fifo_mem_pound_5b1_pound_5d_3_in
+00 0
+.names rxr_pound_5b2_pound_5d_172 n848 n992
+00 1
+.names rxr_pound_5b2_pound_5d_172 n992 n993
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d_4 n993 n994
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_4 n848 n995
+01 1
+.names rxr_pound_5b2_pound_5d_172 n995 n996
+11 1
+.names n994 n996 n997
+00 1
+.names n867 n997 n998
+01 1
+.names n997 n998 n999
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_4 n999 n1000
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_4 n867 n1001
+01 1
+.names n997 n1001 n1002
+01 1
+.names n1000 n1002 rx_fifo_mem_pound_5b1_pound_5d_4_in
+00 0
+.names rxr_pound_5b2_pound_5d_173 n848 n1004
+00 1
+.names rxr_pound_5b2_pound_5d_173 n1004 n1005
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d_5 n1005 n1006
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_5 n848 n1007
+01 1
+.names rxr_pound_5b2_pound_5d_173 n1007 n1008
+11 1
+.names n1006 n1008 n1009
+00 1
+.names n867 n1009 n1010
+01 1
+.names n1009 n1010 n1011
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_5 n1011 n1012
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_5 n867 n1013
+01 1
+.names n1009 n1013 n1014
+01 1
+.names n1012 n1014 rx_fifo_mem_pound_5b1_pound_5d_5_in
+00 0
+.names rxr_pound_5b2_pound_5d_174 n848 n1016
+00 1
+.names rxr_pound_5b2_pound_5d_174 n1016 n1017
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d_6 n1017 n1018
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_6 n848 n1019
+01 1
+.names rxr_pound_5b2_pound_5d_174 n1019 n1020
+11 1
+.names n1018 n1020 n1021
+00 1
+.names n867 n1021 n1022
+01 1
+.names n1021 n1022 n1023
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_6 n1023 n1024
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_6 n867 n1025
+01 1
+.names n1021 n1025 n1026
+01 1
+.names n1024 n1026 rx_fifo_mem_pound_5b1_pound_5d_6_in
+00 0
+.names rxr_pound_5b2_pound_5d_175 n848 n1028
+00 1
+.names rxr_pound_5b2_pound_5d_175 n1028 n1029
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d_7 n1029 n1030
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_7 n848 n1031
+01 1
+.names rxr_pound_5b2_pound_5d_175 n1031 n1032
+11 1
+.names n1030 n1032 n1033
+00 1
+.names n867 n1033 n1034
+01 1
+.names n1033 n1034 n1035
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_7 n1035 n1036
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_7 n867 n1037
+01 1
+.names n1033 n1037 n1038
+01 1
+.names n1036 n1038 rx_fifo_mem_pound_5b1_pound_5d_7_in
+00 0
+.names rxr_pound_5b2_pound_5d_176 n848 n1040
+00 1
+.names rxr_pound_5b2_pound_5d_176 n1040 n1041
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d_8 n1041 n1042
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_8 n848 n1043
+01 1
+.names rxr_pound_5b2_pound_5d_176 n1043 n1044
+11 1
+.names n1042 n1044 n1045
+00 1
+.names n867 n1045 n1046
+01 1
+.names n1045 n1046 n1047
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_8 n1047 n1048
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_8 n867 n1049
+01 1
+.names n1045 n1049 n1050
+01 1
+.names n1048 n1050 rx_fifo_mem_pound_5b1_pound_5d_8_in
+00 0
+.names rxr_pound_5b2_pound_5d_177 n848 n1052
+00 1
+.names rxr_pound_5b2_pound_5d_177 n1052 n1053
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d_9 n1053 n1054
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_9 n848 n1055
+01 1
+.names rxr_pound_5b2_pound_5d_177 n1055 n1056
+11 1
+.names n1054 n1056 n1057
+00 1
+.names n867 n1057 n1058
+01 1
+.names n1057 n1058 n1059
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_9 n1059 n1060
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d_9 n867 n1061
+01 1
+.names n1057 n1061 n1062
+01 1
+.names n1060 n1062 rx_fifo_mem_pound_5b1_pound_5d_9_in
+00 0
+.names rxr_pound_5b2_pound_5d n848 n1064
+00 1
+.names rxr_pound_5b2_pound_5d n1064 n1065
+00 1
+.names rx_fifo_mem_pound_5b1_pound_5d n1065 n1066
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d n848 n1067
+01 1
+.names rxr_pound_5b2_pound_5d n1067 n1068
+11 1
+.names n1066 n1068 n1069
+00 1
+.names n867 n1069 n1070
+01 1
+.names n1069 n1070 n1071
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d n1071 n1072
+10 1
+.names rx_fifo_mem_pound_5b1_pound_5d n867 n1073
+01 1
+.names n1069 n1073 n1074
+01 1
+.names n1072 n1074 rx_fifo_mem_pound_5b1_pound_5d_in
+00 0
+.names rxr_pound_5b2_pound_5d_171 n845 n1076
+00 1
+.names rxr_pound_5b2_pound_5d_171 n1076 n1077
+00 1
+.names rx_fifo_mem_pound_5b2_pound_5d_24 n1077 n1078
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_24 n845 n1079
+01 1
+.names rxr_pound_5b2_pound_5d_171 n1079 n1080
+11 1
+.names n1078 n1080 n1081
+00 1
+.names n867 n1081 n1082
+01 1
+.names n1081 n1082 n1083
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_24 n1083 n1084
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_24 n867 n1085
+01 1
+.names n1081 n1085 n1086
+01 1
+.names n1084 n1086 rx_fifo_mem_pound_5b2_pound_5d_24_in
+00 0
+.names rxr_pound_5b2_pound_5d_172 n845 n1088
+00 1
+.names rxr_pound_5b2_pound_5d_172 n1088 n1089
+00 1
+.names rx_fifo_mem_pound_5b2_pound_5d_25 n1089 n1090
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_25 n845 n1091
+01 1
+.names rxr_pound_5b2_pound_5d_172 n1091 n1092
+11 1
+.names n1090 n1092 n1093
+00 1
+.names n867 n1093 n1094
+01 1
+.names n1093 n1094 n1095
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_25 n1095 n1096
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_25 n867 n1097
+01 1
+.names n1093 n1097 n1098
+01 1
+.names n1096 n1098 rx_fifo_mem_pound_5b2_pound_5d_25_in
+00 0
+.names rxr_pound_5b2_pound_5d_173 n845 n1100
+00 1
+.names rxr_pound_5b2_pound_5d_173 n1100 n1101
+00 1
+.names rx_fifo_mem_pound_5b2_pound_5d_26 n1101 n1102
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_26 n845 n1103
+01 1
+.names rxr_pound_5b2_pound_5d_173 n1103 n1104
+11 1
+.names n1102 n1104 n1105
+00 1
+.names n867 n1105 n1106
+01 1
+.names n1105 n1106 n1107
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_26 n1107 n1108
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_26 n867 n1109
+01 1
+.names n1105 n1109 n1110
+01 1
+.names n1108 n1110 rx_fifo_mem_pound_5b2_pound_5d_26_in
+00 0
+.names rxr_pound_5b2_pound_5d_174 n845 n1112
+00 1
+.names rxr_pound_5b2_pound_5d_174 n1112 n1113
+00 1
+.names rx_fifo_mem_pound_5b2_pound_5d_27 n1113 n1114
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_27 n845 n1115
+01 1
+.names rxr_pound_5b2_pound_5d_174 n1115 n1116
+11 1
+.names n1114 n1116 n1117
+00 1
+.names n867 n1117 n1118
+01 1
+.names n1117 n1118 n1119
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_27 n1119 n1120
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_27 n867 n1121
+01 1
+.names n1117 n1121 n1122
+01 1
+.names n1120 n1122 rx_fifo_mem_pound_5b2_pound_5d_27_in
+00 0
+.names rxr_pound_5b2_pound_5d_175 n845 n1124
+00 1
+.names rxr_pound_5b2_pound_5d_175 n1124 n1125
+00 1
+.names rx_fifo_mem_pound_5b2_pound_5d_28 n1125 n1126
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_28 n845 n1127
+01 1
+.names rxr_pound_5b2_pound_5d_175 n1127 n1128
+11 1
+.names n1126 n1128 n1129
+00 1
+.names n867 n1129 n1130
+01 1
+.names n1129 n1130 n1131
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_28 n1131 n1132
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_28 n867 n1133
+01 1
+.names n1129 n1133 n1134
+01 1
+.names n1132 n1134 rx_fifo_mem_pound_5b2_pound_5d_28_in
+00 0
+.names rxr_pound_5b2_pound_5d_176 n845 n1136
+00 1
+.names rxr_pound_5b2_pound_5d_176 n1136 n1137
+00 1
+.names rx_fifo_mem_pound_5b2_pound_5d_29 n1137 n1138
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_29 n845 n1139
+01 1
+.names rxr_pound_5b2_pound_5d_176 n1139 n1140
+11 1
+.names n1138 n1140 n1141
+00 1
+.names n867 n1141 n1142
+01 1
+.names n1141 n1142 n1143
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_29 n1143 n1144
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_29 n867 n1145
+01 1
+.names n1141 n1145 n1146
+01 1
+.names n1144 n1146 rx_fifo_mem_pound_5b2_pound_5d_29_in
+00 0
+.names rxr_pound_5b2_pound_5d_177 n845 n1148
+00 1
+.names rxr_pound_5b2_pound_5d_177 n1148 n1149
+00 1
+.names rx_fifo_mem_pound_5b2_pound_5d_30 n1149 n1150
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_30 n845 n1151
+01 1
+.names rxr_pound_5b2_pound_5d_177 n1151 n1152
+11 1
+.names n1150 n1152 n1153
+00 1
+.names n867 n1153 n1154
+01 1
+.names n1153 n1154 n1155
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_30 n1155 n1156
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d_30 n867 n1157
+01 1
+.names n1153 n1157 n1158
+01 1
+.names n1156 n1158 rx_fifo_mem_pound_5b2_pound_5d_30_in
+00 0
+.names rxr_pound_5b2_pound_5d n845 n1160
+00 1
+.names rxr_pound_5b2_pound_5d n1160 n1161
+00 1
+.names rx_fifo_mem_pound_5b2_pound_5d n1161 n1162
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d n845 n1163
+01 1
+.names rxr_pound_5b2_pound_5d n1163 n1164
+11 1
+.names n1162 n1164 n1165
+00 1
+.names n867 n1165 n1166
+01 1
+.names n1165 n1166 n1167
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d n1167 n1168
+10 1
+.names rx_fifo_mem_pound_5b2_pound_5d n867 n1169
+01 1
+.names n1165 n1169 n1170
+01 1
+.names n1168 n1170 rx_fifo_mem_pound_5b2_pound_5d_in
+00 0
+.names n841 n847 n1172
+01 1
+.names rxr_pound_5b2_pound_5d_171 n1172 n1173
+00 1
+.names rxr_pound_5b2_pound_5d_171 n1173 n1174
+00 1
+.names rx_fifo_mem_pound_5b3_pound_5d_17 n1174 n1175
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_17 n1172 n1176
+01 1
+.names rxr_pound_5b2_pound_5d_171 n1176 n1177
+11 1
+.names n1175 n1177 n1178
+00 1
+.names n867 n1178 n1179
+01 1
+.names n1178 n1179 n1180
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_17 n1180 n1181
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_17 n867 n1182
+01 1
+.names n1178 n1182 n1183
+01 1
+.names n1181 n1183 rx_fifo_mem_pound_5b3_pound_5d_17_in
+00 0
+.names rxr_pound_5b2_pound_5d_172 n1172 n1185
+00 1
+.names rxr_pound_5b2_pound_5d_172 n1185 n1186
+00 1
+.names rx_fifo_mem_pound_5b3_pound_5d_18 n1186 n1187
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_18 n1172 n1188
+01 1
+.names rxr_pound_5b2_pound_5d_172 n1188 n1189
+11 1
+.names n1187 n1189 n1190
+00 1
+.names n867 n1190 n1191
+01 1
+.names n1190 n1191 n1192
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_18 n1192 n1193
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_18 n867 n1194
+01 1
+.names n1190 n1194 n1195
+01 1
+.names n1193 n1195 rx_fifo_mem_pound_5b3_pound_5d_18_in
+00 0
+.names rxr_pound_5b2_pound_5d_173 n1172 n1197
+00 1
+.names rxr_pound_5b2_pound_5d_173 n1197 n1198
+00 1
+.names rx_fifo_mem_pound_5b3_pound_5d_19 n1198 n1199
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_19 n1172 n1200
+01 1
+.names rxr_pound_5b2_pound_5d_173 n1200 n1201
+11 1
+.names n1199 n1201 n1202
+00 1
+.names n867 n1202 n1203
+01 1
+.names n1202 n1203 n1204
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_19 n1204 n1205
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_19 n867 n1206
+01 1
+.names n1202 n1206 n1207
+01 1
+.names n1205 n1207 rx_fifo_mem_pound_5b3_pound_5d_19_in
+00 0
+.names rxr_pound_5b2_pound_5d_174 n1172 n1209
+00 1
+.names rxr_pound_5b2_pound_5d_174 n1209 n1210
+00 1
+.names rx_fifo_mem_pound_5b3_pound_5d_20 n1210 n1211
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_20 n1172 n1212
+01 1
+.names rxr_pound_5b2_pound_5d_174 n1212 n1213
+11 1
+.names n1211 n1213 n1214
+00 1
+.names n867 n1214 n1215
+01 1
+.names n1214 n1215 n1216
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_20 n1216 n1217
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_20 n867 n1218
+01 1
+.names n1214 n1218 n1219
+01 1
+.names n1217 n1219 rx_fifo_mem_pound_5b3_pound_5d_20_in
+00 0
+.names rxr_pound_5b2_pound_5d_175 n1172 n1221
+00 1
+.names rxr_pound_5b2_pound_5d_175 n1221 n1222
+00 1
+.names rx_fifo_mem_pound_5b3_pound_5d_21 n1222 n1223
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_21 n1172 n1224
+01 1
+.names rxr_pound_5b2_pound_5d_175 n1224 n1225
+11 1
+.names n1223 n1225 n1226
+00 1
+.names n867 n1226 n1227
+01 1
+.names n1226 n1227 n1228
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_21 n1228 n1229
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_21 n867 n1230
+01 1
+.names n1226 n1230 n1231
+01 1
+.names n1229 n1231 rx_fifo_mem_pound_5b3_pound_5d_21_in
+00 0
+.names rxr_pound_5b2_pound_5d_176 n1172 n1233
+00 1
+.names rxr_pound_5b2_pound_5d_176 n1233 n1234
+00 1
+.names rx_fifo_mem_pound_5b3_pound_5d_22 n1234 n1235
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_22 n1172 n1236
+01 1
+.names rxr_pound_5b2_pound_5d_176 n1236 n1237
+11 1
+.names n1235 n1237 n1238
+00 1
+.names n867 n1238 n1239
+01 1
+.names n1238 n1239 n1240
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_22 n1240 n1241
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_22 n867 n1242
+01 1
+.names n1238 n1242 n1243
+01 1
+.names n1241 n1243 rx_fifo_mem_pound_5b3_pound_5d_22_in
+00 0
+.names rxr_pound_5b2_pound_5d_177 n1172 n1245
+00 1
+.names rxr_pound_5b2_pound_5d_177 n1245 n1246
+00 1
+.names rx_fifo_mem_pound_5b3_pound_5d_23 n1246 n1247
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_23 n1172 n1248
+01 1
+.names rxr_pound_5b2_pound_5d_177 n1248 n1249
+11 1
+.names n1247 n1249 n1250
+00 1
+.names n867 n1250 n1251
+01 1
+.names n1250 n1251 n1252
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_23 n1252 n1253
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d_23 n867 n1254
+01 1
+.names n1250 n1254 n1255
+01 1
+.names n1253 n1255 rx_fifo_mem_pound_5b3_pound_5d_23_in
+00 0
+.names rxr_pound_5b2_pound_5d n1172 n1257
+00 1
+.names rxr_pound_5b2_pound_5d n1257 n1258
+00 1
+.names rx_fifo_mem_pound_5b3_pound_5d n1258 n1259
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d n1172 n1260
+01 1
+.names rxr_pound_5b2_pound_5d n1260 n1261
+11 1
+.names n1259 n1261 n1262
+00 1
+.names n867 n1262 n1263
+01 1
+.names n1262 n1263 n1264
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d n1264 n1265
+10 1
+.names rx_fifo_mem_pound_5b3_pound_5d n867 n1266
+01 1
+.names n1262 n1266 n1267
+01 1
+.names n1265 n1267 rx_fifo_mem_pound_5b3_pound_5d_in
+00 0
+.names re_i rx_fifo_rp_pound_5b0_pound_5d n1269
+01 1
+.names re_i rx_fifo_rp_pound_5b0_pound_5d n1270
+10 1
+.names n1269 n1270 rx_fifo_rp_pound_5b0_pound_5d_in
+00 0
+.names n270 n277 n1272
+01 1
+.names n270 n277 n1273
+10 1
+.names n1272 n1273 n1274
+00 1
+.names n270 n277 n1275
+11 1
+.names n1274 n1275 n1276
+10 1
+.names re_i rx_fifo_rp_pound_5b1_pound_5d n1277
+10 1
+.names rx_fifo_rp_pound_5b1_pound_5d n1277 n1278
+00 1
+.names n1276 n1278 n1279
+00 1
+.names re_i n1276 n1280
+01 1
+.names rx_fifo_rp_pound_5b1_pound_5d n1280 n1281
+11 1
+.names n1279 n1281 rx_fifo_rp_pound_5b1_pound_5d_in
+00 0
+.names rx_fifo_wp_pound_5b0_pound_5d n867 n1283
+01 1
+.names rx_fifo_wp_pound_5b0_pound_5d n867 n1284
+11 1
+.names n1283 n1284 n1285
+00 1
+.names rx_fifo_wp_pound_5b0_pound_5d n867 n1286
+00 1
+.names n1285 n1286 n1287
+10 1
+.names rx_fifo_wp_pound_5b0_pound_5d n1287 n1288
+00 1
+.names n867 n1288 n1289
+11 1
+.names n1287 n1289 rx_fifo_wp_pound_5b0_pound_5d_in
+00 0
+.names n853 n867 n1291
+10 1
+.names n853 n1291 n1292
+10 1
+.names rx_fifo_wp_pound_5b1_pound_5d n1292 n1293
+10 1
+.names rx_fifo_wp_pound_5b1_pound_5d n867 n1294
+01 1
+.names n853 n1294 n1295
+01 1
+.names n1293 n1295 rx_fifo_wp_pound_5b1_pound_5d_in
+00 0
+.names n_182 rx_bit_cnt_pound_5b2_pound_5d n1297
+00 1
+.names rx_bit_cnt_pound_5b2_pound_5d n1297 n1298
+00 1
+.names n_182 rx_bit_cnt_pound_5b3_pound_5d n1299
+10 1
+.names rx_bit_cnt_pound_5b2_pound_5d n1299 n1300
+01 1
+.names n1298 n1300 n1301
+10 1
+.names n_182 rx_bit_cnt_pound_5b2_pound_5d n1302
+10 1
+.names rx_bit_cnt_pound_5b0_pound_5d rx_bit_cnt_pound_5b3_pound_5d n1303
+11 1
+.names n1302 n1303 n1304
+11 1
+.names n1301 n1304 rx_go_in
+10 0
+.names rx_sio_ce_r1_reg_Q rx_sio_ce_r2 rx_sio_ce_in
+10 1
+.names n_182 rx_bit_cnt_pound_5b2_pound_5d n1307
+01 1
+.names n1302 n1307 n1308
+00 1
+.names n_182 rx_bit_cnt_pound_5b2_pound_5d n1309
+11 1
+.names n1308 n1309 n1310
+10 1
+.names rx_bit_cnt_pound_5b0_pound_5d rx_bit_cnt_pound_5b3_pound_5d n1311
+00 1
+.names rx_bit_cnt_pound_5b0_pound_5d rx_bit_cnt_pound_5b3_pound_5d n1312
+01 1
+.names n1311 n1312 n1313
+00 1
+.names rx_bit_cnt_pound_5b0_pound_5d rx_bit_cnt_pound_5b3_pound_5d n1314
+10 1
+.names n1313 n1314 n1315
+10 1
+.names n1310 n1315 rx_valid_in
+11 1
+.names rxr_pound_5b2_pound_5d_172 n776 n1317
+00 1
+.names rxr_pound_5b2_pound_5d_172 n1317 n1318
+00 1
+.names rxr_pound_5b2_pound_5d_171 n1318 n1319
+10 1
+.names rxr_pound_5b2_pound_5d_171 n776 n1320
+01 1
+.names rxr_pound_5b2_pound_5d_172 n1320 n1321
+11 1
+.names n1319 n1321 rxr_pound_5b2_pound_5d_171_in
+00 0
+.names rxr_pound_5b2_pound_5d_173 n776 n1323
+00 1
+.names rxr_pound_5b2_pound_5d_173 n1323 n1324
+00 1
+.names rxr_pound_5b2_pound_5d_172 n1324 n1325
+10 1
+.names rxr_pound_5b2_pound_5d_172 n776 n1326
+01 1
+.names rxr_pound_5b2_pound_5d_173 n1326 n1327
+11 1
+.names n1325 n1327 rxr_pound_5b2_pound_5d_172_in
+00 0
+.names rxr_pound_5b2_pound_5d_174 n776 n1329
+00 1
+.names rxr_pound_5b2_pound_5d_174 n1329 n1330
+00 1
+.names rxr_pound_5b2_pound_5d_173 n1330 n1331
+10 1
+.names rxr_pound_5b2_pound_5d_173 n776 n1332
+01 1
+.names rxr_pound_5b2_pound_5d_174 n1332 n1333
+11 1
+.names n1331 n1333 rxr_pound_5b2_pound_5d_173_in
+00 0
+.names rxr_pound_5b2_pound_5d_175 n776 n1335
+00 1
+.names rxr_pound_5b2_pound_5d_175 n1335 n1336
+00 1
+.names rxr_pound_5b2_pound_5d_174 n1336 n1337
+10 1
+.names rxr_pound_5b2_pound_5d_174 n776 n1338
+01 1
+.names rxr_pound_5b2_pound_5d_175 n1338 n1339
+11 1
+.names n1337 n1339 rxr_pound_5b2_pound_5d_174_in
+00 0
+.names rxr_pound_5b2_pound_5d_176 n776 n1341
+00 1
+.names rxr_pound_5b2_pound_5d_176 n1341 n1342
+00 1
+.names rxr_pound_5b2_pound_5d_175 n1342 n1343
+10 1
+.names rxr_pound_5b2_pound_5d_175 n776 n1344
+01 1
+.names rxr_pound_5b2_pound_5d_176 n1344 n1345
+11 1
+.names n1343 n1345 rxr_pound_5b2_pound_5d_175_in
+00 0
+.names rxr_pound_5b2_pound_5d_177 n776 n1347
+00 1
+.names rxr_pound_5b2_pound_5d_177 n1347 n1348
+00 1
+.names rxr_pound_5b2_pound_5d_176 n1348 n1349
+10 1
+.names rxr_pound_5b2_pound_5d_176 n776 n1350
+01 1
+.names rxr_pound_5b2_pound_5d_177 n1350 n1351
+11 1
+.names n1349 n1351 rxr_pound_5b2_pound_5d_176_in
+00 0
+.names rxd_s n776 n1353
+00 1
+.names rxd_s n1353 n1354
+00 1
+.names rxr_pound_5b2_pound_5d_177 n1354 n1355
+10 1
+.names rxr_pound_5b2_pound_5d_177 n776 n1356
+01 1
+.names rxd_s n1356 n1357
+11 1
+.names n1355 n1357 rxr_pound_5b2_pound_5d_177_in
+00 0
+.names rxr_pound_5b2_pound_5d_171 n776 n1359
+00 1
+.names rxr_pound_5b2_pound_5d_171 n1359 n1360
+00 1
+.names rxr_pound_5b2_pound_5d n1360 n1361
+10 1
+.names rxr_pound_5b2_pound_5d n776 n1362
+01 1
+.names rxr_pound_5b2_pound_5d_171 n1362 n1363
+11 1
+.names n1361 n1363 rxr_pound_5b2_pound_5d_in
+00 0
+.names tx_bit_cnt_pound_5b2_pound_5d tx_bit_cnt_pound_5b3_pound_5d n1365
+10 1
+.names tx_bit_cnt_pound_5b2_pound_5d tx_bit_cnt_pound_5b3_pound_5d n1366
+11 1
+.names n1365 n1366 n1367
+00 1
+.names tx_bit_cnt_pound_5b2_pound_5d tx_bit_cnt_pound_5b3_pound_5d n1368
+00 1
+.names n1367 n1368 n1369
+10 1
+.names tx_bit_cnt_pound_5b0_pound_5d tx_bit_cnt_pound_5b1_pound_5d n1370
+11 1
+.names tx_bit_cnt_pound_5b0_pound_5d tx_bit_cnt_pound_5b1_pound_5d n1371
+00 1
+.names n1370 n1371 n1372
+00 1
+.names tx_bit_cnt_pound_5b0_pound_5d tx_bit_cnt_pound_5b1_pound_5d n1373
+01 1
+.names n1372 n1373 n1374
+10 1
+.names n1369 n1374 n1375
+10 1
+.names n1369 n1374 n1376
+01 1
+.names n1375 n1376 n1377
+00 1
+.names n1369 n1374 n1378
+00 1
+.names n1377 n1378 shift_en_in
+10 0
+.names shift_en_r sio_ce n1380
+01 1
+.names shift_en_r sio_ce n1381
+00 1
+.names n1380 n1381 n1382
+00 1
+.names shift_en_r sio_ce n1383
+11 1
+.names n1382 n1383 n1384
+10 1
+.names rst n1384 n1385
+11 1
+.names rst n466 n1386
+01 1
+.names n1384 n1386 n1387
+01 1
+.names n1385 n1387 shift_en_r_in
+00 0
+.names tx_bit_cnt_pound_5b0_pound_5d n466 n1389
+01 1
+.names tx_bit_cnt_pound_5b0_pound_5d n1389 n1390
+00 1
+.names n466 n1389 n1391
+11 1
+.names tx_bit_cnt_pound_5b0_pound_5d n1391 n1392
+11 1
+.names n1390 n1392 n1393
+00 1
+.names rst n467 n1394
+10 1
+.names n1393 n1394 n1395
+11 1
+.names rst n1395 tx_bit_cnt_pound_5b0_pound_5d_in
+10 0
+.names tx_bit_cnt_pound_5b0_pound_5d tx_bit_cnt_pound_5b1_pound_5d n1397
+10 1
+.names n1370 n1397 n1398
+00 1
+.names n1371 n1398 n1399
+01 1
+.names n466 n1374 n1400
+11 1
+.names n466 n1399 n1401
+01 1
+.names n1374 n1401 n1402
+01 1
+.names n1400 n1402 n1403
+00 1
+.names tx_bit_cnt_pound_5b1_pound_5d n1403 n1404
+01 1
+.names n466 n1403 n1405
+10 1
+.names tx_bit_cnt_pound_5b1_pound_5d n1405 n1406
+11 1
+.names n1404 n1406 n1407
+00 1
+.names rst n467 n1408
+00 1
+.names rst n467 n1409
+11 1
+.names n1408 n1409 n1410
+00 1
+.names rst n467 n1411
+01 1
+.names n1410 n1411 n1412
+10 1
+.names n1407 n1412 tx_bit_cnt_pound_5b1_pound_5d_in
+11 1
+.names tx_bit_cnt_pound_5b2_pound_5d n1370 n1414
+01 1
+.names n1370 n1414 n1415
+10 1
+.names tx_bit_cnt_pound_5b2_pound_5d n1414 n1416
+01 1
+.names n1370 n1416 n1417
+01 1
+.names n1415 n1417 n1418
+00 1
+.names n466 n1418 n1419
+11 1
+.names tx_bit_cnt_pound_5b2_pound_5d n1419 n1420
+00 1
+.names n466 n1419 n1421
+11 1
+.names tx_bit_cnt_pound_5b2_pound_5d n1421 n1422
+11 1
+.names n1420 n1422 n1423
+00 1
+.names n1412 n1423 tx_bit_cnt_pound_5b2_pound_5d_in
+11 1
+.names tx_bit_cnt_pound_5b2_pound_5d n1370 n1425
+00 1
+.names tx_bit_cnt_pound_5b2_pound_5d n1370 n1426
+10 1
+.names n1425 n1426 n1427
+00 1
+.names n1414 n1427 n1428
+01 1
+.names tx_bit_cnt_pound_5b3_pound_5d n1428 n1429
+00 1
+.names tx_bit_cnt_pound_5b3_pound_5d n1428 n1430
+11 1
+.names n1429 n1430 n1431
+00 1
+.names n466 n1431 n1432
+11 1
+.names n466 n1432 n1433
+10 1
+.names tx_bit_cnt_pound_5b3_pound_5d n1432 n1434
+01 1
+.names n466 n1434 n1435
+01 1
+.names n1433 n1435 n1436
+00 1
+.names n1394 n1436 n1437
+11 1
+.names rst n1437 tx_bit_cnt_pound_5b3_pound_5d_in
+10 0
+.names tx_fifo_gb_reg_Q n467 n1439
+01 1
+.names tx_fifo_gb_reg_Q n467 n1440
+11 1
+.names n1439 n1440 n1441
+00 1
+.names tx_fifo_gb_reg_Q n467 n1442
+00 1
+.names n1441 n1442 n1443
+10 1
+.names tx_fifo_wp_pound_5b0_pound_5d tx_fifo_wp_pound_5b1_pound_5d n1444
+01 1
+.names tx_fifo_wp_pound_5b0_pound_5d tx_fifo_wp_pound_5b1_pound_5d n1445
+00 1
+.names n1444 n1445 n1446
+00 1
+.names tx_fifo_wp_pound_5b0_pound_5d tx_fifo_wp_pound_5b1_pound_5d n1447
+11 1
+.names n1446 n1447 n1448
+10 1
+.names tx_fifo_wp_pound_5b0_pound_5d tx_fifo_wp_pound_5b1_pound_5d n1449
+10 1
+.names n1447 n1449 n1450
+00 1
+.names n1445 n1450 n1451
+01 1
+.names n1448 n1451 n1452
+11 1
+.names n1448 n1451 n1453
+10 1
+.names n1452 n1453 n1454
+00 1
+.names n1448 n1451 n1455
+01 1
+.names n1454 n1455 n1456
+10 1
+.names tx_fifo_rp_pound_5b1_pound_5d n1456 n1457
+10 1
+.names tx_fifo_rp_pound_5b1_pound_5d n1456 n1458
+01 1
+.names n1457 n1458 n1459
+00 1
+.names n463 n1459 n1460
+10 1
+.names n1459 n1460 n1461
+00 1
+.names we_i n463 n1462
+00 1
+.names n1459 n1462 n1463
+01 1
+.names n1461 n1463 n1464
+10 1
+.names rst n1443 n1465
+11 1
+.names rst n1464 n1466
+01 1
+.names n1443 n1466 n1467
+01 1
+.names n1465 n1467 tx_fifo_gb_reg_Q_in
+00 0
+.names n1444 n1450 n1469
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_10 n1469 n1470
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_10 n1470 n1471
+00 1
+.names din_i_lb_1_rb_ n1471 n1472
+10 1
+.names din_i_lb_1_rb_ n1469 n1473
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_10 n1473 n1474
+11 1
+.names n1472 n1474 n1475
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_10 we_i n1476
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_10 n1476 n1477
+00 1
+.names n1475 n1477 n1478
+00 1
+.names we_i n1475 n1479
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_10 n1479 n1480
+11 1
+.names n1478 n1480 tx_fifo_mem_pound_5b0_pound_5d_10_in
+00 0
+.names tx_fifo_mem_pound_5b0_pound_5d_11 n1469 n1482
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_11 n1482 n1483
+00 1
+.names din_i_lb_2_rb_ n1483 n1484
+10 1
+.names din_i_lb_2_rb_ n1469 n1485
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_11 n1485 n1486
+11 1
+.names n1484 n1486 n1487
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_11 we_i n1488
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_11 n1488 n1489
+00 1
+.names n1487 n1489 n1490
+00 1
+.names we_i n1487 n1491
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_11 n1491 n1492
+11 1
+.names n1490 n1492 tx_fifo_mem_pound_5b0_pound_5d_11_in
+00 0
+.names tx_fifo_mem_pound_5b0_pound_5d_12 n1469 n1494
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_12 n1494 n1495
+00 1
+.names din_i_lb_3_rb_ n1495 n1496
+10 1
+.names din_i_lb_3_rb_ n1469 n1497
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_12 n1497 n1498
+11 1
+.names n1496 n1498 n1499
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_12 we_i n1500
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_12 n1500 n1501
+00 1
+.names n1499 n1501 n1502
+00 1
+.names we_i n1499 n1503
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_12 n1503 n1504
+11 1
+.names n1502 n1504 tx_fifo_mem_pound_5b0_pound_5d_12_in
+00 0
+.names tx_fifo_mem_pound_5b0_pound_5d_13 n1469 n1506
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_13 n1506 n1507
+00 1
+.names din_i_lb_4_rb_ n1507 n1508
+10 1
+.names din_i_lb_4_rb_ n1469 n1509
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_13 n1509 n1510
+11 1
+.names n1508 n1510 n1511
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_13 we_i n1512
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_13 n1512 n1513
+00 1
+.names n1511 n1513 n1514
+00 1
+.names we_i n1511 n1515
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_13 n1515 n1516
+11 1
+.names n1514 n1516 tx_fifo_mem_pound_5b0_pound_5d_13_in
+00 0
+.names tx_fifo_mem_pound_5b0_pound_5d_14 n1469 n1518
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_14 n1518 n1519
+00 1
+.names din_i_lb_5_rb_ n1519 n1520
+10 1
+.names din_i_lb_5_rb_ n1469 n1521
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_14 n1521 n1522
+11 1
+.names n1520 n1522 n1523
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_14 we_i n1524
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_14 n1524 n1525
+00 1
+.names n1523 n1525 n1526
+00 1
+.names we_i n1523 n1527
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_14 n1527 n1528
+11 1
+.names n1526 n1528 tx_fifo_mem_pound_5b0_pound_5d_14_in
+00 0
+.names tx_fifo_mem_pound_5b0_pound_5d_15 n1469 n1530
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_15 n1530 n1531
+00 1
+.names din_i_lb_6_rb_ n1531 n1532
+10 1
+.names din_i_lb_6_rb_ n1469 n1533
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_15 n1533 n1534
+11 1
+.names n1532 n1534 n1535
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_15 we_i n1536
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_15 n1536 n1537
+00 1
+.names n1535 n1537 n1538
+00 1
+.names we_i n1535 n1539
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_15 n1539 n1540
+11 1
+.names n1538 n1540 tx_fifo_mem_pound_5b0_pound_5d_15_in
+00 0
+.names tx_fifo_mem_pound_5b0_pound_5d_16 n1469 n1542
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_16 n1542 n1543
+00 1
+.names din_i_lb_7_rb_ n1543 n1544
+10 1
+.names din_i_lb_7_rb_ n1469 n1545
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_16 n1545 n1546
+11 1
+.names n1544 n1546 n1547
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d_16 we_i n1548
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_16 n1548 n1549
+00 1
+.names n1547 n1549 n1550
+00 1
+.names we_i n1547 n1551
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d_16 n1551 n1552
+11 1
+.names n1550 n1552 tx_fifo_mem_pound_5b0_pound_5d_16_in
+00 0
+.names tx_fifo_mem_pound_5b0_pound_5d n1469 n1554
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d n1554 n1555
+00 1
+.names din_i_lb_0_rb_ n1555 n1556
+10 1
+.names din_i_lb_0_rb_ n1469 n1557
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d n1557 n1558
+11 1
+.names n1556 n1558 n1559
+00 1
+.names tx_fifo_mem_pound_5b0_pound_5d we_i n1560
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d n1560 n1561
+00 1
+.names n1559 n1561 n1562
+00 1
+.names we_i n1559 n1563
+01 1
+.names tx_fifo_mem_pound_5b0_pound_5d n1563 n1564
+11 1
+.names n1562 n1564 tx_fifo_mem_pound_5b0_pound_5d_in
+00 0
+.names din_i_lb_1_rb_ n1448 n1566
+00 1
+.names din_i_lb_1_rb_ n1566 n1567
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_3 n1567 n1568
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_3 n1448 n1569
+01 1
+.names din_i_lb_1_rb_ n1569 n1570
+11 1
+.names n1568 n1570 n1571
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_3 we_i n1572
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_3 n1572 n1573
+00 1
+.names n1571 n1573 n1574
+00 1
+.names we_i n1571 n1575
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_3 n1575 n1576
+11 1
+.names n1574 n1576 tx_fifo_mem_pound_5b1_pound_5d_3_in
+00 0
+.names din_i_lb_2_rb_ n1448 n1578
+00 1
+.names din_i_lb_2_rb_ n1578 n1579
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_4 n1579 n1580
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_4 n1448 n1581
+01 1
+.names din_i_lb_2_rb_ n1581 n1582
+11 1
+.names n1580 n1582 n1583
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_4 we_i n1584
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_4 n1584 n1585
+00 1
+.names n1583 n1585 n1586
+00 1
+.names we_i n1583 n1587
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_4 n1587 n1588
+11 1
+.names n1586 n1588 tx_fifo_mem_pound_5b1_pound_5d_4_in
+00 0
+.names din_i_lb_3_rb_ n1448 n1590
+00 1
+.names din_i_lb_3_rb_ n1590 n1591
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_5 n1591 n1592
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_5 n1448 n1593
+01 1
+.names din_i_lb_3_rb_ n1593 n1594
+11 1
+.names n1592 n1594 n1595
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_5 we_i n1596
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_5 n1596 n1597
+00 1
+.names n1595 n1597 n1598
+00 1
+.names we_i n1595 n1599
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_5 n1599 n1600
+11 1
+.names n1598 n1600 tx_fifo_mem_pound_5b1_pound_5d_5_in
+00 0
+.names din_i_lb_4_rb_ n1448 n1602
+00 1
+.names din_i_lb_4_rb_ n1602 n1603
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_6 n1603 n1604
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_6 n1448 n1605
+01 1
+.names din_i_lb_4_rb_ n1605 n1606
+11 1
+.names n1604 n1606 n1607
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_6 we_i n1608
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_6 n1608 n1609
+00 1
+.names n1607 n1609 n1610
+00 1
+.names we_i n1607 n1611
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_6 n1611 n1612
+11 1
+.names n1610 n1612 tx_fifo_mem_pound_5b1_pound_5d_6_in
+00 0
+.names din_i_lb_5_rb_ n1448 n1614
+00 1
+.names din_i_lb_5_rb_ n1614 n1615
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_7 n1615 n1616
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_7 n1448 n1617
+01 1
+.names din_i_lb_5_rb_ n1617 n1618
+11 1
+.names n1616 n1618 n1619
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_7 we_i n1620
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_7 n1620 n1621
+00 1
+.names n1619 n1621 n1622
+00 1
+.names we_i n1619 n1623
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_7 n1623 n1624
+11 1
+.names n1622 n1624 tx_fifo_mem_pound_5b1_pound_5d_7_in
+00 0
+.names din_i_lb_6_rb_ n1448 n1626
+00 1
+.names din_i_lb_6_rb_ n1626 n1627
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_8 n1627 n1628
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_8 n1448 n1629
+01 1
+.names din_i_lb_6_rb_ n1629 n1630
+11 1
+.names n1628 n1630 n1631
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_8 we_i n1632
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_8 n1632 n1633
+00 1
+.names n1631 n1633 n1634
+00 1
+.names we_i n1631 n1635
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_8 n1635 n1636
+11 1
+.names n1634 n1636 tx_fifo_mem_pound_5b1_pound_5d_8_in
+00 0
+.names din_i_lb_7_rb_ n1448 n1638
+00 1
+.names din_i_lb_7_rb_ n1638 n1639
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_9 n1639 n1640
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d_9 n1448 n1641
+01 1
+.names din_i_lb_7_rb_ n1641 n1642
+11 1
+.names n1640 n1642 n1643
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d_9 we_i n1644
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_9 n1644 n1645
+00 1
+.names n1643 n1645 n1646
+00 1
+.names we_i n1643 n1647
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d_9 n1647 n1648
+11 1
+.names n1646 n1648 tx_fifo_mem_pound_5b1_pound_5d_9_in
+00 0
+.names din_i_lb_0_rb_ n1448 n1650
+00 1
+.names din_i_lb_0_rb_ n1650 n1651
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d n1651 n1652
+10 1
+.names tx_fifo_mem_pound_5b1_pound_5d n1448 n1653
+01 1
+.names din_i_lb_0_rb_ n1653 n1654
+11 1
+.names n1652 n1654 n1655
+00 1
+.names tx_fifo_mem_pound_5b1_pound_5d we_i n1656
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d n1656 n1657
+00 1
+.names n1655 n1657 n1658
+00 1
+.names we_i n1655 n1659
+01 1
+.names tx_fifo_mem_pound_5b1_pound_5d n1659 n1660
+11 1
+.names n1658 n1660 tx_fifo_mem_pound_5b1_pound_5d_in
+00 0
+.names din_i_lb_1_rb_ n1451 n1662
+00 1
+.names din_i_lb_1_rb_ n1662 n1663
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_24 n1663 n1664
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_24 n1451 n1665
+01 1
+.names din_i_lb_1_rb_ n1665 n1666
+11 1
+.names n1664 n1666 n1667
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_24 we_i n1668
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_24 n1668 n1669
+00 1
+.names n1667 n1669 n1670
+00 1
+.names we_i n1667 n1671
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_24 n1671 n1672
+11 1
+.names n1670 n1672 tx_fifo_mem_pound_5b2_pound_5d_24_in
+00 0
+.names din_i_lb_2_rb_ n1451 n1674
+00 1
+.names din_i_lb_2_rb_ n1674 n1675
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_25 n1675 n1676
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_25 n1451 n1677
+01 1
+.names din_i_lb_2_rb_ n1677 n1678
+11 1
+.names n1676 n1678 n1679
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_25 we_i n1680
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_25 n1680 n1681
+00 1
+.names n1679 n1681 n1682
+00 1
+.names we_i n1679 n1683
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_25 n1683 n1684
+11 1
+.names n1682 n1684 tx_fifo_mem_pound_5b2_pound_5d_25_in
+00 0
+.names din_i_lb_3_rb_ n1451 n1686
+00 1
+.names din_i_lb_3_rb_ n1686 n1687
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_26 n1687 n1688
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_26 n1451 n1689
+01 1
+.names din_i_lb_3_rb_ n1689 n1690
+11 1
+.names n1688 n1690 n1691
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_26 we_i n1692
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_26 n1692 n1693
+00 1
+.names n1691 n1693 n1694
+00 1
+.names we_i n1691 n1695
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_26 n1695 n1696
+11 1
+.names n1694 n1696 tx_fifo_mem_pound_5b2_pound_5d_26_in
+00 0
+.names din_i_lb_4_rb_ n1451 n1698
+00 1
+.names din_i_lb_4_rb_ n1698 n1699
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_27 n1699 n1700
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_27 n1451 n1701
+01 1
+.names din_i_lb_4_rb_ n1701 n1702
+11 1
+.names n1700 n1702 n1703
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_27 we_i n1704
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_27 n1704 n1705
+00 1
+.names n1703 n1705 n1706
+00 1
+.names we_i n1703 n1707
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_27 n1707 n1708
+11 1
+.names n1706 n1708 tx_fifo_mem_pound_5b2_pound_5d_27_in
+00 0
+.names din_i_lb_5_rb_ n1451 n1710
+00 1
+.names din_i_lb_5_rb_ n1710 n1711
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_28 n1711 n1712
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_28 n1451 n1713
+01 1
+.names din_i_lb_5_rb_ n1713 n1714
+11 1
+.names n1712 n1714 n1715
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_28 we_i n1716
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_28 n1716 n1717
+00 1
+.names n1715 n1717 n1718
+00 1
+.names we_i n1715 n1719
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_28 n1719 n1720
+11 1
+.names n1718 n1720 tx_fifo_mem_pound_5b2_pound_5d_28_in
+00 0
+.names din_i_lb_6_rb_ n1451 n1722
+00 1
+.names din_i_lb_6_rb_ n1722 n1723
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_29 n1723 n1724
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_29 n1451 n1725
+01 1
+.names din_i_lb_6_rb_ n1725 n1726
+11 1
+.names n1724 n1726 n1727
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_29 we_i n1728
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_29 n1728 n1729
+00 1
+.names n1727 n1729 n1730
+00 1
+.names we_i n1727 n1731
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_29 n1731 n1732
+11 1
+.names n1730 n1732 tx_fifo_mem_pound_5b2_pound_5d_29_in
+00 0
+.names din_i_lb_7_rb_ n1451 n1734
+00 1
+.names din_i_lb_7_rb_ n1734 n1735
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_30 n1735 n1736
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d_30 n1451 n1737
+01 1
+.names din_i_lb_7_rb_ n1737 n1738
+11 1
+.names n1736 n1738 n1739
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d_30 we_i n1740
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_30 n1740 n1741
+00 1
+.names n1739 n1741 n1742
+00 1
+.names we_i n1739 n1743
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d_30 n1743 n1744
+11 1
+.names n1742 n1744 tx_fifo_mem_pound_5b2_pound_5d_30_in
+00 0
+.names din_i_lb_0_rb_ n1451 n1746
+00 1
+.names din_i_lb_0_rb_ n1746 n1747
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d n1747 n1748
+10 1
+.names tx_fifo_mem_pound_5b2_pound_5d n1451 n1749
+01 1
+.names din_i_lb_0_rb_ n1749 n1750
+11 1
+.names n1748 n1750 n1751
+00 1
+.names tx_fifo_mem_pound_5b2_pound_5d we_i n1752
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d n1752 n1753
+00 1
+.names n1751 n1753 n1754
+00 1
+.names we_i n1751 n1755
+01 1
+.names tx_fifo_mem_pound_5b2_pound_5d n1755 n1756
+11 1
+.names n1754 n1756 tx_fifo_mem_pound_5b2_pound_5d_in
+00 0
+.names n1445 n1449 n1758
+00 1
+.names n1444 n1758 n1759
+01 1
+.names din_i_lb_1_rb_ n1759 n1760
+00 1
+.names din_i_lb_1_rb_ n1760 n1761
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_17 n1761 n1762
+10 1
+.names tx_fifo_mem_pound_5b3_pound_5d_17 n1759 n1763
+01 1
+.names din_i_lb_1_rb_ n1763 n1764
+11 1
+.names n1762 n1764 n1765
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_17 we_i n1766
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_17 n1766 n1767
+00 1
+.names n1765 n1767 n1768
+00 1
+.names we_i n1765 n1769
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_17 n1769 n1770
+11 1
+.names n1768 n1770 tx_fifo_mem_pound_5b3_pound_5d_17_in
+00 0
+.names din_i_lb_2_rb_ n1759 n1772
+00 1
+.names din_i_lb_2_rb_ n1772 n1773
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_18 n1773 n1774
+10 1
+.names tx_fifo_mem_pound_5b3_pound_5d_18 n1759 n1775
+01 1
+.names din_i_lb_2_rb_ n1775 n1776
+11 1
+.names n1774 n1776 n1777
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_18 we_i n1778
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_18 n1778 n1779
+00 1
+.names n1777 n1779 n1780
+00 1
+.names we_i n1777 n1781
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_18 n1781 n1782
+11 1
+.names n1780 n1782 tx_fifo_mem_pound_5b3_pound_5d_18_in
+00 0
+.names din_i_lb_3_rb_ n1759 n1784
+00 1
+.names din_i_lb_3_rb_ n1784 n1785
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_19 n1785 n1786
+10 1
+.names tx_fifo_mem_pound_5b3_pound_5d_19 n1759 n1787
+01 1
+.names din_i_lb_3_rb_ n1787 n1788
+11 1
+.names n1786 n1788 n1789
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_19 we_i n1790
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_19 n1790 n1791
+00 1
+.names n1789 n1791 n1792
+00 1
+.names we_i n1789 n1793
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_19 n1793 n1794
+11 1
+.names n1792 n1794 tx_fifo_mem_pound_5b3_pound_5d_19_in
+00 0
+.names din_i_lb_4_rb_ n1759 n1796
+00 1
+.names din_i_lb_4_rb_ n1796 n1797
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_20 n1797 n1798
+10 1
+.names tx_fifo_mem_pound_5b3_pound_5d_20 n1759 n1799
+01 1
+.names din_i_lb_4_rb_ n1799 n1800
+11 1
+.names n1798 n1800 n1801
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_20 we_i n1802
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_20 n1802 n1803
+00 1
+.names n1801 n1803 n1804
+00 1
+.names we_i n1801 n1805
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_20 n1805 n1806
+11 1
+.names n1804 n1806 tx_fifo_mem_pound_5b3_pound_5d_20_in
+00 0
+.names din_i_lb_5_rb_ n1759 n1808
+00 1
+.names din_i_lb_5_rb_ n1808 n1809
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_21 n1809 n1810
+10 1
+.names tx_fifo_mem_pound_5b3_pound_5d_21 n1759 n1811
+01 1
+.names din_i_lb_5_rb_ n1811 n1812
+11 1
+.names n1810 n1812 n1813
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_21 we_i n1814
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_21 n1814 n1815
+00 1
+.names n1813 n1815 n1816
+00 1
+.names we_i n1813 n1817
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_21 n1817 n1818
+11 1
+.names n1816 n1818 tx_fifo_mem_pound_5b3_pound_5d_21_in
+00 0
+.names din_i_lb_6_rb_ n1759 n1820
+00 1
+.names din_i_lb_6_rb_ n1820 n1821
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_22 n1821 n1822
+10 1
+.names tx_fifo_mem_pound_5b3_pound_5d_22 n1759 n1823
+01 1
+.names din_i_lb_6_rb_ n1823 n1824
+11 1
+.names n1822 n1824 n1825
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_22 we_i n1826
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_22 n1826 n1827
+00 1
+.names n1825 n1827 n1828
+00 1
+.names we_i n1825 n1829
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_22 n1829 n1830
+11 1
+.names n1828 n1830 tx_fifo_mem_pound_5b3_pound_5d_22_in
+00 0
+.names din_i_lb_7_rb_ n1759 n1832
+00 1
+.names din_i_lb_7_rb_ n1832 n1833
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_23 n1833 n1834
+10 1
+.names tx_fifo_mem_pound_5b3_pound_5d_23 n1759 n1835
+01 1
+.names din_i_lb_7_rb_ n1835 n1836
+11 1
+.names n1834 n1836 n1837
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d_23 we_i n1838
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_23 n1838 n1839
+00 1
+.names n1837 n1839 n1840
+00 1
+.names we_i n1837 n1841
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d_23 n1841 n1842
+11 1
+.names n1840 n1842 tx_fifo_mem_pound_5b3_pound_5d_23_in
+00 0
+.names din_i_lb_0_rb_ n1759 n1844
+00 1
+.names din_i_lb_0_rb_ n1844 n1845
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d n1845 n1846
+10 1
+.names tx_fifo_mem_pound_5b3_pound_5d n1759 n1847
+01 1
+.names din_i_lb_0_rb_ n1847 n1848
+11 1
+.names n1846 n1848 n1849
+00 1
+.names tx_fifo_mem_pound_5b3_pound_5d we_i n1850
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d n1850 n1851
+00 1
+.names n1849 n1851 n1852
+00 1
+.names we_i n1849 n1853
+01 1
+.names tx_fifo_mem_pound_5b3_pound_5d n1853 n1854
+11 1
+.names n1852 n1854 tx_fifo_mem_pound_5b3_pound_5d_in
+00 0
+.names tx_fifo_rp_pound_5b0_pound_5d n467 n1856
+01 1
+.names tx_fifo_rp_pound_5b0_pound_5d n467 n1857
+10 1
+.names n1856 n1857 tx_fifo_rp_pound_5b0_pound_5d_in
+00 0
+.names n506 n516 n1859
+01 1
+.names n506 n516 n1860
+10 1
+.names n1859 n1860 n1861
+00 1
+.names n506 n516 n1862
+11 1
+.names n1861 n1862 n1863
+10 1
+.names tx_fifo_rp_pound_5b1_pound_5d n467 n1864
+01 1
+.names tx_fifo_rp_pound_5b1_pound_5d n1864 n1865
+00 1
+.names n1863 n1865 n1866
+00 1
+.names n467 n1863 n1867
+01 1
+.names tx_fifo_rp_pound_5b1_pound_5d n1867 n1868
+11 1
+.names n1866 n1868 tx_fifo_rp_pound_5b1_pound_5d_in
+00 0
+.names tx_fifo_wp_pound_5b0_pound_5d we_i n1870
+01 1
+.names tx_fifo_wp_pound_5b0_pound_5d we_i n1871
+10 1
+.names n1870 n1871 tx_fifo_wp_pound_5b0_pound_5d_in
+00 0
+.names tx_fifo_wp_pound_5b1_pound_5d we_i n1873
+01 1
+.names tx_fifo_wp_pound_5b1_pound_5d n1873 n1874
+00 1
+.names n1456 n1874 n1875
+00 1
+.names we_i n1456 n1876
+01 1
+.names tx_fifo_wp_pound_5b1_pound_5d n1876 n1877
+11 1
+.names n1875 n1877 tx_fifo_wp_pound_5b1_pound_5d_in
+00 0
+.names shift_en shift_en_r n1879
+00 1
+.names hold_reg n1879 n1880
+10 1
+.names hold_reg n1879 n1881
+01 1
+.names n1880 n1881 n1882
+00 1
+.names hold_reg n1879 n1883
+11 1
+.names n1882 n1883 n1884
+10 1
+.names sio_ce n1884 n1885
+00 1
+.names n1884 n1885 n1886
+00 1
+.names sio_ce txd_o n1887
+00 1
+.names sio_ce n1887 n1888
+00 1
+.names n1886 n1888 n1889
+00 1
+.names rst n1889 n1890
+00 1
+.names rst n1889 n1891
+10 1
+.names n1890 n1891 n1892
+00 1
+.names rst n1889 n1893
+01 1
+.names n1892 n1893 txd_o_in
+10 0
+.names sio_ce tx_fifo_gb_reg_Q n1895
+10 1
+.names n464 n1895 n1896
+01 1
+.names n1895 n1896 n1897
+10 1
+.names sio_ce txf_empty_r_reg_Q n1898
+00 1
+.names sio_ce n1898 n1899
+00 1
+.names n1897 n1899 n1900
+00 1
+.names rst n1900 n1901
+00 1
+.names rst n1900 n1902
+10 1
+.names n1901 n1902 n1903
+00 1
+.names rst n1900 n1904
+01 1
+.names n1903 n1904 txf_empty_r_reg_Q_in
+10 0
+.names rx_sio_ce_r1_reg_Q rx_sio_ce_r2_in
+1 1
+.names rx_valid rx_valid_r_reg_Q_in
+1 1
+.names rxd_s rxd_r_reg_Q_in
+1 1
+.names rxd_i rxd_s_in
+1 1
+.end

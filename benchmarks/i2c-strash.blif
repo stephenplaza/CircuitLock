@@ -1,0 +1,6136 @@
+# Benchmark "i2c_physical" written by ABC on Sat Nov 30 02:53:21 2013
+.model i2c_physical
+.inputs ack al byte_controller_bit_controller_c_state_pound_5b0_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b10_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b11_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b12_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b13_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b14_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b15_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b16_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b1_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b2_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b3_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b4_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b5_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b6_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b7_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b8_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b9_pound_5d \
+ byte_controller_bit_controller_clk_en \
+ byte_controller_bit_controller_cmd_stop \
+ byte_controller_bit_controller_cnt_pound_5b0_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b13_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b14_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b15_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b1_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b2_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b3_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b4_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b5_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b6_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b7_pound_5d \
+ byte_controller_bit_controller_dSCL byte_controller_bit_controller_dSDA \
+ byte_controller_bit_controller_dscl_oen \
+ byte_controller_bit_controller_sSCL_reg_Q \
+ byte_controller_bit_controller_sSDA \
+ byte_controller_bit_controller_sda_chk_reg_Q \
+ byte_controller_bit_controller_sta_condition_reg_Q \
+ byte_controller_bit_controller_sto_condition_reg_Q \
+ byte_controller_c_state_pound_5b0_pound_5d \
+ byte_controller_c_state_pound_5b1_pound_5d \
+ byte_controller_c_state_pound_5b2_pound_5d \
+ byte_controller_c_state_pound_5b3_pound_5d \
+ byte_controller_c_state_pound_5b4_pound_5d byte_controller_core_ack \
+ byte_controller_core_cmd_pound_5b0_pound_5d \
+ byte_controller_core_cmd_pound_5b1_pound_5d \
+ byte_controller_core_cmd_pound_5b2_pound_5d \
+ byte_controller_core_cmd_pound_5b3_pound_5d byte_controller_core_txd \
+ byte_controller_dcnt_pound_5b0_pound_5d \
+ byte_controller_dcnt_pound_5b1_pound_5d \
+ byte_controller_dcnt_pound_5b2_pound_5d byte_controller_ld \
+ byte_controller_n_52 byte_controller_shift core_en \
+ cr_reg_pound_5b1_pound_5d_Q cr_reg_pound_5b2_pound_5d_Q ctr_10 ctr_11 \
+ ctr_12 ctr_13 ctr_14 ctr done i2c_al iack ien irq_flag irxack n_108 n_2211 \
+ n_2228 n_2255 n_2259 n_2323 prer_reg_pound_5b0_pound_5d_Q \
+ prer_reg_pound_5b10_pound_5d_Q prer_reg_pound_5b11_pound_5d_Q \
+ prer_reg_pound_5b12_pound_5d_Q prer_reg_pound_5b13_pound_5d_Q \
+ prer_reg_pound_5b14_pound_5d_Q prer_reg_pound_5b15_pound_5d_Q \
+ prer_reg_pound_5b1_pound_5d_Q prer_reg_pound_5b2_pound_5d_Q \
+ prer_reg_pound_5b3_pound_5d_Q prer_reg_pound_5b4_pound_5d_Q \
+ prer_reg_pound_5b5_pound_5d_Q prer_reg_pound_5b6_pound_5d_Q \
+ prer_reg_pound_5b7_pound_5d_Q prer_reg_pound_5b8_pound_5d_Q \
+ prer_reg_pound_5b9_pound_5d_Q rd rxack rxr_257 rxr_258 rxr_259 rxr_260 \
+ rxr_261 rxr_262 rxr_263 rxr scl_pad_i scl_padoen_o sda_pad_i sda_padoen_o \
+ sr sta sto tip txr_pound_5b0_pound_5d txr_pound_5b1_pound_5d \
+ txr_pound_5b2_pound_5d txr_pound_5b3_pound_5d txr_pound_5b4_pound_5d \
+ txr_pound_5b5_pound_5d txr_pound_5b6_pound_5d txr_pound_5b7_pound_5d \
+ wb_ack_o wb_adr_i_lb_0_rb_ wb_adr_i_lb_1_rb_ wb_adr_i_lb_2_rb_ wb_cyc_i \
+ wb_dat_i_lb_0_rb_ wb_dat_i_lb_1_rb_ wb_dat_i_lb_2_rb_ wb_dat_i_lb_3_rb_ \
+ wb_dat_i_lb_4_rb_ wb_dat_i_lb_5_rb_ wb_dat_i_lb_6_rb_ wb_dat_i_lb_7_rb_ \
+ wb_rst_i wb_stb_i wb_we_i
+.outputs ack_in al_in \
+ byte_controller_bit_controller_c_state_pound_5b0_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b10_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b11_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b12_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b13_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b14_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b15_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b16_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b1_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b2_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b3_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b4_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b5_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b6_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b7_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b8_pound_5d_in \
+ byte_controller_bit_controller_c_state_pound_5b9_pound_5d_in \
+ byte_controller_bit_controller_clk_en_in \
+ byte_controller_bit_controller_cmd_stop_in \
+ byte_controller_bit_controller_cnt_pound_5b0_pound_5d_in \
+ byte_controller_bit_controller_cnt_pound_5b13_pound_5d_in \
+ byte_controller_bit_controller_cnt_pound_5b14_pound_5d_in \
+ byte_controller_bit_controller_cnt_pound_5b15_pound_5d_in \
+ byte_controller_bit_controller_cnt_pound_5b1_pound_5d_in \
+ byte_controller_bit_controller_cnt_pound_5b2_pound_5d_in \
+ byte_controller_bit_controller_cnt_pound_5b3_pound_5d_in \
+ byte_controller_bit_controller_cnt_pound_5b4_pound_5d_in \
+ byte_controller_bit_controller_cnt_pound_5b5_pound_5d_in \
+ byte_controller_bit_controller_cnt_pound_5b6_pound_5d_in \
+ byte_controller_bit_controller_cnt_pound_5b7_pound_5d_in \
+ byte_controller_bit_controller_dSCL_in \
+ byte_controller_bit_controller_dSDA_in \
+ byte_controller_bit_controller_dscl_oen_in \
+ byte_controller_bit_controller_sSCL_reg_Q_in \
+ byte_controller_bit_controller_sSDA_in \
+ byte_controller_bit_controller_sda_chk_reg_Q_in \
+ byte_controller_bit_controller_sta_condition_reg_Q_in \
+ byte_controller_bit_controller_sto_condition_reg_Q_in \
+ byte_controller_c_state_pound_5b0_pound_5d_in \
+ byte_controller_c_state_pound_5b1_pound_5d_in \
+ byte_controller_c_state_pound_5b2_pound_5d_in \
+ byte_controller_c_state_pound_5b3_pound_5d_in \
+ byte_controller_c_state_pound_5b4_pound_5d_in byte_controller_core_ack_in \
+ byte_controller_core_cmd_pound_5b0_pound_5d_in \
+ byte_controller_core_cmd_pound_5b1_pound_5d_in \
+ byte_controller_core_cmd_pound_5b2_pound_5d_in \
+ byte_controller_core_cmd_pound_5b3_pound_5d_in byte_controller_core_txd_in \
+ byte_controller_dcnt_pound_5b0_pound_5d_in \
+ byte_controller_dcnt_pound_5b1_pound_5d_in \
+ byte_controller_dcnt_pound_5b2_pound_5d_in byte_controller_ld_in \
+ byte_controller_n_52_in byte_controller_shift_in core_en_in \
+ cr_reg_pound_5b1_pound_5d_Q_in cr_reg_pound_5b2_pound_5d_Q_in ctr_10_in \
+ ctr_11_in ctr_12_in ctr_13_in ctr_14_in ctr_in done_in i2c_al_in iack_in \
+ ien_in irq_flag_in irxack_in n_108_in n_2211_in n_2228_in n_2255_in \
+ n_2259_in n_2323_in prer_reg_pound_5b0_pound_5d_Q_in \
+ prer_reg_pound_5b10_pound_5d_Q_in prer_reg_pound_5b11_pound_5d_Q_in \
+ prer_reg_pound_5b12_pound_5d_Q_in prer_reg_pound_5b13_pound_5d_Q_in \
+ prer_reg_pound_5b14_pound_5d_Q_in prer_reg_pound_5b15_pound_5d_Q_in \
+ prer_reg_pound_5b1_pound_5d_Q_in prer_reg_pound_5b2_pound_5d_Q_in \
+ prer_reg_pound_5b3_pound_5d_Q_in prer_reg_pound_5b4_pound_5d_Q_in \
+ prer_reg_pound_5b5_pound_5d_Q_in prer_reg_pound_5b6_pound_5d_Q_in \
+ prer_reg_pound_5b7_pound_5d_Q_in prer_reg_pound_5b8_pound_5d_Q_in \
+ prer_reg_pound_5b9_pound_5d_Q_in rd_in rxack_in rxr_257_in rxr_258_in \
+ rxr_259_in rxr_260_in rxr_261_in rxr_262_in rxr_263_in rxr_in \
+ scl_padoen_o_in sda_padoen_o_in sr_in sta_in sto_in tip_in \
+ txr_pound_5b0_pound_5d_in txr_pound_5b1_pound_5d_in \
+ txr_pound_5b2_pound_5d_in txr_pound_5b3_pound_5d_in \
+ txr_pound_5b4_pound_5d_in txr_pound_5b5_pound_5d_in \
+ txr_pound_5b6_pound_5d_in txr_pound_5b7_pound_5d_in wb_ack_o_in \
+ wb_dat_o_lb_0_rb__in wb_dat_o_lb_1_rb__in wb_dat_o_lb_2_rb__in \
+ wb_dat_o_lb_3_rb__in wb_dat_o_lb_4_rb__in wb_dat_o_lb_5_rb__in \
+ wb_dat_o_lb_6_rb__in wb_dat_o_lb_7_rb__in wb_inta_o_in
+.names wb_cyc_i wb_we_i n264
+01 1
+.names wb_we_i n264 n265
+10 1
+.names wb_cyc_i wb_stb_i n266
+10 1
+.names wb_we_i n266 n267
+11 1
+.names n265 n267 n268
+10 1
+.names wb_adr_i_lb_1_rb_ wb_adr_i_lb_2_rb_ n269
+01 1
+.names core_en n269 n270
+01 1
+.names n269 n270 n271
+10 1
+.names core_en wb_adr_i_lb_0_rb_ n272
+11 1
+.names n269 n272 n273
+11 1
+.names n271 n273 n274
+10 1
+.names wb_dat_i_lb_3_rb_ n274 n275
+01 1
+.names n274 n275 n276
+10 1
+.names ack n274 n277
+00 1
+.names n274 n277 n278
+00 1
+.names n276 n278 n279
+00 1
+.names n268 n279 n280
+10 1
+.names n268 n280 n281
+10 1
+.names ack n280 n282
+01 1
+.names n268 n282 n283
+01 1
+.names n281 n283 n284
+00 1
+.names wb_rst_i n284 ack_in
+01 1
+.names al i2c_al n286
+00 1
+.names i2c_al sta n287
+11 1
+.names al n287 n288
+11 1
+.names n286 n288 n289
+00 1
+.names wb_rst_i n289 al_in
+01 1
+.names byte_controller_core_cmd_pound_5b2_pound_5d \
+ byte_controller_core_cmd_pound_5b3_pound_5d n291
+11 1
+.names byte_controller_core_cmd_pound_5b2_pound_5d \
+ byte_controller_core_cmd_pound_5b3_pound_5d n292
+10 1
+.names byte_controller_core_cmd_pound_5b2_pound_5d \
+ byte_controller_core_cmd_pound_5b3_pound_5d n293
+01 1
+.names n292 n293 n294
+00 1
+.names n291 n294 n295
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b8_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b9_pound_5d n296
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b8_pound_5d n296 n297
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b7_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b9_pound_5d n298
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b8_pound_5d n298 n299
+01 1
+.names n297 n299 n300
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b14_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b15_pound_5d n301
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b13_pound_5d n301 n302
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b13_pound_5d n301 n303
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b13_pound_5d n301 n304
+11 1
+.names n303 n304 n305
+00 1
+.names n302 n305 n306
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b16_pound_5d n307
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b16_pound_5d n308
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b16_pound_5d n309
+01 1
+.names n308 n309 n310
+00 1
+.names n307 n310 n311
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b11_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b12_pound_5d n312
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b11_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b12_pound_5d n313
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b11_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b12_pound_5d n314
+01 1
+.names n313 n314 n315
+00 1
+.names n312 n315 n316
+01 1
+.names n311 n316 n317
+11 1
+.names n306 n317 n318
+10 1
+.names n306 n317 n319
+00 1
+.names n306 n317 n320
+01 1
+.names n319 n320 n321
+00 1
+.names n318 n321 n322
+01 1
+.names n300 n322 n323
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b1_pound_5d n324
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b2_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b3_pound_5d n325
+00 1
+.names n324 n325 n326
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b4_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b5_pound_5d n327
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b4_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b5_pound_5d n328
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b4_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b5_pound_5d n329
+01 1
+.names n328 n329 n330
+00 1
+.names n327 n330 n331
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b6_pound_5d n331 n332
+01 1
+.names n323 n326 n333
+10 1
+.names n323 n333 n334
+10 1
+.names n326 n332 n335
+10 1
+.names n323 n335 n336
+11 1
+.names n334 n336 n337
+10 1
+.names n295 n337 n338
+11 1
+.names byte_controller_bit_controller_clk_en n338 n339
+01 1
+.names n338 n339 n340
+10 1
+.names byte_controller_bit_controller_clk_en \
+ byte_controller_core_cmd_pound_5b1_pound_5d n341
+11 1
+.names n338 n341 n342
+11 1
+.names n340 n342 n343
+10 1
+.names byte_controller_bit_controller_clk_en n338 n344
+11 1
+.names byte_controller_core_cmd_pound_5b0_pound_5d \
+ byte_controller_core_cmd_pound_5b1_pound_5d n345
+00 1
+.names n344 n345 n346
+11 1
+.names n343 n346 n347
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d \
+ byte_controller_bit_controller_clk_en n348
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d \
+ byte_controller_bit_controller_clk_en n349
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d \
+ byte_controller_bit_controller_clk_en n350
+00 1
+.names n349 n350 n351
+00 1
+.names n348 n351 n352
+01 1
+.names i2c_al wb_rst_i n353
+11 1
+.names i2c_al wb_rst_i n354
+01 1
+.names i2c_al wb_rst_i n355
+10 1
+.names n354 n355 n356
+00 1
+.names n353 n356 n357
+01 1
+.names n347 n357 n358
+11 1
+.names n352 n357 n359
+10 1
+.names n347 n359 n360
+01 1
+.names n358 n360 \
+ byte_controller_bit_controller_c_state_pound_5b0_pound_5d_in
+00 0
+.names byte_controller_bit_controller_clk_en n357 n362
+11 1
+.names n337 n362 n363
+00 1
+.names n337 n362 n364
+10 1
+.names n337 n362 n365
+11 1
+.names n364 n365 n366
+00 1
+.names n363 n366 n367
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b5_pound_5d n368
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b3_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b4_pound_5d n369
+00 1
+.names n368 n369 n370
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b7_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b8_pound_5d n371
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b7_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b8_pound_5d n372
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b7_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b8_pound_5d n373
+10 1
+.names n372 n373 n374
+00 1
+.names n371 n374 n375
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b6_pound_5d n375 n376
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b1_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b2_pound_5d n377
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b1_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b2_pound_5d n378
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b1_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b2_pound_5d n379
+01 1
+.names n378 n379 n380
+00 1
+.names n377 n380 n381
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b16_pound_5d n301 n382
+11 1
+.names n301 n382 n383
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b13_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b16_pound_5d n384
+10 1
+.names n301 n384 n385
+11 1
+.names n383 n385 n386
+10 1
+.names n316 n386 n387
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n387 n388
+01 1
+.names n370 n376 n389
+10 1
+.names n370 n389 n390
+10 1
+.names n376 n381 n391
+10 1
+.names n370 n391 n392
+11 1
+.names n390 n392 n393
+10 1
+.names n370 n376 n394
+11 1
+.names n381 n388 n395
+10 1
+.names n394 n395 n396
+11 1
+.names n393 n396 n397
+10 1
+.names byte_controller_bit_controller_clk_en n357 n398
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d n398 n399
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d n398 n400
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d n398 n401
+10 1
+.names n400 n401 n402
+00 1
+.names n399 n402 n403
+01 1
+.names n397 n403 n404
+10 1
+.names n367 n404 n405
+11 1
+.names n403 n405 \
+ byte_controller_bit_controller_c_state_pound_5b10_pound_5d_in
+00 0
+.names byte_controller_bit_controller_c_state_pound_5b3_pound_5d n300 n407
+01 1
+.names n332 n388 n408
+01 1
+.names n388 n408 n409
+10 1
+.names n332 n381 n410
+10 1
+.names n388 n410 n411
+11 1
+.names n409 n411 n412
+10 1
+.names n332 n388 n413
+11 1
+.names n381 n407 n414
+10 1
+.names n413 n414 n415
+11 1
+.names n412 n415 n416
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b11_pound_5d n398 n417
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b11_pound_5d n398 n418
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b11_pound_5d n398 n419
+10 1
+.names n418 n419 n420
+00 1
+.names n417 n420 n421
+01 1
+.names n416 n421 n422
+10 1
+.names n367 n422 n423
+11 1
+.names n421 n423 \
+ byte_controller_bit_controller_c_state_pound_5b11_pound_5d_in
+00 0
+.names byte_controller_bit_controller_c_state_pound_5b12_pound_5d n398 n425
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b12_pound_5d n398 n426
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b12_pound_5d n398 n427
+10 1
+.names n426 n427 n428
+00 1
+.names n425 n428 n429
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b8_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b9_pound_5d n430
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d n430 n431
+01 1
+.names n362 n431 n432
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b2_pound_5d n369 n433
+01 1
+.names n386 n433 n434
+01 1
+.names n433 n434 n435
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b12_pound_5d n386 n436
+11 1
+.names n433 n436 n437
+11 1
+.names n435 n437 n438
+10 1
+.names n386 n433 n439
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b12_pound_5d n324 n440
+00 1
+.names n439 n440 n441
+11 1
+.names n438 n441 n442
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b6_pound_5d n443
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b6_pound_5d n444
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b6_pound_5d n445
+10 1
+.names n444 n445 n446
+00 1
+.names n443 n446 n447
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b7_pound_5d n447 n448
+01 1
+.names n432 n442 n449
+10 1
+.names n432 n449 n450
+10 1
+.names n442 n448 n451
+10 1
+.names n432 n451 n452
+11 1
+.names n450 n452 n453
+10 1
+.names n432 n442 n454
+11 1
+.names n337 n448 n455
+11 1
+.names n454 n455 n456
+11 1
+.names n453 n456 n457
+10 1
+.names n429 n457 n458
+01 1
+.names n429 n457 n459
+11 1
+.names n429 n457 n460
+10 1
+.names n459 n460 n461
+00 1
+.names n458 n461 \
+ byte_controller_bit_controller_c_state_pound_5b12_pound_5d_in
+01 0
+.names byte_controller_bit_controller_clk_en \
+ byte_controller_core_cmd_pound_5b0_pound_5d n463
+10 1
+.names n292 n463 n464
+10 1
+.names n292 n464 n465
+10 1
+.names n337 n463 n466
+01 1
+.names n292 n466 n467
+11 1
+.names n465 n467 n468
+10 1
+.names n292 n463 n469
+11 1
+.names byte_controller_core_cmd_pound_5b1_pound_5d n337 n470
+11 1
+.names n469 n470 n471
+11 1
+.names n468 n471 n472
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b13_pound_5d \
+ byte_controller_bit_controller_clk_en n473
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b13_pound_5d \
+ byte_controller_bit_controller_clk_en n474
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b13_pound_5d \
+ byte_controller_bit_controller_clk_en n475
+00 1
+.names n474 n475 n476
+00 1
+.names n473 n476 n477
+01 1
+.names n357 n472 n478
+11 1
+.names n357 n477 n479
+01 1
+.names n472 n479 n480
+01 1
+.names n478 n480 \
+ byte_controller_bit_controller_c_state_pound_5b13_pound_5d_in
+00 0
+.names byte_controller_bit_controller_c_state_pound_5b14_pound_5d n398 n482
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b14_pound_5d n398 n483
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b14_pound_5d n398 n484
+10 1
+.names n483 n484 n485
+00 1
+.names n482 n485 n486
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b14_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b16_pound_5d n487
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b14_pound_5d n487 n488
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b15_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b16_pound_5d n489
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b14_pound_5d n489 n490
+01 1
+.names n488 n490 n491
+10 1
+.names n433 n491 n492
+01 1
+.names n433 n491 n493
+00 1
+.names n433 n491 n494
+10 1
+.names n493 n494 n495
+00 1
+.names n492 n495 n496
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b11_pound_5d n497
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b11_pound_5d n498
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b11_pound_5d n499
+10 1
+.names n498 n499 n500
+00 1
+.names n497 n500 n501
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b12_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b9_pound_5d n502
+00 1
+.names n376 n501 n503
+10 1
+.names n376 n503 n504
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d n501 n505
+11 1
+.names n376 n505 n506
+11 1
+.names n504 n506 n507
+10 1
+.names n376 n501 n508
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d n502 n509
+00 1
+.names n508 n509 n510
+11 1
+.names n507 n510 n511
+10 1
+.names n496 n511 n512
+11 1
+.names n337 n512 n513
+11 1
+.names n512 n513 n514
+10 1
+.names n324 n337 n515
+00 1
+.names n512 n515 n516
+11 1
+.names n514 n516 n517
+10 1
+.names n337 n512 n518
+01 1
+.names n324 n362 n519
+10 1
+.names n518 n519 n520
+11 1
+.names n517 n520 n521
+10 1
+.names n486 n521 n522
+01 1
+.names n486 n521 n523
+11 1
+.names n486 n521 n524
+10 1
+.names n523 n524 n525
+00 1
+.names n522 n525 \
+ byte_controller_bit_controller_c_state_pound_5b14_pound_5d_in
+01 0
+.names byte_controller_bit_controller_c_state_pound_5b15_pound_5d n398 n527
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b15_pound_5d n398 n528
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b15_pound_5d n398 n529
+10 1
+.names n528 n529 n530
+00 1
+.names n527 n530 n531
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b12_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b13_pound_5d n532
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b12_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b13_pound_5d n533
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b12_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b13_pound_5d n534
+01 1
+.names n533 n534 n535
+00 1
+.names n532 n535 n536
+01 1
+.names n501 n536 n537
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b15_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b16_pound_5d n538
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b15_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b16_pound_5d n539
+11 1
+.names n489 n539 n540
+00 1
+.names n538 n540 n541
+01 1
+.names n537 n541 n542
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b6_pound_5d n300 n543
+01 1
+.names n433 n543 n544
+10 1
+.names n433 n544 n545
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d n543 n546
+11 1
+.names n433 n546 n547
+11 1
+.names n545 n547 n548
+10 1
+.names n433 n543 n549
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d n324 n550
+00 1
+.names n549 n550 n551
+11 1
+.names n548 n551 n552
+10 1
+.names n362 n542 n553
+10 1
+.names n362 n553 n554
+10 1
+.names n337 n542 n555
+11 1
+.names n362 n555 n556
+11 1
+.names n554 n556 n557
+10 1
+.names n362 n542 n558
+11 1
+.names n337 n552 n559
+00 1
+.names n558 n559 n560
+11 1
+.names n557 n560 n561
+10 1
+.names n531 n561 n562
+01 1
+.names n531 n561 n563
+11 1
+.names n531 n561 n564
+10 1
+.names n563 n564 n565
+00 1
+.names n562 n565 \
+ byte_controller_bit_controller_c_state_pound_5b15_pound_5d_in
+01 0
+.names byte_controller_bit_controller_c_state_pound_5b14_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b16_pound_5d n567
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b4_pound_5d n447 n568
+11 1
+.names n447 n568 n569
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b3_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b4_pound_5d n570
+10 1
+.names n447 n570 n571
+11 1
+.names n569 n571 n572
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n381 n573
+01 1
+.names n367 n567 n574
+10 1
+.names n367 n574 n575
+10 1
+.names n567 n572 n576
+10 1
+.names n367 n576 n577
+11 1
+.names n575 n577 n578
+10 1
+.names n367 n567 n579
+11 1
+.names n572 n573 n580
+10 1
+.names n579 n580 n581
+11 1
+.names n578 n581 n582
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d n300 n583
+01 1
+.names n536 n583 n584
+01 1
+.names n583 n584 n585
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b11_pound_5d n536 n586
+11 1
+.names n583 n586 n587
+11 1
+.names n585 n587 n588
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b16_pound_5d n398 n589
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b16_pound_5d n398 n590
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b16_pound_5d n398 n591
+10 1
+.names n590 n591 n592
+00 1
+.names n589 n592 n593
+01 1
+.names n588 n593 n594
+10 1
+.names n582 n594 n595
+11 1
+.names n593 n595 \
+ byte_controller_bit_controller_c_state_pound_5b16_pound_5d_in
+00 0
+.names n325 n337 n597
+11 1
+.names n325 n337 n598
+01 1
+.names n325 n337 n599
+00 1
+.names n598 n599 n600
+00 1
+.names n597 n600 n601
+01 1
+.names n323 n332 n602
+10 1
+.names n323 n332 n603
+00 1
+.names n323 n332 n604
+01 1
+.names n603 n604 n605
+00 1
+.names n602 n605 n606
+01 1
+.names n601 n606 n607
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b1_pound_5d n362 n608
+01 1
+.names n607 n608 n609
+10 1
+.names n607 n608 n610
+00 1
+.names n607 n608 n611
+01 1
+.names n610 n611 n612
+00 1
+.names n609 n612 n613
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b1_pound_5d n398 n614
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b1_pound_5d n398 n615
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b1_pound_5d n398 n616
+10 1
+.names n615 n616 n617
+00 1
+.names n614 n617 n618
+01 1
+.names n613 n618 \
+ byte_controller_bit_controller_c_state_pound_5b1_pound_5d_in
+00 0
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n362 n620
+01 1
+.names n607 n620 n621
+01 1
+.names n620 n621 n622
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b2_pound_5d n398 n623
+01 1
+.names n398 n623 n624
+10 1
+.names n622 n624 \
+ byte_controller_bit_controller_c_state_pound_5b2_pound_5d_in
+00 0
+.names n337 n606 n626
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b3_pound_5d \
+ byte_controller_bit_controller_clk_en n627
+01 1
+.names n626 n627 n628
+10 1
+.names n626 n628 n629
+10 1
+.names n324 n627 n630
+01 1
+.names n626 n630 n631
+11 1
+.names n629 n631 n632
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b3_pound_5d \
+ byte_controller_bit_controller_clk_en n633
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b3_pound_5d \
+ byte_controller_bit_controller_clk_en n634
+00 1
+.names n627 n634 n635
+00 1
+.names n633 n635 n636
+01 1
+.names n357 n632 n637
+11 1
+.names n357 n636 n638
+01 1
+.names n632 n638 n639
+01 1
+.names n637 n639 \
+ byte_controller_bit_controller_c_state_pound_5b3_pound_5d_in
+00 0
+.names byte_controller_bit_controller_c_state_pound_5b1_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b2_pound_5d n641
+00 1
+.names n337 n606 n642
+11 1
+.names n606 n642 n643
+10 1
+.names n337 n641 n644
+00 1
+.names n606 n644 n645
+11 1
+.names n643 n645 n646
+10 1
+.names n349 n641 n647
+01 1
+.names n626 n647 n648
+11 1
+.names n646 n648 n649
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b4_pound_5d \
+ byte_controller_bit_controller_clk_en n650
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b4_pound_5d \
+ byte_controller_bit_controller_clk_en n651
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b4_pound_5d \
+ byte_controller_bit_controller_clk_en n652
+00 1
+.names n651 n652 n653
+00 1
+.names n650 n653 n654
+01 1
+.names n357 n649 n655
+11 1
+.names n357 n654 n656
+01 1
+.names n649 n656 n657
+01 1
+.names n655 n657 \
+ byte_controller_bit_controller_c_state_pound_5b4_pound_5d_in
+00 0
+.names byte_controller_core_cmd_pound_5b1_pound_5d n295 n659
+11 1
+.names n337 n659 n660
+01 1
+.names n659 n660 n661
+10 1
+.names n337 n463 n662
+10 1
+.names n659 n662 n663
+11 1
+.names n661 n663 n664
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d \
+ byte_controller_bit_controller_clk_en n665
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d \
+ byte_controller_bit_controller_clk_en n666
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d \
+ byte_controller_bit_controller_clk_en n667
+00 1
+.names n666 n667 n668
+00 1
+.names n665 n668 n669
+01 1
+.names n357 n664 n670
+11 1
+.names n357 n669 n671
+01 1
+.names n664 n671 n672
+01 1
+.names n670 n672 \
+ byte_controller_bit_controller_c_state_pound_5b5_pound_5d_in
+00 0
+.names n323 n573 n674
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b6_pound_5d \
+ byte_controller_bit_controller_clk_en n675
+01 1
+.names n337 n674 n676
+11 1
+.names n674 n676 n677
+10 1
+.names n337 n369 n678
+00 1
+.names n674 n678 n679
+11 1
+.names n677 n679 n680
+10 1
+.names n337 n674 n681
+01 1
+.names n369 n675 n682
+10 1
+.names n681 n682 n683
+11 1
+.names n680 n683 n684
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b6_pound_5d \
+ byte_controller_bit_controller_clk_en n685
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b6_pound_5d \
+ byte_controller_bit_controller_clk_en n686
+00 1
+.names n675 n686 n687
+00 1
+.names n685 n687 n688
+01 1
+.names n357 n684 n689
+11 1
+.names n357 n688 n690
+01 1
+.names n684 n690 n691
+01 1
+.names n689 n691 \
+ byte_controller_bit_controller_c_state_pound_5b6_pound_5d_in
+00 0
+.names n323 n324 n693
+11 1
+.names byte_controller_bit_controller_clk_en n331 n694
+11 1
+.names n337 n693 n695
+11 1
+.names n693 n695 n696
+10 1
+.names n599 n693 n697
+11 1
+.names n696 n697 n698
+10 1
+.names n337 n693 n699
+01 1
+.names n325 n694 n700
+10 1
+.names n699 n700 n701
+11 1
+.names n698 n701 n702
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b7_pound_5d \
+ byte_controller_bit_controller_clk_en n703
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b7_pound_5d \
+ byte_controller_bit_controller_clk_en n704
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b7_pound_5d \
+ byte_controller_bit_controller_clk_en n705
+00 1
+.names n704 n705 n706
+00 1
+.names n703 n706 n707
+01 1
+.names n357 n702 n708
+11 1
+.names n357 n707 n709
+01 1
+.names n702 n709 n710
+01 1
+.names n708 n710 \
+ byte_controller_bit_controller_c_state_pound_5b7_pound_5d_in
+00 0
+.names byte_controller_bit_controller_clk_en n381 n712
+10 1
+.names byte_controller_bit_controller_clk_en n712 n713
+10 1
+.names n381 n572 n714
+10 1
+.names byte_controller_bit_controller_clk_en n714 n715
+11 1
+.names n713 n715 n716
+10 1
+.names n322 n430 n717
+10 1
+.names n322 n430 n718
+00 1
+.names n322 n430 n719
+01 1
+.names n718 n719 n720
+00 1
+.names n717 n720 n721
+01 1
+.names n716 n721 n722
+11 1
+.names n337 n722 n723
+00 1
+.names n337 n723 n724
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n722 n725
+11 1
+.names n337 n725 n726
+01 1
+.names n724 n726 n727
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b8_pound_5d \
+ byte_controller_bit_controller_clk_en n728
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b8_pound_5d \
+ byte_controller_bit_controller_clk_en n729
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b8_pound_5d \
+ byte_controller_bit_controller_clk_en n730
+00 1
+.names n729 n730 n731
+00 1
+.names n728 n731 n732
+01 1
+.names n357 n727 n733
+11 1
+.names n357 n732 n734
+01 1
+.names n727 n734 n735
+01 1
+.names n733 n735 \
+ byte_controller_bit_controller_c_state_pound_5b8_pound_5d_in
+00 0
+.names n337 n470 n737
+10 1
+.names byte_controller_core_cmd_pound_5b1_pound_5d n463 n738
+00 1
+.names n337 n738 n739
+11 1
+.names n737 n739 n740
+10 1
+.names byte_controller_core_cmd_pound_5b1_pound_5d n337 n741
+01 1
+.names n293 n463 n742
+01 1
+.names n741 n742 n743
+11 1
+.names n740 n743 n744
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b9_pound_5d \
+ byte_controller_bit_controller_clk_en n745
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b9_pound_5d \
+ byte_controller_bit_controller_clk_en n746
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b9_pound_5d \
+ byte_controller_bit_controller_clk_en n747
+00 1
+.names n746 n747 n748
+00 1
+.names n745 n748 n749
+01 1
+.names n357 n744 n750
+11 1
+.names n357 n749 n751
+01 1
+.names n744 n751 n752
+01 1
+.names n750 n752 \
+ byte_controller_bit_controller_c_state_pound_5b9_pound_5d_in
+00 0
+.names byte_controller_bit_controller_cnt_pound_5b4_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b5_pound_5d n754
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b6_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b7_pound_5d n755
+00 1
+.names n754 n755 n756
+10 1
+.names n754 n755 n757
+00 1
+.names n754 n755 n758
+01 1
+.names n757 n758 n759
+00 1
+.names n756 n759 n760
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b0_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b1_pound_5d n761
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b0_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b1_pound_5d n762
+11 1
+.names byte_controller_bit_controller_cnt_pound_5b0_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b1_pound_5d n763
+01 1
+.names n762 n763 n764
+00 1
+.names n761 n764 n765
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b2_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b3_pound_5d n766
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b2_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b3_pound_5d n767
+11 1
+.names byte_controller_bit_controller_cnt_pound_5b2_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b3_pound_5d n768
+01 1
+.names n767 n768 n769
+00 1
+.names n766 n769 n770
+01 1
+.names n765 n770 n771
+11 1
+.names n760 n771 n772
+11 1
+.names byte_controller_bit_controller_cnt_pound_5b13_pound_5d n_2228 n773
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b14_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b15_pound_5d n774
+00 1
+.names n773 n774 n775
+10 1
+.names n773 n774 n776
+00 1
+.names n773 n774 n777
+01 1
+.names n776 n777 n778
+00 1
+.names n775 n778 n779
+01 1
+.names n_2259 n_2323 n780
+00 1
+.names n_2211 n_2255 n781
+00 1
+.names n780 n781 n782
+10 1
+.names n780 n781 n783
+00 1
+.names n780 n781 n784
+01 1
+.names n783 n784 n785
+00 1
+.names n782 n785 n786
+01 1
+.names n779 n786 n787
+11 1
+.names n772 n787 n788
+10 1
+.names n772 n787 n789
+00 1
+.names n772 n787 n790
+01 1
+.names n789 n790 n791
+00 1
+.names n788 n791 n792
+01 1
+.names core_en n792 n793
+00 1
+.names core_en n792 n794
+01 1
+.names core_en n792 n795
+11 1
+.names n794 n795 n796
+00 1
+.names n793 n796 n797
+01 1
+.names byte_controller_bit_controller_dscl_oen \
+ byte_controller_bit_controller_sSCL_reg_Q n798
+11 1
+.names byte_controller_bit_controller_dscl_oen \
+ byte_controller_bit_controller_sSCL_reg_Q n799
+01 1
+.names byte_controller_bit_controller_dscl_oen \
+ byte_controller_bit_controller_sSCL_reg_Q n800
+00 1
+.names n799 n800 n801
+00 1
+.names n798 n801 n802
+01 1
+.names wb_rst_i n797 n803
+01 1
+.names wb_rst_i n802 n804
+11 1
+.names n797 n804 n805
+01 1
+.names n803 n805 byte_controller_bit_controller_clk_en_in
+00 1
+.names n463 n659 n807
+01 1
+.names n659 n807 n808
+10 1
+.names byte_controller_bit_controller_clk_en \
+ byte_controller_bit_controller_cmd_stop n809
+11 1
+.names byte_controller_bit_controller_cmd_stop n809 n810
+10 1
+.names n808 n810 n811
+00 1
+.names wb_rst_i n811 byte_controller_bit_controller_cmd_stop_in
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b0_pound_5d n802 n813
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b0_pound_5d n813 n814
+00 1
+.names prer_reg_pound_5b0_pound_5d_Q n814 n815
+10 1
+.names prer_reg_pound_5b0_pound_5d_Q n802 n816
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b0_pound_5d n816 n817
+11 1
+.names n815 n817 n818
+00 1
+.names n797 n818 n819
+01 1
+.names n797 n818 n820
+11 1
+.names n797 n818 n821
+10 1
+.names n820 n821 n822
+00 1
+.names n819 n822 n823
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b0_pound_5d n797 n824
+11 1
+.names byte_controller_bit_controller_cnt_pound_5b0_pound_5d n797 n825
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b0_pound_5d n797 n826
+00 1
+.names n825 n826 n827
+00 1
+.names n824 n827 n828
+01 1
+.names wb_rst_i n823 n829
+01 1
+.names wb_rst_i n828 n830
+11 1
+.names n823 n830 n831
+01 1
+.names n829 n831 byte_controller_bit_controller_cnt_pound_5b0_pound_5d_in
+00 0
+.names prer_reg_pound_5b13_pound_5d_Q n802 n833
+00 1
+.names prer_reg_pound_5b13_pound_5d_Q n802 n834
+01 1
+.names prer_reg_pound_5b13_pound_5d_Q n802 n835
+11 1
+.names n834 n835 n836
+00 1
+.names n833 n836 n837
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b13_pound_5d n837 n838
+10 1
+.names n802 n838 n839
+11 1
+.names n837 n839 n840
+00 1
+.names n_2228 n780 n841
+01 1
+.names n_2255 n841 n842
+11 1
+.names n_2255 n841 n843
+10 1
+.names n_2255 n841 n844
+00 1
+.names n843 n844 n845
+00 1
+.names n842 n845 n846
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b0_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b4_pound_5d n847
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b1_pound_5d n847 n848
+11 1
+.names n847 n848 n849
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b1_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b3_pound_5d n850
+01 1
+.names n847 n850 n851
+11 1
+.names n849 n851 n852
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b1_pound_5d n847 n853
+01 1
+.names n766 n853 n854
+11 1
+.names n852 n854 n855
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b5_pound_5d n_2211 n856
+00 1
+.names n855 n856 n857
+10 1
+.names n855 n857 n858
+10 1
+.names n755 n856 n859
+01 1
+.names n855 n859 n860
+11 1
+.names n858 n860 n861
+10 1
+.names n846 n861 n862
+00 1
+.names n846 n861 n863
+01 1
+.names n846 n861 n864
+10 1
+.names n863 n864 n865
+00 1
+.names n862 n865 n866
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b13_pound_5d n866 n867
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b13_pound_5d n867 n868
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b13_pound_5d n868 n869
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b13_pound_5d n866 n870
+11 1
+.names byte_controller_bit_controller_cnt_pound_5b13_pound_5d n870 n871
+11 1
+.names n869 n871 n872
+00 1
+.names n797 n872 n873
+11 1
+.names n840 n873 n874
+10 1
+.names n797 n873 n875
+11 1
+.names n840 n875 n876
+01 1
+.names n874 n876 n877
+00 1
+.names wb_rst_i n877 \
+ byte_controller_bit_controller_cnt_pound_5b13_pound_5d_in
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b14_pound_5d n802 n879
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b14_pound_5d n879 n880
+00 1
+.names prer_reg_pound_5b14_pound_5d_Q n880 n881
+10 1
+.names prer_reg_pound_5b14_pound_5d_Q n802 n882
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b14_pound_5d n882 n883
+11 1
+.names n881 n883 n884
+00 1
+.names n797 n884 n885
+10 1
+.names n797 n884 n886
+11 1
+.names n797 n884 n887
+01 1
+.names n886 n887 n888
+00 1
+.names n885 n888 n889
+01 1
+.names n773 n780 n890
+11 1
+.names n754 n771 n891
+11 1
+.names byte_controller_bit_controller_cnt_pound_5b6_pound_5d n_2211 n892
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b7_pound_5d n_2255 n893
+00 1
+.names n891 n892 n894
+10 1
+.names n891 n894 n895
+10 1
+.names n892 n893 n896
+10 1
+.names n891 n896 n897
+11 1
+.names n895 n897 n898
+10 1
+.names n890 n898 n899
+10 1
+.names n890 n898 n900
+00 1
+.names n890 n898 n901
+01 1
+.names n900 n901 n902
+00 1
+.names n899 n902 n903
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b14_pound_5d n903 n904
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b14_pound_5d n903 n905
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b14_pound_5d n903 n906
+11 1
+.names n905 n906 n907
+00 1
+.names n904 n907 n908
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b14_pound_5d n890 n909
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b14_pound_5d n909 n910
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b14_pound_5d n899 n911
+01 1
+.names n910 n911 n912
+10 1
+.names n908 n912 n913
+01 1
+.names n908 n912 n914
+11 1
+.names n908 n912 n915
+10 1
+.names n914 n915 n916
+00 1
+.names n913 n916 n917
+01 1
+.names n797 n917 n918
+00 1
+.names n797 n917 n919
+01 1
+.names n797 n917 n920
+11 1
+.names n919 n920 n921
+00 1
+.names n918 n921 n922
+01 1
+.names wb_rst_i n889 n923
+01 1
+.names wb_rst_i n922 n924
+11 1
+.names n889 n924 n925
+01 1
+.names n923 n925 byte_controller_bit_controller_cnt_pound_5b14_pound_5d_in
+00 0
+.names byte_controller_bit_controller_cnt_pound_5b0_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b1_pound_5d n927
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b2_pound_5d n927 n928
+11 1
+.names byte_controller_bit_controller_cnt_pound_5b2_pound_5d n927 n929
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b2_pound_5d n927 n930
+00 1
+.names n929 n930 n931
+00 1
+.names n928 n931 n932
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b6_pound_5d n754 n933
+11 1
+.names n754 n933 n934
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b3_pound_5d \
+ byte_controller_bit_controller_cnt_pound_5b6_pound_5d n935
+10 1
+.names n754 n935 n936
+11 1
+.names n934 n936 n937
+10 1
+.names n_2211 n_2323 n938
+00 1
+.names n932 n937 n939
+10 1
+.names n932 n939 n940
+10 1
+.names n893 n937 n941
+01 1
+.names n932 n941 n942
+11 1
+.names n940 n942 n943
+10 1
+.names n932 n937 n944
+11 1
+.names n893 n938 n945
+10 1
+.names n944 n945 n946
+11 1
+.names n943 n946 n947
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b14_pound_5d n_2228 n948
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b13_pound_5d n_2259 n949
+00 1
+.names n947 n948 n950
+10 1
+.names n947 n950 n951
+10 1
+.names n948 n949 n952
+10 1
+.names n947 n952 n953
+11 1
+.names n951 n953 n954
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b15_pound_5d n954 n955
+01 1
+.names n954 n955 n956
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b15_pound_5d n955 n957
+01 1
+.names n954 n957 n958
+01 1
+.names n956 n958 n959
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b15_pound_5d n802 n960
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b15_pound_5d n802 n961
+11 1
+.names byte_controller_bit_controller_cnt_pound_5b15_pound_5d n802 n962
+00 1
+.names n961 n962 n963
+00 1
+.names n960 n963 n964
+01 1
+.names prer_reg_pound_5b15_pound_5d_Q n964 n965
+00 1
+.names n802 n965 n966
+01 1
+.names n964 n966 n967
+00 1
+.names n797 n967 n968
+10 1
+.names n797 n967 n969
+00 1
+.names n797 n967 n970
+11 1
+.names n969 n970 n971
+00 1
+.names n968 n971 n972
+01 1
+.names n797 n972 n973
+10 1
+.names n959 n973 n974
+11 1
+.names n972 n974 n975
+00 1
+.names wb_rst_i n975 n976
+01 1
+.names wb_rst_i n975 n977
+11 1
+.names wb_rst_i n975 n978
+10 1
+.names n977 n978 n979
+00 1
+.names n976 n979 byte_controller_bit_controller_cnt_pound_5b15_pound_5d_in
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b1_pound_5d n802 n981
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b1_pound_5d n981 n982
+00 1
+.names prer_reg_pound_5b1_pound_5d_Q n982 n983
+10 1
+.names prer_reg_pound_5b1_pound_5d_Q n802 n984
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b1_pound_5d n984 n985
+11 1
+.names n983 n985 n986
+00 1
+.names n797 n986 n987
+01 1
+.names n797 n986 n988
+11 1
+.names n797 n986 n989
+10 1
+.names n988 n989 n990
+00 1
+.names n987 n990 n991
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b0_pound_5d n927 n992
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b1_pound_5d n927 n993
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b0_pound_5d n993 n994
+11 1
+.names n992 n994 n995
+00 1
+.names n797 n995 n996
+00 1
+.names n797 n995 n997
+10 1
+.names n797 n995 n998
+01 1
+.names n997 n998 n999
+00 1
+.names n996 n999 n1000
+01 1
+.names wb_rst_i n991 n1001
+01 1
+.names wb_rst_i n1000 n1002
+11 1
+.names n991 n1002 n1003
+01 1
+.names n1001 n1003 byte_controller_bit_controller_cnt_pound_5b1_pound_5d_in
+00 0
+.names byte_controller_bit_controller_cnt_pound_5b2_pound_5d n802 n1005
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b2_pound_5d n1005 n1006
+00 1
+.names prer_reg_pound_5b2_pound_5d_Q n1006 n1007
+10 1
+.names prer_reg_pound_5b2_pound_5d_Q n802 n1008
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b2_pound_5d n1008 n1009
+11 1
+.names n1007 n1009 n1010
+00 1
+.names n797 n1010 n1011
+01 1
+.names n797 n1010 n1012
+11 1
+.names n797 n1010 n1013
+10 1
+.names n1012 n1013 n1014
+00 1
+.names n1011 n1014 n1015
+01 1
+.names n927 n932 n1016
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b2_pound_5d n932 n1017
+01 1
+.names n927 n1017 n1018
+01 1
+.names n1016 n1018 n1019
+00 1
+.names n797 n1019 n1020
+00 1
+.names n797 n1019 n1021
+10 1
+.names n797 n1019 n1022
+01 1
+.names n1021 n1022 n1023
+00 1
+.names n1020 n1023 n1024
+01 1
+.names wb_rst_i n1015 n1025
+01 1
+.names wb_rst_i n1024 n1026
+11 1
+.names n1015 n1026 n1027
+01 1
+.names n1025 n1027 byte_controller_bit_controller_cnt_pound_5b2_pound_5d_in
+00 0
+.names prer_reg_pound_5b3_pound_5d_Q n802 n1029
+00 1
+.names prer_reg_pound_5b3_pound_5d_Q n802 n1030
+01 1
+.names prer_reg_pound_5b3_pound_5d_Q n802 n1031
+11 1
+.names n1030 n1031 n1032
+00 1
+.names n1029 n1032 n1033
+01 1
+.names n802 n1033 n1034
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b3_pound_5d n1034 n1035
+11 1
+.names n1033 n1035 n1036
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b3_pound_5d n932 n1037
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b3_pound_5d n932 n1038
+11 1
+.names byte_controller_bit_controller_cnt_pound_5b3_pound_5d n932 n1039
+00 1
+.names n1038 n1039 n1040
+00 1
+.names n1037 n1040 n1041
+01 1
+.names n771 n797 n1042
+11 1
+.names n797 n1041 n1043
+01 1
+.names n771 n1043 n1044
+01 1
+.names n1042 n1044 n1045
+00 1
+.names n797 n1045 n1046
+11 1
+.names n1036 n1045 n1047
+10 1
+.names n797 n1047 n1048
+01 1
+.names n1046 n1048 n1049
+00 1
+.names wb_rst_i n1049 \
+ byte_controller_bit_controller_cnt_pound_5b3_pound_5d_in
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b4_pound_5d n802 n1051
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b4_pound_5d n1051 n1052
+00 1
+.names prer_reg_pound_5b4_pound_5d_Q n1052 n1053
+10 1
+.names prer_reg_pound_5b4_pound_5d_Q n802 n1054
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b4_pound_5d n1054 n1055
+11 1
+.names n1053 n1055 n1056
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b4_pound_5d n771 n1057
+11 1
+.names byte_controller_bit_controller_cnt_pound_5b4_pound_5d n771 n1058
+00 1
+.names n1057 n1058 n1059
+00 1
+.names n797 n1059 n1060
+11 1
+.names n1056 n1060 n1061
+10 1
+.names n797 n1060 n1062
+11 1
+.names n1056 n1062 n1063
+01 1
+.names n1061 n1063 n1064
+00 1
+.names wb_rst_i n1064 \
+ byte_controller_bit_controller_cnt_pound_5b4_pound_5d_in
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b5_pound_5d n855 n1066
+11 1
+.names byte_controller_bit_controller_cnt_pound_5b5_pound_5d n855 n1067
+00 1
+.names n1066 n1067 n1068
+00 1
+.names n797 n1068 n1069
+00 1
+.names n797 n1068 n1070
+01 1
+.names n797 n1068 n1071
+10 1
+.names n1070 n1071 n1072
+00 1
+.names n1069 n1072 n1073
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b5_pound_5d n802 n1074
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b5_pound_5d n1074 n1075
+00 1
+.names prer_reg_pound_5b5_pound_5d_Q n1075 n1076
+10 1
+.names prer_reg_pound_5b5_pound_5d_Q n802 n1077
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b5_pound_5d n1077 n1078
+11 1
+.names n1076 n1078 n1079
+00 1
+.names n797 n1079 n1080
+01 1
+.names n797 n1079 n1081
+11 1
+.names n797 n1079 n1082
+10 1
+.names n1081 n1082 n1083
+00 1
+.names n1080 n1083 n1084
+01 1
+.names wb_rst_i n1073 n1085
+01 1
+.names wb_rst_i n1084 n1086
+11 1
+.names n1073 n1086 n1087
+01 1
+.names n1085 n1087 byte_controller_bit_controller_cnt_pound_5b5_pound_5d_in
+00 0
+.names prer_reg_pound_5b6_pound_5d_Q n802 n1089
+00 1
+.names prer_reg_pound_5b6_pound_5d_Q n802 n1090
+01 1
+.names prer_reg_pound_5b6_pound_5d_Q n802 n1091
+11 1
+.names n1090 n1091 n1092
+00 1
+.names n1089 n1092 n1093
+01 1
+.names n802 n1093 n1094
+10 1
+.names byte_controller_bit_controller_cnt_pound_5b6_pound_5d n1094 n1095
+11 1
+.names n1093 n1095 n1096
+00 1
+.names n797 n1096 n1097
+01 1
+.names n797 n1096 n1098
+11 1
+.names n797 n1096 n1099
+10 1
+.names n1098 n1099 n1100
+00 1
+.names n1097 n1100 n1101
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b6_pound_5d n891 n1102
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b6_pound_5d n891 n1103
+11 1
+.names n1102 n1103 n1104
+00 1
+.names n797 n1104 n1105
+00 1
+.names n797 n1104 n1106
+01 1
+.names n797 n1104 n1107
+10 1
+.names n1106 n1107 n1108
+00 1
+.names n1105 n1108 n1109
+01 1
+.names wb_rst_i n1101 n1110
+01 1
+.names wb_rst_i n1109 n1111
+11 1
+.names n1101 n1111 n1112
+01 1
+.names n1110 n1112 byte_controller_bit_controller_cnt_pound_5b6_pound_5d_in
+00 0
+.names byte_controller_bit_controller_cnt_pound_5b7_pound_5d n802 n1114
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b7_pound_5d n1114 n1115
+00 1
+.names prer_reg_pound_5b7_pound_5d_Q n1115 n1116
+10 1
+.names prer_reg_pound_5b7_pound_5d_Q n802 n1117
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b7_pound_5d n1117 n1118
+11 1
+.names n1116 n1118 n1119
+00 1
+.names n797 n1119 n1120
+01 1
+.names n797 n1119 n1121
+11 1
+.names n797 n1119 n1122
+10 1
+.names n1121 n1122 n1123
+00 1
+.names n1120 n1123 n1124
+01 1
+.names byte_controller_bit_controller_cnt_pound_5b7_pound_5d n944 n1125
+00 1
+.names byte_controller_bit_controller_cnt_pound_5b7_pound_5d n944 n1126
+11 1
+.names n1125 n1126 n1127
+00 1
+.names n797 n1127 n1128
+00 1
+.names n797 n1127 n1129
+10 1
+.names n797 n1127 n1130
+01 1
+.names n1129 n1130 n1131
+00 1
+.names n1128 n1131 n1132
+01 1
+.names wb_rst_i n1124 n1133
+01 1
+.names wb_rst_i n1132 n1134
+11 1
+.names n1124 n1134 n1135
+01 1
+.names n1133 n1135 byte_controller_bit_controller_cnt_pound_5b7_pound_5d_in
+00 0
+.names byte_controller_bit_controller_sSCL_reg_Q wb_rst_i n1137
+01 1
+.names byte_controller_bit_controller_sSCL_reg_Q wb_rst_i n1138
+11 1
+.names byte_controller_bit_controller_sSCL_reg_Q wb_rst_i n1139
+10 1
+.names n1138 n1139 n1140
+00 1
+.names n1137 n1140 byte_controller_bit_controller_dSCL_in
+01 0
+.names byte_controller_bit_controller_sSDA wb_rst_i \
+ byte_controller_bit_controller_dSDA_in
+00 0
+.names scl_pad_i wb_rst_i n1143
+11 1
+.names scl_pad_i wb_rst_i n1144
+10 1
+.names scl_pad_i wb_rst_i n1145
+01 1
+.names n1144 n1145 n1146
+00 1
+.names n1143 n1146 byte_controller_bit_controller_sSCL_reg_Q_in
+01 0
+.names sda_pad_i wb_rst_i n1148
+11 1
+.names sda_pad_i wb_rst_i n1149
+10 1
+.names sda_pad_i wb_rst_i n1150
+01 1
+.names n1149 n1150 n1151
+00 1
+.names n1148 n1151 byte_controller_bit_controller_sSDA_in
+01 0
+.names byte_controller_bit_controller_sda_chk_reg_Q n398 n1153
+01 1
+.names byte_controller_bit_controller_sda_chk_reg_Q n398 n1154
+00 1
+.names byte_controller_bit_controller_sda_chk_reg_Q n398 n1155
+10 1
+.names n1154 n1155 n1156
+00 1
+.names n1153 n1156 n1157
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b15_pound_5d n362 \
+ n1158
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b14_pound_5d n1158 \
+ n1159
+01 1
+.names n362 n1159 n1160
+10 1
+.names n1157 n1160 n1161
+01 1
+.names n1157 n1160 n1162
+11 1
+.names n1157 n1160 n1163
+10 1
+.names n1162 n1163 n1164
+00 1
+.names n1161 n1164 byte_controller_bit_controller_sda_chk_reg_Q_in
+01 0
+.names byte_controller_bit_controller_dSDA \
+ byte_controller_bit_controller_sSCL_reg_Q n1166
+11 1
+.names byte_controller_bit_controller_dSDA_in n1166 \
+ byte_controller_bit_controller_sta_condition_reg_Q_in
+01 1
+.names byte_controller_bit_controller_dSDA \
+ byte_controller_bit_controller_sSCL_reg_Q n1168
+01 1
+.names byte_controller_bit_controller_sSDA wb_rst_i n1169
+10 1
+.names n1168 n1169 byte_controller_bit_controller_sto_condition_reg_Q_in
+11 1
+.names byte_controller_c_state_pound_5b1_pound_5d \
+ byte_controller_c_state_pound_5b2_pound_5d n1171
+01 1
+.names byte_controller_c_state_pound_5b1_pound_5d n1171 n1172
+00 1
+.names byte_controller_c_state_pound_5b2_pound_5d \
+ byte_controller_c_state_pound_5b3_pound_5d n1173
+01 1
+.names byte_controller_c_state_pound_5b1_pound_5d n1173 n1174
+01 1
+.names n1172 n1174 n1175
+10 1
+.names byte_controller_c_state_pound_5b1_pound_5d \
+ byte_controller_c_state_pound_5b2_pound_5d n1176
+00 1
+.names byte_controller_c_state_pound_5b3_pound_5d \
+ byte_controller_c_state_pound_5b4_pound_5d n1177
+01 1
+.names n1176 n1177 n1178
+11 1
+.names n1175 n1178 n1179
+10 1
+.names byte_controller_c_state_pound_5b0_pound_5d n1179 n1180
+01 1
+.names byte_controller_c_state_pound_5b0_pound_5d n1179 n1181
+00 1
+.names byte_controller_c_state_pound_5b0_pound_5d n1179 n1182
+10 1
+.names n1181 n1182 n1183
+00 1
+.names n1180 n1183 n1184
+01 1
+.names byte_controller_c_state_pound_5b0_pound_5d n1184 n1185
+01 1
+.names n1184 n1185 n1186
+10 1
+.names byte_controller_c_state_pound_5b0_pound_5d byte_controller_core_ack \
+ n1187
+11 1
+.names n1184 n1187 n1188
+11 1
+.names n1186 n1188 n1189
+10 1
+.names rd sto n1190
+00 1
+.names done n1190 n1191
+00 1
+.names done n_108 n1192
+11 1
+.names n1190 n1192 n1193
+11 1
+.names n1191 n1193 n1194
+00 1
+.names byte_controller_c_state_pound_5b0_pound_5d n1194 n1195
+01 1
+.names byte_controller_c_state_pound_5b0_pound_5d n1194 n1196
+00 1
+.names byte_controller_c_state_pound_5b0_pound_5d n1194 n1197
+10 1
+.names n1196 n1197 n1198
+00 1
+.names n1195 n1198 n1199
+01 1
+.names sta n1194 n1200
+00 1
+.names sta n1194 n1201
+01 1
+.names sta n1194 n1202
+11 1
+.names n1201 n1202 n1203
+00 1
+.names n1200 n1203 n1204
+01 1
+.names n1199 n1204 n1205
+01 1
+.names n1199 n1204 n1206
+11 1
+.names n1199 n1204 n1207
+10 1
+.names n1206 n1207 n1208
+00 1
+.names n1205 n1208 n1209
+01 1
+.names n1180 n1209 n1210
+00 1
+.names n1180 n1209 n1211
+01 1
+.names n1180 n1209 n1212
+11 1
+.names n1211 n1212 n1213
+00 1
+.names n1210 n1213 n1214
+01 1
+.names n357 n1189 n1215
+11 1
+.names n357 n1214 n1216
+01 1
+.names n1189 n1216 n1217
+01 1
+.names n1215 n1217 byte_controller_c_state_pound_5b0_pound_5d_in
+00 0
+.names byte_controller_c_state_pound_5b1_pound_5d n1180 n1219
+11 1
+.names byte_controller_c_state_pound_5b1_pound_5d \
+ byte_controller_c_state_pound_5b2_pound_5d n1220
+10 1
+.names byte_controller_c_state_pound_5b3_pound_5d \
+ byte_controller_c_state_pound_5b4_pound_5d n1221
+00 1
+.names n1220 n1221 n1222
+10 1
+.names n1220 n1222 n1223
+10 1
+.names byte_controller_c_state_pound_5b0_pound_5d n1221 n1224
+11 1
+.names n1220 n1224 n1225
+11 1
+.names n1223 n1225 n1226
+10 1
+.names byte_controller_dcnt_pound_5b1_pound_5d \
+ byte_controller_dcnt_pound_5b2_pound_5d n1227
+01 1
+.names byte_controller_dcnt_pound_5b1_pound_5d \
+ byte_controller_dcnt_pound_5b2_pound_5d n1228
+11 1
+.names byte_controller_dcnt_pound_5b1_pound_5d \
+ byte_controller_dcnt_pound_5b2_pound_5d n1229
+10 1
+.names n1228 n1229 n1230
+00 1
+.names n1227 n1230 n1231
+01 1
+.names byte_controller_dcnt_pound_5b0_pound_5d n1231 n1232
+01 1
+.names byte_controller_core_ack n1232 n1233
+01 1
+.names byte_controller_core_ack n1232 n1234
+11 1
+.names byte_controller_core_ack n1232 n1235
+00 1
+.names n1234 n1235 n1236
+00 1
+.names n1233 n1236 n1237
+01 1
+.names n1226 n1237 n1238
+11 1
+.names n1184 n1226 n1239
+10 1
+.names n1184 n1226 n1240
+11 1
+.names n1184 n1226 n1241
+01 1
+.names n1240 n1241 n1242
+00 1
+.names n1239 n1242 n1243
+01 1
+.names byte_controller_c_state_pound_5b1_pound_5d n1243 n1244
+00 1
+.names n1243 n1244 n1245
+00 1
+.names byte_controller_c_state_pound_5b1_pound_5d byte_controller_core_ack \
+ n1246
+11 1
+.names n1243 n1246 n1247
+01 1
+.names n1245 n1247 n1248
+10 1
+.names byte_controller_core_ack n1184 n1249
+01 1
+.names n1184 n1249 n1250
+10 1
+.names byte_controller_core_ack rd n1251
+10 1
+.names n1184 n1251 n1252
+11 1
+.names n1250 n1252 n1253
+10 1
+.names n1238 n1248 n1254
+01 1
+.names n1238 n1254 n1255
+00 1
+.names n1248 n1253 n1256
+01 1
+.names n1238 n1256 n1257
+01 1
+.names n1255 n1257 n1258
+10 1
+.names n1219 n1258 n1259
+01 1
+.names n1194 n1258 n1260
+00 1
+.names n1219 n1260 n1261
+11 1
+.names n1259 n1261 n1262
+00 1
+.names n1180 n1194 n1263
+10 1
+.names sta n1263 n1264
+11 1
+.names n1263 n1264 n1265
+10 1
+.names rd sta n1266
+00 1
+.names n1263 n1266 n1267
+11 1
+.names n1265 n1267 n1268
+10 1
+.names n357 n1262 n1269
+11 1
+.names n357 n1268 n1270
+01 1
+.names n1262 n1270 n1271
+01 1
+.names n1269 n1271 byte_controller_c_state_pound_5b1_pound_5d_in
+00 0
+.names byte_controller_c_state_pound_5b2_pound_5d n1180 n1273
+11 1
+.names n1171 n1221 n1274
+10 1
+.names n1171 n1274 n1275
+10 1
+.names n1171 n1224 n1276
+11 1
+.names n1275 n1276 n1277
+10 1
+.names n1237 n1277 n1278
+11 1
+.names n1184 n1277 n1279
+10 1
+.names n1184 n1277 n1280
+11 1
+.names n1184 n1277 n1281
+01 1
+.names n1280 n1281 n1282
+00 1
+.names n1279 n1282 n1283
+01 1
+.names byte_controller_c_state_pound_5b2_pound_5d n1283 n1284
+00 1
+.names n1283 n1284 n1285
+00 1
+.names byte_controller_c_state_pound_5b2_pound_5d byte_controller_core_ack \
+ n1286
+11 1
+.names n1283 n1286 n1287
+01 1
+.names n1285 n1287 n1288
+10 1
+.names byte_controller_core_ack rd n1289
+00 1
+.names rd n1289 n1290
+00 1
+.names byte_controller_core_ack n1184 n1291
+10 1
+.names rd n1291 n1292
+01 1
+.names n1290 n1292 n1293
+10 1
+.names n1278 n1288 n1294
+01 1
+.names n1278 n1294 n1295
+00 1
+.names n1288 n1293 n1296
+01 1
+.names n1278 n1296 n1297
+01 1
+.names n1295 n1297 n1298
+10 1
+.names n1273 n1298 n1299
+01 1
+.names n1194 n1298 n1300
+00 1
+.names n1273 n1300 n1301
+11 1
+.names n1299 n1301 n1302
+00 1
+.names n1263 n1266 n1303
+01 1
+.names n1266 n1303 n1304
+10 1
+.names n_108 n1263 n1305
+01 1
+.names n1266 n1305 n1306
+11 1
+.names n1304 n1306 n1307
+10 1
+.names n357 n1302 n1308
+11 1
+.names n357 n1307 n1309
+01 1
+.names n1302 n1309 n1310
+01 1
+.names n1308 n1310 byte_controller_c_state_pound_5b2_pound_5d_in
+00 0
+.names byte_controller_c_state_pound_5b3_pound_5d byte_controller_core_ack \
+ n1312
+11 1
+.names byte_controller_c_state_pound_5b3_pound_5d byte_controller_core_ack \
+ n1313
+01 1
+.names byte_controller_c_state_pound_5b3_pound_5d byte_controller_core_ack \
+ n1314
+00 1
+.names n1313 n1314 n1315
+00 1
+.names n1312 n1315 n1316
+01 1
+.names byte_controller_c_state_pound_5b3_pound_5d \
+ byte_controller_c_state_pound_5b4_pound_5d n1317
+10 1
+.names byte_controller_c_state_pound_5b0_pound_5d \
+ byte_controller_c_state_pound_5b1_pound_5d n1318
+01 1
+.names byte_controller_c_state_pound_5b0_pound_5d n1318 n1319
+00 1
+.names byte_controller_c_state_pound_5b0_pound_5d n1171 n1320
+01 1
+.names n1319 n1320 n1321
+10 1
+.names n1317 n1321 n1322
+10 1
+.names n1317 n1321 n1323
+00 1
+.names n1317 n1321 n1324
+01 1
+.names n1323 n1324 n1325
+00 1
+.names n1322 n1325 n1326
+01 1
+.names n1277 n1316 n1327
+11 1
+.names n1316 n1326 n1328
+01 1
+.names n1277 n1328 n1329
+01 1
+.names n1327 n1329 n1330
+00 1
+.names byte_controller_core_ack n1232 n1331
+10 1
+.names n1235 n1331 n1332
+00 1
+.names n1233 n1332 n1333
+01 1
+.names n1277 n1333 n1334
+11 1
+.names n1330 n1334 n1335
+01 1
+.names n1330 n1334 n1336
+00 1
+.names n1330 n1334 n1337
+11 1
+.names n1336 n1337 n1338
+00 1
+.names n1335 n1338 n1339
+01 1
+.names n1226 n1339 n1340
+01 1
+.names n1316 n1339 n1341
+00 1
+.names n1226 n1341 n1342
+11 1
+.names n1340 n1342 n1343
+00 1
+.names n1226 n1333 n1344
+00 1
+.names n1226 n1333 n1345
+01 1
+.names n1226 n1333 n1346
+10 1
+.names n1345 n1346 n1347
+00 1
+.names n1344 n1347 n1348
+01 1
+.names n357 n1343 n1349
+11 1
+.names n357 n1348 n1350
+01 1
+.names n1343 n1350 n1351
+01 1
+.names n1349 n1351 byte_controller_c_state_pound_5b3_pound_5d_in
+00 0
+.names n1180 n1194 n1353
+01 1
+.names n1194 n1353 n1354
+10 1
+.names byte_controller_c_state_pound_5b4_pound_5d n1180 n1355
+01 1
+.names n1194 n1355 n1356
+11 1
+.names n1354 n1356 n1357
+10 1
+.names byte_controller_c_state_pound_5b3_pound_5d n1321 n1358
+11 1
+.names n1321 n1358 n1359
+10 1
+.names n1221 n1321 n1360
+11 1
+.names n1359 n1360 n1361
+10 1
+.names n1326 n1361 n1362
+00 1
+.names byte_controller_c_state_pound_5b4_pound_5d n1362 n1363
+00 1
+.names n1362 n1363 n1364
+00 1
+.names byte_controller_c_state_pound_5b4_pound_5d byte_controller_core_ack \
+ n1365
+11 1
+.names n1362 n1365 n1366
+01 1
+.names n1364 n1366 n1367
+10 1
+.names n_108 n1263 n1368
+11 1
+.names n1266 n1368 n1369
+11 1
+.names n1304 n1369 n1370
+10 1
+.names byte_controller_core_ack n1326 n1371
+01 1
+.names n1326 n1371 n1372
+10 1
+.names byte_controller_core_ack sto n1373
+10 1
+.names n1326 n1373 n1374
+11 1
+.names n1372 n1374 n1375
+10 1
+.names n1357 n1367 n1376
+01 1
+.names n1357 n1376 n1377
+00 1
+.names n1367 n1370 n1378
+01 1
+.names n1357 n1378 n1379
+01 1
+.names n1377 n1379 n1380
+10 1
+.names n1357 n1367 n1381
+00 1
+.names n1370 n1375 n1382
+01 1
+.names n1381 n1382 n1383
+11 1
+.names n1380 n1383 n1384
+10 1
+.names n357 n1384 byte_controller_c_state_pound_5b4_pound_5d_in
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b16_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b4_pound_5d n1386
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b12_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b8_pound_5d n1387
+00 1
+.names n362 n1386 n1388
+10 1
+.names n362 n1387 n1389
+00 1
+.names n1386 n1389 n1390
+11 1
+.names n1388 n1390 byte_controller_core_ack_in
+00 0
+.names n1226 n1362 n1392
+11 1
+.names n1226 n1362 n1393
+10 1
+.names n1226 n1362 n1394
+00 1
+.names n1393 n1394 n1395
+00 1
+.names n1392 n1395 n1396
+01 1
+.names byte_controller_core_ack byte_controller_core_cmd_pound_5b0_pound_5d \
+ n1397
+01 1
+.names n1396 n1397 n1398
+00 1
+.names n1396 n1397 n1399
+10 1
+.names n1396 n1397 n1400
+11 1
+.names n1399 n1400 n1401
+00 1
+.names n1398 n1401 n1402
+01 1
+.names byte_controller_core_cmd_pound_5b0_pound_5d n1194 n1403
+01 1
+.names byte_controller_core_cmd_pound_5b0_pound_5d n1194 n1404
+00 1
+.names byte_controller_core_cmd_pound_5b0_pound_5d n1194 n1405
+10 1
+.names n1404 n1405 n1406
+00 1
+.names n1403 n1406 n1407
+01 1
+.names n1180 n1407 n1408
+11 1
+.names n1180 n1204 n1409
+01 1
+.names n1407 n1409 n1410
+01 1
+.names n1408 n1410 n1411
+00 1
+.names n1283 n1411 n1412
+11 1
+.names n1397 n1411 n1413
+00 1
+.names n1283 n1413 n1414
+01 1
+.names n1412 n1414 n1415
+00 1
+.names n357 n1402 n1416
+11 1
+.names n357 n1415 n1417
+01 1
+.names n1402 n1417 n1418
+01 1
+.names n1416 n1418 byte_controller_core_cmd_pound_5b0_pound_5d_in
+00 0
+.names n1184 n1326 n1420
+01 1
+.names n1184 n1326 n1421
+11 1
+.names n1184 n1326 n1422
+10 1
+.names n1421 n1422 n1423
+00 1
+.names n1420 n1423 n1424
+01 1
+.names byte_controller_core_ack byte_controller_core_cmd_pound_5b1_pound_5d \
+ n1425
+01 1
+.names n1424 n1425 n1426
+00 1
+.names n1424 n1425 n1427
+10 1
+.names n1424 n1425 n1428
+11 1
+.names n1427 n1428 n1429
+00 1
+.names n1426 n1429 n1430
+01 1
+.names byte_controller_core_cmd_pound_5b1_pound_5d n1194 n1431
+01 1
+.names n1194 n1431 n1432
+10 1
+.names byte_controller_core_cmd_pound_5b1_pound_5d n1180 n1433
+10 1
+.names n1194 n1433 n1434
+11 1
+.names n1432 n1434 n1435
+10 1
+.names n1375 n1430 n1436
+01 1
+.names n1375 n1436 n1437
+00 1
+.names n1370 n1430 n1438
+10 1
+.names n1375 n1438 n1439
+01 1
+.names n1437 n1439 n1440
+10 1
+.names n1375 n1430 n1441
+00 1
+.names n1370 n1435 n1442
+01 1
+.names n1441 n1442 n1443
+11 1
+.names n1440 n1443 n1444
+10 1
+.names n1226 n1361 n1445
+01 1
+.names n1226 n1445 n1446
+00 1
+.names n1277 n1361 n1447
+10 1
+.names n1226 n1447 n1448
+01 1
+.names n1446 n1448 n1449
+10 1
+.names n1425 n1449 n1450
+00 1
+.names n1425 n1449 n1451
+01 1
+.names n1425 n1449 n1452
+11 1
+.names n1451 n1452 n1453
+00 1
+.names n1450 n1453 n1454
+01 1
+.names n357 n1444 n1455
+10 1
+.names n357 n1454 n1456
+01 1
+.names n1444 n1456 n1457
+11 1
+.names n1455 n1457 byte_controller_core_cmd_pound_5b1_pound_5d_in
+00 0
+.names byte_controller_core_ack byte_controller_core_cmd_pound_5b2_pound_5d \
+ n1459
+00 1
+.names byte_controller_core_ack byte_controller_core_cmd_pound_5b2_pound_5d \
+ n1460
+10 1
+.names byte_controller_core_ack byte_controller_core_cmd_pound_5b2_pound_5d \
+ n1461
+11 1
+.names n1460 n1461 n1462
+00 1
+.names n1459 n1462 n1463
+01 1
+.names n1293 n1463 n1464
+01 1
+.names n1293 n1463 n1465
+11 1
+.names n1293 n1463 n1466
+10 1
+.names n1465 n1466 n1467
+00 1
+.names n1464 n1467 n1468
+01 1
+.names n1243 n1468 n1469
+01 1
+.names n1243 n1468 n1470
+11 1
+.names n1243 n1468 n1471
+10 1
+.names n1470 n1471 n1472
+00 1
+.names n1469 n1472 n1473
+01 1
+.names n1348 n1473 n1474
+00 1
+.names n1277 n1362 n1475
+11 1
+.names n1277 n1362 n1476
+10 1
+.names n1277 n1362 n1477
+00 1
+.names n1476 n1477 n1478
+00 1
+.names n1475 n1478 n1479
+01 1
+.names n1278 n1479 n1480
+01 1
+.names n1278 n1463 n1481
+10 1
+.names n1479 n1481 n1482
+01 1
+.names n1480 n1482 n1483
+00 1
+.names byte_controller_core_cmd_pound_5b2_pound_5d n1194 n1484
+01 1
+.names n1194 n1484 n1485
+10 1
+.names byte_controller_core_cmd_pound_5b2_pound_5d n1180 n1486
+10 1
+.names n1194 n1486 n1487
+11 1
+.names n1485 n1487 n1488
+10 1
+.names n1474 n1483 n1489
+11 1
+.names n1474 n1489 n1490
+10 1
+.names n1307 n1483 n1491
+10 1
+.names n1474 n1491 n1492
+11 1
+.names n1490 n1492 n1493
+10 1
+.names n1474 n1483 n1494
+10 1
+.names n1307 n1488 n1495
+01 1
+.names n1494 n1495 n1496
+11 1
+.names n1493 n1496 n1497
+10 1
+.names n357 n1497 byte_controller_core_cmd_pound_5b2_pound_5d_in
+10 1
+.names byte_controller_core_ack byte_controller_core_cmd_pound_5b3_pound_5d \
+ n1499
+01 1
+.names n1283 n1499 n1500
+00 1
+.names n1283 n1499 n1501
+10 1
+.names n1283 n1499 n1502
+11 1
+.names n1501 n1502 n1503
+00 1
+.names n1500 n1503 n1504
+01 1
+.names n1253 n1504 n1505
+10 1
+.names n1253 n1504 n1506
+11 1
+.names n1253 n1504 n1507
+01 1
+.names n1506 n1507 n1508
+00 1
+.names n1505 n1508 n1509
+01 1
+.names n1180 n1263 n1510
+10 1
+.names byte_controller_core_cmd_pound_5b3_pound_5d n1194 n1511
+01 1
+.names n1180 n1511 n1512
+11 1
+.names n1510 n1512 n1513
+10 1
+.names n1268 n1513 n1514
+01 1
+.names n1268 n1513 n1515
+11 1
+.names n1268 n1513 n1516
+10 1
+.names n1515 n1516 n1517
+00 1
+.names n1514 n1517 n1518
+01 1
+.names n1396 n1518 n1519
+11 1
+.names n1499 n1518 n1520
+00 1
+.names n1396 n1520 n1521
+01 1
+.names n1519 n1521 n1522
+00 1
+.names n1238 n1334 n1523
+00 1
+.names n1509 n1522 n1524
+11 1
+.names n1509 n1524 n1525
+10 1
+.names n1522 n1523 n1526
+00 1
+.names n1509 n1526 n1527
+11 1
+.names n1525 n1527 n1528
+10 1
+.names n357 n1528 byte_controller_core_cmd_pound_5b3_pound_5d_in
+10 1
+.names n1277 n1361 n1530
+01 1
+.names n1277 n1530 n1531
+00 1
+.names n1184 n1361 n1532
+10 1
+.names n1277 n1532 n1533
+01 1
+.names n1531 n1533 n1534
+10 1
+.names ack byte_controller_core_ack n1535
+00 1
+.names ack n1535 n1536
+00 1
+.names rxr_263 n1536 n1537
+10 1
+.names byte_controller_core_ack rxr_263 n1538
+10 1
+.names ack n1538 n1539
+11 1
+.names n1537 n1539 n1540
+00 1
+.names n1226 n1540 n1541
+11 1
+.names n1226 n1541 n1542
+10 1
+.names rxr_263 n1180 n1543
+01 1
+.names n1180 n1543 n1544
+10 1
+.names n1542 n1544 n1545
+00 1
+.names n1326 n1545 n1546
+11 1
+.names n1535 n1546 n1547
+01 1
+.names n1545 n1547 n1548
+10 1
+.names n1534 n1548 n1549
+11 1
+.names rxr_263 n1548 n1550
+00 1
+.names n1534 n1550 n1551
+01 1
+.names n1549 n1551 n1552
+00 1
+.names n357 n1552 byte_controller_core_txd_in
+11 1
+.names byte_controller_dcnt_pound_5b0_pound_5d byte_controller_shift n1554
+11 1
+.names byte_controller_dcnt_pound_5b0_pound_5d byte_controller_shift n1555
+00 1
+.names n1554 n1555 n1556
+00 1
+.names byte_controller_ld wb_rst_i n1557
+11 1
+.names byte_controller_ld wb_rst_i n1558
+01 1
+.names byte_controller_ld wb_rst_i n1559
+00 1
+.names n1558 n1559 n1560
+00 1
+.names n1557 n1560 n1561
+01 1
+.names wb_rst_i n1561 n1562
+00 1
+.names n1556 n1562 n1563
+11 1
+.names n1561 n1563 byte_controller_dcnt_pound_5b0_pound_5d_in
+00 0
+.names byte_controller_dcnt_pound_5b0_pound_5d \
+ byte_controller_dcnt_pound_5b1_pound_5d n1565
+11 1
+.names byte_controller_dcnt_pound_5b0_pound_5d \
+ byte_controller_dcnt_pound_5b1_pound_5d n1566
+10 1
+.names byte_controller_dcnt_pound_5b0_pound_5d \
+ byte_controller_dcnt_pound_5b1_pound_5d n1567
+01 1
+.names n1566 n1567 n1568
+00 1
+.names n1565 n1568 n1569
+01 1
+.names byte_controller_dcnt_pound_5b0_pound_5d n1569 n1570
+00 1
+.names byte_controller_dcnt_pound_5b1_pound_5d n1569 n1571
+01 1
+.names byte_controller_dcnt_pound_5b0_pound_5d n1571 n1572
+11 1
+.names n1570 n1572 n1573
+00 1
+.names byte_controller_dcnt_pound_5b1_pound_5d byte_controller_shift n1574
+11 1
+.names byte_controller_dcnt_pound_5b1_pound_5d n1574 n1575
+10 1
+.names n1573 n1575 n1576
+00 1
+.names byte_controller_shift n1573 n1577
+01 1
+.names byte_controller_dcnt_pound_5b1_pound_5d n1577 n1578
+01 1
+.names n1576 n1578 n1579
+00 1
+.names n1562 n1579 n1580
+11 1
+.names n1561 n1580 byte_controller_dcnt_pound_5b1_pound_5d_in
+00 0
+.names n1232 n1569 n1582
+01 1
+.names byte_controller_dcnt_pound_5b2_pound_5d n1232 n1583
+01 1
+.names n1569 n1583 n1584
+01 1
+.names n1582 n1584 n1585
+00 1
+.names byte_controller_dcnt_pound_5b2_pound_5d byte_controller_shift n1586
+11 1
+.names byte_controller_dcnt_pound_5b2_pound_5d n1586 n1587
+10 1
+.names n1585 n1587 n1588
+00 1
+.names byte_controller_shift n1585 n1589
+01 1
+.names byte_controller_dcnt_pound_5b2_pound_5d n1589 n1590
+01 1
+.names n1588 n1590 n1591
+00 1
+.names n1562 n1591 n1592
+11 1
+.names n1561 n1592 byte_controller_dcnt_pound_5b2_pound_5d_in
+00 0
+.names n1221 n1321 n1594
+10 1
+.names n1221 n1321 n1595
+00 1
+.names n1221 n1321 n1596
+01 1
+.names n1595 n1596 n1597
+00 1
+.names n1594 n1597 n1598
+01 1
+.names byte_controller_c_state_pound_5b0_pound_5d n1598 n1599
+00 1
+.names n1598 n1599 n1600
+00 1
+.names byte_controller_c_state_pound_5b0_pound_5d byte_controller_core_ack \
+ n1601
+10 1
+.names n1598 n1601 n1602
+01 1
+.names n1600 n1602 n1603
+10 1
+.names byte_controller_c_state_pound_5b0_pound_5d n1598 n1604
+01 1
+.names n1194 n1604 n1605
+11 1
+.names n1194 n1604 n1606
+10 1
+.names n1194 n1604 n1607
+00 1
+.names n1606 n1607 n1608
+00 1
+.names n1605 n1608 n1609
+01 1
+.names n357 n1603 n1610
+11 1
+.names n357 n1609 n1611
+01 1
+.names n1603 n1611 n1612
+01 1
+.names n1610 n1612 byte_controller_ld_in
+00 0
+.names byte_controller_bit_controller_dSCL \
+ byte_controller_bit_controller_sSCL_reg_Q n1614
+01 1
+.names byte_controller_n_52 n1614 n1615
+01 1
+.names byte_controller_n_52 n1615 n1616
+00 1
+.names byte_controller_bit_controller_sSDA n1616 n1617
+10 1
+.names byte_controller_bit_controller_sSDA n1614 n1618
+00 1
+.names byte_controller_n_52 n1618 n1619
+11 1
+.names n1617 n1619 byte_controller_n_52_in
+00 0
+.names n1171 n1237 n1621
+01 1
+.names n1237 n1621 n1622
+10 1
+.names byte_controller_core_ack n1220 n1623
+01 1
+.names n1220 n1623 n1624
+10 1
+.names n1622 n1624 n1625
+00 1
+.names n357 n1625 byte_controller_shift_in
+10 1
+.names wb_adr_i_lb_1_rb_ wb_adr_i_lb_2_rb_ n1627
+10 1
+.names wb_adr_i_lb_0_rb_ n1627 n1628
+10 1
+.names wb_adr_i_lb_0_rb_ n1627 n1629
+00 1
+.names wb_adr_i_lb_0_rb_ n1627 n1630
+11 1
+.names n1629 n1630 n1631
+00 1
+.names n1628 n1631 n1632
+01 1
+.names core_en n1632 n1633
+00 1
+.names core_en n1632 n1634
+01 1
+.names core_en n1632 n1635
+11 1
+.names n1634 n1635 n1636
+00 1
+.names n1633 n1636 n1637
+01 1
+.names wb_dat_i_lb_7_rb_ n1632 n1638
+10 1
+.names wb_dat_i_lb_7_rb_ n1632 n1639
+00 1
+.names wb_dat_i_lb_7_rb_ n1632 n1640
+01 1
+.names n1639 n1640 n1641
+00 1
+.names n1638 n1641 n1642
+01 1
+.names n268 n1637 n1643
+11 1
+.names n268 n1642 n1644
+01 1
+.names n1637 n1644 n1645
+01 1
+.names n1643 n1645 n1646
+00 1
+.names n268 n1646 n1647
+11 1
+.names core_en n1646 n1648
+00 1
+.names n268 n1648 n1649
+01 1
+.names n1647 n1649 n1650
+00 1
+.names wb_rst_i n1650 core_en_in
+01 1
+.names wb_dat_i_lb_1_rb_ n274 n1652
+00 1
+.names wb_dat_i_lb_1_rb_ n1652 n1653
+00 1
+.names cr_reg_pound_5b1_pound_5d_Q n1653 n1654
+10 1
+.names cr_reg_pound_5b1_pound_5d_Q n274 n1655
+01 1
+.names wb_dat_i_lb_1_rb_ n1655 n1656
+11 1
+.names n1654 n1656 n1657
+00 1
+.names wb_rst_i n268 n1658
+01 1
+.names n1657 n1658 cr_reg_pound_5b1_pound_5d_Q_in
+01 1
+.names wb_dat_i_lb_2_rb_ n274 n1660
+00 1
+.names wb_dat_i_lb_2_rb_ n1660 n1661
+00 1
+.names cr_reg_pound_5b2_pound_5d_Q n1661 n1662
+10 1
+.names cr_reg_pound_5b2_pound_5d_Q n274 n1663
+01 1
+.names wb_dat_i_lb_2_rb_ n1663 n1664
+11 1
+.names n1662 n1664 n1665
+00 1
+.names n1658 n1665 cr_reg_pound_5b2_pound_5d_Q_in
+10 1
+.names ctr_10 n1632 n1667
+11 1
+.names ctr_10 n1632 n1668
+01 1
+.names ctr_10 n1632 n1669
+00 1
+.names n1668 n1669 n1670
+00 1
+.names n1667 n1670 n1671
+01 1
+.names wb_dat_i_lb_1_rb_ n1632 n1672
+10 1
+.names wb_dat_i_lb_1_rb_ n1632 n1673
+00 1
+.names wb_dat_i_lb_1_rb_ n1632 n1674
+01 1
+.names n1673 n1674 n1675
+00 1
+.names n1672 n1675 n1676
+01 1
+.names n268 n1671 n1677
+11 1
+.names n268 n1676 n1678
+01 1
+.names n1671 n1678 n1679
+01 1
+.names n1677 n1679 n1680
+00 1
+.names n268 n1680 n1681
+11 1
+.names ctr_10 n1680 n1682
+00 1
+.names n268 n1682 n1683
+01 1
+.names n1681 n1683 n1684
+00 1
+.names wb_rst_i n1684 ctr_10_in
+01 1
+.names ctr_11 n1632 n1686
+11 1
+.names ctr_11 n1632 n1687
+01 1
+.names ctr_11 n1632 n1688
+00 1
+.names n1687 n1688 n1689
+00 1
+.names n1686 n1689 n1690
+01 1
+.names wb_dat_i_lb_2_rb_ n1632 n1691
+10 1
+.names wb_dat_i_lb_2_rb_ n1632 n1692
+00 1
+.names wb_dat_i_lb_2_rb_ n1632 n1693
+01 1
+.names n1692 n1693 n1694
+00 1
+.names n1691 n1694 n1695
+01 1
+.names n268 n1690 n1696
+11 1
+.names n268 n1695 n1697
+01 1
+.names n1690 n1697 n1698
+01 1
+.names n1696 n1698 n1699
+00 1
+.names n268 n1699 n1700
+11 1
+.names ctr_11 n1699 n1701
+00 1
+.names n268 n1701 n1702
+01 1
+.names n1700 n1702 n1703
+00 1
+.names wb_rst_i n1703 ctr_11_in
+01 1
+.names ctr_12 n1632 n1705
+11 1
+.names ctr_12 n1632 n1706
+01 1
+.names ctr_12 n1632 n1707
+00 1
+.names n1706 n1707 n1708
+00 1
+.names n1705 n1708 n1709
+01 1
+.names wb_dat_i_lb_3_rb_ n1632 n1710
+10 1
+.names wb_dat_i_lb_3_rb_ n1632 n1711
+00 1
+.names wb_dat_i_lb_3_rb_ n1632 n1712
+01 1
+.names n1711 n1712 n1713
+00 1
+.names n1710 n1713 n1714
+01 1
+.names n268 n1709 n1715
+11 1
+.names n268 n1714 n1716
+01 1
+.names n1709 n1716 n1717
+01 1
+.names n1715 n1717 n1718
+00 1
+.names n268 n1718 n1719
+11 1
+.names ctr_12 n1718 n1720
+00 1
+.names n268 n1720 n1721
+01 1
+.names n1719 n1721 n1722
+00 1
+.names wb_rst_i n1722 ctr_12_in
+01 1
+.names ctr_13 n1632 n1724
+11 1
+.names ctr_13 n1632 n1725
+01 1
+.names ctr_13 n1632 n1726
+00 1
+.names n1725 n1726 n1727
+00 1
+.names n1724 n1727 n1728
+01 1
+.names wb_dat_i_lb_4_rb_ n1632 n1729
+10 1
+.names wb_dat_i_lb_4_rb_ n1632 n1730
+00 1
+.names wb_dat_i_lb_4_rb_ n1632 n1731
+01 1
+.names n1730 n1731 n1732
+00 1
+.names n1729 n1732 n1733
+01 1
+.names n268 n1728 n1734
+11 1
+.names n268 n1733 n1735
+01 1
+.names n1728 n1735 n1736
+01 1
+.names n1734 n1736 n1737
+00 1
+.names n268 n1737 n1738
+11 1
+.names ctr_13 n1737 n1739
+00 1
+.names n268 n1739 n1740
+01 1
+.names n1738 n1740 n1741
+00 1
+.names wb_rst_i n1741 ctr_13_in
+01 1
+.names ctr_14 n1632 n1743
+11 1
+.names ctr_14 n1632 n1744
+01 1
+.names ctr_14 n1632 n1745
+00 1
+.names n1744 n1745 n1746
+00 1
+.names n1743 n1746 n1747
+01 1
+.names wb_dat_i_lb_5_rb_ n1632 n1748
+10 1
+.names wb_dat_i_lb_5_rb_ n1632 n1749
+00 1
+.names wb_dat_i_lb_5_rb_ n1632 n1750
+01 1
+.names n1749 n1750 n1751
+00 1
+.names n1748 n1751 n1752
+01 1
+.names n268 n1747 n1753
+11 1
+.names n268 n1752 n1754
+01 1
+.names n1747 n1754 n1755
+01 1
+.names n1753 n1755 n1756
+00 1
+.names n268 n1756 n1757
+11 1
+.names ctr_14 n1756 n1758
+00 1
+.names n268 n1758 n1759
+01 1
+.names n1757 n1759 n1760
+00 1
+.names wb_rst_i n1760 ctr_14_in
+01 1
+.names ctr n1632 n1762
+11 1
+.names ctr n1632 n1763
+01 1
+.names ctr n1632 n1764
+00 1
+.names n1763 n1764 n1765
+00 1
+.names n1762 n1765 n1766
+01 1
+.names wb_dat_i_lb_0_rb_ n1632 n1767
+10 1
+.names wb_dat_i_lb_0_rb_ n1632 n1768
+00 1
+.names wb_dat_i_lb_0_rb_ n1632 n1769
+01 1
+.names n1768 n1769 n1770
+00 1
+.names n1767 n1770 n1771
+01 1
+.names n268 n1766 n1772
+11 1
+.names n268 n1771 n1773
+01 1
+.names n1766 n1773 n1774
+01 1
+.names n1772 n1774 n1775
+00 1
+.names n268 n1775 n1776
+11 1
+.names ctr n1775 n1777
+00 1
+.names n268 n1777 n1778
+01 1
+.names n1776 n1778 n1779
+00 1
+.names wb_rst_i n1779 ctr_in
+01 1
+.names byte_controller_core_ack n357 n1781
+01 1
+.names byte_controller_core_ack n357 n1782
+00 1
+.names byte_controller_core_ack n357 n1783
+10 1
+.names n1782 n1783 n1784
+00 1
+.names n1781 n1784 n1785
+01 1
+.names sto n1317 n1786
+01 1
+.names byte_controller_c_state_pound_5b3_pound_5d n1786 n1787
+10 1
+.names byte_controller_c_state_pound_5b4_pound_5d n1786 n1788
+01 1
+.names byte_controller_c_state_pound_5b3_pound_5d n1788 n1789
+01 1
+.names n1787 n1789 n1790
+00 1
+.names n1785 n1790 done_in
+11 1
+.names byte_controller_bit_controller_sSDA \
+ byte_controller_bit_controller_sda_chk_reg_Q n1792
+11 1
+.names byte_controller_bit_controller_sda_chk_reg_Q n1792 n1793
+10 1
+.names byte_controller_bit_controller_sSDA sda_padoen_o n1794
+00 1
+.names byte_controller_bit_controller_sda_chk_reg_Q n1794 n1795
+11 1
+.names n1793 n1795 n1796
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n386 n1797
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n386 n1798
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n386 n1799
+00 1
+.names n1798 n1799 n1800
+00 1
+.names n1797 n1800 n1801
+01 1
+.names n511 n1801 n1802
+00 1
+.names n511 n1801 n1803
+10 1
+.names n511 n1801 n1804
+01 1
+.names n1803 n1804 n1805
+00 1
+.names n1802 n1805 n1806
+01 1
+.names byte_controller_bit_controller_cmd_stop \
+ byte_controller_bit_controller_sto_condition_reg_Q n1807
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b1_pound_5d n433 n1808
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b1_pound_5d n433 n1809
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b1_pound_5d n433 n1810
+00 1
+.names n1809 n1810 n1811
+00 1
+.names n1808 n1811 n1812
+01 1
+.names n1806 n1807 n1813
+00 1
+.names n1806 n1813 n1814
+00 1
+.names n1807 n1812 n1815
+00 1
+.names n1812 n1815 n1816
+00 1
+.names n1814 n1816 n1817
+00 1
+.names wb_rst_i n1796 n1818
+01 1
+.names wb_rst_i n1817 n1819
+10 1
+.names n1796 n1819 n1820
+01 1
+.names n1818 n1820 i2c_al_in
+00 0
+.names wb_dat_i_lb_0_rb_ n274 n1822
+00 1
+.names wb_dat_i_lb_0_rb_ n1822 n1823
+00 1
+.names iack n1823 n1824
+10 1
+.names iack n274 n1825
+01 1
+.names wb_dat_i_lb_0_rb_ n1825 n1826
+11 1
+.names n1824 n1826 n1827
+00 1
+.names n1658 n1827 iack_in
+10 1
+.names ien n1632 n1829
+00 1
+.names ien n1632 n1830
+01 1
+.names ien n1632 n1831
+11 1
+.names n1830 n1831 n1832
+00 1
+.names n1829 n1832 n1833
+01 1
+.names wb_dat_i_lb_6_rb_ n1632 n1834
+10 1
+.names wb_dat_i_lb_6_rb_ n1632 n1835
+00 1
+.names wb_dat_i_lb_6_rb_ n1632 n1836
+01 1
+.names n1835 n1836 n1837
+00 1
+.names n1834 n1837 n1838
+01 1
+.names n268 n1833 n1839
+11 1
+.names n268 n1838 n1840
+01 1
+.names n1833 n1840 n1841
+01 1
+.names n1839 n1841 n1842
+00 1
+.names n268 n1842 n1843
+11 1
+.names ien n1842 n1844
+00 1
+.names n268 n1844 n1845
+01 1
+.names n1843 n1845 n1846
+00 1
+.names wb_rst_i n1846 ien_in
+01 1
+.names done i2c_al n1848
+00 1
+.names iack wb_rst_i n1849
+11 1
+.names iack wb_rst_i n1850
+10 1
+.names iack wb_rst_i n1851
+01 1
+.names n1850 n1851 n1852
+00 1
+.names n1849 n1852 n1853
+01 1
+.names n1848 n1853 n1854
+01 1
+.names irq_flag n1853 n1855
+10 1
+.names n1848 n1855 n1856
+11 1
+.names n1854 n1856 irq_flag_in
+00 0
+.names irxack n1449 n1858
+00 1
+.names irxack n1449 n1859
+01 1
+.names irxack n1449 n1860
+11 1
+.names n1859 n1860 n1861
+00 1
+.names n1858 n1861 n1862
+01 1
+.names n1180 n1184 n1863
+10 1
+.names n1180 n1184 n1864
+11 1
+.names n1180 n1184 n1865
+01 1
+.names n1864 n1865 n1866
+00 1
+.names n1863 n1866 n1867
+01 1
+.names byte_controller_core_ack irxack n1868
+00 1
+.names byte_controller_core_ack n1868 n1869
+00 1
+.names byte_controller_core_ack byte_controller_n_52 n1870
+10 1
+.names byte_controller_core_ack n1870 n1871
+10 1
+.names n1869 n1871 n1872
+00 1
+.names n1326 n1872 n1873
+10 1
+.names n1867 n1873 n1874
+10 1
+.names irxack n1873 n1875
+01 1
+.names n1867 n1875 n1876
+01 1
+.names n1874 n1876 n1877
+00 1
+.names n357 n1862 n1878
+11 1
+.names n357 n1877 n1879
+01 1
+.names n1862 n1879 n1880
+01 1
+.names n1878 n1880 irxack_in
+00 0
+.names n268 n1848 n1882
+00 1
+.names n268 n1882 n1883
+00 1
+.names n_108 n1848 n1884
+01 1
+.names n268 n1884 n1885
+01 1
+.names n1883 n1885 n1886
+10 1
+.names wb_dat_i_lb_4_rb_ n274 n1887
+01 1
+.names n274 n1887 n1888
+10 1
+.names n_108 n1887 n1889
+11 1
+.names n274 n1889 n1890
+01 1
+.names n1888 n1890 n1891
+00 1
+.names n268 n1891 n1892
+00 1
+.names n268 n1891 n1893
+01 1
+.names n268 n1891 n1894
+11 1
+.names n1893 n1894 n1895
+00 1
+.names n1892 n1895 n1896
+01 1
+.names wb_rst_i n1886 n1897
+01 1
+.names wb_rst_i n1896 n1898
+11 1
+.names n1886 n1898 n1899
+01 1
+.names n1897 n1899 n_108_in
+00 0
+.names n_2211 n802 n1901
+00 1
+.names n_2211 n1901 n1902
+00 1
+.names prer_reg_pound_5b8_pound_5d_Q n1902 n1903
+10 1
+.names prer_reg_pound_5b8_pound_5d_Q n802 n1904
+01 1
+.names n_2211 n1904 n1905
+11 1
+.names n1903 n1905 n1906
+00 1
+.names n797 n1906 n1907
+01 1
+.names n797 n1906 n1908
+11 1
+.names n797 n1906 n1909
+10 1
+.names n1908 n1909 n1910
+00 1
+.names n1907 n1910 n1911
+01 1
+.names n760 n771 n1912
+01 1
+.names n760 n771 n1913
+00 1
+.names n760 n771 n1914
+10 1
+.names n1913 n1914 n1915
+00 1
+.names n1912 n1915 n1916
+01 1
+.names n_2211 n1916 n1917
+11 1
+.names n_2211 n1916 n1918
+00 1
+.names n1917 n1918 n1919
+00 1
+.names n797 n1919 n1920
+00 1
+.names n797 n1919 n1921
+10 1
+.names n797 n1919 n1922
+01 1
+.names n1921 n1922 n1923
+00 1
+.names n1920 n1923 n1924
+01 1
+.names wb_rst_i n1911 n1925
+01 1
+.names wb_rst_i n1924 n1926
+11 1
+.names n1911 n1926 n1927
+01 1
+.names n1925 n1927 n_2211_in
+00 0
+.names n_2228 n802 n1929
+00 1
+.names n_2228 n1929 n1930
+00 1
+.names prer_reg_pound_5b12_pound_5d_Q n1930 n1931
+10 1
+.names prer_reg_pound_5b12_pound_5d_Q n802 n1932
+01 1
+.names n_2228 n1932 n1933
+11 1
+.names n1931 n1933 n1934
+00 1
+.names n797 n1934 n1935
+10 1
+.names n797 n1934 n1936
+11 1
+.names n797 n1934 n1937
+01 1
+.names n1936 n1937 n1938
+00 1
+.names n1935 n1938 n1939
+01 1
+.names n786 n1916 n1940
+00 1
+.names n786 n1916 n1941
+01 1
+.names n786 n1916 n1942
+10 1
+.names n1941 n1942 n1943
+00 1
+.names n1940 n1943 n1944
+01 1
+.names n_2228 n1944 n1945
+00 1
+.names n_2228 n1944 n1946
+01 1
+.names n_2228 n1944 n1947
+11 1
+.names n1946 n1947 n1948
+00 1
+.names n1945 n1948 n1949
+01 1
+.names n_2228 n1949 n1950
+00 1
+.names n1944 n1950 n1951
+11 1
+.names n1949 n1951 n1952
+00 1
+.names n797 n1952 n1953
+00 1
+.names n797 n1952 n1954
+01 1
+.names n797 n1952 n1955
+11 1
+.names n1954 n1955 n1956
+00 1
+.names n1953 n1956 n1957
+01 1
+.names wb_rst_i n1939 n1958
+01 1
+.names wb_rst_i n1957 n1959
+11 1
+.names n1939 n1959 n1960
+01 1
+.names n1958 n1960 n_2228_in
+00 0
+.names n_2255 n802 n1962
+00 1
+.names n_2255 n1962 n1963
+00 1
+.names prer_reg_pound_5b9_pound_5d_Q n1963 n1964
+10 1
+.names prer_reg_pound_5b9_pound_5d_Q n802 n1965
+01 1
+.names n_2255 n1965 n1966
+11 1
+.names n1964 n1966 n1967
+00 1
+.names n797 n1967 n1968
+01 1
+.names n797 n1967 n1969
+11 1
+.names n797 n1967 n1970
+10 1
+.names n1969 n1970 n1971
+00 1
+.names n1968 n1971 n1972
+01 1
+.names n_2255 n861 n1973
+01 1
+.names n861 n1973 n1974
+10 1
+.names n_2255 n1973 n1975
+01 1
+.names n861 n1975 n1976
+01 1
+.names n1974 n1976 n1977
+00 1
+.names n797 n1977 n1978
+00 1
+.names n797 n1977 n1979
+10 1
+.names n797 n1977 n1980
+01 1
+.names n1979 n1980 n1981
+00 1
+.names n1978 n1981 n1982
+01 1
+.names wb_rst_i n1972 n1983
+01 1
+.names wb_rst_i n1982 n1984
+11 1
+.names n1972 n1984 n1985
+01 1
+.names n1983 n1985 n_2255_in
+00 0
+.names n_2259 n947 n1987
+01 1
+.names n_2259 n947 n1988
+10 1
+.names n797 n1988 n1989
+10 1
+.names n1987 n1989 n1990
+01 1
+.names n797 n1990 n1991
+10 1
+.names n_2259 n802 n1992
+00 1
+.names n_2259 n1992 n1993
+00 1
+.names prer_reg_pound_5b11_pound_5d_Q n1993 n1994
+10 1
+.names prer_reg_pound_5b11_pound_5d_Q n802 n1995
+01 1
+.names n_2259 n1995 n1996
+11 1
+.names n1994 n1996 n1997
+00 1
+.names n797 n1997 n1998
+01 1
+.names n797 n1997 n1999
+11 1
+.names n797 n1997 n2000
+10 1
+.names n1999 n2000 n2001
+00 1
+.names n1998 n2001 n2002
+01 1
+.names wb_rst_i n1991 n2003
+01 1
+.names wb_rst_i n2002 n2004
+11 1
+.names n1991 n2004 n2005
+01 1
+.names n2003 n2005 n_2259_in
+00 0
+.names n_2323 n802 n2007
+00 1
+.names n_2323 n2007 n2008
+00 1
+.names prer_reg_pound_5b10_pound_5d_Q n2008 n2009
+10 1
+.names prer_reg_pound_5b10_pound_5d_Q n802 n2010
+01 1
+.names n_2323 n2010 n2011
+11 1
+.names n2009 n2011 n2012
+00 1
+.names n797 n2012 n2013
+10 1
+.names n797 n2012 n2014
+11 1
+.names n797 n2012 n2015
+01 1
+.names n2014 n2015 n2016
+00 1
+.names n2013 n2016 n2017
+01 1
+.names n_2323 n898 n2018
+00 1
+.names n_2323 n898 n2019
+01 1
+.names n_2323 n898 n2020
+11 1
+.names n2019 n2020 n2021
+00 1
+.names n2018 n2021 n2022
+01 1
+.names n_2323 n2022 n2023
+00 1
+.names n898 n2023 n2024
+11 1
+.names n2022 n2024 n2025
+00 1
+.names n797 n2025 n2026
+00 1
+.names n797 n2025 n2027
+01 1
+.names n797 n2025 n2028
+11 1
+.names n2027 n2028 n2029
+00 1
+.names n2026 n2029 n2030
+01 1
+.names wb_rst_i n2017 n2031
+01 1
+.names wb_rst_i n2030 n2032
+11 1
+.names n2017 n2032 n2033
+01 1
+.names n2031 n2033 n_2323_in
+00 0
+.names wb_adr_i_lb_1_rb_ wb_adr_i_lb_2_rb_ n2035
+11 1
+.names n269 n1627 n2036
+00 1
+.names n2035 n2036 n2037
+01 1
+.names wb_adr_i_lb_0_rb_ n2037 n2038
+11 1
+.names wb_adr_i_lb_0_rb_ n2037 n2039
+01 1
+.names n2038 n2039 n2040
+00 1
+.names n2038 n2040 n2041
+11 1
+.names n2038 n2040 n2042
+01 1
+.names n2038 n2040 n2043
+10 1
+.names n2042 n2043 n2044
+00 1
+.names n2041 n2044 n2045
+01 1
+.names prer_reg_pound_5b0_pound_5d_Q n2045 n2046
+00 1
+.names n2045 n2046 n2047
+00 1
+.names wb_dat_i_lb_0_rb_ n2039 n2048
+10 1
+.names wb_dat_i_lb_0_rb_ n2048 n2049
+10 1
+.names n2047 n2049 n2050
+00 1
+.names n268 n2050 n2051
+10 1
+.names n268 n2051 n2052
+10 1
+.names prer_reg_pound_5b0_pound_5d_Q n2051 n2053
+01 1
+.names n268 n2053 n2054
+01 1
+.names n2052 n2054 n2055
+00 1
+.names wb_rst_i n2055 n2056
+10 1
+.names wb_rst_i n2055 n2057
+11 1
+.names wb_rst_i n2055 n2058
+01 1
+.names n2057 n2058 n2059
+00 1
+.names n2056 n2059 prer_reg_pound_5b0_pound_5d_Q_in
+01 0
+.names n2039 n2040 n2061
+11 1
+.names n2039 n2040 n2062
+01 1
+.names n2039 n2040 n2063
+10 1
+.names n2062 n2063 n2064
+00 1
+.names n2061 n2064 n2065
+01 1
+.names prer_reg_pound_5b10_pound_5d_Q n2065 n2066
+00 1
+.names n2065 n2066 n2067
+00 1
+.names wb_dat_i_lb_2_rb_ n2038 n2068
+10 1
+.names wb_dat_i_lb_2_rb_ n2068 n2069
+10 1
+.names n2067 n2069 n2070
+00 1
+.names n268 n2070 n2071
+10 1
+.names n268 n2071 n2072
+10 1
+.names prer_reg_pound_5b10_pound_5d_Q n2071 n2073
+01 1
+.names n268 n2073 n2074
+01 1
+.names n2072 n2074 n2075
+00 1
+.names wb_rst_i n2075 n2076
+10 1
+.names wb_rst_i n2075 n2077
+11 1
+.names wb_rst_i n2075 n2078
+01 1
+.names n2077 n2078 n2079
+00 1
+.names n2076 n2079 prer_reg_pound_5b10_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b11_pound_5d_Q n2065 n2081
+00 1
+.names n2065 n2081 n2082
+00 1
+.names wb_dat_i_lb_3_rb_ n2038 n2083
+10 1
+.names wb_dat_i_lb_3_rb_ n2083 n2084
+10 1
+.names n2082 n2084 n2085
+00 1
+.names n268 n2085 n2086
+10 1
+.names n268 n2086 n2087
+10 1
+.names prer_reg_pound_5b11_pound_5d_Q n2086 n2088
+01 1
+.names n268 n2088 n2089
+01 1
+.names n2087 n2089 n2090
+00 1
+.names wb_rst_i n2090 n2091
+10 1
+.names wb_rst_i n2090 n2092
+11 1
+.names wb_rst_i n2090 n2093
+01 1
+.names n2092 n2093 n2094
+00 1
+.names n2091 n2094 prer_reg_pound_5b11_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b12_pound_5d_Q n2065 n2096
+00 1
+.names n2065 n2096 n2097
+00 1
+.names wb_dat_i_lb_4_rb_ n2038 n2098
+10 1
+.names wb_dat_i_lb_4_rb_ n2098 n2099
+10 1
+.names n2097 n2099 n2100
+00 1
+.names n268 n2100 n2101
+10 1
+.names n268 n2101 n2102
+10 1
+.names prer_reg_pound_5b12_pound_5d_Q n2101 n2103
+01 1
+.names n268 n2103 n2104
+01 1
+.names n2102 n2104 n2105
+00 1
+.names wb_rst_i n2105 n2106
+10 1
+.names wb_rst_i n2105 n2107
+11 1
+.names wb_rst_i n2105 n2108
+01 1
+.names n2107 n2108 n2109
+00 1
+.names n2106 n2109 prer_reg_pound_5b12_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b13_pound_5d_Q n2065 n2111
+00 1
+.names n2065 n2111 n2112
+00 1
+.names wb_dat_i_lb_5_rb_ n2038 n2113
+10 1
+.names wb_dat_i_lb_5_rb_ n2113 n2114
+10 1
+.names n2112 n2114 n2115
+00 1
+.names n268 n2115 n2116
+10 1
+.names n268 n2116 n2117
+10 1
+.names prer_reg_pound_5b13_pound_5d_Q n2116 n2118
+01 1
+.names n268 n2118 n2119
+01 1
+.names n2117 n2119 n2120
+00 1
+.names wb_rst_i n2120 n2121
+10 1
+.names wb_rst_i n2120 n2122
+11 1
+.names wb_rst_i n2120 n2123
+01 1
+.names n2122 n2123 n2124
+00 1
+.names n2121 n2124 prer_reg_pound_5b13_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b14_pound_5d_Q n2065 n2126
+00 1
+.names n2065 n2126 n2127
+00 1
+.names wb_dat_i_lb_6_rb_ n2038 n2128
+10 1
+.names wb_dat_i_lb_6_rb_ n2128 n2129
+10 1
+.names n2127 n2129 n2130
+00 1
+.names n268 n2130 n2131
+10 1
+.names n268 n2131 n2132
+10 1
+.names prer_reg_pound_5b14_pound_5d_Q n2131 n2133
+01 1
+.names n268 n2133 n2134
+01 1
+.names n2132 n2134 n2135
+00 1
+.names wb_rst_i n2135 n2136
+10 1
+.names wb_rst_i n2135 n2137
+11 1
+.names wb_rst_i n2135 n2138
+01 1
+.names n2137 n2138 n2139
+00 1
+.names n2136 n2139 prer_reg_pound_5b14_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b15_pound_5d_Q n2065 n2141
+00 1
+.names n2065 n2141 n2142
+00 1
+.names wb_dat_i_lb_7_rb_ n2038 n2143
+10 1
+.names wb_dat_i_lb_7_rb_ n2143 n2144
+10 1
+.names n2142 n2144 n2145
+00 1
+.names n268 n2145 n2146
+10 1
+.names n268 n2146 n2147
+10 1
+.names prer_reg_pound_5b15_pound_5d_Q n2146 n2148
+01 1
+.names n268 n2148 n2149
+01 1
+.names n2147 n2149 n2150
+00 1
+.names wb_rst_i n2150 n2151
+10 1
+.names wb_rst_i n2150 n2152
+11 1
+.names wb_rst_i n2150 n2153
+01 1
+.names n2152 n2153 n2154
+00 1
+.names n2151 n2154 prer_reg_pound_5b15_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b1_pound_5d_Q n2045 n2156
+00 1
+.names n2045 n2156 n2157
+00 1
+.names wb_dat_i_lb_1_rb_ n2039 n2158
+10 1
+.names wb_dat_i_lb_1_rb_ n2158 n2159
+10 1
+.names n2157 n2159 n2160
+00 1
+.names n268 n2160 n2161
+10 1
+.names n268 n2161 n2162
+10 1
+.names prer_reg_pound_5b1_pound_5d_Q n2161 n2163
+01 1
+.names n268 n2163 n2164
+01 1
+.names n2162 n2164 n2165
+00 1
+.names wb_rst_i n2165 n2166
+10 1
+.names wb_rst_i n2165 n2167
+11 1
+.names wb_rst_i n2165 n2168
+01 1
+.names n2167 n2168 n2169
+00 1
+.names n2166 n2169 prer_reg_pound_5b1_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b2_pound_5d_Q n2045 n2171
+00 1
+.names n2045 n2171 n2172
+00 1
+.names wb_dat_i_lb_2_rb_ n2039 n2173
+10 1
+.names wb_dat_i_lb_2_rb_ n2173 n2174
+10 1
+.names n2172 n2174 n2175
+00 1
+.names n268 n2175 n2176
+10 1
+.names n268 n2176 n2177
+10 1
+.names prer_reg_pound_5b2_pound_5d_Q n2176 n2178
+01 1
+.names n268 n2178 n2179
+01 1
+.names n2177 n2179 n2180
+00 1
+.names wb_rst_i n2180 n2181
+10 1
+.names wb_rst_i n2180 n2182
+11 1
+.names wb_rst_i n2180 n2183
+01 1
+.names n2182 n2183 n2184
+00 1
+.names n2181 n2184 prer_reg_pound_5b2_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b3_pound_5d_Q n2045 n2186
+00 1
+.names n2045 n2186 n2187
+00 1
+.names wb_dat_i_lb_3_rb_ n2039 n2188
+10 1
+.names wb_dat_i_lb_3_rb_ n2188 n2189
+10 1
+.names n2187 n2189 n2190
+00 1
+.names n268 n2190 n2191
+10 1
+.names n268 n2191 n2192
+10 1
+.names prer_reg_pound_5b3_pound_5d_Q n2191 n2193
+01 1
+.names n268 n2193 n2194
+01 1
+.names n2192 n2194 n2195
+00 1
+.names wb_rst_i n2195 n2196
+10 1
+.names wb_rst_i n2195 n2197
+11 1
+.names wb_rst_i n2195 n2198
+01 1
+.names n2197 n2198 n2199
+00 1
+.names n2196 n2199 prer_reg_pound_5b3_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b4_pound_5d_Q n2045 n2201
+00 1
+.names n2045 n2201 n2202
+00 1
+.names wb_dat_i_lb_4_rb_ n2039 n2203
+10 1
+.names wb_dat_i_lb_4_rb_ n2203 n2204
+10 1
+.names n2202 n2204 n2205
+00 1
+.names n268 n2205 n2206
+10 1
+.names n268 n2206 n2207
+10 1
+.names prer_reg_pound_5b4_pound_5d_Q n2206 n2208
+01 1
+.names n268 n2208 n2209
+01 1
+.names n2207 n2209 n2210
+00 1
+.names wb_rst_i n2210 n2211
+10 1
+.names wb_rst_i n2210 n2212
+11 1
+.names wb_rst_i n2210 n2213
+01 1
+.names n2212 n2213 n2214
+00 1
+.names n2211 n2214 prer_reg_pound_5b4_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b5_pound_5d_Q n2045 n2216
+00 1
+.names n2045 n2216 n2217
+00 1
+.names wb_dat_i_lb_5_rb_ n2039 n2218
+10 1
+.names wb_dat_i_lb_5_rb_ n2218 n2219
+10 1
+.names n2217 n2219 n2220
+00 1
+.names n268 n2220 n2221
+10 1
+.names n268 n2221 n2222
+10 1
+.names prer_reg_pound_5b5_pound_5d_Q n2221 n2223
+01 1
+.names n268 n2223 n2224
+01 1
+.names n2222 n2224 n2225
+00 1
+.names wb_rst_i n2225 n2226
+10 1
+.names wb_rst_i n2225 n2227
+11 1
+.names wb_rst_i n2225 n2228
+01 1
+.names n2227 n2228 n2229
+00 1
+.names n2226 n2229 prer_reg_pound_5b5_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b6_pound_5d_Q n2045 n2231
+00 1
+.names n2045 n2231 n2232
+00 1
+.names wb_dat_i_lb_6_rb_ n2039 n2233
+10 1
+.names wb_dat_i_lb_6_rb_ n2233 n2234
+10 1
+.names n2232 n2234 n2235
+00 1
+.names n268 n2235 n2236
+10 1
+.names n268 n2236 n2237
+10 1
+.names prer_reg_pound_5b6_pound_5d_Q n2236 n2238
+01 1
+.names n268 n2238 n2239
+01 1
+.names n2237 n2239 n2240
+00 1
+.names wb_rst_i n2240 n2241
+10 1
+.names wb_rst_i n2240 n2242
+11 1
+.names wb_rst_i n2240 n2243
+01 1
+.names n2242 n2243 n2244
+00 1
+.names n2241 n2244 prer_reg_pound_5b6_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b7_pound_5d_Q n2045 n2246
+00 1
+.names n2045 n2246 n2247
+00 1
+.names wb_dat_i_lb_7_rb_ n2039 n2248
+10 1
+.names wb_dat_i_lb_7_rb_ n2248 n2249
+10 1
+.names n2247 n2249 n2250
+00 1
+.names n268 n2250 n2251
+10 1
+.names n268 n2251 n2252
+10 1
+.names prer_reg_pound_5b7_pound_5d_Q n2251 n2253
+01 1
+.names n268 n2253 n2254
+01 1
+.names n2252 n2254 n2255
+00 1
+.names wb_rst_i n2255 n2256
+10 1
+.names wb_rst_i n2255 n2257
+11 1
+.names wb_rst_i n2255 n2258
+01 1
+.names n2257 n2258 n2259
+00 1
+.names n2256 n2259 prer_reg_pound_5b7_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b8_pound_5d_Q n2065 n2261
+00 1
+.names n2065 n2261 n2262
+00 1
+.names wb_dat_i_lb_0_rb_ n2038 n2263
+10 1
+.names wb_dat_i_lb_0_rb_ n2263 n2264
+10 1
+.names n2262 n2264 n2265
+00 1
+.names n268 n2265 n2266
+10 1
+.names n268 n2266 n2267
+10 1
+.names prer_reg_pound_5b8_pound_5d_Q n2266 n2268
+01 1
+.names n268 n2268 n2269
+01 1
+.names n2267 n2269 n2270
+00 1
+.names wb_rst_i n2270 n2271
+10 1
+.names wb_rst_i n2270 n2272
+11 1
+.names wb_rst_i n2270 n2273
+01 1
+.names n2272 n2273 n2274
+00 1
+.names n2271 n2274 prer_reg_pound_5b8_pound_5d_Q_in
+01 0
+.names prer_reg_pound_5b9_pound_5d_Q n2065 n2276
+00 1
+.names n2065 n2276 n2277
+00 1
+.names wb_dat_i_lb_1_rb_ n2038 n2278
+10 1
+.names wb_dat_i_lb_1_rb_ n2278 n2279
+10 1
+.names n2277 n2279 n2280
+00 1
+.names n268 n2280 n2281
+10 1
+.names n268 n2281 n2282
+10 1
+.names prer_reg_pound_5b9_pound_5d_Q n2281 n2283
+01 1
+.names n268 n2283 n2284
+01 1
+.names n2282 n2284 n2285
+00 1
+.names wb_rst_i n2285 n2286
+10 1
+.names wb_rst_i n2285 n2287
+11 1
+.names wb_rst_i n2285 n2288
+01 1
+.names n2287 n2288 n2289
+00 1
+.names n2286 n2289 prer_reg_pound_5b9_pound_5d_Q_in
+01 0
+.names rd n1848 n2291
+01 1
+.names n268 n2291 n2292
+01 1
+.names n1883 n2292 n2293
+10 1
+.names wb_dat_i_lb_5_rb_ n274 n2294
+01 1
+.names n274 n2294 n2295
+10 1
+.names rd n2294 n2296
+11 1
+.names n274 n2296 n2297
+01 1
+.names n2295 n2297 n2298
+00 1
+.names n268 n2298 n2299
+00 1
+.names n268 n2298 n2300
+01 1
+.names n268 n2298 n2301
+11 1
+.names n2300 n2301 n2302
+00 1
+.names n2299 n2302 n2303
+01 1
+.names wb_rst_i n2293 n2304
+01 1
+.names wb_rst_i n2303 n2305
+11 1
+.names n2293 n2305 n2306
+01 1
+.names n2304 n2306 rd_in
+00 0
+.names irxack wb_rst_i rxack_in
+10 1
+.names byte_controller_ld txr_pound_5b1_pound_5d n2309
+10 1
+.names byte_controller_ld txr_pound_5b1_pound_5d n2310
+00 1
+.names byte_controller_ld txr_pound_5b1_pound_5d n2311
+01 1
+.names n2310 n2311 n2312
+00 1
+.names n2309 n2312 n2313
+01 1
+.names byte_controller_shift rxr_257 n2314
+00 1
+.names byte_controller_shift n2314 n2315
+00 1
+.names byte_controller_shift rxr n2316
+10 1
+.names byte_controller_shift n2316 n2317
+10 1
+.names n2315 n2317 n2318
+00 1
+.names byte_controller_ld n2318 n2319
+11 1
+.names byte_controller_ld n2318 n2320
+01 1
+.names byte_controller_ld n2318 n2321
+10 1
+.names n2320 n2321 n2322
+00 1
+.names n2319 n2322 n2323
+01 1
+.names wb_rst_i n2313 n2324
+01 1
+.names wb_rst_i n2323 n2325
+11 1
+.names n2313 n2325 n2326
+01 1
+.names n2324 n2326 rxr_257_in
+00 0
+.names byte_controller_ld txr_pound_5b2_pound_5d n2328
+10 1
+.names byte_controller_ld txr_pound_5b2_pound_5d n2329
+00 1
+.names byte_controller_ld txr_pound_5b2_pound_5d n2330
+01 1
+.names n2329 n2330 n2331
+00 1
+.names n2328 n2331 n2332
+01 1
+.names byte_controller_shift rxr_258 n2333
+00 1
+.names byte_controller_shift n2333 n2334
+00 1
+.names byte_controller_shift rxr_257 n2335
+10 1
+.names byte_controller_shift n2335 n2336
+10 1
+.names n2334 n2336 n2337
+00 1
+.names byte_controller_ld n2337 n2338
+11 1
+.names byte_controller_ld n2337 n2339
+01 1
+.names byte_controller_ld n2337 n2340
+10 1
+.names n2339 n2340 n2341
+00 1
+.names n2338 n2341 n2342
+01 1
+.names wb_rst_i n2332 n2343
+01 1
+.names wb_rst_i n2342 n2344
+11 1
+.names n2332 n2344 n2345
+01 1
+.names n2343 n2345 rxr_258_in
+00 0
+.names byte_controller_ld txr_pound_5b3_pound_5d n2347
+10 1
+.names byte_controller_ld txr_pound_5b3_pound_5d n2348
+00 1
+.names byte_controller_ld txr_pound_5b3_pound_5d n2349
+01 1
+.names n2348 n2349 n2350
+00 1
+.names n2347 n2350 n2351
+01 1
+.names byte_controller_shift rxr_259 n2352
+00 1
+.names byte_controller_shift n2352 n2353
+00 1
+.names byte_controller_shift rxr_258 n2354
+10 1
+.names byte_controller_shift n2354 n2355
+10 1
+.names n2353 n2355 n2356
+00 1
+.names byte_controller_ld n2356 n2357
+11 1
+.names byte_controller_ld n2356 n2358
+01 1
+.names byte_controller_ld n2356 n2359
+10 1
+.names n2358 n2359 n2360
+00 1
+.names n2357 n2360 n2361
+01 1
+.names wb_rst_i n2351 n2362
+01 1
+.names wb_rst_i n2361 n2363
+11 1
+.names n2351 n2363 n2364
+01 1
+.names n2362 n2364 rxr_259_in
+00 0
+.names byte_controller_ld txr_pound_5b4_pound_5d n2366
+10 1
+.names byte_controller_ld txr_pound_5b4_pound_5d n2367
+00 1
+.names byte_controller_ld txr_pound_5b4_pound_5d n2368
+01 1
+.names n2367 n2368 n2369
+00 1
+.names n2366 n2369 n2370
+01 1
+.names byte_controller_shift rxr_260 n2371
+00 1
+.names byte_controller_shift n2371 n2372
+00 1
+.names byte_controller_shift rxr_259 n2373
+10 1
+.names byte_controller_shift n2373 n2374
+10 1
+.names n2372 n2374 n2375
+00 1
+.names byte_controller_ld n2375 n2376
+11 1
+.names byte_controller_ld n2375 n2377
+01 1
+.names byte_controller_ld n2375 n2378
+10 1
+.names n2377 n2378 n2379
+00 1
+.names n2376 n2379 n2380
+01 1
+.names wb_rst_i n2370 n2381
+01 1
+.names wb_rst_i n2380 n2382
+11 1
+.names n2370 n2382 n2383
+01 1
+.names n2381 n2383 rxr_260_in
+00 0
+.names byte_controller_ld txr_pound_5b5_pound_5d n2385
+10 1
+.names byte_controller_ld txr_pound_5b5_pound_5d n2386
+00 1
+.names byte_controller_ld txr_pound_5b5_pound_5d n2387
+01 1
+.names n2386 n2387 n2388
+00 1
+.names n2385 n2388 n2389
+01 1
+.names byte_controller_shift rxr_261 n2390
+00 1
+.names byte_controller_shift n2390 n2391
+00 1
+.names byte_controller_shift rxr_260 n2392
+10 1
+.names byte_controller_shift n2392 n2393
+10 1
+.names n2391 n2393 n2394
+00 1
+.names byte_controller_ld n2394 n2395
+11 1
+.names byte_controller_ld n2394 n2396
+01 1
+.names byte_controller_ld n2394 n2397
+10 1
+.names n2396 n2397 n2398
+00 1
+.names n2395 n2398 n2399
+01 1
+.names wb_rst_i n2389 n2400
+01 1
+.names wb_rst_i n2399 n2401
+11 1
+.names n2389 n2401 n2402
+01 1
+.names n2400 n2402 rxr_261_in
+00 0
+.names byte_controller_ld txr_pound_5b6_pound_5d n2404
+10 1
+.names byte_controller_ld txr_pound_5b6_pound_5d n2405
+00 1
+.names byte_controller_ld txr_pound_5b6_pound_5d n2406
+01 1
+.names n2405 n2406 n2407
+00 1
+.names n2404 n2407 n2408
+01 1
+.names byte_controller_shift rxr_262 n2409
+00 1
+.names byte_controller_shift n2409 n2410
+00 1
+.names byte_controller_shift rxr_261 n2411
+10 1
+.names byte_controller_shift n2411 n2412
+10 1
+.names n2410 n2412 n2413
+00 1
+.names byte_controller_ld n2413 n2414
+11 1
+.names byte_controller_ld n2413 n2415
+01 1
+.names byte_controller_ld n2413 n2416
+10 1
+.names n2415 n2416 n2417
+00 1
+.names n2414 n2417 n2418
+01 1
+.names wb_rst_i n2408 n2419
+01 1
+.names wb_rst_i n2418 n2420
+11 1
+.names n2408 n2420 n2421
+01 1
+.names n2419 n2421 rxr_262_in
+00 0
+.names byte_controller_ld txr_pound_5b7_pound_5d n2423
+10 1
+.names byte_controller_ld txr_pound_5b7_pound_5d n2424
+00 1
+.names byte_controller_ld txr_pound_5b7_pound_5d n2425
+01 1
+.names n2424 n2425 n2426
+00 1
+.names n2423 n2426 n2427
+01 1
+.names byte_controller_shift rxr_263 n2428
+00 1
+.names byte_controller_shift n2428 n2429
+00 1
+.names byte_controller_shift rxr_262 n2430
+10 1
+.names byte_controller_shift n2430 n2431
+10 1
+.names n2429 n2431 n2432
+00 1
+.names byte_controller_ld n2432 n2433
+11 1
+.names byte_controller_ld n2432 n2434
+01 1
+.names byte_controller_ld n2432 n2435
+10 1
+.names n2434 n2435 n2436
+00 1
+.names n2433 n2436 n2437
+01 1
+.names wb_rst_i n2427 n2438
+01 1
+.names wb_rst_i n2437 n2439
+11 1
+.names n2427 n2439 n2440
+01 1
+.names n2438 n2440 rxr_263_in
+00 0
+.names byte_controller_ld txr_pound_5b0_pound_5d n2442
+10 1
+.names byte_controller_ld txr_pound_5b0_pound_5d n2443
+00 1
+.names byte_controller_ld txr_pound_5b0_pound_5d n2444
+01 1
+.names n2443 n2444 n2445
+00 1
+.names n2442 n2445 n2446
+01 1
+.names byte_controller_n_52 byte_controller_shift n2447
+10 1
+.names byte_controller_n_52 n2447 n2448
+10 1
+.names byte_controller_shift rxr n2449
+00 1
+.names byte_controller_shift n2449 n2450
+00 1
+.names n2448 n2450 n2451
+00 1
+.names byte_controller_ld n2451 n2452
+11 1
+.names byte_controller_ld n2451 n2453
+01 1
+.names byte_controller_ld n2451 n2454
+10 1
+.names n2453 n2454 n2455
+00 1
+.names n2452 n2455 n2456
+01 1
+.names wb_rst_i n2446 n2457
+01 1
+.names wb_rst_i n2456 n2458
+11 1
+.names n2446 n2458 n2459
+01 1
+.names n2457 n2459 rxr_in
+00 0
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d n543 n2461
+01 1
+.names n322 n2461 n2462
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b13_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b15_pound_5d n2463
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b14_pound_5d n2463 \
+ n2464
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b12_pound_5d n491 \
+ n2465
+00 1
+.names n2464 n2465 n2466
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b12_pound_5d n2466 \
+ n2467
+00 1
+.names n386 n2467 n2468
+01 1
+.names n386 n2467 n2469
+11 1
+.names n386 n2467 n2470
+10 1
+.names n2469 n2470 n2471
+00 1
+.names n2468 n2471 n2472
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b9_pound_5d n501 n2473
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b9_pound_5d n501 n2474
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b9_pound_5d n501 n2475
+00 1
+.names n2474 n2475 n2476
+00 1
+.names n2473 n2476 n2477
+01 1
+.names n371 n372 n2478
+00 1
+.names n373 n2478 n2479
+01 1
+.names n447 n2479 n2480
+11 1
+.names n2472 n2477 n2481
+00 1
+.names n2472 n2481 n2482
+00 1
+.names n2477 n2480 n2483
+10 1
+.names n2472 n2483 n2484
+01 1
+.names n2482 n2484 n2485
+10 1
+.names n543 n2480 n2486
+11 1
+.names n543 n2480 n2487
+01 1
+.names n543 n2480 n2488
+10 1
+.names n2487 n2488 n2489
+00 1
+.names n2486 n2489 n2490
+01 1
+.names n322 n2461 n2491
+10 1
+.names n2490 n2491 n2492
+11 1
+.names n322 n2492 n2493
+10 1
+.names n2485 n2493 n2494
+01 1
+.names n2485 n2493 n2495
+11 1
+.names n2485 n2493 n2496
+10 1
+.names n2495 n2496 n2497
+00 1
+.names n2494 n2497 n2498
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b4_pound_5d n2498 \
+ n2499
+10 1
+.names n2462 n2499 n2500
+01 1
+.names n2498 n2500 n2501
+00 1
+.names n324 n325 n2502
+10 1
+.names n324 n325 n2503
+00 1
+.names n324 n325 n2504
+01 1
+.names n2503 n2504 n2505
+00 1
+.names n2502 n2505 n2506
+01 1
+.names byte_controller_bit_controller_clk_en scl_padoen_o n2507
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n2507 \
+ n2508
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n2507 \
+ n2509
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n2507 \
+ n2510
+01 1
+.names n2509 n2510 n2511
+00 1
+.names n2508 n2511 n2512
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d n381 \
+ n2513
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d n2513 \
+ n2514
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b3_pound_5d n2515
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n2515 \
+ n2516
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b3_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b4_pound_5d n2517
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n2517 \
+ n2518
+01 1
+.names n2516 n2518 n2519
+10 1
+.names n386 n2519 n2520
+11 1
+.names n2514 n2520 n2521
+10 1
+.names n2514 n2521 n2522
+10 1
+.names n316 n2520 n2523
+01 1
+.names n2514 n2523 n2524
+11 1
+.names n2522 n2524 n2525
+10 1
+.names n2514 n2520 n2526
+11 1
+.names n316 n543 n2527
+10 1
+.names n2526 n2527 n2528
+11 1
+.names n2525 n2528 n2529
+10 1
+.names n2512 n2529 n2530
+10 1
+.names n2506 n2530 n2531
+01 1
+.names n2506 n2530 n2532
+00 1
+.names n2506 n2530 n2533
+11 1
+.names n2532 n2533 n2534
+00 1
+.names n2531 n2534 n2535
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n2529 \
+ n2536
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n2536 \
+ n2537
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n2537 \
+ n2538
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n2529 \
+ n2539
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n2539 \
+ n2540
+11 1
+.names n2538 n2540 n2541
+00 1
+.names byte_controller_bit_controller_clk_en n2541 n2542
+00 1
+.names byte_controller_bit_controller_clk_en n2541 n2543
+01 1
+.names byte_controller_bit_controller_clk_en n2541 n2544
+11 1
+.names n2543 n2544 n2545
+00 1
+.names n2542 n2545 n2546
+01 1
+.names n2530 n2546 n2547
+10 1
+.names n2530 n2546 n2548
+11 1
+.names n2530 n2546 n2549
+01 1
+.names n2548 n2549 n2550
+00 1
+.names n2547 n2550 n2551
+01 1
+.names n2535 n2551 n2552
+10 1
+.names n2501 n2552 n2553
+11 1
+.names n2551 n2553 n2554
+00 1
+.names n2529 n2539 n2555
+10 1
+.names n2509 n2529 n2556
+11 1
+.names n2555 n2556 n2557
+10 1
+.names byte_controller_bit_controller_clk_en scl_padoen_o n2558
+00 1
+.names byte_controller_bit_controller_clk_en scl_padoen_o n2559
+10 1
+.names n2507 n2559 n2560
+00 1
+.names n2558 n2560 n2561
+01 1
+.names n2557 n2561 n2562
+00 1
+.names n2554 n2562 n2563
+01 1
+.names n357 n2563 n2564
+01 1
+.names n357 n2563 n2565
+00 1
+.names n357 n2563 n2566
+10 1
+.names n2565 n2566 n2567
+00 1
+.names n2564 n2567 scl_padoen_o_in
+01 0
+.names byte_controller_bit_controller_clk_en sda_padoen_o n2569
+01 1
+.names byte_controller_bit_controller_clk_en sda_padoen_o n2570
+11 1
+.names byte_controller_bit_controller_clk_en sda_padoen_o n2571
+10 1
+.names n2570 n2571 n2572
+00 1
+.names n2569 n2572 n2573
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b6_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b7_pound_5d n2574
+00 1
+.names n537 n2574 n2575
+01 1
+.names n2574 n2575 n2576
+10 1
+.names n491 n537 n2577
+01 1
+.names n2574 n2577 n2578
+11 1
+.names n2576 n2578 n2579
+10 1
+.names n537 n2574 n2580
+11 1
+.names n430 n491 n2581
+01 1
+.names n2580 n2581 n2582
+11 1
+.names n2579 n2582 n2583
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b2_pound_5d n331 n2584
+01 1
+.names n2583 n2584 n2585
+10 1
+.names n2583 n2584 n2586
+00 1
+.names n2583 n2584 n2587
+01 1
+.names n2586 n2587 n2588
+00 1
+.names n2585 n2588 n2589
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b2_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b3_pound_5d n2590
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b2_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b3_pound_5d n2591
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b2_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b3_pound_5d n2592
+01 1
+.names n2591 n2592 n2593
+00 1
+.names n2590 n2593 n2594
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d n2594 \
+ n2595
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d n2594 \
+ n2596
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d n2594 \
+ n2597
+00 1
+.names n2596 n2597 n2598
+00 1
+.names n2595 n2598 n2599
+01 1
+.names n2583 n2599 n2600
+00 1
+.names n2583 n2599 n2601
+01 1
+.names n2583 n2599 n2602
+10 1
+.names n2601 n2602 n2603
+00 1
+.names n2600 n2603 n2604
+01 1
+.names n2589 n2604 n2605
+01 1
+.names n2589 n2604 n2606
+11 1
+.names n2589 n2604 n2607
+10 1
+.names n2606 n2607 n2608
+00 1
+.names n2605 n2608 n2609
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b5_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b7_pound_5d n2610
+10 1
+.names byte_controller_bit_controller_c_state_pound_5b6_pound_5d n2610 \
+ n2611
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b7_pound_5d n2611 \
+ n2612
+00 1
+.names n491 n537 n2613
+10 1
+.names n491 n2613 n2614
+10 1
+.names n430 n537 n2615
+01 1
+.names n491 n2615 n2616
+11 1
+.names n2614 n2616 n2617
+10 1
+.names n491 n537 n2618
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b4_pound_5d n430 n2619
+11 1
+.names n2618 n2619 n2620
+11 1
+.names n2617 n2620 n2621
+10 1
+.names n2612 n2621 n2622
+11 1
+.names n447 n2621 n2623
+10 1
+.names n2612 n2623 n2624
+01 1
+.names n2622 n2624 n2625
+00 1
+.names n325 n2625 n2626
+10 1
+.names n324 n2626 n2627
+10 1
+.names n2609 n2627 n2628
+11 1
+.names n324 n2628 n2629
+10 1
+.names n300 n381 n2630
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b11_pound_5d n2631
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b11_pound_5d n2632
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b11_pound_5d n2633
+10 1
+.names n2632 n2633 n2634
+00 1
+.names n2631 n2634 n2635
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b10_pound_5d n2635 \
+ n2636
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b15_pound_5d n536 \
+ n2637
+01 1
+.names n572 n2630 n2638
+10 1
+.names n572 n2638 n2639
+10 1
+.names n2630 n2636 n2640
+10 1
+.names n572 n2640 n2641
+11 1
+.names n2639 n2641 n2642
+10 1
+.names n572 n2630 n2643
+11 1
+.names n2636 n2637 n2644
+10 1
+.names n2643 n2644 n2645
+11 1
+.names n2642 n2645 n2646
+10 1
+.names n541 n2646 n2647
+00 1
+.names n541 n2646 n2648
+01 1
+.names n541 n2646 n2649
+10 1
+.names n2648 n2649 n2650
+00 1
+.names n2647 n2650 n2651
+01 1
+.names byte_controller_bit_controller_c_state_pound_5b13_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b14_pound_5d n2652
+00 1
+.names n541 n2652 n2653
+00 1
+.names n541 n2652 n2654
+11 1
+.names n2653 n2654 n2655
+00 1
+.names n2651 n2655 n2656
+00 1
+.names byte_controller_bit_controller_c_state_pound_5b1_pound_5d \
+ byte_controller_bit_controller_c_state_pound_5b3_pound_5d n2657
+00 1
+.names n331 n2583 n2658
+01 1
+.names n2583 n2658 n2659
+10 1
+.names n331 n2657 n2660
+10 1
+.names n2583 n2660 n2661
+11 1
+.names n2659 n2661 n2662
+10 1
+.names n331 n2583 n2663
+11 1
+.names byte_controller_bit_controller_c_state_pound_5b0_pound_5d n2657 \
+ n2664
+11 1
+.names n2663 n2664 n2665
+11 1
+.names n2662 n2665 n2666
+10 1
+.names n2656 n2666 n2667
+11 1
+.names n2656 n2666 n2668
+01 1
+.names n2656 n2666 n2669
+00 1
+.names n2668 n2669 n2670
+00 1
+.names n2667 n2670 n2671
+01 1
+.names byte_controller_core_txd n2652 n2672
+10 1
+.names n2652 n2672 n2673
+00 1
+.names sda_padoen_o n2672 n2674
+01 1
+.names n2652 n2674 n2675
+11 1
+.names n2673 n2675 n2676
+00 1
+.names n2649 n2672 n2677
+10 1
+.names n2649 n2672 n2678
+00 1
+.names n2649 n2672 n2679
+01 1
+.names n2678 n2679 n2680
+00 1
+.names n2677 n2680 n2681
+01 1
+.names n2676 n2681 n2682
+10 1
+.names n2651 n2682 n2683
+11 1
+.names n2681 n2683 n2684
+00 1
+.names n2652 n2654 n2685
+10 1
+.names byte_controller_core_txd n541 n2686
+00 1
+.names n2652 n2686 n2687
+11 1
+.names n2685 n2687 n2688
+10 1
+.names n2646 n2688 n2689
+10 1
+.names n2646 n2688 n2690
+00 1
+.names n2646 n2688 n2691
+01 1
+.names n2690 n2691 n2692
+00 1
+.names n2689 n2692 n2693
+01 1
+.names byte_controller_bit_controller_clk_en n2646 n2694
+11 1
+.names byte_controller_bit_controller_clk_en n2688 n2695
+00 1
+.names n2646 n2695 n2696
+01 1
+.names n2694 n2696 n2697
+00 1
+.names n2693 n2697 n2698
+01 1
+.names n2693 n2697 n2699
+11 1
+.names n2693 n2697 n2700
+10 1
+.names n2699 n2700 n2701
+00 1
+.names n2698 n2701 n2702
+01 1
+.names n2684 n2702 n2703
+11 1
+.names n2671 n2703 n2704
+11 1
+.names n2629 n2704 n2705
+01 1
+.names n2703 n2705 n2706
+10 1
+.names n2573 n2706 n2707
+01 1
+.names n2573 n2706 n2708
+11 1
+.names n2573 n2706 n2709
+10 1
+.names n2708 n2709 n2710
+00 1
+.names n2707 n2710 n2711
+01 1
+.names n357 n2711 n2712
+00 1
+.names n357 n2711 n2713
+01 1
+.names n357 n2711 n2714
+11 1
+.names n2713 n2714 n2715
+00 1
+.names n2712 n2715 sda_padoen_o_in
+01 0
+.names byte_controller_bit_controller_sto_condition_reg_Q wb_rst_i n2717
+01 1
+.names byte_controller_bit_controller_sto_condition_reg_Q wb_rst_i n2718
+11 1
+.names byte_controller_bit_controller_sto_condition_reg_Q wb_rst_i n2719
+10 1
+.names n2718 n2719 n2720
+00 1
+.names n2717 n2720 n2721
+01 1
+.names byte_controller_bit_controller_sta_condition_reg_Q n2721 n2722
+11 1
+.names sr n2721 n2723
+10 1
+.names byte_controller_bit_controller_sta_condition_reg_Q n2723 n2724
+01 1
+.names n2722 n2724 sr_in
+00 0
+.names sta n1848 n2726
+01 1
+.names n268 n2726 n2727
+01 1
+.names n1883 n2727 n2728
+10 1
+.names wb_dat_i_lb_7_rb_ n274 n2729
+01 1
+.names n274 n2729 n2730
+10 1
+.names sta n2729 n2731
+11 1
+.names n274 n2731 n2732
+01 1
+.names n2730 n2732 n2733
+00 1
+.names n268 n2733 n2734
+00 1
+.names n268 n2733 n2735
+01 1
+.names n268 n2733 n2736
+11 1
+.names n2735 n2736 n2737
+00 1
+.names n2734 n2737 n2738
+01 1
+.names wb_rst_i n2728 n2739
+01 1
+.names wb_rst_i n2738 n2740
+11 1
+.names n2728 n2740 n2741
+01 1
+.names n2739 n2741 sta_in
+00 0
+.names sto n1848 n2743
+01 1
+.names n268 n2743 n2744
+01 1
+.names n1883 n2744 n2745
+10 1
+.names wb_dat_i_lb_6_rb_ n274 n2746
+00 1
+.names wb_dat_i_lb_6_rb_ n2746 n2747
+00 1
+.names sto n2747 n2748
+10 1
+.names sto n274 n2749
+01 1
+.names wb_dat_i_lb_6_rb_ n2749 n2750
+11 1
+.names n2748 n2750 n2751
+00 1
+.names n268 n2751 n2752
+00 1
+.names n268 n2751 n2753
+01 1
+.names n268 n2751 n2754
+11 1
+.names n2753 n2754 n2755
+00 1
+.names n2752 n2755 n2756
+01 1
+.names wb_rst_i n2745 n2757
+01 1
+.names wb_rst_i n2756 n2758
+11 1
+.names n2745 n2758 n2759
+01 1
+.names n2757 n2759 sto_in
+00 0
+.names n_108 wb_rst_i n2761
+10 1
+.names rd wb_rst_i n2762
+11 1
+.names n_108 n2762 n2763
+01 1
+.names n2761 n2763 tip_in
+00 0
+.names wb_adr_i_lb_0_rb_ n1627 n2765
+01 1
+.names n1628 n1629 n2766
+00 1
+.names n2765 n2766 n2767
+01 1
+.names txr_pound_5b0_pound_5d n2767 n2768
+11 1
+.names txr_pound_5b0_pound_5d n2767 n2769
+01 1
+.names txr_pound_5b0_pound_5d n2767 n2770
+00 1
+.names n2769 n2770 n2771
+00 1
+.names n2768 n2771 n2772
+01 1
+.names wb_dat_i_lb_0_rb_ n2767 n2773
+10 1
+.names wb_dat_i_lb_0_rb_ n2767 n2774
+00 1
+.names wb_dat_i_lb_0_rb_ n2767 n2775
+01 1
+.names n2774 n2775 n2776
+00 1
+.names n2773 n2776 n2777
+01 1
+.names n268 n2772 n2778
+11 1
+.names n268 n2777 n2779
+01 1
+.names n2772 n2779 n2780
+01 1
+.names n2778 n2780 n2781
+00 1
+.names n268 n2781 n2782
+11 1
+.names txr_pound_5b0_pound_5d n2781 n2783
+00 1
+.names n268 n2783 n2784
+01 1
+.names n2782 n2784 n2785
+00 1
+.names wb_rst_i n2785 txr_pound_5b0_pound_5d_in
+01 1
+.names txr_pound_5b1_pound_5d n2767 n2787
+11 1
+.names txr_pound_5b1_pound_5d n2767 n2788
+01 1
+.names txr_pound_5b1_pound_5d n2767 n2789
+00 1
+.names n2788 n2789 n2790
+00 1
+.names n2787 n2790 n2791
+01 1
+.names wb_dat_i_lb_1_rb_ n2767 n2792
+10 1
+.names wb_dat_i_lb_1_rb_ n2767 n2793
+00 1
+.names wb_dat_i_lb_1_rb_ n2767 n2794
+01 1
+.names n2793 n2794 n2795
+00 1
+.names n2792 n2795 n2796
+01 1
+.names n268 n2791 n2797
+11 1
+.names n268 n2796 n2798
+01 1
+.names n2791 n2798 n2799
+01 1
+.names n2797 n2799 n2800
+00 1
+.names n268 n2800 n2801
+11 1
+.names txr_pound_5b1_pound_5d n2800 n2802
+00 1
+.names n268 n2802 n2803
+01 1
+.names n2801 n2803 n2804
+00 1
+.names wb_rst_i n2804 txr_pound_5b1_pound_5d_in
+01 1
+.names txr_pound_5b2_pound_5d n2767 n2806
+11 1
+.names txr_pound_5b2_pound_5d n2767 n2807
+01 1
+.names txr_pound_5b2_pound_5d n2767 n2808
+00 1
+.names n2807 n2808 n2809
+00 1
+.names n2806 n2809 n2810
+01 1
+.names wb_dat_i_lb_2_rb_ n2767 n2811
+10 1
+.names wb_dat_i_lb_2_rb_ n2767 n2812
+00 1
+.names wb_dat_i_lb_2_rb_ n2767 n2813
+01 1
+.names n2812 n2813 n2814
+00 1
+.names n2811 n2814 n2815
+01 1
+.names n268 n2810 n2816
+11 1
+.names n268 n2815 n2817
+01 1
+.names n2810 n2817 n2818
+01 1
+.names n2816 n2818 n2819
+00 1
+.names n268 n2819 n2820
+11 1
+.names txr_pound_5b2_pound_5d n2819 n2821
+00 1
+.names n268 n2821 n2822
+01 1
+.names n2820 n2822 n2823
+00 1
+.names wb_rst_i n2823 txr_pound_5b2_pound_5d_in
+01 1
+.names txr_pound_5b3_pound_5d n2767 n2825
+11 1
+.names txr_pound_5b3_pound_5d n2767 n2826
+01 1
+.names txr_pound_5b3_pound_5d n2767 n2827
+00 1
+.names n2826 n2827 n2828
+00 1
+.names n2825 n2828 n2829
+01 1
+.names wb_dat_i_lb_3_rb_ n2767 n2830
+10 1
+.names wb_dat_i_lb_3_rb_ n2767 n2831
+00 1
+.names wb_dat_i_lb_3_rb_ n2767 n2832
+01 1
+.names n2831 n2832 n2833
+00 1
+.names n2830 n2833 n2834
+01 1
+.names n268 n2829 n2835
+11 1
+.names n268 n2834 n2836
+01 1
+.names n2829 n2836 n2837
+01 1
+.names n2835 n2837 n2838
+00 1
+.names n268 n2838 n2839
+11 1
+.names txr_pound_5b3_pound_5d n2838 n2840
+00 1
+.names n268 n2840 n2841
+01 1
+.names n2839 n2841 n2842
+00 1
+.names wb_rst_i n2842 txr_pound_5b3_pound_5d_in
+01 1
+.names txr_pound_5b4_pound_5d n2767 n2844
+11 1
+.names txr_pound_5b4_pound_5d n2767 n2845
+01 1
+.names txr_pound_5b4_pound_5d n2767 n2846
+00 1
+.names n2845 n2846 n2847
+00 1
+.names n2844 n2847 n2848
+01 1
+.names wb_dat_i_lb_4_rb_ n2767 n2849
+10 1
+.names wb_dat_i_lb_4_rb_ n2767 n2850
+00 1
+.names wb_dat_i_lb_4_rb_ n2767 n2851
+01 1
+.names n2850 n2851 n2852
+00 1
+.names n2849 n2852 n2853
+01 1
+.names n268 n2848 n2854
+11 1
+.names n268 n2853 n2855
+01 1
+.names n2848 n2855 n2856
+01 1
+.names n2854 n2856 n2857
+00 1
+.names n268 n2857 n2858
+11 1
+.names txr_pound_5b4_pound_5d n2857 n2859
+00 1
+.names n268 n2859 n2860
+01 1
+.names n2858 n2860 n2861
+00 1
+.names wb_rst_i n2861 txr_pound_5b4_pound_5d_in
+01 1
+.names txr_pound_5b5_pound_5d n2767 n2863
+11 1
+.names txr_pound_5b5_pound_5d n2767 n2864
+01 1
+.names txr_pound_5b5_pound_5d n2767 n2865
+00 1
+.names n2864 n2865 n2866
+00 1
+.names n2863 n2866 n2867
+01 1
+.names wb_dat_i_lb_5_rb_ n2767 n2868
+10 1
+.names wb_dat_i_lb_5_rb_ n2767 n2869
+00 1
+.names wb_dat_i_lb_5_rb_ n2767 n2870
+01 1
+.names n2869 n2870 n2871
+00 1
+.names n2868 n2871 n2872
+01 1
+.names n268 n2867 n2873
+11 1
+.names n268 n2872 n2874
+01 1
+.names n2867 n2874 n2875
+01 1
+.names n2873 n2875 n2876
+00 1
+.names n268 n2876 n2877
+11 1
+.names txr_pound_5b5_pound_5d n2876 n2878
+00 1
+.names n268 n2878 n2879
+01 1
+.names n2877 n2879 n2880
+00 1
+.names wb_rst_i n2880 txr_pound_5b5_pound_5d_in
+01 1
+.names txr_pound_5b6_pound_5d n2767 n2882
+11 1
+.names txr_pound_5b6_pound_5d n2767 n2883
+01 1
+.names txr_pound_5b6_pound_5d n2767 n2884
+00 1
+.names n2883 n2884 n2885
+00 1
+.names n2882 n2885 n2886
+01 1
+.names wb_dat_i_lb_6_rb_ n2767 n2887
+10 1
+.names wb_dat_i_lb_6_rb_ n2767 n2888
+00 1
+.names wb_dat_i_lb_6_rb_ n2767 n2889
+01 1
+.names n2888 n2889 n2890
+00 1
+.names n2887 n2890 n2891
+01 1
+.names n268 n2886 n2892
+11 1
+.names n268 n2891 n2893
+01 1
+.names n2886 n2893 n2894
+01 1
+.names n2892 n2894 n2895
+00 1
+.names n268 n2895 n2896
+11 1
+.names txr_pound_5b6_pound_5d n2895 n2897
+00 1
+.names n268 n2897 n2898
+01 1
+.names n2896 n2898 n2899
+00 1
+.names wb_rst_i n2899 txr_pound_5b6_pound_5d_in
+01 1
+.names txr_pound_5b7_pound_5d n2767 n2901
+11 1
+.names txr_pound_5b7_pound_5d n2767 n2902
+01 1
+.names txr_pound_5b7_pound_5d n2767 n2903
+00 1
+.names n2902 n2903 n2904
+00 1
+.names n2901 n2904 n2905
+01 1
+.names wb_dat_i_lb_7_rb_ n2767 n2906
+10 1
+.names wb_dat_i_lb_7_rb_ n2767 n2907
+00 1
+.names wb_dat_i_lb_7_rb_ n2767 n2908
+01 1
+.names n2907 n2908 n2909
+00 1
+.names n2906 n2909 n2910
+01 1
+.names n268 n2905 n2911
+11 1
+.names n268 n2910 n2912
+01 1
+.names n2905 n2912 n2913
+01 1
+.names n2911 n2913 n2914
+00 1
+.names n268 n2914 n2915
+11 1
+.names txr_pound_5b7_pound_5d n2914 n2916
+00 1
+.names n268 n2916 n2917
+01 1
+.names n2915 n2917 n2918
+00 1
+.names wb_rst_i n2918 txr_pound_5b7_pound_5d_in
+01 1
+.names wb_cyc_i n266 n2920
+10 1
+.names wb_ack_o wb_stb_i n2921
+11 1
+.names wb_cyc_i n2921 n2922
+11 1
+.names n2920 n2922 wb_ack_o_in
+10 1
+.names ctr n1632 n2924
+10 1
+.names ctr n2924 n2925
+10 1
+.names prer_reg_pound_5b8_pound_5d_Q n2038 n2926
+10 1
+.names prer_reg_pound_5b8_pound_5d_Q n2926 n2927
+10 1
+.names n2925 n2927 n2928
+00 1
+.names prer_reg_pound_5b0_pound_5d_Q n2039 n2929
+10 1
+.names prer_reg_pound_5b0_pound_5d_Q n2039 n2930
+00 1
+.names prer_reg_pound_5b0_pound_5d_Q n2039 n2931
+01 1
+.names n2930 n2931 n2932
+00 1
+.names n2929 n2932 n2933
+01 1
+.names wb_adr_i_lb_0_rb_ n269 n2934
+01 1
+.names rxr n2767 n2935
+10 1
+.names rxr n2935 n2936
+10 1
+.names irq_flag n2934 n2937
+01 1
+.names n2934 n2937 n2938
+10 1
+.names n2936 n2938 n2939
+00 1
+.names wb_adr_i_lb_1_rb_ wb_adr_i_lb_2_rb_ n2940
+00 1
+.names n269 n2940 n2941
+00 1
+.names n1627 n2941 n2942
+01 1
+.names wb_adr_i_lb_0_rb_ n2942 n2943
+01 1
+.names wb_adr_i_lb_0_rb_ n269 n2944
+11 1
+.names iack n2943 n2945
+01 1
+.names n2943 n2945 n2946
+10 1
+.names txr_pound_5b0_pound_5d n2944 n2947
+10 1
+.names txr_pound_5b0_pound_5d n2947 n2948
+10 1
+.names n2946 n2948 n2949
+00 1
+.names n2928 n2933 n2950
+11 1
+.names n2928 n2950 n2951
+10 1
+.names n2933 n2939 n2952
+00 1
+.names n2928 n2952 n2953
+11 1
+.names n2951 n2953 n2954
+10 1
+.names n2928 n2933 n2955
+10 1
+.names n2939 n2949 n2956
+10 1
+.names n2955 n2956 n2957
+11 1
+.names n2954 n2957 wb_dat_o_lb_0_rb__in
+10 0
+.names cr_reg_pound_5b1_pound_5d_Q n2943 n2959
+01 1
+.names n2943 n2959 n2960
+10 1
+.names txr_pound_5b1_pound_5d n2944 n2961
+10 1
+.names txr_pound_5b1_pound_5d n2961 n2962
+10 1
+.names n2960 n2962 n2963
+00 1
+.names tip n2934 n2964
+10 1
+.names tip n2964 n2965
+10 1
+.names rxr_257 n2767 n2966
+10 1
+.names rxr_257 n2966 n2967
+10 1
+.names n2965 n2967 n2968
+00 1
+.names prer_reg_pound_5b1_pound_5d_Q n2039 n2969
+10 1
+.names prer_reg_pound_5b1_pound_5d_Q n2039 n2970
+00 1
+.names prer_reg_pound_5b1_pound_5d_Q n2039 n2971
+01 1
+.names n2970 n2971 n2972
+00 1
+.names n2969 n2972 n2973
+01 1
+.names ctr_10 n1632 n2974
+10 1
+.names ctr_10 n2974 n2975
+10 1
+.names prer_reg_pound_5b9_pound_5d_Q n2038 n2976
+10 1
+.names prer_reg_pound_5b9_pound_5d_Q n2976 n2977
+10 1
+.names n2975 n2977 n2978
+00 1
+.names n2963 n2968 n2979
+10 1
+.names n2963 n2979 n2980
+10 1
+.names n2968 n2973 n2981
+11 1
+.names n2963 n2981 n2982
+11 1
+.names n2980 n2982 n2983
+10 1
+.names n2963 n2968 n2984
+11 1
+.names n2973 n2978 n2985
+00 1
+.names n2984 n2985 n2986
+11 1
+.names n2983 n2986 wb_dat_o_lb_1_rb__in
+10 0
+.names cr_reg_pound_5b2_pound_5d_Q n2943 n2988
+01 1
+.names n2943 n2988 n2989
+10 1
+.names txr_pound_5b2_pound_5d n2944 n2990
+10 1
+.names txr_pound_5b2_pound_5d n2990 n2991
+10 1
+.names n2989 n2991 n2992
+00 1
+.names rxr_258 n2767 n2993
+10 1
+.names rxr_258 n2767 n2994
+00 1
+.names rxr_258 n2767 n2995
+01 1
+.names n2994 n2995 n2996
+00 1
+.names n2993 n2996 n2997
+01 1
+.names prer_reg_pound_5b2_pound_5d_Q n2039 n2998
+10 1
+.names prer_reg_pound_5b2_pound_5d_Q n2039 n2999
+00 1
+.names prer_reg_pound_5b2_pound_5d_Q n2039 n3000
+01 1
+.names n2999 n3000 n3001
+00 1
+.names n2998 n3001 n3002
+01 1
+.names ctr_11 n1632 n3003
+10 1
+.names ctr_11 n3003 n3004
+10 1
+.names prer_reg_pound_5b10_pound_5d_Q n2038 n3005
+10 1
+.names prer_reg_pound_5b10_pound_5d_Q n3005 n3006
+10 1
+.names n3004 n3006 n3007
+00 1
+.names n2992 n2997 n3008
+11 1
+.names n2992 n3008 n3009
+10 1
+.names n2997 n3002 n3010
+01 1
+.names n2992 n3010 n3011
+11 1
+.names n3009 n3011 n3012
+10 1
+.names n2992 n2997 n3013
+10 1
+.names n3002 n3007 n3014
+00 1
+.names n3013 n3014 n3015
+11 1
+.names n3012 n3015 wb_dat_o_lb_2_rb__in
+10 0
+.names ack n2943 n3017
+01 1
+.names n2943 n3017 n3018
+10 1
+.names txr_pound_5b3_pound_5d n2944 n3019
+10 1
+.names txr_pound_5b3_pound_5d n3019 n3020
+10 1
+.names n3018 n3020 n3021
+00 1
+.names rxr_259 n2767 n3022
+10 1
+.names rxr_259 n2767 n3023
+00 1
+.names rxr_259 n2767 n3024
+01 1
+.names n3023 n3024 n3025
+00 1
+.names n3022 n3025 n3026
+01 1
+.names prer_reg_pound_5b3_pound_5d_Q n2039 n3027
+10 1
+.names prer_reg_pound_5b3_pound_5d_Q n2039 n3028
+00 1
+.names prer_reg_pound_5b3_pound_5d_Q n2039 n3029
+01 1
+.names n3028 n3029 n3030
+00 1
+.names n3027 n3030 n3031
+01 1
+.names ctr_12 n1632 n3032
+10 1
+.names ctr_12 n3032 n3033
+10 1
+.names prer_reg_pound_5b11_pound_5d_Q n2038 n3034
+10 1
+.names prer_reg_pound_5b11_pound_5d_Q n3034 n3035
+10 1
+.names n3033 n3035 n3036
+00 1
+.names n3021 n3026 n3037
+11 1
+.names n3021 n3037 n3038
+10 1
+.names n3026 n3031 n3039
+01 1
+.names n3021 n3039 n3040
+11 1
+.names n3038 n3040 n3041
+10 1
+.names n3021 n3026 n3042
+10 1
+.names n3031 n3036 n3043
+00 1
+.names n3042 n3043 n3044
+11 1
+.names n3041 n3044 wb_dat_o_lb_3_rb__in
+10 0
+.names n_108 n2943 n3046
+01 1
+.names n2943 n3046 n3047
+10 1
+.names txr_pound_5b4_pound_5d n2944 n3048
+10 1
+.names txr_pound_5b4_pound_5d n3048 n3049
+10 1
+.names n3047 n3049 n3050
+00 1
+.names rxr_260 n2767 n3051
+10 1
+.names rxr_260 n2767 n3052
+00 1
+.names rxr_260 n2767 n3053
+01 1
+.names n3052 n3053 n3054
+00 1
+.names n3051 n3054 n3055
+01 1
+.names prer_reg_pound_5b4_pound_5d_Q n2039 n3056
+10 1
+.names prer_reg_pound_5b4_pound_5d_Q n2039 n3057
+00 1
+.names prer_reg_pound_5b4_pound_5d_Q n2039 n3058
+01 1
+.names n3057 n3058 n3059
+00 1
+.names n3056 n3059 n3060
+01 1
+.names ctr_13 n1632 n3061
+10 1
+.names ctr_13 n3061 n3062
+10 1
+.names prer_reg_pound_5b12_pound_5d_Q n2038 n3063
+10 1
+.names prer_reg_pound_5b12_pound_5d_Q n3063 n3064
+10 1
+.names n3062 n3064 n3065
+00 1
+.names n3050 n3055 n3066
+11 1
+.names n3050 n3066 n3067
+10 1
+.names n3055 n3060 n3068
+01 1
+.names n3050 n3068 n3069
+11 1
+.names n3067 n3069 n3070
+10 1
+.names n3050 n3055 n3071
+10 1
+.names n3060 n3065 n3072
+00 1
+.names n3071 n3072 n3073
+11 1
+.names n3070 n3073 wb_dat_o_lb_4_rb__in
+10 0
+.names rd n2943 n3075
+01 1
+.names n2943 n3075 n3076
+10 1
+.names txr_pound_5b5_pound_5d n2944 n3077
+10 1
+.names txr_pound_5b5_pound_5d n3077 n3078
+10 1
+.names n3076 n3078 n3079
+00 1
+.names al n2934 n3080
+10 1
+.names al n3080 n3081
+10 1
+.names rxr_261 n2767 n3082
+10 1
+.names rxr_261 n3082 n3083
+10 1
+.names n3081 n3083 n3084
+00 1
+.names prer_reg_pound_5b5_pound_5d_Q n2039 n3085
+10 1
+.names prer_reg_pound_5b5_pound_5d_Q n2039 n3086
+00 1
+.names prer_reg_pound_5b5_pound_5d_Q n2039 n3087
+01 1
+.names n3086 n3087 n3088
+00 1
+.names n3085 n3088 n3089
+01 1
+.names ctr_14 n1632 n3090
+10 1
+.names ctr_14 n3090 n3091
+10 1
+.names prer_reg_pound_5b13_pound_5d_Q n2038 n3092
+10 1
+.names prer_reg_pound_5b13_pound_5d_Q n3092 n3093
+10 1
+.names n3091 n3093 n3094
+00 1
+.names n3079 n3084 n3095
+10 1
+.names n3079 n3095 n3096
+10 1
+.names n3084 n3089 n3097
+11 1
+.names n3079 n3097 n3098
+11 1
+.names n3096 n3098 n3099
+10 1
+.names n3079 n3084 n3100
+11 1
+.names n3089 n3094 n3101
+00 1
+.names n3100 n3101 n3102
+11 1
+.names n3099 n3102 wb_dat_o_lb_5_rb__in
+10 0
+.names sto n2943 n3104
+01 1
+.names n2943 n3104 n3105
+10 1
+.names txr_pound_5b6_pound_5d n2944 n3106
+10 1
+.names txr_pound_5b6_pound_5d n3106 n3107
+10 1
+.names n3105 n3107 n3108
+00 1
+.names sr n2934 n3109
+10 1
+.names sr n3109 n3110
+10 1
+.names rxr_262 n2767 n3111
+10 1
+.names rxr_262 n3111 n3112
+10 1
+.names n3110 n3112 n3113
+00 1
+.names ien n1632 n3114
+10 1
+.names n1829 n3114 n3115
+00 1
+.names n1830 n3115 n3116
+01 1
+.names prer_reg_pound_5b14_pound_5d_Q n2038 n3117
+10 1
+.names prer_reg_pound_5b14_pound_5d_Q n3117 n3118
+10 1
+.names prer_reg_pound_5b6_pound_5d_Q n2039 n3119
+10 1
+.names prer_reg_pound_5b6_pound_5d_Q n3119 n3120
+10 1
+.names n3118 n3120 n3121
+00 1
+.names n3108 n3113 n3122
+10 1
+.names n3108 n3122 n3123
+10 1
+.names n3113 n3116 n3124
+11 1
+.names n3108 n3124 n3125
+11 1
+.names n3123 n3125 n3126
+10 1
+.names n3108 n3113 n3127
+11 1
+.names n3116 n3121 n3128
+00 1
+.names n3127 n3128 n3129
+11 1
+.names n3126 n3129 wb_dat_o_lb_6_rb__in
+10 0
+.names sta n2943 n3131
+01 1
+.names n2943 n3131 n3132
+10 1
+.names txr_pound_5b7_pound_5d n2944 n3133
+01 1
+.names n2944 n3133 n3134
+10 1
+.names n3132 n3134 n3135
+00 1
+.names rxack n2934 n3136
+01 1
+.names n2934 n3136 n3137
+10 1
+.names rxr_263 n2767 n3138
+01 1
+.names n2767 n3138 n3139
+10 1
+.names n3137 n3139 n3140
+00 1
+.names prer_reg_pound_5b7_pound_5d_Q n2039 n3141
+01 1
+.names prer_reg_pound_5b7_pound_5d_Q n2039 n3142
+00 1
+.names prer_reg_pound_5b7_pound_5d_Q n2039 n3143
+10 1
+.names n3142 n3143 n3144
+00 1
+.names n3141 n3144 n3145
+01 1
+.names n1632 n1634 n3146
+10 1
+.names prer_reg_pound_5b15_pound_5d_Q n2038 n3147
+01 1
+.names n2038 n3147 n3148
+10 1
+.names n3146 n3148 n3149
+00 1
+.names n3135 n3140 n3150
+10 1
+.names n3135 n3150 n3151
+10 1
+.names n3140 n3145 n3152
+11 1
+.names n3135 n3152 n3153
+11 1
+.names n3151 n3153 n3154
+10 1
+.names n3135 n3140 n3155
+11 1
+.names n3145 n3149 n3156
+00 1
+.names n3155 n3156 n3157
+11 1
+.names n3154 n3157 wb_dat_o_lb_7_rb__in
+10 0
+.names ien irq_flag n3159
+01 1
+.names ien irq_flag n3160
+00 1
+.names ien irq_flag n3161
+10 1
+.names n3160 n3161 n3162
+00 1
+.names n3159 n3162 n3163
+01 1
+.names wb_rst_i n3163 wb_inta_o_in
+01 1
+.names scl_padoen_o byte_controller_bit_controller_dscl_oen_in
+1 1
+.end

@@ -1,0 +1,2502 @@
+# Benchmark "usb_phy_physical" written by ABC on Sat Nov 30 02:53:22 2013
+.model usb_phy_physical
+.inputs DataIn_o_lb_1_rb_ DataIn_o_lb_2_rb_ DataIn_o_lb_3_rb_ \
+ DataIn_o_lb_4_rb_ DataIn_o_lb_5_rb_ DataIn_o_lb_6_rb_ DataIn_o_lb_7_rb_ \
+ DataOut_i_lb_0_rb_ DataOut_i_lb_1_rb_ DataOut_i_lb_2_rb_ \
+ DataOut_i_lb_3_rb_ DataOut_i_lb_4_rb_ DataOut_i_lb_5_rb_ \
+ DataOut_i_lb_6_rb_ DataOut_i_lb_7_rb_ LineState_o_lb_0_rb_ \
+ LineState_o_lb_1_rb_ RxActive_o RxValid_o TxValid_i \
+ i_rx_phy_bit_cnt_pound_5b0_pound_5d i_rx_phy_bit_cnt_pound_5b2_pound_5d \
+ i_rx_phy_bit_stuff_err_reg_Q i_rx_phy_byte_err_reg_Q \
+ i_rx_phy_dpll_state_pound_5b0_pound_5d \
+ i_rx_phy_dpll_state_pound_5b1_pound_5d i_rx_phy_fs_ce_r1 i_rx_phy_fs_ce_r2 \
+ i_rx_phy_fs_state_pound_5b0_pound_5d i_rx_phy_fs_state_pound_5b2_pound_5d \
+ i_rx_phy_one_cnt_pound_5b0_pound_5d i_rx_phy_one_cnt_pound_5b1_pound_5d \
+ i_rx_phy_one_cnt_pound_5b2_pound_5d i_rx_phy_rx_en i_rx_phy_rx_valid1 \
+ i_rx_phy_rx_valid_r i_rx_phy_rxd_r i_rx_phy_rxd_s0 i_rx_phy_rxd_s1_reg_Q \
+ i_rx_phy_rxd_s i_rx_phy_rxdn_s0 i_rx_phy_rxdn_s i_rx_phy_rxdn_s_r_reg_Q \
+ i_rx_phy_rxdp_s0 i_rx_phy_rxdp_s i_rx_phy_rxdp_s_r_reg_Q i_rx_phy_sd_nrzi \
+ i_rx_phy_sd_r i_rx_phy_se0_r_reg_Q i_rx_phy_se0_s i_rx_phy_shift_en \
+ i_rx_phy_sync_err_reg_Q i_tx_phy_append_eop i_tx_phy_append_eop_sync1 \
+ i_tx_phy_append_eop_sync2 i_tx_phy_append_eop_sync4 \
+ i_tx_phy_bit_cnt_pound_5b0_pound_5d i_tx_phy_bit_cnt_pound_5b1_pound_5d \
+ i_tx_phy_bit_cnt_pound_5b2_pound_5d i_tx_phy_data_done \
+ i_tx_phy_hold_reg_10 i_tx_phy_hold_reg_4 i_tx_phy_hold_reg_5 \
+ i_tx_phy_hold_reg_6 i_tx_phy_hold_reg_7 i_tx_phy_hold_reg_8 \
+ i_tx_phy_hold_reg_9 i_tx_phy_hold_reg_d_12 i_tx_phy_hold_reg_d_14 \
+ i_tx_phy_hold_reg_d_17 i_tx_phy_hold_reg_d \
+ i_tx_phy_hold_reg_d_reg_pound_5b1_pound_5d_Q \
+ i_tx_phy_hold_reg_d_reg_pound_5b3_pound_5d_Q \
+ i_tx_phy_hold_reg_d_reg_pound_5b5_pound_5d_Q \
+ i_tx_phy_hold_reg_d_reg_pound_5b6_pound_5d_Q i_tx_phy_hold_reg \
+ i_tx_phy_ld_data_reg_Q i_tx_phy_one_cnt_pound_5b0_pound_5d \
+ i_tx_phy_one_cnt_pound_5b1_pound_5d i_tx_phy_one_cnt_pound_5b2_pound_5d \
+ i_tx_phy_sd_bs_o i_tx_phy_sd_nrzi_o i_tx_phy_sd_raw_o i_tx_phy_sft_done \
+ i_tx_phy_sft_done_r i_tx_phy_state_pound_5b1_pound_5d \
+ i_tx_phy_state_pound_5b2_pound_5d i_tx_phy_tx_ip i_tx_phy_txoe_r1 \
+ i_tx_phy_txoe_r2 n_224 n_238 n_306 n_353 n_796 n_886 n_898 phy_tx_mode \
+ rst_cnt_pound_5b0_pound_5d rst_cnt_pound_5b1_pound_5d \
+ rst_cnt_pound_5b3_pound_5d rst_cnt_pound_5b4_pound_5d rst rxd rxdn rxdp \
+ txdn txdp txoe usb_rst
+.outputs DataIn_o_lb_0_rb__in DataIn_o_lb_1_rb__in DataIn_o_lb_2_rb__in \
+ DataIn_o_lb_3_rb__in DataIn_o_lb_4_rb__in DataIn_o_lb_5_rb__in \
+ DataIn_o_lb_6_rb__in DataIn_o_lb_7_rb__in LineState_o_lb_0_rb__in \
+ LineState_o_lb_1_rb__in RxActive_o_in RxError_o RxValid_o_in TxReady_o_in \
+ i_rx_phy_bit_cnt_pound_5b0_pound_5d_in \
+ i_rx_phy_bit_cnt_pound_5b2_pound_5d_in i_rx_phy_bit_stuff_err_reg_Q_in \
+ i_rx_phy_byte_err_reg_Q_in i_rx_phy_dpll_state_pound_5b0_pound_5d_in \
+ i_rx_phy_dpll_state_pound_5b1_pound_5d_in i_rx_phy_fs_ce_r1_in \
+ i_rx_phy_fs_ce_r2_in i_rx_phy_fs_state_pound_5b0_pound_5d_in \
+ i_rx_phy_fs_state_pound_5b2_pound_5d_in \
+ i_rx_phy_one_cnt_pound_5b0_pound_5d_in \
+ i_rx_phy_one_cnt_pound_5b1_pound_5d_in \
+ i_rx_phy_one_cnt_pound_5b2_pound_5d_in i_rx_phy_rx_en_in \
+ i_rx_phy_rx_valid1_in i_rx_phy_rx_valid_r_in i_rx_phy_rxd_r_in \
+ i_rx_phy_rxd_s0_in i_rx_phy_rxd_s1_reg_Q_in i_rx_phy_rxd_s_in \
+ i_rx_phy_rxdn_s0_in i_rx_phy_rxdn_s_in i_rx_phy_rxdn_s_r_reg_Q_in \
+ i_rx_phy_rxdp_s0_in i_rx_phy_rxdp_s_in i_rx_phy_rxdp_s_r_reg_Q_in \
+ i_rx_phy_sd_nrzi_in i_rx_phy_sd_r_in i_rx_phy_se0_r_reg_Q_in \
+ i_rx_phy_se0_s_in i_rx_phy_shift_en_in i_rx_phy_sync_err_reg_Q_in \
+ i_tx_phy_append_eop_in i_tx_phy_append_eop_sync1_in \
+ i_tx_phy_append_eop_sync2_in i_tx_phy_append_eop_sync4_in \
+ i_tx_phy_bit_cnt_pound_5b0_pound_5d_in \
+ i_tx_phy_bit_cnt_pound_5b1_pound_5d_in \
+ i_tx_phy_bit_cnt_pound_5b2_pound_5d_in i_tx_phy_data_done_in \
+ i_tx_phy_hold_reg_10_in i_tx_phy_hold_reg_4_in i_tx_phy_hold_reg_5_in \
+ i_tx_phy_hold_reg_6_in i_tx_phy_hold_reg_7_in i_tx_phy_hold_reg_8_in \
+ i_tx_phy_hold_reg_9_in i_tx_phy_hold_reg_d_12_in i_tx_phy_hold_reg_d_14_in \
+ i_tx_phy_hold_reg_d_17_in i_tx_phy_hold_reg_d_in \
+ i_tx_phy_hold_reg_d_reg_pound_5b1_pound_5d_Q_in \
+ i_tx_phy_hold_reg_d_reg_pound_5b3_pound_5d_Q_in \
+ i_tx_phy_hold_reg_d_reg_pound_5b5_pound_5d_Q_in \
+ i_tx_phy_hold_reg_d_reg_pound_5b6_pound_5d_Q_in i_tx_phy_hold_reg_in \
+ i_tx_phy_ld_data_reg_Q_in i_tx_phy_one_cnt_pound_5b0_pound_5d_in \
+ i_tx_phy_one_cnt_pound_5b1_pound_5d_in \
+ i_tx_phy_one_cnt_pound_5b2_pound_5d_in i_tx_phy_sd_bs_o_in \
+ i_tx_phy_sd_nrzi_o_in i_tx_phy_sd_raw_o_in i_tx_phy_sft_done_in \
+ i_tx_phy_sft_done_r_in i_tx_phy_state_pound_5b1_pound_5d_in \
+ i_tx_phy_state_pound_5b2_pound_5d_in i_tx_phy_tx_ip_in i_tx_phy_txoe_r1_in \
+ i_tx_phy_txoe_r2_in n_224_in n_238_in n_306_in n_353_in n_796_in n_886_in \
+ n_898_in rst_cnt_pound_5b0_pound_5d_in rst_cnt_pound_5b1_pound_5d_in \
+ rst_cnt_pound_5b3_pound_5d_in rst_cnt_pound_5b4_pound_5d_in txdn_in \
+ txdp_in txoe_in usb_rst_in
+.names i_rx_phy_rx_en rst n209
+11 1
+.names RxActive_o n_886 n210
+01 1
+.names i_rx_phy_rxdn_s i_rx_phy_rxdp_s n211
+11 1
+.names i_rx_phy_rxdn_s i_rx_phy_rxdp_s n212
+10 1
+.names n211 n212 n213
+00 1
+.names i_rx_phy_rxdn_s i_rx_phy_rxdp_s n214
+01 1
+.names n213 n214 i_rx_phy_se0_r_reg_Q_in
+10 1
+.names n210 i_rx_phy_se0_r_reg_Q_in n216
+11 1
+.names n210 n216 n217
+10 1
+.names i_rx_phy_se0_s i_rx_phy_se0_r_reg_Q_in n218
+10 1
+.names n210 n218 n219
+11 1
+.names n217 n219 n220
+10 1
+.names i_rx_phy_fs_state_pound_5b0_pound_5d \
+ i_rx_phy_fs_state_pound_5b2_pound_5d n221
+11 1
+.names n_796 n221 n222
+11 1
+.names n_796 n221 n223
+10 1
+.names n_796 n221 n224
+00 1
+.names n223 n224 n225
+00 1
+.names n222 n225 n226
+01 1
+.names i_rx_phy_rxdn_s i_rx_phy_rxdp_s n227
+00 1
+.names i_rx_phy_rxdp_s n227 n228
+00 1
+.names i_rx_phy_rx_en i_rx_phy_rxdn_s n229
+01 1
+.names i_rx_phy_rxdp_s n229 n230
+01 1
+.names n228 n230 n231
+10 1
+.names i_rx_phy_rx_en i_rx_phy_rxdp_s n232
+11 1
+.names i_rx_phy_rxdn_s n232 n233
+10 1
+.names i_rx_phy_rxdn_s n232 n234
+00 1
+.names n233 n234 n235
+00 1
+.names i_rx_phy_rxdn_s n232 n236
+11 1
+.names n235 n236 n237
+10 1
+.names n231 n237 n238
+10 1
+.names n222 n226 n239
+00 1
+.names n222 n239 n240
+00 1
+.names n226 n238 n241
+10 1
+.names n222 n241 n242
+01 1
+.names n240 n242 n243
+10 1
+.names n212 n226 n244
+11 1
+.names n212 n244 n245
+10 1
+.names n212 n239 n246
+11 1
+.names n245 n246 n247
+10 1
+.names n243 n247 n248
+11 1
+.names n243 n247 n249
+10 1
+.names n248 n249 n250
+00 1
+.names n243 n247 n251
+01 1
+.names n250 n251 n252
+10 1
+.names n209 n220 n253
+10 1
+.names n209 n253 n254
+10 1
+.names n220 n252 n255
+11 1
+.names n209 n255 n256
+11 1
+.names n254 n256 n257
+10 1
+.names i_rx_phy_rx_valid_r i_rx_phy_se0_r_reg_Q_in n258
+00 1
+.names i_rx_phy_rx_valid_r i_rx_phy_se0_r_reg_Q_in n259
+01 1
+.names n258 n259 n260
+00 1
+.names i_rx_phy_rx_valid_r i_rx_phy_se0_r_reg_Q_in n261
+10 1
+.names n260 n261 n262
+10 1
+.names RxActive_o n262 n263
+00 1
+.names n262 n263 n264
+00 1
+.names RxActive_o rst n265
+10 1
+.names n262 n265 n266
+01 1
+.names n264 n266 n267
+10 1
+.names n257 n267 n268
+11 1
+.names n257 n267 n269
+10 1
+.names n268 n269 n270
+00 1
+.names n257 n267 n271
+01 1
+.names n270 n271 RxActive_o_in
+10 0
+.names i_rx_phy_byte_err_reg_Q i_rx_phy_sync_err_reg_Q n273
+01 1
+.names i_rx_phy_byte_err_reg_Q n273 n274
+00 1
+.names i_rx_phy_bit_stuff_err_reg_Q i_rx_phy_sync_err_reg_Q n275
+10 1
+.names i_rx_phy_byte_err_reg_Q n275 n276
+01 1
+.names n274 n276 RxError_o
+10 0
+.names i_rx_phy_one_cnt_pound_5b1_pound_5d \
+ i_rx_phy_one_cnt_pound_5b2_pound_5d n278
+11 1
+.names i_rx_phy_one_cnt_pound_5b0_pound_5d n278 n279
+10 1
+.names i_rx_phy_one_cnt_pound_5b0_pound_5d n278 n280
+00 1
+.names n279 n280 n281
+00 1
+.names i_rx_phy_one_cnt_pound_5b0_pound_5d n278 n282
+11 1
+.names n281 n282 n283
+10 1
+.names n_886 n283 n284
+01 1
+.names n_886 n283 n285
+11 1
+.names n284 n285 n286
+00 1
+.names n_886 n283 n287
+00 1
+.names n286 n287 n288
+10 1
+.names i_rx_phy_rx_valid1 n288 RxValid_o_in
+11 1
+.names i_tx_phy_state_pound_5b1_pound_5d i_tx_phy_state_pound_5b2_pound_5d \
+ n290
+11 1
+.names i_tx_phy_state_pound_5b1_pound_5d i_tx_phy_state_pound_5b2_pound_5d \
+ n291
+10 1
+.names n290 n291 n292
+00 1
+.names i_tx_phy_state_pound_5b1_pound_5d i_tx_phy_state_pound_5b2_pound_5d \
+ n293
+01 1
+.names n292 n293 n294
+10 1
+.names n_898 n294 n295
+11 1
+.names i_tx_phy_sft_done i_tx_phy_sft_done_r n296
+01 1
+.names i_tx_phy_sft_done i_tx_phy_sft_done_r n297
+11 1
+.names n296 n297 n298
+00 1
+.names i_tx_phy_sft_done i_tx_phy_sft_done_r n299
+00 1
+.names n298 n299 n300
+10 1
+.names n295 n300 n301
+11 1
+.names TxValid_i rst n302
+00 1
+.names TxValid_i rst n303
+01 1
+.names n302 n303 n304
+00 1
+.names TxValid_i rst n305
+10 1
+.names n304 n305 n306
+10 1
+.names n_898 n306 n307
+11 1
+.names i_tx_phy_state_pound_5b1_pound_5d n306 n308
+00 1
+.names n_898 n308 n309
+01 1
+.names n307 n309 n310
+00 1
+.names n301 n310 n311
+01 1
+.names n301 n310 n312
+00 1
+.names n311 n312 n313
+00 1
+.names n301 n310 n314
+11 1
+.names n313 n314 n315
+10 1
+.names n_898 n295 n316
+00 1
+.names i_tx_phy_data_done n300 n317
+11 1
+.names n316 n317 n318
+10 1
+.names n316 n318 n319
+10 1
+.names i_tx_phy_state_pound_5b1_pound_5d n317 n320
+01 1
+.names n316 n320 n321
+11 1
+.names n319 n321 n322
+10 1
+.names n316 n317 n323
+11 1
+.names i_tx_phy_state_pound_5b1_pound_5d n306 n324
+10 1
+.names n323 n324 n325
+11 1
+.names n322 n325 n326
+10 1
+.names n315 n326 n327
+11 1
+.names n315 n326 n328
+10 1
+.names n327 n328 n329
+00 1
+.names n315 n326 n330
+01 1
+.names n329 n330 TxReady_o_in
+10 0
+.names i_rx_phy_bit_cnt_pound_5b0_pound_5d n288 n332
+01 1
+.names i_rx_phy_bit_cnt_pound_5b0_pound_5d n288 n333
+00 1
+.names n332 n333 n334
+00 1
+.names i_rx_phy_bit_cnt_pound_5b0_pound_5d n288 n335
+11 1
+.names n334 n335 n336
+10 1
+.names i_rx_phy_bit_cnt_pound_5b0_pound_5d n288 n337
+10 1
+.names n335 n337 n338
+00 1
+.names n333 n338 n339
+01 1
+.names i_rx_phy_shift_en rst n340
+00 1
+.names i_rx_phy_shift_en rst n341
+01 1
+.names n340 n341 n342
+00 1
+.names i_rx_phy_shift_en rst n343
+10 1
+.names n342 n343 n344
+10 1
+.names n336 n344 n345
+11 1
+.names n339 n344 n346
+10 1
+.names n336 n346 n347
+01 1
+.names n345 n347 i_rx_phy_bit_cnt_pound_5b0_pound_5d_in
+00 0
+.names i_rx_phy_bit_cnt_pound_5b2_pound_5d n288 n349
+01 1
+.names i_rx_phy_bit_cnt_pound_5b2_pound_5d n288 n350
+00 1
+.names n349 n350 n351
+00 1
+.names i_rx_phy_bit_cnt_pound_5b2_pound_5d n288 n352
+11 1
+.names n351 n352 n353
+10 1
+.names i_rx_phy_bit_cnt_pound_5b0_pound_5d n_353 n354
+11 1
+.names i_rx_phy_bit_cnt_pound_5b2_pound_5d n354 n355
+01 1
+.names i_rx_phy_bit_cnt_pound_5b2_pound_5d n354 n356
+10 1
+.names n355 n356 n357
+00 1
+.names n288 n357 n358
+01 1
+.names n288 n357 n359
+11 1
+.names n358 n359 n360
+00 1
+.names n288 n357 n361
+00 1
+.names n360 n361 n362
+10 1
+.names n344 n353 n363
+11 1
+.names n344 n362 n364
+01 1
+.names n353 n364 n365
+01 1
+.names n363 n365 i_rx_phy_bit_cnt_pound_5b2_pound_5d_in
+00 0
+.names RxActive_o n_886 n367
+10 1
+.names n210 n367 n368
+00 1
+.names RxActive_o n_886 n369
+00 1
+.names n368 n369 n370
+10 1
+.names n283 n370 n371
+10 1
+.names n283 n371 n372
+10 1
+.names i_rx_phy_se0_r_reg_Q_in n370 n373
+11 1
+.names n283 n373 n374
+11 1
+.names n372 n374 n375
+10 1
+.names n283 n370 n376
+11 1
+.names i_rx_phy_sd_nrzi i_rx_phy_se0_r_reg_Q_in n377
+00 1
+.names n376 n377 n378
+11 1
+.names n375 n378 i_rx_phy_bit_stuff_err_reg_Q_in
+10 1
+.names i_rx_phy_bit_cnt_pound_5b2_pound_5d i_rx_phy_se0_r_reg_Q n380
+00 1
+.names n_353 n380 n381
+01 1
+.names i_rx_phy_se0_r_reg_Q n381 n382
+00 1
+.names RxActive_o i_rx_phy_se0_r_reg_Q_in n383
+00 1
+.names RxActive_o i_rx_phy_se0_r_reg_Q_in n384
+10 1
+.names n383 n384 n385
+00 1
+.names RxActive_o i_rx_phy_se0_r_reg_Q_in n386
+01 1
+.names n385 n386 n387
+10 1
+.names n382 n387 i_rx_phy_byte_err_reg_Q_in
+11 1
+.names i_rx_phy_dpll_state_pound_5b0_pound_5d \
+ i_rx_phy_dpll_state_pound_5b1_pound_5d n389
+00 1
+.names i_rx_phy_rxd_r i_rx_phy_rxd_s n390
+10 1
+.names i_rx_phy_rxd_r i_rx_phy_rxd_s n391
+01 1
+.names n390 n391 n392
+00 1
+.names i_rx_phy_rxd_r i_rx_phy_rxd_s n393
+00 1
+.names n392 n393 n394
+10 1
+.names i_rx_phy_rxd_r i_rx_phy_rxd_s n395
+11 1
+.names n390 n395 n396
+00 1
+.names n391 n396 n397
+01 1
+.names n394 n397 n398
+11 1
+.names n394 n397 n399
+10 1
+.names n398 n399 n400
+00 1
+.names n394 n397 n401
+01 1
+.names n400 n401 n402
+10 1
+.names i_rx_phy_rx_en n402 n403
+01 1
+.names i_rx_phy_rx_en n402 n404
+10 1
+.names n403 n404 n405
+00 1
+.names i_rx_phy_rx_en n402 n406
+00 1
+.names n405 n406 n407
+10 1
+.names i_rx_phy_dpll_state_pound_5b0_pound_5d \
+ i_rx_phy_dpll_state_pound_5b1_pound_5d n408
+11 1
+.names n389 n408 n409
+00 1
+.names i_rx_phy_dpll_state_pound_5b0_pound_5d \
+ i_rx_phy_dpll_state_pound_5b1_pound_5d n410
+01 1
+.names n409 n410 i_rx_phy_fs_ce_r1_in
+10 1
+.names n407 i_rx_phy_fs_ce_r1_in n412
+11 1
+.names n389 n412 n413
+00 1
+.names n407 n412 n414
+11 1
+.names n389 n414 n415
+11 1
+.names n413 n415 n416
+00 1
+.names i_rx_phy_dpll_state_pound_5b1_pound_5d n407 n417
+00 1
+.names n407 n417 n418
+00 1
+.names n407 n408 n419
+01 1
+.names n418 n419 n420
+10 1
+.names n416 n420 n421
+01 1
+.names n416 n421 n422
+00 1
+.names rst n420 n423
+00 1
+.names n416 n423 n424
+01 1
+.names n422 n424 i_rx_phy_dpll_state_pound_5b0_pound_5d_in
+10 0
+.names rst n420 n426
+11 1
+.names rst i_rx_phy_fs_ce_r1_in n427
+01 1
+.names n420 n427 n428
+01 1
+.names n426 n428 i_rx_phy_dpll_state_pound_5b1_pound_5d_in
+00 0
+.names i_rx_phy_fs_state_pound_5b0_pound_5d \
+ i_rx_phy_fs_state_pound_5b2_pound_5d n430
+10 1
+.names n221 n430 n431
+00 1
+.names i_rx_phy_fs_state_pound_5b0_pound_5d \
+ i_rx_phy_fs_state_pound_5b2_pound_5d n432
+00 1
+.names n431 n432 n433
+10 1
+.names n_796 n433 n434
+11 1
+.names n231 n434 n435
+00 1
+.names n231 n434 n436
+10 1
+.names n435 n436 n437
+00 1
+.names n231 n434 n438
+01 1
+.names n437 n438 n439
+10 1
+.names n_796 n433 n440
+01 1
+.names n231 n440 n441
+00 1
+.names n231 n440 n442
+01 1
+.names n441 n442 n443
+00 1
+.names n231 n440 n444
+10 1
+.names n443 n444 n445
+10 1
+.names n439 n445 n446
+11 1
+.names n439 n445 n447
+10 1
+.names n446 n447 n448
+00 1
+.names n439 n445 n449
+01 1
+.names n448 n449 n450
+10 1
+.names i_rx_phy_fs_state_pound_5b0_pound_5d \
+ i_rx_phy_fs_state_pound_5b2_pound_5d n451
+01 1
+.names n221 n451 n452
+00 1
+.names n430 n452 n453
+01 1
+.names n_796 n453 n454
+11 1
+.names n231 n454 n455
+00 1
+.names n231 n454 n456
+10 1
+.names n455 n456 n457
+00 1
+.names n231 n454 n458
+01 1
+.names n457 n458 n459
+10 1
+.names i_rx_phy_fs_state_pound_5b0_pound_5d n231 n460
+11 1
+.names i_rx_phy_fs_state_pound_5b0_pound_5d n231 n461
+01 1
+.names n460 n461 n462
+00 1
+.names i_rx_phy_fs_state_pound_5b0_pound_5d n231 n463
+10 1
+.names n462 n463 n464
+10 1
+.names n_796 n464 n465
+10 1
+.names n464 n465 n466
+00 1
+.names n_796 n453 n467
+00 1
+.names n464 n467 n468
+01 1
+.names n466 n468 n469
+10 1
+.names n459 n469 n470
+11 1
+.names n459 n469 n471
+10 1
+.names n470 n471 n472
+00 1
+.names n459 n469 n473
+01 1
+.names n472 n473 n474
+10 1
+.names n220 n474 n475
+10 1
+.names n220 n474 n476
+01 1
+.names n475 n476 n477
+00 1
+.names n220 n474 n478
+00 1
+.names n477 n478 n479
+10 1
+.names n450 n479 n480
+10 1
+.names n450 n479 n481
+01 1
+.names n480 n481 n482
+00 1
+.names n450 n479 n483
+00 1
+.names n482 n483 n484
+10 1
+.names i_rx_phy_fs_state_pound_5b0_pound_5d n220 n485
+11 1
+.names i_rx_phy_fs_state_pound_5b0_pound_5d n220 n486
+01 1
+.names n485 n486 n487
+00 1
+.names i_rx_phy_fs_state_pound_5b0_pound_5d n220 n488
+10 1
+.names n487 n488 n489
+10 1
+.names n484 n489 n490
+01 1
+.names n484 n490 n491
+00 1
+.names rst n489 n492
+00 1
+.names n484 n492 n493
+01 1
+.names n491 n493 i_rx_phy_fs_state_pound_5b0_pound_5d_in
+10 1
+.names n432 n452 n495
+01 1
+.names n_796 n495 n496
+01 1
+.names n495 n496 n497
+10 1
+.names n_796 n237 n498
+10 1
+.names n495 n498 n499
+11 1
+.names n497 n499 n500
+10 1
+.names n439 n500 n501
+11 1
+.names n439 n500 n502
+10 1
+.names n501 n502 n503
+00 1
+.names n439 n500 n504
+01 1
+.names n503 n504 n505
+10 1
+.names n430 n451 n506
+00 1
+.names n432 n506 n507
+01 1
+.names n_796 n507 n508
+01 1
+.names n237 n508 n509
+00 1
+.names n237 n508 n510
+01 1
+.names n509 n510 n511
+00 1
+.names n237 n508 n512
+10 1
+.names n511 n512 n513
+10 1
+.names n445 n513 n514
+11 1
+.names n445 n513 n515
+10 1
+.names n514 n515 n516
+00 1
+.names n445 n513 n517
+01 1
+.names n516 n517 n518
+10 1
+.names n220 n518 n519
+11 1
+.names n505 n519 n520
+11 1
+.names n220 n520 n521
+10 1
+.names i_rx_phy_fs_state_pound_5b2_pound_5d n220 n522
+11 1
+.names i_rx_phy_fs_state_pound_5b2_pound_5d n220 n523
+00 1
+.names n522 n523 n524
+00 1
+.names i_rx_phy_fs_state_pound_5b2_pound_5d n220 n525
+01 1
+.names n524 n525 n526
+10 1
+.names rst n521 n527
+11 1
+.names rst n526 n528
+01 1
+.names n521 n528 n529
+01 1
+.names n527 n529 i_rx_phy_fs_state_pound_5b2_pound_5d_in
+00 0
+.names i_rx_phy_one_cnt_pound_5b0_pound_5d n_886 n531
+01 1
+.names i_rx_phy_one_cnt_pound_5b0_pound_5d n_886 n532
+00 1
+.names n531 n532 n533
+00 1
+.names i_rx_phy_one_cnt_pound_5b0_pound_5d n_886 n534
+11 1
+.names n533 n534 n535
+10 1
+.names i_rx_phy_sd_nrzi n283 n536
+01 1
+.names i_rx_phy_sd_nrzi n283 n537
+11 1
+.names n536 n537 n538
+00 1
+.names i_rx_phy_sd_nrzi n283 n539
+00 1
+.names n538 n539 n540
+10 1
+.names i_rx_phy_one_cnt_pound_5b0_pound_5d n540 n541
+11 1
+.names n540 n541 n542
+10 1
+.names n532 n540 n543
+11 1
+.names n542 n543 n544
+10 1
+.names n344 n535 n545
+11 1
+.names n344 n544 n546
+01 1
+.names n535 n546 n547
+01 1
+.names n545 n547 i_rx_phy_one_cnt_pound_5b0_pound_5d_in
+00 0
+.names i_rx_phy_one_cnt_pound_5b1_pound_5d n_886 n549
+01 1
+.names i_rx_phy_one_cnt_pound_5b1_pound_5d n_886 n550
+00 1
+.names n549 n550 n551
+00 1
+.names i_rx_phy_one_cnt_pound_5b1_pound_5d n_886 n552
+11 1
+.names n551 n552 n553
+10 1
+.names i_rx_phy_one_cnt_pound_5b0_pound_5d \
+ i_rx_phy_one_cnt_pound_5b1_pound_5d n554
+10 1
+.names i_rx_phy_one_cnt_pound_5b0_pound_5d \
+ i_rx_phy_one_cnt_pound_5b1_pound_5d n555
+01 1
+.names n554 n555 n556
+00 1
+.names n_886 n540 n557
+11 1
+.names n556 n557 n558
+10 1
+.names n556 n557 n559
+11 1
+.names n558 n559 n560
+00 1
+.names n556 n557 n561
+00 1
+.names n560 n561 n562
+10 1
+.names n344 n553 n563
+11 1
+.names n344 n562 n564
+01 1
+.names n553 n564 n565
+01 1
+.names n563 n565 i_rx_phy_one_cnt_pound_5b1_pound_5d_in
+00 0
+.names i_rx_phy_one_cnt_pound_5b0_pound_5d \
+ i_rx_phy_one_cnt_pound_5b1_pound_5d n567
+11 1
+.names i_rx_phy_one_cnt_pound_5b2_pound_5d n567 n568
+01 1
+.names i_rx_phy_one_cnt_pound_5b2_pound_5d n567 n569
+10 1
+.names n568 n569 n570
+00 1
+.names n557 n570 n571
+01 1
+.names n557 n570 n572
+11 1
+.names n571 n572 n573
+00 1
+.names n557 n570 n574
+00 1
+.names n573 n574 n575
+10 1
+.names i_rx_phy_one_cnt_pound_5b2_pound_5d n_886 n576
+01 1
+.names i_rx_phy_one_cnt_pound_5b2_pound_5d n_886 n577
+11 1
+.names n576 n577 n578
+00 1
+.names i_rx_phy_one_cnt_pound_5b2_pound_5d n_886 n579
+00 1
+.names n578 n579 n580
+10 1
+.names n344 n575 n581
+11 1
+.names n344 n580 n582
+01 1
+.names n575 n582 n583
+01 1
+.names n581 n583 i_rx_phy_one_cnt_pound_5b2_pound_5d_in
+00 0
+.names i_rx_phy_rx_valid1 n288 n585
+00 1
+.names n288 n585 n586
+00 1
+.names i_rx_phy_rx_valid1 rst n587
+10 1
+.names n288 n587 n588
+01 1
+.names n586 n588 n589
+10 1
+.names n288 n349 n590
+10 1
+.names i_rx_phy_bit_cnt_pound_5b2_pound_5d rst n591
+10 1
+.names n288 n591 n592
+11 1
+.names n590 n592 n593
+10 1
+.names rst n354 n594
+10 1
+.names n352 n594 n595
+11 1
+.names n593 n595 n596
+10 1
+.names n589 n596 n597
+11 1
+.names n589 n596 n598
+10 1
+.names n597 n598 n599
+00 1
+.names n589 n596 n600
+01 1
+.names n599 n600 i_rx_phy_rx_valid1_in
+10 0
+.names i_rx_phy_rx_valid_r n_886 n602
+10 1
+.names RxValid_o n602 n603
+10 1
+.names RxValid_o n602 n604
+01 1
+.names n603 n604 n605
+00 1
+.names RxValid_o n602 n606
+11 1
+.names n605 n606 i_rx_phy_rx_valid_r_in
+10 0
+.names i_rx_phy_rxd_s0 i_rx_phy_rxd_s n608
+00 1
+.names i_rx_phy_rxd_s0 i_rx_phy_rxd_s n609
+01 1
+.names n608 n609 n610
+00 1
+.names i_rx_phy_rxd_s0 i_rx_phy_rxd_s n611
+10 1
+.names n610 n611 n612
+10 1
+.names i_rx_phy_rxd_s1_reg_Q n612 n613
+10 1
+.names n608 n613 n614
+01 1
+.names n612 n614 i_rx_phy_rxd_s_in
+00 0
+.names LineState_o_lb_1_rb_ i_rx_phy_rxdn_s0 i_rx_phy_rxdn_s_r_reg_Q_in
+11 1
+.names i_rx_phy_rxdn_s_r_reg_Q i_rx_phy_rxdn_s_r_reg_Q_in n617
+11 1
+.names i_rx_phy_rxdn_s_r_reg_Q i_rx_phy_rxdn_s_r_reg_Q_in n618
+01 1
+.names n617 n618 n619
+00 1
+.names i_rx_phy_rxdn_s_r_reg_Q i_rx_phy_rxdn_s_r_reg_Q_in n620
+10 1
+.names n619 n620 i_rx_phy_rxdn_s_in
+10 0
+.names LineState_o_lb_0_rb_ i_rx_phy_rxdp_s0 i_rx_phy_rxdp_s_r_reg_Q_in
+11 1
+.names i_rx_phy_rxdp_s_r_reg_Q i_rx_phy_rxdp_s_r_reg_Q_in n623
+11 1
+.names i_rx_phy_rxdp_s_r_reg_Q i_rx_phy_rxdp_s_r_reg_Q_in n624
+01 1
+.names n623 n624 n625
+00 1
+.names i_rx_phy_rxdp_s_r_reg_Q i_rx_phy_rxdp_s_r_reg_Q_in n626
+10 1
+.names n625 n626 i_rx_phy_rxdp_s_in
+10 0
+.names i_rx_phy_rxd_s i_rx_phy_sd_r n628
+00 1
+.names i_rx_phy_rxd_s i_rx_phy_sd_r n629
+11 1
+.names n628 n629 n630
+00 1
+.names n370 n630 n631
+00 1
+.names n630 n631 n632
+00 1
+.names i_rx_phy_sd_nrzi n370 n633
+00 1
+.names n370 n633 n634
+00 1
+.names n632 n634 n635
+00 1
+.names rst n635 n636
+10 1
+.names RxActive_o rst n637
+00 1
+.names n635 n637 n638
+11 1
+.names n636 n638 i_rx_phy_sd_nrzi_in
+00 0
+.names i_rx_phy_rxd_s n_886 n640
+00 1
+.names i_rx_phy_rxd_s n640 n641
+00 1
+.names i_rx_phy_sd_r n641 n642
+10 1
+.names i_rx_phy_sd_r n_886 n643
+01 1
+.names i_rx_phy_rxd_s n643 n644
+11 1
+.names n642 n644 i_rx_phy_sd_r_in
+00 0
+.names n_886 i_rx_phy_se0_r_reg_Q_in n646
+00 1
+.names n_886 i_rx_phy_se0_r_reg_Q_in n647
+10 1
+.names n646 n647 n648
+00 1
+.names n_886 i_rx_phy_se0_r_reg_Q_in n649
+01 1
+.names n648 n649 n650
+10 1
+.names n_886 n650 n651
+00 1
+.names i_rx_phy_se0_s n651 n652
+11 1
+.names n650 n652 i_rx_phy_se0_s_in
+00 0
+.names n220 n252 n654
+01 1
+.names n220 n252 n655
+00 1
+.names n654 n655 n656
+00 1
+.names n255 n656 n657
+01 1
+.names RxActive_o n657 n658
+11 1
+.names RxActive_o n657 n659
+01 1
+.names n658 n659 n660
+00 1
+.names RxActive_o n657 n661
+10 1
+.names n660 n661 n662
+10 1
+.names n_886 n662 n663
+01 1
+.names n_886 n662 n664
+00 1
+.names n663 n664 n665
+00 1
+.names n_886 n662 n666
+11 1
+.names n665 n666 n667
+10 1
+.names i_rx_phy_shift_en n_886 n668
+01 1
+.names i_rx_phy_shift_en n_886 n669
+11 1
+.names n668 n669 n670
+00 1
+.names i_rx_phy_shift_en n_886 n671
+00 1
+.names n670 n671 n672
+10 1
+.names n667 n672 n673
+11 1
+.names n667 n672 n674
+10 1
+.names n673 n674 n675
+00 1
+.names n667 n672 n676
+01 1
+.names n675 n676 i_rx_phy_shift_en_in
+10 0
+.names n237 n508 n678
+11 1
+.names n512 n678 n679
+00 1
+.names n509 n679 n680
+01 1
+.names n440 n680 n681
+10 1
+.names n680 n681 n682
+00 1
+.names n434 n440 n683
+10 1
+.names n680 n683 n684
+01 1
+.names n682 n684 n685
+10 1
+.names n_796 n495 n686
+11 1
+.names n237 n686 n687
+00 1
+.names n237 n687 n688
+00 1
+.names n231 n454 n689
+11 1
+.names n454 n689 n690
+10 1
+.names n688 n690 n691
+00 1
+.names n_796 n495 n692
+00 1
+.names n_796 n692 n693
+00 1
+.names n237 n495 n694
+11 1
+.names n_796 n694 n695
+01 1
+.names n693 n695 n696
+10 1
+.names n691 n696 n697
+01 1
+.names n691 n696 n698
+00 1
+.names n697 n698 n699
+00 1
+.names n691 n696 n700
+11 1
+.names n699 n700 n701
+10 1
+.names n685 n701 n702
+11 1
+.names n231 n701 n703
+10 1
+.names n685 n703 n704
+01 1
+.names n702 n704 n705
+00 1
+.names RxActive_o n220 n706
+10 1
+.names RxActive_o n220 n707
+00 1
+.names n706 n707 n708
+00 1
+.names RxActive_o n220 n709
+11 1
+.names n708 n709 n710
+10 1
+.names n705 n710 i_rx_phy_sync_err_reg_Q_in
+11 1
+.names i_tx_phy_append_eop i_tx_phy_append_eop_sync2 n712
+01 1
+.names i_tx_phy_append_eop i_tx_phy_append_eop_sync2 n713
+00 1
+.names n712 n713 n714
+00 1
+.names i_tx_phy_append_eop i_tx_phy_append_eop_sync2 n715
+11 1
+.names n714 n715 n716
+10 1
+.names i_tx_phy_data_done n_898 n717
+00 1
+.names i_tx_phy_state_pound_5b2_pound_5d n300 n718
+01 1
+.names i_tx_phy_state_pound_5b1_pound_5d n717 n719
+10 1
+.names i_tx_phy_state_pound_5b1_pound_5d n719 n720
+10 1
+.names n717 n718 n721
+10 1
+.names i_tx_phy_state_pound_5b1_pound_5d n721 n722
+11 1
+.names n720 n722 n723
+10 1
+.names rst n716 n724
+11 1
+.names rst n723 n725
+01 1
+.names n716 n725 n726
+01 1
+.names n724 n726 i_tx_phy_append_eop_in
+00 0
+.names i_tx_phy_append_eop n_886 n728
+10 1
+.names i_tx_phy_append_eop n728 n729
+10 1
+.names i_tx_phy_append_eop_sync1 n_886 n730
+11 1
+.names i_tx_phy_append_eop_sync1 n730 n731
+10 1
+.names n729 n731 n732
+00 1
+.names rst n732 i_tx_phy_append_eop_sync1_in
+10 1
+.names i_tx_phy_append_eop_sync1 n_886 n734
+10 1
+.names i_tx_phy_append_eop_sync1 n734 n735
+10 1
+.names i_tx_phy_append_eop_sync2 n_886 n736
+11 1
+.names i_tx_phy_append_eop_sync2 n736 n737
+10 1
+.names n735 n737 n738
+00 1
+.names rst n738 i_tx_phy_append_eop_sync2_in
+10 1
+.names i_tx_phy_append_eop_sync4 n_886 n740
+11 1
+.names i_tx_phy_append_eop_sync4 n740 n741
+10 1
+.names n_224 n_886 n742
+10 1
+.names n_224 n742 n743
+10 1
+.names n741 n743 n744
+00 1
+.names rst n744 i_tx_phy_append_eop_sync4_in
+10 1
+.names i_tx_phy_one_cnt_pound_5b1_pound_5d \
+ i_tx_phy_one_cnt_pound_5b2_pound_5d n746
+11 1
+.names i_tx_phy_one_cnt_pound_5b0_pound_5d n746 n747
+10 1
+.names i_tx_phy_one_cnt_pound_5b0_pound_5d n746 n748
+00 1
+.names n747 n748 n749
+00 1
+.names i_tx_phy_one_cnt_pound_5b0_pound_5d n746 n750
+11 1
+.names n749 n750 n751
+10 1
+.names n_886 n751 n752
+01 1
+.names n_886 n751 n753
+11 1
+.names n752 n753 n754
+00 1
+.names n_886 n751 n755
+00 1
+.names n754 n755 n756
+10 1
+.names i_tx_phy_bit_cnt_pound_5b0_pound_5d n756 n757
+01 1
+.names i_tx_phy_bit_cnt_pound_5b0_pound_5d n756 n758
+11 1
+.names n757 n758 n759
+00 1
+.names i_tx_phy_bit_cnt_pound_5b0_pound_5d n756 n760
+00 1
+.names n759 n760 n761
+10 1
+.names n_886 n751 n762
+10 1
+.names i_tx_phy_bit_cnt_pound_5b0_pound_5d n762 n763
+10 1
+.names i_tx_phy_bit_cnt_pound_5b0_pound_5d n762 n764
+00 1
+.names n763 n764 n765
+00 1
+.names i_tx_phy_bit_cnt_pound_5b0_pound_5d n762 n766
+11 1
+.names n765 n766 n767
+10 1
+.names n_238 rst n768
+10 1
+.names n_238 rst n769
+01 1
+.names n768 n769 n770
+00 1
+.names n_238 rst n771
+00 1
+.names n770 n771 n772
+10 1
+.names n761 n772 n773
+11 1
+.names n767 n772 n774
+10 1
+.names n761 n774 n775
+01 1
+.names n773 n775 i_tx_phy_bit_cnt_pound_5b0_pound_5d_in
+00 0
+.names i_tx_phy_bit_cnt_pound_5b1_pound_5d n756 n777
+01 1
+.names i_tx_phy_bit_cnt_pound_5b1_pound_5d n756 n778
+11 1
+.names n777 n778 n779
+00 1
+.names i_tx_phy_bit_cnt_pound_5b1_pound_5d n756 n780
+00 1
+.names n779 n780 n781
+10 1
+.names i_tx_phy_bit_cnt_pound_5b0_pound_5d \
+ i_tx_phy_bit_cnt_pound_5b1_pound_5d n782
+10 1
+.names i_tx_phy_bit_cnt_pound_5b0_pound_5d \
+ i_tx_phy_bit_cnt_pound_5b1_pound_5d n783
+00 1
+.names n782 n783 n784
+00 1
+.names i_tx_phy_bit_cnt_pound_5b0_pound_5d \
+ i_tx_phy_bit_cnt_pound_5b1_pound_5d n785
+11 1
+.names n784 n785 n786
+10 1
+.names i_tx_phy_bit_cnt_pound_5b0_pound_5d \
+ i_tx_phy_bit_cnt_pound_5b1_pound_5d n787
+01 1
+.names n785 n787 n788
+00 1
+.names n783 n788 n789
+01 1
+.names n786 n789 n790
+11 1
+.names n786 n789 n791
+10 1
+.names n790 n791 n792
+00 1
+.names n786 n789 n793
+01 1
+.names n792 n793 n794
+10 1
+.names n762 n794 n795
+01 1
+.names n762 n794 n796
+11 1
+.names n795 n796 n797
+00 1
+.names n762 n794 n798
+00 1
+.names n797 n798 n799
+10 1
+.names n772 n781 n800
+11 1
+.names n772 n799 n801
+01 1
+.names n781 n801 n802
+01 1
+.names n800 n802 i_tx_phy_bit_cnt_pound_5b1_pound_5d_in
+00 0
+.names i_tx_phy_bit_cnt_pound_5b2_pound_5d n785 n804
+00 1
+.names i_tx_phy_bit_cnt_pound_5b2_pound_5d n785 n805
+11 1
+.names n804 n805 n806
+00 1
+.names i_tx_phy_bit_cnt_pound_5b2_pound_5d n785 n807
+01 1
+.names n806 n807 n808
+10 1
+.names i_tx_phy_bit_cnt_pound_5b2_pound_5d n785 n809
+10 1
+.names n804 n809 n810
+00 1
+.names n805 n810 n811
+01 1
+.names n756 n808 n812
+11 1
+.names n756 n811 n813
+01 1
+.names n808 n813 n814
+01 1
+.names n812 n814 n815
+00 1
+.names n756 n815 n816
+11 1
+.names i_tx_phy_bit_cnt_pound_5b2_pound_5d n815 n817
+00 1
+.names n756 n817 n818
+01 1
+.names n816 n818 n819
+00 1
+.names n772 n819 i_tx_phy_bit_cnt_pound_5b2_pound_5d_in
+11 1
+.names i_tx_phy_data_done n306 n821
+11 1
+.names i_tx_phy_tx_ip n306 n822
+00 1
+.names i_tx_phy_data_done n822 n823
+01 1
+.names n821 n823 i_tx_phy_data_done_in
+00 0
+.names n294 n295 n825
+10 1
+.names TxValid_i n_898 n826
+00 1
+.names n294 n826 n827
+11 1
+.names n825 n827 n828
+10 1
+.names DataOut_i_lb_7_rb_ i_tx_phy_ld_data_reg_Q n829
+00 1
+.names DataOut_i_lb_7_rb_ i_tx_phy_ld_data_reg_Q n830
+10 1
+.names n829 n830 n831
+00 1
+.names DataOut_i_lb_7_rb_ i_tx_phy_ld_data_reg_Q n832
+01 1
+.names n831 n832 n833
+10 1
+.names i_tx_phy_hold_reg_10 i_tx_phy_ld_data_reg_Q n834
+01 1
+.names i_tx_phy_hold_reg_10 i_tx_phy_ld_data_reg_Q n835
+00 1
+.names n834 n835 n836
+00 1
+.names i_tx_phy_hold_reg_10 i_tx_phy_ld_data_reg_Q n837
+11 1
+.names n836 n837 n838
+10 1
+.names n828 n833 n839
+01 1
+.names n828 n839 n840
+00 1
+.names n833 n838 n841
+01 1
+.names n828 n841 n842
+01 1
+.names n840 n842 i_tx_phy_hold_reg_10_in
+10 0
+.names DataOut_i_lb_1_rb_ i_tx_phy_ld_data_reg_Q n844
+00 1
+.names DataOut_i_lb_1_rb_ n844 n845
+00 1
+.names i_tx_phy_hold_reg_4 n845 n846
+10 1
+.names i_tx_phy_hold_reg_4 i_tx_phy_ld_data_reg_Q n847
+01 1
+.names DataOut_i_lb_1_rb_ n847 n848
+11 1
+.names n846 n848 n849
+00 1
+.names n828 n849 i_tx_phy_hold_reg_4_in
+00 1
+.names DataOut_i_lb_2_rb_ i_tx_phy_ld_data_reg_Q n851
+00 1
+.names DataOut_i_lb_2_rb_ n851 n852
+00 1
+.names i_tx_phy_hold_reg_5 n852 n853
+10 1
+.names i_tx_phy_hold_reg_5 i_tx_phy_ld_data_reg_Q n854
+01 1
+.names DataOut_i_lb_2_rb_ n854 n855
+11 1
+.names n853 n855 n856
+00 1
+.names n828 n856 i_tx_phy_hold_reg_5_in
+00 1
+.names DataOut_i_lb_3_rb_ i_tx_phy_ld_data_reg_Q n858
+00 1
+.names DataOut_i_lb_3_rb_ n858 n859
+00 1
+.names i_tx_phy_hold_reg_6 n859 n860
+10 1
+.names i_tx_phy_hold_reg_6 i_tx_phy_ld_data_reg_Q n861
+01 1
+.names DataOut_i_lb_3_rb_ n861 n862
+11 1
+.names n860 n862 n863
+00 1
+.names n828 n863 i_tx_phy_hold_reg_6_in
+00 1
+.names DataOut_i_lb_4_rb_ i_tx_phy_ld_data_reg_Q n865
+00 1
+.names DataOut_i_lb_4_rb_ n865 n866
+00 1
+.names i_tx_phy_hold_reg_7 n866 n867
+10 1
+.names i_tx_phy_hold_reg_7 i_tx_phy_ld_data_reg_Q n868
+01 1
+.names DataOut_i_lb_4_rb_ n868 n869
+11 1
+.names n867 n869 n870
+00 1
+.names n828 n870 i_tx_phy_hold_reg_7_in
+00 1
+.names DataOut_i_lb_5_rb_ i_tx_phy_ld_data_reg_Q n872
+00 1
+.names DataOut_i_lb_5_rb_ n872 n873
+00 1
+.names i_tx_phy_hold_reg_8 n873 n874
+10 1
+.names i_tx_phy_hold_reg_8 i_tx_phy_ld_data_reg_Q n875
+01 1
+.names DataOut_i_lb_5_rb_ n875 n876
+11 1
+.names n874 n876 n877
+00 1
+.names n828 n877 i_tx_phy_hold_reg_8_in
+00 1
+.names DataOut_i_lb_6_rb_ i_tx_phy_ld_data_reg_Q n879
+00 1
+.names DataOut_i_lb_6_rb_ n879 n880
+00 1
+.names i_tx_phy_hold_reg_9 n880 n881
+10 1
+.names i_tx_phy_hold_reg_9 i_tx_phy_ld_data_reg_Q n882
+01 1
+.names DataOut_i_lb_6_rb_ n882 n883
+11 1
+.names n881 n883 n884
+00 1
+.names n828 n884 i_tx_phy_hold_reg_9_in
+00 1
+.names DataOut_i_lb_0_rb_ i_tx_phy_ld_data_reg_Q n886
+00 1
+.names DataOut_i_lb_0_rb_ n886 n887
+00 1
+.names i_tx_phy_hold_reg n887 n888
+10 1
+.names i_tx_phy_hold_reg i_tx_phy_ld_data_reg_Q n889
+01 1
+.names DataOut_i_lb_0_rb_ n889 n890
+11 1
+.names n888 n890 n891
+00 1
+.names n828 n891 i_tx_phy_hold_reg_in
+00 1
+.names i_tx_phy_state_pound_5b2_pound_5d n_898 n893
+00 1
+.names i_tx_phy_state_pound_5b1_pound_5d n893 n894
+11 1
+.names n317 n894 n895
+10 1
+.names n317 n895 n896
+10 1
+.names n295 n894 n897
+11 1
+.names n317 n897 n898
+11 1
+.names n896 n898 n899
+10 1
+.names n894 n899 n900
+00 1
+.names n301 n900 n901
+11 1
+.names n899 n901 i_tx_phy_ld_data_reg_Q_in
+00 0
+.names i_tx_phy_one_cnt_pound_5b0_pound_5d n_886 n903
+01 1
+.names i_tx_phy_one_cnt_pound_5b0_pound_5d n_886 n904
+00 1
+.names n903 n904 n905
+00 1
+.names i_tx_phy_one_cnt_pound_5b0_pound_5d n_886 n906
+11 1
+.names n905 n906 n907
+10 1
+.names i_tx_phy_sd_raw_o n751 n908
+01 1
+.names i_tx_phy_sd_raw_o n751 n909
+11 1
+.names n908 n909 n910
+00 1
+.names i_tx_phy_sd_raw_o n751 n911
+00 1
+.names n910 n911 n912
+10 1
+.names i_tx_phy_one_cnt_pound_5b0_pound_5d n912 n913
+11 1
+.names n912 n913 n914
+10 1
+.names n904 n912 n915
+11 1
+.names n914 n915 n916
+10 1
+.names n772 n907 n917
+11 1
+.names n772 n916 n918
+01 1
+.names n907 n918 n919
+01 1
+.names n917 n919 i_tx_phy_one_cnt_pound_5b0_pound_5d_in
+00 0
+.names i_tx_phy_one_cnt_pound_5b1_pound_5d n_886 n921
+01 1
+.names i_tx_phy_one_cnt_pound_5b1_pound_5d n_886 n922
+00 1
+.names n921 n922 n923
+00 1
+.names i_tx_phy_one_cnt_pound_5b1_pound_5d n_886 n924
+11 1
+.names n923 n924 n925
+10 1
+.names i_tx_phy_one_cnt_pound_5b0_pound_5d \
+ i_tx_phy_one_cnt_pound_5b1_pound_5d n926
+10 1
+.names i_tx_phy_one_cnt_pound_5b0_pound_5d \
+ i_tx_phy_one_cnt_pound_5b1_pound_5d n927
+01 1
+.names n926 n927 n928
+00 1
+.names n_886 n912 n929
+11 1
+.names n928 n929 n930
+10 1
+.names n928 n929 n931
+11 1
+.names n930 n931 n932
+00 1
+.names n928 n929 n933
+00 1
+.names n932 n933 n934
+10 1
+.names n772 n925 n935
+11 1
+.names n772 n934 n936
+01 1
+.names n925 n936 n937
+01 1
+.names n935 n937 i_tx_phy_one_cnt_pound_5b1_pound_5d_in
+00 0
+.names i_tx_phy_one_cnt_pound_5b2_pound_5d n_886 n939
+01 1
+.names i_tx_phy_one_cnt_pound_5b2_pound_5d n_886 n940
+00 1
+.names n939 n940 n941
+00 1
+.names i_tx_phy_one_cnt_pound_5b2_pound_5d n_886 n942
+11 1
+.names n941 n942 n943
+10 1
+.names i_tx_phy_one_cnt_pound_5b0_pound_5d \
+ i_tx_phy_one_cnt_pound_5b1_pound_5d n944
+11 1
+.names i_tx_phy_one_cnt_pound_5b2_pound_5d n944 n945
+01 1
+.names i_tx_phy_one_cnt_pound_5b2_pound_5d n944 n946
+10 1
+.names n945 n946 n947
+00 1
+.names n929 n947 n948
+01 1
+.names n929 n947 n949
+11 1
+.names n948 n949 n950
+00 1
+.names n929 n947 n951
+00 1
+.names n950 n951 n952
+10 1
+.names n772 n943 n953
+11 1
+.names n772 n952 n954
+01 1
+.names n943 n954 n955
+01 1
+.names n953 n955 i_tx_phy_one_cnt_pound_5b2_pound_5d_in
+00 0
+.names n_886 rst n957
+01 1
+.names i_tx_phy_sd_bs_o n957 n958
+00 1
+.names i_tx_phy_sd_bs_o n957 n959
+10 1
+.names n958 n959 n960
+00 1
+.names i_tx_phy_sd_bs_o n957 n961
+01 1
+.names n960 n961 n962
+10 1
+.names i_tx_phy_sd_raw_o n762 n963
+01 1
+.names n762 n963 n964
+10 1
+.names i_tx_phy_sd_raw_o n772 n965
+10 1
+.names n762 n965 n966
+11 1
+.names n964 n966 n967
+10 1
+.names n962 n967 n968
+11 1
+.names n962 n967 n969
+10 1
+.names n968 n969 n970
+00 1
+.names n962 n967 n971
+01 1
+.names n970 n971 i_tx_phy_sd_bs_o_in
+10 0
+.names i_tx_phy_sd_bs_o i_tx_phy_sd_nrzi_o n973
+00 1
+.names i_tx_phy_sd_bs_o i_tx_phy_sd_nrzi_o n974
+01 1
+.names n973 n974 n975
+00 1
+.names i_tx_phy_sd_bs_o i_tx_phy_sd_nrzi_o n976
+10 1
+.names n975 n976 n977
+10 1
+.names i_tx_phy_sd_nrzi_o n977 n978
+00 1
+.names i_tx_phy_sd_bs_o n978 n979
+01 1
+.names n977 n979 n980
+00 1
+.names n_886 n980 n981
+00 1
+.names n980 n981 n982
+00 1
+.names i_tx_phy_sd_nrzi_o n_886 n983
+11 1
+.names i_tx_phy_sd_nrzi_o n983 n984
+10 1
+.names n982 n984 n985
+00 1
+.names n_238 n985 n986
+01 1
+.names n985 n986 n987
+10 1
+.names n768 n985 n988
+11 1
+.names n987 n988 n989
+10 1
+.names n_238 n985 n990
+11 1
+.names i_tx_phy_txoe_r1 rst n991
+01 1
+.names n990 n991 n992
+11 1
+.names n989 n992 i_tx_phy_sd_nrzi_o_in
+10 0
+.names i_tx_phy_hold_reg_d_17 n785 n994
+01 1
+.names n785 n994 n995
+10 1
+.names i_tx_phy_bit_cnt_pound_5b2_pound_5d i_tx_phy_hold_reg_d_17 n996
+01 1
+.names n785 n996 n997
+11 1
+.names n995 n997 n998
+10 1
+.names i_tx_phy_hold_reg_d_reg_pound_5b3_pound_5d_Q n998 n999
+10 1
+.names n811 n999 n1000
+11 1
+.names n998 n1000 n1001
+00 1
+.names i_tx_phy_hold_reg_d_reg_pound_5b1_pound_5d_Q n789 n1002
+11 1
+.names n783 n1002 n1003
+00 1
+.names i_tx_phy_hold_reg_d n1002 n1004
+01 1
+.names n783 n1004 n1005
+11 1
+.names n1003 n1005 n1006
+00 1
+.names i_tx_phy_bit_cnt_pound_5b2_pound_5d n1006 n1007
+01 1
+.names n1001 n1007 n1008
+10 1
+.names i_tx_phy_hold_reg_d_reg_pound_5b6_pound_5d_Q n786 n1009
+01 1
+.names i_tx_phy_hold_reg_d_reg_pound_5b6_pound_5d_Q n786 n1010
+10 1
+.names n1009 n1010 n1011
+00 1
+.names i_tx_phy_hold_reg_d_reg_pound_5b6_pound_5d_Q n786 n1012
+00 1
+.names n1011 n1012 n1013
+10 1
+.names n789 n1013 n1014
+10 1
+.names i_tx_phy_hold_reg_d_reg_pound_5b5_pound_5d_Q n1014 n1015
+11 1
+.names n1013 n1015 n1016
+00 1
+.names i_tx_phy_bit_cnt_pound_5b2_pound_5d i_tx_phy_hold_reg_d_12 n1017
+10 1
+.names i_tx_phy_bit_cnt_pound_5b2_pound_5d i_tx_phy_hold_reg_d_12 n1018
+00 1
+.names n1017 n1018 n1019
+00 1
+.names i_tx_phy_bit_cnt_pound_5b2_pound_5d i_tx_phy_hold_reg_d_12 n1020
+11 1
+.names n1019 n1020 n1021
+10 1
+.names i_tx_phy_hold_reg_d_14 n783 n1022
+10 1
+.names i_tx_phy_hold_reg_d_14 n1022 n1023
+10 1
+.names i_tx_phy_bit_cnt_pound_5b2_pound_5d n783 n1024
+01 1
+.names i_tx_phy_hold_reg_d_14 n1024 n1025
+11 1
+.names n1023 n1025 n1026
+10 1
+.names n786 n1026 n1027
+10 1
+.names n1021 n1027 n1028
+11 1
+.names n1026 n1028 n1029
+00 1
+.names n1016 n1029 n1030
+11 1
+.names i_tx_phy_bit_cnt_pound_5b2_pound_5d n1029 n1031
+00 1
+.names n1016 n1031 n1032
+01 1
+.names n1030 n1032 n1033
+00 1
+.names n_238 n1008 n1034
+10 1
+.names n_238 n1033 n1035
+01 1
+.names n1008 n1035 n1036
+11 1
+.names n1034 n1036 i_tx_phy_sd_raw_o_in
+00 0
+.names i_tx_phy_bit_cnt_pound_5b1_pound_5d n751 n1038
+00 1
+.names n751 n1038 n1039
+00 1
+.names i_tx_phy_bit_cnt_pound_5b1_pound_5d \
+ i_tx_phy_bit_cnt_pound_5b2_pound_5d n1040
+10 1
+.names n751 n1040 n1041
+01 1
+.names n1039 n1041 n1042
+10 1
+.names i_tx_phy_bit_cnt_pound_5b1_pound_5d n751 n1043
+10 1
+.names i_tx_phy_bit_cnt_pound_5b0_pound_5d \
+ i_tx_phy_bit_cnt_pound_5b2_pound_5d n1044
+01 1
+.names n1043 n1044 n1045
+11 1
+.names n1042 n1045 i_tx_phy_sft_done_in
+10 1
+.names n_898 n291 n1047
+11 1
+.names i_tx_phy_state_pound_5b1_pound_5d n_224 n1048
+00 1
+.names n_224 n1048 n1049
+00 1
+.names i_tx_phy_state_pound_5b1_pound_5d n1047 n1050
+10 1
+.names n_224 n1050 n1051
+01 1
+.names n1049 n1051 n1052
+10 1
+.names n295 n300 n1053
+10 1
+.names i_tx_phy_state_pound_5b1_pound_5d n1053 n1054
+01 1
+.names n295 n1054 n1055
+10 1
+.names i_tx_phy_state_pound_5b1_pound_5d n894 n1056
+00 1
+.names i_tx_phy_state_pound_5b1_pound_5d n894 n1057
+10 1
+.names n1056 n1057 n1058
+00 1
+.names i_tx_phy_state_pound_5b1_pound_5d n894 n1059
+01 1
+.names n1058 n1059 n1060
+10 1
+.names n1052 n1055 n1061
+01 1
+.names n1052 n1061 n1062
+00 1
+.names n1055 n1060 n1063
+01 1
+.names n1052 n1063 n1064
+01 1
+.names n1062 n1064 n1065
+10 1
+.names n1052 n1055 n1066
+00 1
+.names n723 n1060 n1067
+10 1
+.names n1066 n1067 n1068
+11 1
+.names n1065 n1068 n1069
+10 1
+.names rst n1069 i_tx_phy_state_pound_5b1_pound_5d_in
+10 1
+.names i_tx_phy_state_pound_5b1_pound_5d n_886 n1071
+01 1
+.names i_tx_phy_state_pound_5b1_pound_5d n1071 n1072
+00 1
+.names i_tx_phy_state_pound_5b2_pound_5d n_886 n1073
+00 1
+.names i_tx_phy_state_pound_5b1_pound_5d n1073 n1074
+01 1
+.names n1072 n1074 n1075
+10 1
+.names i_tx_phy_state_pound_5b1_pound_5d n_886 n1076
+00 1
+.names i_tx_phy_state_pound_5b2_pound_5d n_898 n1077
+10 1
+.names n1076 n1077 n1078
+11 1
+.names n1075 n1078 n1079
+10 1
+.names i_tx_phy_state_pound_5b1_pound_5d i_tx_phy_state_pound_5b2_pound_5d \
+ n1080
+00 1
+.names i_tx_phy_state_pound_5b1_pound_5d n1080 n1081
+00 1
+.names i_tx_phy_state_pound_5b2_pound_5d n_898 n1082
+11 1
+.names i_tx_phy_state_pound_5b1_pound_5d n1082 n1083
+01 1
+.names n1081 n1083 n1084
+10 1
+.names n1079 n1084 n1085
+11 1
+.names n1079 n1084 n1086
+10 1
+.names n1085 n1086 n1087
+00 1
+.names n1079 n1084 n1088
+01 1
+.names n1087 n1088 n1089
+10 1
+.names n_224 n_886 n1090
+01 1
+.names n1084 n1090 n1091
+00 1
+.names n1084 n1090 n1092
+01 1
+.names n1091 n1092 n1093
+00 1
+.names n1084 n1090 n1094
+10 1
+.names n1093 n1094 n1095
+10 1
+.names n1089 n1095 n1096
+10 1
+.names i_tx_phy_state_pound_5b2_pound_5d n1095 n1097
+01 1
+.names n1089 n1097 n1098
+01 1
+.names n1096 n1098 n1099
+00 1
+.names n_224 n1047 n1100
+01 1
+.names i_tx_phy_state_pound_5b2_pound_5d n1100 n1101
+01 1
+.names n1047 n1101 n1102
+10 1
+.names rst n1099 n1103
+11 1
+.names rst n1102 n1104
+01 1
+.names n1099 n1104 n1105
+01 1
+.names n1103 n1105 i_tx_phy_state_pound_5b2_pound_5d_in
+00 0
+.names i_tx_phy_tx_ip n_224 n1107
+01 1
+.names i_tx_phy_tx_ip n_224 n1108
+11 1
+.names n1107 n1108 n1109
+00 1
+.names i_tx_phy_tx_ip n_224 n1110
+00 1
+.names n1109 n1110 n1111
+10 1
+.names rst n1111 n1112
+11 1
+.names rst n828 n1113
+01 1
+.names n1111 n1113 n1114
+01 1
+.names n1112 n1114 i_tx_phy_tx_ip_in
+00 0
+.names n_238 n_886 n1116
+10 1
+.names n_238 n1116 n1117
+10 1
+.names i_tx_phy_txoe_r1 n_886 n1118
+11 1
+.names i_tx_phy_txoe_r1 n1118 n1119
+10 1
+.names n1117 n1119 n1120
+00 1
+.names rst n1120 i_tx_phy_txoe_r1_in
+10 1
+.names i_tx_phy_txoe_r2 n_886 n1122
+11 1
+.names i_tx_phy_txoe_r2 n1122 n1123
+10 1
+.names i_tx_phy_txoe_r1 n_886 n1124
+10 1
+.names i_tx_phy_txoe_r1 n1124 n1125
+10 1
+.names n1123 n1125 n1126
+00 1
+.names rst n1126 i_tx_phy_txoe_r2_in
+10 1
+.names n_224 n957 n1128
+00 1
+.names n_224 n957 n1129
+10 1
+.names n1128 n1129 n1130
+00 1
+.names n_224 n957 n1131
+01 1
+.names n1130 n1131 n1132
+10 1
+.names i_tx_phy_append_eop_sync2 i_tx_phy_append_eop_sync4 n1133
+01 1
+.names i_tx_phy_append_eop_sync2 n_224 n1134
+10 1
+.names i_tx_phy_append_eop_sync4 n1134 n1135
+01 1
+.names n1133 n1135 n1136
+00 1
+.names n_886 n1136 n1137
+10 1
+.names n_886 n1137 n1138
+10 1
+.names rst n1136 n1139
+01 1
+.names n_886 n1139 n1140
+11 1
+.names n1138 n1140 n1141
+10 1
+.names n1132 n1141 n1142
+11 1
+.names n1132 n1141 n1143
+10 1
+.names n1142 n1143 n1144
+00 1
+.names n1132 n1141 n1145
+01 1
+.names n1144 n1145 n_224_in
+10 0
+.names i_tx_phy_tx_ip n_886 n1147
+10 1
+.names i_tx_phy_tx_ip n1147 n1148
+10 1
+.names n_238 n_886 n1149
+11 1
+.names n_238 n1149 n1150
+10 1
+.names n1148 n1150 n1151
+00 1
+.names rst n1151 n_238_in
+10 1
+.names n_886 usb_rst n1153
+10 1
+.names rst_cnt_pound_5b0_pound_5d rst_cnt_pound_5b1_pound_5d n1154
+11 1
+.names n_306 n1154 n1155
+01 1
+.names n1154 n1155 n1156
+10 1
+.names n_306 n1155 n1157
+01 1
+.names n1154 n1157 n1158
+01 1
+.names n1156 n1158 n1159
+00 1
+.names n1153 n1159 n1160
+11 1
+.names n1153 n1160 n1161
+10 1
+.names n_306 n1160 n1162
+01 1
+.names n1153 n1162 n1163
+01 1
+.names n1161 n1163 n1164
+00 1
+.names LineState_o_lb_0_rb_ LineState_o_lb_1_rb_ n1165
+00 1
+.names rst n1165 n1166
+00 1
+.names rst n1165 n1167
+10 1
+.names n1166 n1167 n1168
+00 1
+.names rst n1165 n1169
+01 1
+.names n1168 n1169 n1170
+10 1
+.names n1164 n1170 n_306_in
+11 1
+.names n_353 n288 n1172
+01 1
+.names n_353 n288 n1173
+00 1
+.names n1172 n1173 n1174
+00 1
+.names n_353 n288 n1175
+11 1
+.names n1174 n1175 n1176
+10 1
+.names i_rx_phy_bit_cnt_pound_5b0_pound_5d n_353 n1177
+10 1
+.names i_rx_phy_bit_cnt_pound_5b0_pound_5d n_353 n1178
+01 1
+.names n1177 n1178 n1179
+00 1
+.names n288 n1179 n1180
+01 1
+.names n288 n1179 n1181
+11 1
+.names n1180 n1181 n1182
+00 1
+.names n288 n1179 n1183
+00 1
+.names n1182 n1183 n1184
+10 1
+.names n344 n1176 n1185
+11 1
+.names n344 n1184 n1186
+01 1
+.names n1176 n1186 n1187
+01 1
+.names n1185 n1187 n_353_in
+00 0
+.names n_796 n220 n1189
+01 1
+.names n_796 n220 n1190
+11 1
+.names n1189 n1190 n1191
+00 1
+.names n_796 n220 n1192
+00 1
+.names n1191 n1192 n1193
+10 1
+.names n459 n513 n1194
+00 1
+.names n495 n686 n1195
+10 1
+.names n_796 n237 n1196
+00 1
+.names n495 n1196 n1197
+11 1
+.names n1195 n1197 n1198
+10 1
+.names n439 n1194 n1199
+11 1
+.names n1194 n1199 n1200
+10 1
+.names n439 n1198 n1201
+01 1
+.names n1194 n1201 n1202
+11 1
+.names n1200 n1202 n1203
+10 1
+.names n220 n1203 n1204
+01 1
+.names n220 n1203 n1205
+11 1
+.names n1204 n1205 n1206
+00 1
+.names n220 n1203 n1207
+00 1
+.names n1206 n1207 n1208
+10 1
+.names rst n1193 n1209
+11 1
+.names rst n1208 n1210
+01 1
+.names n1193 n1210 n1211
+01 1
+.names n1209 n1211 n_796_in
+00 0
+.names n828 n1084 n1213
+00 1
+.names n828 n1090 n1214
+10 1
+.names n1084 n1214 n1215
+11 1
+.names n1213 n1215 n1216
+00 1
+.names n_898 n894 n1217
+01 1
+.names n_898 n894 n1218
+10 1
+.names n1217 n1218 n1219
+00 1
+.names n_898 n894 n1220
+00 1
+.names n1219 n1220 n1221
+10 1
+.names n_898 n294 n1222
+10 1
+.names n_898 n294 n1223
+00 1
+.names n1222 n1223 n1224
+00 1
+.names n295 n1224 n1225
+01 1
+.names n1084 n1225 n1226
+11 1
+.names n1084 n1225 n1227
+01 1
+.names n1226 n1227 n1228
+00 1
+.names n1084 n1225 n1229
+10 1
+.names n1228 n1229 n1230
+10 1
+.names n_898 n1230 n1231
+01 1
+.names n_898 n1230 n1232
+11 1
+.names n1231 n1232 n1233
+00 1
+.names n_898 n1230 n1234
+00 1
+.names n1233 n1234 n1235
+10 1
+.names n1216 n1221 n1236
+01 1
+.names n1216 n1236 n1237
+00 1
+.names n1221 n1235 n1238
+01 1
+.names n1216 n1238 n1239
+01 1
+.names n1237 n1239 n1240
+10 1
+.names n1216 n1221 n1241
+00 1
+.names n723 n1235 n1242
+10 1
+.names n1241 n1242 n1243
+11 1
+.names n1240 n1243 n1244
+10 1
+.names n_224 n_898 n1245
+01 1
+.names n295 n300 n1246
+01 1
+.names n295 n300 n1247
+00 1
+.names n1246 n1247 n1248
+00 1
+.names n301 n1248 n1249
+01 1
+.names n1079 n1249 n1250
+11 1
+.names n1079 n1249 n1251
+10 1
+.names n1250 n1251 n1252
+00 1
+.names n1079 n1249 n1253
+01 1
+.names n1252 n1253 n1254
+10 1
+.names n1047 n1245 n1255
+10 1
+.names n1047 n1255 n1256
+10 1
+.names n_898 n1254 n1257
+00 1
+.names n1254 n1257 n1258
+00 1
+.names n1256 n1258 n1259
+00 1
+.names rst n1244 n1260
+10 1
+.names rst n1259 n1261
+00 1
+.names n1244 n1261 n1262
+11 1
+.names n1260 n1262 n_898_in
+00 0
+.names rst_cnt_pound_5b0_pound_5d n1153 n1264
+01 1
+.names n1153 n1264 n1265
+10 1
+.names rst_cnt_pound_5b0_pound_5d n1264 n1266
+01 1
+.names n1153 n1266 n1267
+01 1
+.names n1265 n1267 n1268
+00 1
+.names n1170 n1268 rst_cnt_pound_5b0_pound_5d_in
+11 1
+.names rst_cnt_pound_5b1_pound_5d n1153 n1270
+01 1
+.names rst_cnt_pound_5b1_pound_5d n1153 n1271
+11 1
+.names n1270 n1271 n1272
+00 1
+.names rst_cnt_pound_5b1_pound_5d n1153 n1273
+00 1
+.names n1272 n1273 n1274
+10 1
+.names rst_cnt_pound_5b0_pound_5d rst_cnt_pound_5b1_pound_5d n1275
+10 1
+.names rst_cnt_pound_5b0_pound_5d rst_cnt_pound_5b1_pound_5d n1276
+01 1
+.names n1275 n1276 n1277
+00 1
+.names n1153 n1277 n1278
+01 1
+.names n1153 n1277 n1279
+11 1
+.names n1278 n1279 n1280
+00 1
+.names n1153 n1277 n1281
+00 1
+.names n1280 n1281 n1282
+10 1
+.names n1170 n1274 n1283
+11 1
+.names n1170 n1282 n1284
+01 1
+.names n1274 n1284 n1285
+01 1
+.names n1283 n1285 rst_cnt_pound_5b1_pound_5d_in
+00 0
+.names n_306 n1154 n1287
+11 1
+.names rst_cnt_pound_5b3_pound_5d n1287 n1288
+01 1
+.names rst_cnt_pound_5b3_pound_5d n1287 n1289
+11 1
+.names n1288 n1289 n1290
+00 1
+.names rst_cnt_pound_5b3_pound_5d n1287 n1291
+00 1
+.names n1290 n1291 n1292
+10 1
+.names rst_cnt_pound_5b3_pound_5d n1287 n1293
+10 1
+.names n1291 n1293 n1294
+00 1
+.names n1289 n1294 n1295
+01 1
+.names n1153 n1292 n1296
+11 1
+.names n1153 n1295 n1297
+01 1
+.names n1292 n1297 n1298
+01 1
+.names n1296 n1298 n1299
+00 1
+.names n1153 n1299 n1300
+11 1
+.names rst_cnt_pound_5b3_pound_5d n1299 n1301
+00 1
+.names n1153 n1301 n1302
+01 1
+.names n1300 n1302 n1303
+00 1
+.names n1170 n1303 rst_cnt_pound_5b3_pound_5d_in
+11 1
+.names n_306 rst_cnt_pound_5b3_pound_5d n1305
+11 1
+.names n1154 n1305 n1306
+00 1
+.names n1154 n1305 n1307
+10 1
+.names n1306 n1307 n1308
+00 1
+.names n1154 n1305 n1309
+01 1
+.names n1308 n1309 n1310
+10 1
+.names rst_cnt_pound_5b4_pound_5d n1310 n1311
+00 1
+.names rst_cnt_pound_5b4_pound_5d n1311 n1312
+00 1
+.names rst_cnt_pound_5b4_pound_5d n1312 n1313
+00 1
+.names rst_cnt_pound_5b4_pound_5d n1310 usb_rst_in
+11 1
+.names rst_cnt_pound_5b4_pound_5d usb_rst_in n1315
+11 1
+.names n1313 n1315 n1316
+00 1
+.names rst_cnt_pound_5b4_pound_5d n1153 n1317
+01 1
+.names rst_cnt_pound_5b4_pound_5d n1153 n1318
+11 1
+.names n1317 n1318 n1319
+00 1
+.names rst_cnt_pound_5b4_pound_5d n1153 n1320
+00 1
+.names n1319 n1320 n1321
+10 1
+.names n1153 n1321 n1322
+10 1
+.names n1316 n1322 n1323
+11 1
+.names n1321 n1323 n1324
+00 1
+.names n1170 n1324 n1325
+01 1
+.names n1170 n1324 n1326
+11 1
+.names n1325 n1326 n1327
+00 1
+.names n1170 n1324 n1328
+00 1
+.names n1327 n1328 rst_cnt_pound_5b4_pound_5d_in
+10 1
+.names n_886 txdn n1330
+10 1
+.names n_886 txdn n1331
+11 1
+.names n1330 n1331 n1332
+00 1
+.names n_886 txdn n1333
+00 1
+.names n1332 n1333 n1334
+10 1
+.names n_886 phy_tx_mode n1335
+01 1
+.names n_886 phy_tx_mode n1336
+10 1
+.names n1335 n1336 n1337
+00 1
+.names n_886 phy_tx_mode n1338
+00 1
+.names n1337 n1338 n1339
+10 1
+.names i_tx_phy_sd_nrzi_o n1339 n1340
+01 1
+.names n_886 phy_tx_mode n1341
+11 1
+.names n1338 n1341 n1342
+00 1
+.names n1335 n1342 n1343
+01 1
+.names n_224 n1343 n1344
+01 1
+.names n_224 n1343 n1345
+00 1
+.names n1344 n1345 n1346
+00 1
+.names n_224 n1343 n1347
+11 1
+.names n1346 n1347 n1348
+10 1
+.names n_224 n1348 n1349
+00 1
+.names n1340 n1349 n1350
+01 1
+.names n1348 n1350 n1351
+00 1
+.names rst n1334 n1352
+11 1
+.names rst n1351 n1353
+01 1
+.names n1334 n1353 n1354
+01 1
+.names n1352 n1354 txdn_in
+00 0
+.names n1339 n1345 n1356
+11 1
+.names n1343 n1356 n1357
+00 1
+.names i_tx_phy_sd_nrzi_o n1357 n1358
+00 1
+.names n1357 n1358 n1359
+00 1
+.names n_886 txdp n1360
+00 1
+.names n_886 n1360 n1361
+00 1
+.names n1359 n1361 n1362
+00 1
+.names rst n1362 n1363
+00 1
+.names rst n1362 n1364
+10 1
+.names n1363 n1364 n1365
+00 1
+.names rst n1362 n1366
+01 1
+.names n1365 n1366 txdp_in
+10 0
+.names i_tx_phy_txoe_r1 i_tx_phy_txoe_r2 n1368
+00 1
+.names n_886 n1368 n1369
+11 1
+.names n_886 n1369 n1370
+10 1
+.names txoe n1369 n1371
+01 1
+.names n_886 n1371 n1372
+01 1
+.names n1370 n1372 n1373
+00 1
+.names rst n1373 n1374
+01 1
+.names rst n1373 n1375
+11 1
+.names n1374 n1375 n1376
+00 1
+.names rst n1373 n1377
+00 1
+.names n1376 n1377 txoe_in
+10 0
+.names DataIn_o_lb_1_rb_ DataIn_o_lb_0_rb__in
+1 1
+.names DataIn_o_lb_2_rb_ DataIn_o_lb_1_rb__in
+1 1
+.names DataIn_o_lb_3_rb_ DataIn_o_lb_2_rb__in
+1 1
+.names DataIn_o_lb_4_rb_ DataIn_o_lb_3_rb__in
+1 1
+.names DataIn_o_lb_5_rb_ DataIn_o_lb_4_rb__in
+1 1
+.names DataIn_o_lb_6_rb_ DataIn_o_lb_5_rb__in
+1 1
+.names DataIn_o_lb_7_rb_ DataIn_o_lb_6_rb__in
+1 1
+.names i_rx_phy_sd_nrzi DataIn_o_lb_7_rb__in
+1 1
+.names i_rx_phy_rxdp_s0 LineState_o_lb_0_rb__in
+1 1
+.names i_rx_phy_rxdn_s0 LineState_o_lb_1_rb__in
+1 1
+.names i_rx_phy_fs_ce_r1 i_rx_phy_fs_ce_r2_in
+1 1
+.names txoe i_rx_phy_rx_en_in
+1 1
+.names i_rx_phy_rxd_s i_rx_phy_rxd_r_in
+1 1
+.names rxd i_rx_phy_rxd_s0_in
+1 1
+.names i_rx_phy_rxd_s0 i_rx_phy_rxd_s1_reg_Q_in
+1 1
+.names rxdn i_rx_phy_rxdn_s0_in
+1 1
+.names rxdp i_rx_phy_rxdp_s0_in
+1 1
+.names i_tx_phy_hold_reg_5 i_tx_phy_hold_reg_d_12_in
+1 1
+.names i_tx_phy_hold_reg_7 i_tx_phy_hold_reg_d_14_in
+1 1
+.names i_tx_phy_hold_reg_10 i_tx_phy_hold_reg_d_17_in
+1 1
+.names i_tx_phy_hold_reg i_tx_phy_hold_reg_d_in
+1 1
+.names i_tx_phy_hold_reg_4 i_tx_phy_hold_reg_d_reg_pound_5b1_pound_5d_Q_in
+1 1
+.names i_tx_phy_hold_reg_6 i_tx_phy_hold_reg_d_reg_pound_5b3_pound_5d_Q_in
+1 1
+.names i_tx_phy_hold_reg_8 i_tx_phy_hold_reg_d_reg_pound_5b5_pound_5d_Q_in
+1 1
+.names i_tx_phy_hold_reg_9 i_tx_phy_hold_reg_d_reg_pound_5b6_pound_5d_Q_in
+1 1
+.names i_tx_phy_sft_done i_tx_phy_sft_done_r_in
+1 1
+.names i_rx_phy_fs_ce_r2 n_886_in
+1 1
+.end
