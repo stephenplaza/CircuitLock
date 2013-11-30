@@ -51,6 +51,8 @@ class EncryptedCircuit : public Circuit {
   
   private:
     void insert_xor(Inst* inst, std::string name, int value);
+
+    CoverType find_cover(Wire* wire1, Wire* wire2, Circuit& validation_circuit);
   
     //! these are new inputs to the circuit (not in base class PI list)
     std::vector<Wire*> key_wires;

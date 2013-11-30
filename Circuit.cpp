@@ -24,7 +24,7 @@ using std::tr1::unordered_set;
 using std::map;
 
 Circuit::Circuit(string filename, TechLibrary* library_) :
-    library(library_), num_insts(0), num_wires(0), num_gates(0),
+    library(library_), blif_name(filename), num_insts(0), num_wires(0), num_gates(0),
     num_ports(0), max_level(0), sim_patterns(0), disable_signature_clear(false)
 {
     // will throw an Error if incorrectly formatted
@@ -37,6 +37,16 @@ bool sort_wire(Wire* wire1, Wire* wire2)
 {
     return (wire1->get_name() < wire2->get_name());
 }
+
+
+bool Circuit::wires_equal(std::string w1, std::string w2, CoverType type)
+{
+    Wire* wire1 = (Wire*) sym_table[w1];
+    Wire* wire2 = (Wire*) sym_table[w2];
+
+    return wire1->sig_equiv(*wire2, type); 
+}
+
 
 /*!
  * Assumes all of the wire/inst visited flags are false

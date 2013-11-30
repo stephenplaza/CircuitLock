@@ -41,13 +41,27 @@ int Wire::sig_diffs(Wire& wire1)
     return diffs;
 } 
 
-bool Wire::sig_equiv(Wire& wire1)
+bool Wire::sig_equiv(Wire& wire1, CoverType type)
 {
     assert(signatures.size() == wire1.signatures.size());
 
     for (int i = 0; i < int(signatures.size()); ++i) {
-        if (signatures[i] != wire1.signatures[i]) {
-            return false;
+        if (type == EQUAL) {
+            if (signatures[i] != wire1.signatures[i]) {
+                return false;
+            }
+        } else if (type == AND) {
+            // signature covered by another signature
+            if (signatures[i] != (signatures[i] & wire1.signatures[i])) {
+                return false;
+            }
+        } else if (type == OR) {
+            // signature covered by another signature
+            if (signatures[i] != (signatures[i] | wire1.signatures[i])) {
+                return false;
+            }
+        } else {
+            assert(0);
         }
     }
     return true;

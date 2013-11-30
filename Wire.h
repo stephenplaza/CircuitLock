@@ -5,6 +5,7 @@
 #include <vector>
 
 #define SIGSTEP (sizeof(unsigned long long)*8)
+enum CoverType { NOCOVER, EQUAL, AND, OR };
 
 class Port;
 
@@ -80,7 +81,7 @@ class Wire : public CircuitElement {
     }
 
     int sig_diffs(Wire& wire1);
-    bool sig_equiv(Wire& wire1); 
+    bool sig_equiv(Wire& wire1, CoverType type = EQUAL); 
     
     void randomize();
 

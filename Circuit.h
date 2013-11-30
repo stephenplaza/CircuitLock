@@ -101,6 +101,8 @@ class Circuit {
     } 
 
     void load_test_vectors(const char* testfile);
+    
+    bool wires_equal(std::string w1, std::string w2, CoverType type);
 
   protected:
     TechLibrary* library;
@@ -114,6 +116,8 @@ class Circuit {
     std::vector<Inst*> lib_insts;
     
     int num_insts, num_wires, num_gates, num_ports, max_level;
+    
+    std::string blif_name;
 
   private:
     void simulate(std::vector<std::vector<unsigned long long> >& input_vectors,
