@@ -68,6 +68,20 @@ void EncryptedCircuit::toggle_key(unsigned int key_id)
     }
 }
 
+void EncryptedCircuit::set_key_value(unsigned int key_id, int val)
+{
+    if (key_id >= key_wires.size()) {
+        throw Error("Invalid key id given");
+    } 
+    Wire* wire = key_wires[key_id];
+
+    if (val) {
+        wire->set_sig_temp(~((unsigned long long)(0)));
+    } else {
+        wire->set_sig_temp(((unsigned long long)(0)));
+    }
+}
+
 void EncryptedCircuit::randomly_set_keys()
 {
     for (int i = 0; i < int(key_wires.size()); ++i) {
@@ -316,11 +330,11 @@ void EncryptedCircuit::add_random_xors(int num_xors)
         } 
 
         // verify that XOR impacts the output
-        if (!observable_signal(inst)) {
+        /*if (!observable_signal(inst)) {
             ++total_nonobservable;
             --num_ops;
             continue;
-        }            
+        } */           
 
         chosen_insts.push_back(inst);
         --num_xors;

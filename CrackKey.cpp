@@ -7,7 +7,7 @@ using std::vector;
 using std::cout; using std::endl;
 
 //const int VERIFY_LIMIT = 100000;    
-const int SEARCH_LIMIT = 1000000000;
+const int SEARCH_LIMIT = 1000000;
 
 // ?? allow one to specify simulation step
 bool CrackKey::generate_key(vector<bool>& key_values, int rand_sim,
@@ -49,8 +49,11 @@ bool CrackKey::generate_key(vector<bool>& key_values, int rand_sim,
     double timeout = 3600;
     clock_t initial_clock = clock();
 
+    vector<int> key_same;
+
     //while (num_input_patterns < SEARCH_LIMIT) {
-    while (((clock() - initial_clock) / double(CLOCKS_PER_SEC)) < timeout) {
+    //while (((clock() - initial_clock) / double(CLOCKS_PER_SEC)) < timeout) {
+    while (num_iterations < SEARCH_LIMIT) {
 
         // in theory, outputs could be saved from previous
         // configuration (this doesn't count against num_input_patterns)
@@ -80,11 +83,30 @@ bool CrackKey::generate_key(vector<bool>& key_values, int rand_sim,
             } else {
                 num_bads = 0;
             }
+            if (num_restarts > 10) {
+                for (int i = 0; i < num_keys; ++i) {
+                    if (key_same[i] != -1) {
+                        ++num_examined;
+                        examined[i] = true;
+                    }
+                }
+            }
+
             if (last_bad == num_bad_vectors1 && num_bads == 2) {
                 cout << "randomizing" << endl;
                 locked_circuit->randomly_set_keys();
                 num_input_patterns += num_tests; 
                 num_bads = 0;
+
+                if (num_restarts > 10) {
+                    for (int i = 0; i < num_keys; ++i) {
+                        if (key_same[i] != -1) {
+                            ++num_examined;
+                            examined[i] = true;
+                            locked_circuit->set_key_value(i, key_same[i]);
+                        }
+                    }
+                }
                 continue;
             } else {
                 last_bad = num_bad_vectors1;
@@ -147,6 +169,28 @@ bool CrackKey::generate_key(vector<bool>& key_values, int rand_sim,
                 found = true;
                 break; 
             } else {
+                if (key_same.empty()) {
+                    for (int i = 0; i < num_keys; ++i) {
+                        if (locked_circuit->get_current_key_value(i)) {
+                            key_same.push_back(1);
+                        } else {
+                            key_same.push_back(0);
+                        }
+                    }
+                } else {
+                    for (int i = 0; i < num_keys; ++i) {
+                        if (key_same[i] != -1) {
+                            bool key_value = locked_circuit->get_current_key_value(i) ;
+                            int int_val = 0;
+                            if (key_value) {
+                                int_val = 1;
+                            }
+                            if (key_same[i] != int_val) {
+                                key_same[i] = -1;
+                            }
+                        }
+                    }
+                }
                 cout << endl;
                 /*if (use_rand) {
                     locked_circuit->set_random_inputs(saved_vecs, rand_sim);
@@ -155,12 +199,31 @@ bool CrackKey::generate_key(vector<bool>& key_values, int rand_sim,
                 cout << "restarting" << endl;
                 num_examined = 0;
                 ++num_restarts;
+
+                
                 for (int i = 0; i < int(examined.size()); ++i) {
                     examined[i] = false;
                     locked_circuit->randomly_set_keys();
                     num_input_patterns += num_tests; 
                 }
-            }
+           
+                if (num_restarts > 10) {
+                    for (int i = 0; i < num_keys; ++i) {
+                        if (key_same[i] != -1) {
+                            ++num_examined;
+                            examined[i] = true;
+                            locked_circuit->set_key_value(i, key_same[i]);
+                            bool val = locked_circuit->get_key_value(i);
+                            if ((!val && key_same[i]) || (val && !key_same[i])) {
+                                cout << "Saved key does not match: " << i << endl;
+                            }
+                        } else {
+                            cout << "unknown: " << i << endl;
+                        }
+                    }
+                }
+
+             }
         }
     } 
 

@@ -44,6 +44,8 @@ class EncryptedCircuit : public Circuit {
     */
     void correctly_set_keys();
 
+    void set_key_value(unsigned int key_id, int val);
+
     void print_testability_prob(std::tr1::unordered_set<Inst*>& stuck0,
         std::tr1::unordered_set<Inst*>& stuck1);
 
