@@ -17,15 +17,15 @@ MUX insertion, and a hill-climbing algorithm for discerning the key bits.
 
 For help
 
-    % CircuitLocker -h
+    % CircuitLock -h
 
 To add 64 test-invariant MUX locks to the c3540 circuit and to find out the total number of potential MUX candidates, run the following:
 
-CircuitLock c3540.blif --test-file c3540.test --lock-mux 64 --random-seed 1 --mux-cands 1
+    % CircuitLock c3540.blif --test-file c3540.test --lock-mux 64 --random-seed 1 --mux-cands 1
 
 To add 64 random XOR locks to the c3540 circuit and then try to extract the correct key from this "locked" circuit, run the following:
 
-CircuitLock c3540.blif --test-file c3540.test --lock-randxor 64 --random-seed 1 --crack-key
+    % CircuitLock c3540.blif --test-file c3540.test --lock-randxor 64 --random-seed 1 --crack-key
 
 ## Benchmarks
 
@@ -40,7 +40,7 @@ This tool is for primarily exploring locking mechanisms in combinational circuit
 latches.  If latches exist in the circuit, the latch output is treated as a primary input; the latch input is treated as
 a primary output.
 
-## TODO
+## To Do
 
 * Cleanup debug output
 * Add more comments to code
